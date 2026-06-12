@@ -1,4 +1,3 @@
-notebooks/
 .matplotlib/
 .venv/
 __pycache__/
