@@ -1,0 +1,125 @@
+description: >-
+  Approved full campaign names and co-occurrence rules for metadata matching.
+  Short acronym tokens remain in clamps_biblio/field_campaigns.py CAMPAIGN_SPECS.
+
+campaigns:
+  PECAN:
+    full_names:
+      - Plains Elevated Convection at Night
+      - Plains Elevated Convection At Night
+
+  LAPSE-RATE:
+    full_names:
+      - Lower Atmosphere Process Studies at Elevation – a Remotely-piloted Aircraft Team Experiment
+      - Lower Atmosphere Process Studies at Elevation - a Remotely-piloted Aircraft Team Experiment
+      - Lower Atmosphere Process Studies at Elevation – a Remotely piloted Aircraft Team Experiment
+      - Lower Atmosphere Process Studies at Elevation - a Remotely piloted Aircraft Team Experiment
+      - Lower Atmospheric Profiling Studies at Elevation – a Remotely-piloted Aircraft Team Experiment
+      - Lower Atmospheric Profiling Studies at Elevation - a Remotely-piloted Aircraft Team Experiment
+      - Lower Atmospheric Profiling Studies at Elevation – a Remotely piloted Aircraft Team Experiment
+      - Lower Atmospheric Profiling Studies at Elevation - a Remotely piloted Aircraft Team Experiment
+
+  VORTEX-SE:
+    full_names:
+      - Verification of the Origins of Rotation in Tornadoes Experiment–Southeast
+      - Verification of the Origins of Rotation in Tornadoes Experiment-Southeast
+      - Verification of the Origins of Rotation in Tornadoes EXperiment–Southeast
+      - Verification of the Origins of Rotation in Tornadoes EXperiment-Southeast
+      - Verification of the Origins of Rotation in Tornadoes Experiment Southeast
+      - Verification of the Origins of Rotation in Tornadoes EXperiment Southeast
+
+  VORTEX-USA:
+    full_names:
+      - Verification of the Origins of Rotation in Tornadoes EXperiment–United States
+      - Verification of the Origins of Rotation in Tornadoes EXperiment-United States
+      - Verification of the Origins of Rotation in Tornadoes Experiment–United States
+      - Verification of the Origins of Rotation in Tornadoes Experiment-United States
+      - Verification of the Origins of Rotation in Tornadoes EXperiment United States
+      - Verification of the Origins of Rotation in Tornadoes Experiment United States
+
+  TORUS:
+    full_names:
+      - Targeted Observation by Radars and UAS of Supercells
+      - Targeted Observations by Radars and UAS of Supercells
+
+  PERiLS:
+    full_names:
+      - Propagation, Evolution, and Rotation in Linear Storms
+
+  LAFE:
+    full_names:
+      - Land-Atmosphere Feedback Experiment
+
+  CHEESEHEAD:
+    full_names:
+      - Chequamegon Heterogeneous Ecosystem Energy-balance Study Enabled by a High-density Extensive Array of Detectors
+      - Chequamegon Heterogeneous Ecosystem Energy-Balance Study Enabled by a High-density Extensive Array of Detectors
+      - Chequamegon Heterogeneous Ecosystem Energy balance Study Enabled by a High density Extensive Array of Detectors
+      - Chequamegon Heterogeneous Ecosystem Energy-Balance Study Enabled by a High-Density Extensive Array of Detectors
+
+  TRACER:
+    full_names:
+      - TRacking Aerosol Convection interactions ExpeRiment
+      - TRacking Aerosol Convection Interactions ExpeRiment
+      - Tracking Aerosol Convection Interactions Experiment
+      - Tracking Aerosol Convection interactions Experiment
+
+  TRACER-AQ:
+    full_names:
+      - TRacking Aerosol Convection ExpeRiment – Air Quality
+      - TRacking Aerosol Convection ExpeRiment - Air Quality
+      - TRacking Aerosol Convection Experiment – Air Quality
+      - Tracking Aerosol Convection Experiment – Air Quality
+      - Tracking Aerosol Convection Experiment - Air Quality
+
+  ESCAPE:
+    requires_co_campaign: TRACER
+    full_names:
+      - Experiment of Sea Breeze Convection, Aerosols, Precipitation, and Environment
+      - Experiment of Sea Breeze Convection, Aerosols, Precipitation and Environment
+
+  SPLASH:
+    full_names:
+      - Study of Precipitation, the Lower Atmosphere, and Surface for Hydrometeorology
+      - Study of Precipitation, the Lower Atmosphere and Surface for Hydrometeorology
+
+  SAIL:
+    requires_co_campaign: SPLASH
+    full_names:
+      - Surface Atmosphere Integrated Field Laboratory
+
+  SPLASH-SAIL:
+    requires_all:
+      - SPLASH
+      - SAIL
+
+  AWAKEN:
+    full_names:
+      - American WAKE ExperimeNt
+      - American Wake Experiment
+
+  EPIC:
+    full_names:
+      - Environmental Profiling and Initiation of Convection
+
+  mini-MPEX:
+    full_names:
+      - Mini-Mesoscale Predictability EXperiment
+      - Mini-Mesoscale Predictability Experiment
+
+  RIVoRS:
+    full_names:
+      - Rivers of Vorticity in Supercells
+
+  BLISSFUL:
+    full_names:
+      - BLISS Field Universalization Laboratory
+
+  SCALES:
+    full_names:
+      - Small-UAS Coordination for Atmospheric Low-Level Environmental Sampling
+
+  WH2yMSIE:
+    full_names:
+      - Westcoast and Heartland Hyperspectral Microwave Sensor Intensive Experiment
+      - Westcoast & Heartland Hyperspectral Microwave Sensor Intensive Experiment

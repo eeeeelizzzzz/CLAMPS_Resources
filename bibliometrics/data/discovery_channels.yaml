@@ -1,0 +1,147 @@
+description: Discovery channel definitions for CLAMPS bibliometric pipeline.
+global_floor_year: 2015
+per_campaign_floor_rule: deployment_start_year_minus_2
+work_types: [article, review, preprint, report]
+
+channels:
+  A:
+    name: explicit_facility_identity
+    description: >-
+      Auto-admit when OpenAlex-searchable text contains unambiguous CLAMPS
+      facility identity. Sufficient on its own — no campaign or PDF required.
+    auto_admit: true
+    exclude_bare_clamps: true
+    phrases:
+      - CLAMPS-1
+      - CLAMPS-2
+      - CLAMPS 1
+      - CLAMPS 2
+      - CLAMPS1
+      - CLAMPS2
+      - Collaborative Lower Atmospheric Mobile Profiling System
+      - NSSL mobile profiling
+      - NSSL mobile profiler
+      - NSSL profiling
+      - Mobile PISA
+    notes: >-
+      Bare "CLAMPS" excluded (biology homographs). Retain NSSL mobile profiling
+      per user decision.
+
+  B:
+    name: campaign_compound_queries
+    description: >-
+      Campaign + explicit facility + instrument/observational vocabulary.
+      Requires PDF confirmation when facility identity absent from metadata.
+    auto_admit: false
+    pdf_confirmation_when: facility_not_in_metadata
+
+    # Subset design — NOT full cross product (see query_budget below)
+    facility_terms:
+      - CLAMPS-1
+      - CLAMPS-2
+
+    instruments:
+      - Doppler lidar
+      - microwave radiometer
+      - AERI
+      - radiosonde
+      - remote profiler
+      - profiling system
+
+    observational_terms:
+      - boundary layer 
+      - wind profile
+      - retrieval
+
+
+    query_templates:
+      # Primary B1: campaign + facility + instrument
+      - template: '"{campaign}" "{facility}" "{instrument}"'
+        family: B1
+      # Secondary B2: campaign + instrument (no facility) — catches metadata-silent CLAMPS
+      - template: '"{campaign}" "{instrument}"'
+        family: B2
+        pdf_required: true
+      # Tertiary B3: campaign + facility + obs term
+      - template: '"{campaign}" "{facility}" "{obs_term}"'
+        family: B3
+
+    query_budget:
+      per_campaign_estimate: 12
+      formula: "~2 facility terms × 3 instruments × 2 obs terms"
+      rationale: >-
+        Deliberate subset, not full cross product. A complete cross product of
+        2 facility × 6 instruments × 4 obs terms = 48 queries/campaign, which
+        multiplies OpenAlex API cost and returns heavy homograph noise (e.g.
+        PERiLS matching English "perils"). The ~12-query budget samples the
+        highest-yield combinations: remote profiler + Doppler lidar + AERI with
+        both CLAMPS-1/2, plus 2 boundary-layer obs phrases. Expand only after
+        auditing misses against ground_truth_clamps_papers.csv.
+
+    ambiguous_campaigns:
+      require_quoted_search: true
+      campaigns:
+        - PERiLS
+        - TRACER
+        - SPLASH
+        - SAIL
+        - AWAKEN
+      notes: >-
+        Quote campaign tokens in OpenAlex search strings. PERiLS especially
+        collides with English "perils".
+
+    example_queries:
+      PERiLS:
+        - '"PERiLS" "CLAMPS-1" "remote profiler"'
+        - '"PERiLS" "CLAMPS-2" "Doppler lidar"'
+        - '"PERiLS" "remote profiler"'
+        - '"PERiLS" "atmospheric boundary layer"'
+      PECAN:
+        - '"PECAN" "CLAMPS-1" "microwave radiometer"'
+        - '"PECAN" "CLAMPS-2" "AERI"'
+        - '"PECAN" "boundary layer profiling"'
+
+  C:
+    name: data_products
+    description: Dataset DOI citations and grant acknowledgments.
+    dataset_dois_file: data/clamps_dataset_dois.txt
+    grant_numbers:
+      - AGS-1539470
+
+  D:
+    name: author_seeds
+    description: filter=authorships.author.id from author_seeds.yaml
+    config_file: data/author_seeds.yaml
+
+  E:
+    name: campaign_anchor_authors
+    description: Extract author groups from campaign_anchors.yaml — no citation snowball.
+    config_file: data/campaign_anchors.yaml
+
+  F:
+    name: theses
+    description: University thesis discovery via thesis_institutions.yaml
+    config_file: data/thesis_institutions.yaml
+
+  H:
+    name: thesis_repositories
+    description: >-
+      Tier 6 institutional repository search (DSpace, Digital Commons, EPrints)
+      plus OATD aggregator fallback. Run scripts/discover_thesis_repos.py.
+      Institutions in data/channel_h_exclusions.yaml are skipped here but remain
+      in Channel F (OpenAlex).
+    config_file: data/thesis_repositories.yaml
+    exclusions_file: data/channel_h_exclusions.yaml
+
+  G:
+    name: ground_truth_registry
+    description: Manual registry of known CLAMPS papers — always included.
+    config_file: data/ground_truth_clamps_papers.csv
+
+post_filters:
+  source_allowlist_file: data/source_allowlist.yaml
+  topic_filters_file: data/topic_filters.yaml
+  source_allowlist_mode: optional_boost
+  notes: >-
+    Source allowlist is a soft boost, not a hard gate. Works outside the list
+    pass if they match Channel A/B/D or ground truth.

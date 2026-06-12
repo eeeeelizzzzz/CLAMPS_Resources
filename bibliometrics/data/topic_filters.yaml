@@ -1,0 +1,91 @@
+description: OpenAlex topic/field filters for post-discovery noise reduction.
+default_behavior: pass_through_unless_excluded
+
+# --- What happens to topics NOT in include or exclude? ---
+unlisted_topic_policy: |
+  PASS THROUGH. The include list is an optional precision boost (e.g. for
+  source-allowlist tie-breaking), NOT membership requirement. A work is dropped
+  only if it matches an exclude rule (field, topic, or keyword). Works with
+  no topics assigned by OpenAlex also pass through.
+
+include:
+  mode: optional_boost
+  description: >-
+    Prefer / rank works in these OpenAlex fields. Does NOT reject works outside
+    these fields if they match a discovery channel.
+  openalex_fields:
+    - id: "19"
+      name: Earth and Planetary Sciences
+    - id: "23"
+      name: Environmental Science
+    - id: "22"
+      name: Engineering
+      notes: UAS, lidar, wind-energy instrumentation papers
+    - id: "17"
+      name: Physics and Astronomy
+      notes: Atmospheric physics cross-listed works
+
+exclude:
+  # --- Medical (broad) ---
+  medical:
+    enabled: true
+    openalex_fields:
+      - id: "27"
+        name: Medicine
+    openalex_domains:
+      - id: "4"
+        name: Health Sciences
+    keyword_title_abstract:
+      - dermatology
+      - orthodontic
+      - carcinoma
+      - clinical trial
+    notes: >-
+      Drop medicine/health-science field works. CLAMPS biology homographs
+      (e.g. clamp proteins) caught by keyword list when title/abstract
+      lacks atmospheric context.
+
+  # --- Literary / English-language studies (NOT scientific literature reviews) ---
+  literary_and_english_studies:
+    enabled: true
+    description: >-
+      Exclude fiction/nonfiction book scholarship and English-language pedagogy.
+      Scientific review papers (e.g. BAMS overviews, AMT instrument intercomparisons)
+      are NOT excluded — type=review remains in work_types allowlist.
+    openalex_topics:
+      - id: T14162
+        name: Historical and Literary Studies
+      - id: T11717
+        name: Postcolonial and Cultural Literary Studies
+      - id: T12623
+        name: Cultural, Media, and Literary Studies
+      - id: T13167
+        name: Historical, Literary, and Cultural Studies
+      - id: T14235
+        name: Linguistic, Cultural, and Literary Studies
+    keyword_title_abstract:
+      - english literature
+      - literary criticism
+      - poetry
+      - shakespeare
+      - creative writing
+      - esl classroom
+      - english language teaching
+      - second language acquisition
+      - linguistics pedagogy
+    require_any_keyword: true
+    notes: >-
+      Topic OR keyword match triggers exclusion. Prevents "literature review"
+      in atmospheric abstracts from being dropped — those papers won't match
+      literary-studies topics or fiction/ESL keywords.
+
+  # --- Explicitly NOT excluded ---
+  not_excluded:
+    - scientific review papers (work type = review)
+    - non-English publications (Perdigão, international campaigns)
+    - bare "CLAMPS" biology papers (handled at Channel A phrase level)
+
+language_filter:
+  enabled: false
+  rationale: >-
+    English-only would drop Perdigão and other international campaign science.

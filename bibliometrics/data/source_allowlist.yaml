@@ -1,0 +1,156 @@
+description: OpenAlex primary_location.source.id allowlist for meteorology-adjacent
+  venues incl. general-science journals.
+usage: 'Optional post-filter: keep works where source.id in allowlist OR topic passes
+  include filter.'
+sources:
+- id: ams_bams
+  openalex_id: S140302479
+  display_name: Bulletin of the American Meteorological Society
+  issn: '0'
+  type: journal
+- id: ams_mwr
+  openalex_id: S90791864
+  display_name: Monthly Weather Review
+  issn: '0'
+  type: journal
+- id: ams_jas
+  openalex_id: S131264402
+  display_name: Journal of the Atmospheric Sciences
+  issn: '0'
+  type: journal
+- id: ams_jtech
+  openalex_id: S135937692
+  display_name: Journal of Atmospheric and Oceanic Technology
+  issn: '0'
+  type: journal
+- id: ams_jamc
+  openalex_id: S89108927
+  display_name: Journal of Applied Meteorology and Climatology
+  issn: '1'
+  type: journal
+- id: ams_waf
+  openalex_id: S203100778
+  display_name: Weather and Forecasting
+  issn: '0'
+  type: journal
+- id: ams_jcli
+  openalex_id: S80591372
+  display_name: Journal of Climate
+  issn: '0'
+  type: journal
+- id: copernicus_acp
+  openalex_id: S162708223
+  display_name: Atmospheric chemistry and physics
+  issn: '1'
+  type: journal
+- id: copernicus_amt
+  openalex_id: S70769875
+  display_name: Atmospheric measurement techniques
+  issn: '1'
+  type: journal
+- id: copernicus_essd
+  openalex_id: S106909380
+  display_name: Earth system science data
+  issn: '1'
+  type: journal
+- id: copernicus_gmd
+  openalex_id: S60406085
+  display_name: Geoscientific model development
+  issn: '1'
+  type: journal
+- id: copernicus_wes
+  openalex_id: S4210189655
+  display_name: Wind energy science
+  issn: '2'
+  type: journal
+- id: springer_blm
+  openalex_id: S28534307
+  display_name: Boundary-Layer Meteorology
+  issn: '0'
+  type: journal
+- id: agu_jgr
+  openalex_id: S207178839
+  display_name: Journal of Geophysical Research Atmospheres
+  issn: '0'
+  type: journal
+- id: agu_grl
+  openalex_id: S36624081
+  display_name: Geophysical Research Letters
+  issn: '0'
+  type: journal
+- id: agu_james
+  openalex_id: S185824406
+  display_name: Journal of Advances in Modeling Earth Systems
+  issn: '1'
+  type: journal
+- id: nature
+  openalex_id: S137773608
+  display_name: Nature
+  issn: '0'
+  type: journal
+- id: nature_scientific_data
+  openalex_id: S2607323502
+  display_name: Scientific Data
+  issn: '2'
+  type: journal
+- id: science_advances
+  openalex_id: S2737427234
+  display_name: Science Advances
+  issn: '2'
+  type: journal
+- id: pnas
+  openalex_id: S125754415
+  display_name: Proceedings of the National Academy of Sciences
+  issn: '0'
+  type: journal
+- id: mdpi_remote_sensing
+  openalex_id: S43295729
+  display_name: Remote Sensing
+  issn: '2'
+  type: journal
+- id: mdpi_atmosphere
+  openalex_id: S946213959
+  display_name: Atmosphere
+  issn: '2'
+  type: journal
+- id: mdpi_sensors
+  openalex_id: S101949793
+  display_name: Sensors
+  issn: '1'
+  type: journal
+- id: ieee_tgrs
+  openalex_id: S111326731
+  display_name: IEEE Transactions on Geoscience and Remote Sensing
+  issn: '0'
+  type: journal
+- id: ieee_jstars
+  openalex_id: S117727964
+  display_name: IEEE Journal of Selected Topics in Applied Earth Observations and
+    Remote Sensing
+  issn: '1'
+  type: journal
+- id: elsevier_atmos_res
+  openalex_id: S171488675
+  display_name: Atmospheric Research
+  issn: '0'
+  type: journal
+- id: aip_jrse
+  openalex_id: S168707975
+  display_name: Journal of Renewable and Sustainable Energy
+  issn: '1'
+  type: journal
+- id: rms_qjrms
+  openalex_id: S70522100
+  display_name: Quarterly Journal of the Royal Meteorological Society
+  issn: '0'
+  type: journal
+- id: wiley_met_apps
+  openalex_id: S75230789
+  display_name: Meteorological Applications
+  issn: '1'
+  type: journal
+- id: iop_erl
+  openalex_id: S139338987
+  display_name: Environmental Research Letters
+  issn: '1'
+  type: journal

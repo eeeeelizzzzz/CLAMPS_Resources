@@ -1,0 +1,131 @@
+# CLAMPS bibliometric discovery configuration
+# Copy to config.yaml and set your OpenAlex mailto before running discovery.
+
+openalex:
+  # Strongly recommended — puts you in OpenAlex "polite pool" with higher rate limits
+  mailto: your.email@example.edu
+
+discovery:
+  institution_filter: false
+  dataset_dois_file: data/clamps_dataset_dois.txt
+  thesis_institutions_file: data/thesis_institutions.yaml
+  thesis_repositories_file: data/thesis_repositories.yaml
+  channel_h_exclusions_file: data/channel_h_exclusions.yaml
+  openalex_delay: 1.5
+  hybrid_openalex_fulltext: true
+  html_scrape_playwright_cookies: ams_cookies.json
+  strict_high_confidence: true
+  ambiguous_campaigns:
+    - PERiLS
+    - TRACER
+    - SPLASH
+    - SAIL
+    - AWAKEN
+
+institutions:
+  university_of_oklahoma: I8692664
+  noaa_nssl: I4210092927
+
+affiliation_overrides_file: data/affiliation_overrides.csv
+clamps_deployments_file: data/clamps_deployments.csv
+
+nwc_affiliations:
+  - id: ou
+    label: OU
+    patterns:
+      - "university of oklahoma"
+      - "school of meteorology"
+  - id: ciwro
+    label: CIWRO
+    patterns:
+      - "cooperative institute for severe and high-impact weather"
+      - "\\bCIWRO\\b"
+      - "cooperative institute for mesoscale meteorological"
+      - "\\bCIMMS\\b"
+  - id: nssl
+    label: NSSL
+    patterns:
+      - "national severe storms laboratory"
+      - "noaa national severe storms laboratory"
+      - "\\bNSSL\\b"
+  - id: ocs
+    label: Oklahoma Climatological Survey
+    patterns:
+      - "oklahoma climatological survey"
+      - "oklahoma climatological center"
+  - id: wfo_norman
+    label: NWS WFO Norman
+    patterns:
+      - "norman weather forecast office"
+      - "weather forecast office.*norman"
+      - "norman.*weather forecast office"
+  - id: spc
+    label: NWS SPC
+    patterns:
+      - "storm prediction center"
+      - "noaa storm prediction center"
+  - id: caps
+    label: CAPS
+    patterns:
+      - "center for analysis and prediction of storms"
+  - id: arrc
+    label: ARRC
+    patterns:
+      - "advanced radar research center"
+      - "\\bARRC\\b"
+
+seed_works:
+  - doi: "10.1175/bams-d-17-0165.1"
+    label: "Wagner et al. 2019 (CLAMPS overview)"
+  - doi: "10.5194/essd-13-1041-2021"
+    label: "Bell et al. 2021 (LAPSE-RATE)"
+
+field_campaigns:
+  - PECAN
+  - LAPSE-RATE
+  - VORTEX-SE
+  - TORUS
+  - PERiLS
+  - Perdigão
+  - BLISSFUL
+  - mini-MPEX
+  - LAFE
+  - CHEESEHEAD
+  - TRACER
+  - SPLASH
+  - SAIL
+  - AWAKEN
+  - PBLTops
+
+campaign_extra_terms:
+  PECAN:
+    - MP-1
+    - MP1
+
+search_phrases:
+  - "Collaborative Lower Atmospheric Mobile Profiling System"
+  - CLAMPS
+  - CLAMPS1
+  - CLAMPS2
+  - "CLAMPS-1"
+  - "CLAMPS-2"
+  - "CLAMPS trailer"
+  - "NSSL mobile profiling"
+  - "NSSL mobile profiler"
+  - "NSSL profiling"
+  - "Mobile PISA"
+
+text_patterns: []
+
+grant_numbers:
+  - "AGS-1539470"
+
+data_repository_links:
+  - label: NSSL CLAMPS THREDDS catalog
+    url: https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/catalog.html
+
+output:
+  directory: output
+  papers_csv: clamps_papers_discovered.csv
+  mentions_csv: clamps_text_mentions.csv
+  scan_log_csv: clamps_scan_log.csv

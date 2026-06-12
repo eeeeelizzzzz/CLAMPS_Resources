@@ -1,0 +1,9 @@
+# Repo-wide ignores
+.DS_Store
+
+# Bibliometrics working files (also in bibliometrics/.gitignore)
+bibliometrics/output/
+bibliometrics/.venv/
+bibliometrics/.matplotlib/
+bibliometrics/config.yaml
+.matplotlib/

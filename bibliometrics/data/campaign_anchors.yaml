@@ -1,0 +1,195 @@
+description: >-
+  Campaign → anchor DOI → author group for Channel E (anchor-paper author
+  extraction). Floor year = earliest deployment start year − 2 per campaign.
+global_floor_year: 2012
+usage: >-
+  Fetch anchor work authorships; expand coauthor groups for Channel D seeds.
+  Do NOT citation-snowball from Wagner/Bell — use anchor papers only.
+
+campaigns:
+  PECAN:
+    floor_year: 2013
+    deployment_years: [2015]
+    platforms: [CLAMPS1]
+    anchor_dois:
+      - doi: 10.1175/bams-d-15-00257.1
+        label: Geerts et al. 2017 PECAN overview
+        primary: true
+    author_group_hint: [Bart Geerts, Michael C. Coniglio, Petra M. Klein, James O. Pinto, David D. Turner, Xuguang Wang]
+
+  VORTEX-SE:
+    floor_year: 2014
+    deployment_years: [2016, 2017, 2018, 2019]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois: []
+    notes: No single BAMS overview; use VORTEX-USA DOI list in ground_truth + Tanamachi profiler papers
+
+  Perdigão:
+    floor_year: 2015
+    deployment_years: [2017]
+    platforms: [CLAMPS1]
+    anchor_dois:
+      - doi: 10.1175/bams-d-17-0227.1
+        label: Fernando et al. 2019 Perdigão overview
+        primary: true
+    author_group_hint: [Julie K. Lundquist, Petra M. Klein, Tyler M. Bell, David D. Turner]
+
+  LAFE:
+    floor_year: 2015
+    deployment_years: [2017]
+    platforms: [CLAMPS1]
+    anchor_dois:
+      - doi: 10.1175/bams-d-17-0009.1
+        label: Wulfmeyer et al. 2018 LAFE overview
+        primary: true
+    author_group_hint: [Volker Wulfmeyer, Timothy J. Wagner, David D. Turner]
+
+  LAPSE-RATE:
+    floor_year: 2016
+    deployment_years: [2018]
+    platforms: [CLAMPS1]
+    anchor_dois:
+      - doi: 10.1175/bams-d-19-0050.1
+        label: de Boer et al. 2020 LAPSE-RATE community overview
+        primary: true
+      - doi: 10.5194/essd-13-1041-2021
+        label: Bell et al. 2021 LAPSE-RATE dataset
+        primary: false
+    author_group_hint: [Gijs de Boer, Phillip B. Chilson, Julie K. Lundquist, Tyler M. Bell, Petra M. Klein]
+
+  CHEESEHEAD:
+    floor_year: 2017
+    deployment_years: [2019]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois:
+      - doi: 10.1175/bams-d-19-0346.1
+        label: Butterworth et al. 2021 CHEESEHEAD overview
+        primary: true
+    author_group_hint: [Brian J. Butterworth, David D. Turner, Elizabeth Smith, Timothy J. Wagner, Temple R. Lee]
+
+  TORUS:
+    floor_year: 2021
+    deployment_years: []
+    platforms: []
+    anchor_dois:
+      - doi: 10.1175/bams-d-23-0265.1
+        label: Houston et al. 2024 TORUS overview
+        primary: true
+    author_group_hint: [Adam L. Houston]
+    notes: CLAMPS deployed on related PERiLS/VORTEX timelines; TORUS anchor for UAS/radar science network
+
+  PERiLS:
+    floor_year: 2020
+    deployment_years: [2022, 2023]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois: []
+    notes: No BAMS overview yet; use ground-truth PERiLS papers + compound Channel B queries
+
+  TRACER:
+    floor_year: 2020
+    deployment_years: [2022]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois:
+      - doi: 10.1175/bams-d-23-0331.1
+        label: TRACER overview
+        primary: true
+      - doi: 10.1175/bams-d-23-0014.1
+        label: TRACER companion overview
+        primary: false
+    author_group_hint: []
+
+  TRACER-AQ:
+    floor_year: 2019
+    deployment_years: [2021]
+    platforms: [CLAMPS1]
+    anchor_dois:
+      - doi: 10.1175/bams-d-23-0331.1
+        label: Shared TRACER program overview
+        primary: true
+    author_group_hint: []
+
+  SPLASH-SAIL:
+    floor_year: 2019
+    deployment_years: [2021]
+    platforms: [CLAMPS2]
+    anchor_dois:
+      - doi: 10.1175/bams-d-22-0147.1
+        label: de Boer et al. 2023 SPLASH overview
+        primary: true
+      - doi: 10.1175/bams-d-22-0049.1
+        label: Feldman et al. 2023 SAIL overview
+        primary: false
+    author_group_hint: [Gijs de Boer, James O. Pinto, Elizabeth Smith]
+
+  AWAKEN:
+    floor_year: 2020
+    deployment_years: [2022, 2023]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois:
+      - doi: 10.1063/5.0141683
+        label: Moriarty et al. 2024 AWAKEN overview
+        primary: true
+    author_group_hint: [Patrick Moriarty, Julie K. Lundquist, Petra M. Klein, Tyler Ashley]
+
+  EPIC:
+    floor_year: 2014
+    deployment_years: [2016, 2017]
+    platforms: [CLAMPS2]
+    anchor_dois:
+      - doi: 10.1175/jtech-d-18-0101.1
+        label: Koch et al. 2018 EPIC UAS boundary-layer sampling
+        primary: true
+    author_group_hint: []
+
+  PBLTops:
+    floor_year: 2018
+    deployment_years: [2020]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois:
+      - doi: 10.5194/amt-17-4087-2024
+        label: Smith & Carlin 2024 multi-instrument BL-top algorithm
+        primary: true
+      - doi: 10.1175/jamc-d-23-0231.1
+        label: Carlin et al. 2024 polarimetric BL height context
+        primary: false
+    author_group_hint: [Elizabeth Smith]
+
+  BLISSFUL:
+    floor_year: 2019
+    deployment_years: [2021]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois: []
+    notes: No published overview; deployment-only campaign
+
+  miniMPEX:
+    floor_year: 2015
+    deployment_years: [2017]
+    platforms: [CLAMPS2]
+    anchor_dois: []
+    notes: No published overview
+
+  RIVoRS:
+    floor_year: 2015
+    deployment_years: [2017]
+    platforms: [CLAMPS2]
+    anchor_dois: []
+    notes: No published overview
+
+  SCALES:
+    floor_year: 2022
+    deployment_years: [2024]
+    platforms: [CLAMPS2]
+    anchor_dois: []
+    notes: Recent deployment; no overview yet
+
+  WH2yMSIE:
+    floor_year: 2022
+    deployment_years: [2024]
+    platforms: [CLAMPS1, CLAMPS2]
+    anchor_dois: []
+    notes: Recent deployment; no overview yet
+
+facility_overview:
+  doi: 10.1175/bams-d-17-0165.1
+  label: Wagner et al. 2019 CLAMPS overview
+  use: Channel G ground truth + operator author extraction only; not citation snowball seed

@@ -1,0 +1,14 @@
+# Binder environment — quick reproduction path only (no Playwright).
+# Full local pipeline: pip install -r requirements.txt && playwright install chromium
+name: clamps-biblio-binder
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - requests>=2.31.0
+      - pandas>=2.0.0
+      - pyyaml>=6.0
+      - matplotlib>=3.8.0
+      - ipywidgets>=8.0.0

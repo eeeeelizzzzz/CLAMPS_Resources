@@ -1,0 +1,512 @@
+# Institutional repository targets for Tier 6 thesis/dissertation discovery.
+#
+# platform:
+#   dspace_rest     — DSpace 7 REST discover API (/server/api/discover/search/objects)
+#   dspace_rest6    — DSpace 6 REST discover (/rest/discover/search/objects)
+#   digital_commons — Bepress / Digital Commons HTML search (/do/search/)
+#   eprints         — EPrints advanced search (/cgi/search/advanced)
+#
+# institution_names: links to entries in data/thesis_institutions.yaml (matched by name)
+# Channel H skips institutions listed in data/channel_h_exclusions.yaml (still searched via Channel F).
+#
+# crawled: true|false — set true after a full Channel H search of this repo.
+#   discover_thesis_repos.py --skip-crawled omits repos where crawled: true.
+# crawl_error: optional string when crawled: true but all queries failed (blocked, DNS, etc.).
+#   discover_thesis_repos.py --skip-crawl-errors omits repos where crawl_error is set.
+
+discovery:
+  request_delay: 2.0
+  from_year: 2015
+  max_results_per_query: 30
+  # Two-mode post-filter (see build_repo_queries in thesis_config.py):
+  #   facility + campaign_compound queries → require CLAMPS signal in title/abstract
+  #   campaign_only queries (bare PECAN, etc.) → no CLAMPS required; tagged campaign_candidate
+  require_clamps_signal: true
+
+search_phrases:
+  - CLAMPS-1
+  - CLAMPS-2
+  - CLAMPS1
+  - CLAMPS2
+  - Collaborative Lower Atmospheric Mobile Profiling System
+  - NSSL mobile profiling
+  - NSSL mobile profiler
+
+campaign_phrases:
+  - PECAN
+  - LAPSE-RATE
+  - VORTEX-SE
+  - TORUS
+  - PERiLS
+  - Perdigão
+  - CHEESEHEAD
+  - AWAKEN
+
+aggregators:
+  oatd:
+    enabled: true
+    base_url: https://www.oatd.org
+    max_pages: 3
+
+repositories:
+  # --- Priority 1: CLAMPS home + known CLAMPS thesis hits ---
+  - id: shareok
+    name: SHAREOK
+    platform: dspace_rest
+    base_url: https://shareok.org
+    institution_names:
+      - University of Oklahoma
+      - University of Central Oklahoma
+      - Oklahoma State University
+    priority: 1
+    notes: OU + UCO + OSU theses; DSpace 7
+    crawled: true
+  - id: upcommons
+    name: UPCommons (UPC Barcelona)
+    platform: dspace_rest
+    base_url: https://upcommons.upc.edu
+    institution_names:
+      - Universitat Politècnica de Catalunya
+    priority: 1
+    notes: Known CLAMPS dissertation in corpus
+    crawled: true
+  # --- Priority 2: Texas Digital Library DSpace instances ---
+  - id: tamu_oaktrust
+    name: OAKTrust (Texas A&M)
+    platform: dspace_rest
+    base_url: https://oaktrust.library.tamu.edu
+    institution_names:
+      - Texas A&M University
+    priority: 2
+    notes: May require browser/cookies if Cloudflare blocks bots
+    crawled: true
+    crawl_error: 'blocked (HTTP 403)'
+  - id: ttu_ir
+    name: Texas Tech University Libraries
+    platform: dspace_rest
+    base_url: https://ttu-ir.tdl.org
+    institution_names:
+      - Texas Tech University
+    priority: 2
+    crawled: true
+  - id: tamucc_ir
+    name: Texas A&M-Corpus Christi IR
+    platform: dspace_rest
+    base_url: https://tamucc-ir.tdl.org
+    institution_names:
+      - Texas A&M University-Corpus Christi
+    priority: 2
+    crawled: false
+  - id: uh_ir
+    name: University of Houston IR
+    platform: dspace_rest
+    base_url: https://uh-ir.tdl.org
+    institution_names:
+      - University of Houston
+    priority: 2
+    crawled: true
+  - id: unt_ir
+    name: University of North Texas IR
+    platform: dspace_rest
+    base_url: https://unt-ir.tdl.org
+    institution_names:
+      - University of North Texas
+    priority: 2
+    crawled: true
+    crawl_error: 'dns_resolution (unt-ir.tdl.org)'
+  - id: uta_ir
+    name: UT Arlington IR
+    platform: dspace_rest
+    base_url: https://uta-ir.tdl.org
+    institution_names:
+      - University of Texas at Arlington
+    priority: 2
+    crawled: true
+  - id: utep_ir
+    name: UTEP IR
+    platform: dspace_rest
+    base_url: https://utep-ir.tdl.org
+    institution_names:
+      - University of Texas at El Paso
+    priority: 2
+    crawled: true
+    crawl_error: 'dns_resolution (utep-ir.tdl.org)'
+  # --- Priority 3: Core US / international met (existing + probed core_met) ---
+  - id: psu_etda
+    name: Penn State ETD database
+    platform: dspace_rest
+    base_url: https://etda.libraries.psu.edu
+    institution_names:
+      - Pennsylvania State University
+    priority: 3
+    crawled: true
+  - id: mountainscholar_csu
+    name: Mountain Scholar (Colorado State)
+    platform: dspace_rest
+    base_url: https://mountainscholar.org
+    institution_names:
+      - Colorado State University
+    priority: 3
+    crawled: true
+  - id: uwyo_dc
+    name: Wyoming Scholars Repository
+    platform: digital_commons
+    base_url: https://repository.uwyo.edu
+    institution_names:
+      - University of Wyoming
+    priority: 3
+    crawled: true
+    crawl_error: 'dns_resolution (repository.uwyo.edu)'
+  - id: uky_ir
+    name: UKnowledge (Kentucky)
+    platform: digital_commons
+    base_url: https://uknowledge.uky.edu
+    institution_names:
+      - University of Kentucky
+    priority: 3
+    crawled: true
+  - id: reading_eprints
+    name: University of Reading CentAUR
+    platform: eprints
+    base_url: https://centaur.reading.ac.uk
+    institution_names:
+      - University of Reading
+    priority: 3
+    crawled: true
+  - id: leeds_eprints
+    name: White Rose eTheses Online
+    platform: eprints
+    base_url: https://etheses.whiterose.ac.uk
+    institution_names:
+      - University of Leeds
+    priority: 3
+    crawled: true
+  - id: clemson_university
+    name: Clemson University
+    platform: digital_commons
+    base_url: https://tigerprints.clemson.edu
+    institution_names:
+      - Clemson University
+    priority: 3
+    crawled: true
+  - id: cornell_university
+    name: Cornell University
+    platform: dspace_rest
+    base_url: https://ecommons.cornell.edu
+    institution_names:
+      - Cornell University
+    priority: 3
+    crawled: true
+  - id: embry_riddle_aeronautical_university
+    name: Embry-Riddle Aeronautical University
+    platform: digital_commons
+    base_url: https://commons.erau.edu
+    institution_names:
+      - Embry-Riddle Aeronautical University
+    priority: 3
+    crawled: true
+  - id: georgia_institute_of_technology
+    name: Georgia Institute of Technology
+    platform: dspace_rest
+    base_url: https://repository.gatech.edu
+    institution_names:
+      - Georgia Institute of Technology
+    priority: 3
+    crawled: true
+  - id: howard_university
+    name: Howard University
+    platform: digital_commons
+    base_url: https://dh.howard.edu
+    institution_names:
+      - Howard University
+    priority: 3
+    crawled: true
+  - id: iowa_state_university
+    name: Iowa State University
+    platform: dspace_rest
+    base_url: https://lib.dr.iastate.edu
+    institution_names:
+      - Iowa State University
+    priority: 3
+    crawled: true
+  - id: kansas_state_university
+    name: Kansas State University
+    platform: dspace_rest
+    base_url: https://krex.k-state.edu
+    institution_names:
+      - Kansas State University
+    priority: 3
+    crawled: true
+  - id: louisiana_state_university
+    name: Louisiana State University
+    platform: digital_commons
+    base_url: https://digitalcommons.lsu.edu
+    institution_names:
+      - Louisiana State University
+    priority: 3
+    crawled: true
+  - id: massachusetts_institute_of_technology
+    name: Massachusetts Institute of Technology
+    platform: dspace_rest
+    base_url: https://dspace.mit.edu
+    institution_names:
+      - Massachusetts Institute of Technology
+    priority: 3
+    crawled: true
+  - id: naval_postgraduate_school
+    name: Naval Postgraduate School
+    platform: dspace_rest
+    base_url: https://calhoun.nps.edu
+    institution_names:
+      - Naval Postgraduate School
+    priority: 3
+    crawled: true
+  - id: north_carolina_state_university
+    name: North Carolina State University
+    platform: dspace_rest
+    base_url: https://repository.lib.ncsu.edu
+    institution_names:
+      - North Carolina State University
+    priority: 3
+    crawled: true
+  - id: purdue_university
+    name: Purdue University
+    platform: digital_commons
+    base_url: https://docs.lib.purdue.edu
+    institution_names:
+      - Purdue University
+    priority: 3
+    crawled: true
+  - id: san_jose_state_university
+    name: San Jose State University
+    platform: digital_commons
+    base_url: https://scholarworks.sjsu.edu
+    institution_names:
+      - San Jose State University
+    priority: 3
+    crawled: true
+  - id: university_of_alabama_in_huntsville
+    name: University of Alabama in Huntsville
+    platform: digital_commons
+    base_url: https://louis.uah.edu
+    institution_names:
+      - University of Alabama in Huntsville
+    priority: 3
+    crawled: true
+  - id: university_of_alaska_fairbanks
+    name: University of Alaska Fairbanks
+    platform: digital_commons
+    base_url: https://scholarworks.alaska.edu
+    institution_names:
+      - University of Alaska Fairbanks
+    priority: 3
+    crawled: true
+  - id: university_of_arkansas
+    name: University of Arkansas
+    platform: digital_commons
+    base_url: https://scholarworks.uark.edu
+    institution_names:
+      - University of Arkansas
+    priority: 3
+    crawled: true
+  - id: university_of_missouri
+    name: University of Missouri
+    platform: dspace_rest
+    base_url: https://mospace.umsystem.edu
+    institution_names:
+      - University of Missouri
+    priority: 3
+    crawled: true
+  - id: university_of_nebraska_lincoln
+    name: University of Nebraska-Lincoln
+    platform: digital_commons
+    base_url: https://digitalcommons.unl.edu
+    institution_names:
+      - University of Nebraska-Lincoln
+    priority: 3
+    crawled: true
+  - id: university_of_nevada_reno
+    name: University of Nevada, Reno
+    platform: digital_commons
+    base_url: https://scholarworks.unr.edu
+    institution_names:
+      - University of Nevada, Reno
+    priority: 3
+    crawled: true
+  - id: university_of_north_dakota
+    name: University of North Dakota
+    platform: digital_commons
+    base_url: https://commons.und.edu
+    institution_names:
+      - University of North Dakota
+    priority: 3
+    crawled: true
+  - id: university_of_south_florida
+    name: University of South Florida
+    platform: digital_commons
+    base_url: https://scholarcommons.usf.edu
+    institution_names:
+      - University of South Florida
+    priority: 3
+    crawled: true
+  - id: university_of_tennessee
+    name: University of Tennessee
+    platform: dspace_rest
+    base_url: https://trace.tennessee.edu
+    institution_names:
+      - University of Tennessee
+    priority: 3
+    crawled: true
+  - id: university_of_virginia
+    name: University of Virginia
+    platform: dspace_rest
+    base_url: https://libraopen.lib.virginia.edu
+    institution_names:
+      - University of Virginia
+    priority: 3
+    crawled: true
+  - id: university_of_washington
+    name: University of Washington
+    platform: dspace_rest
+    base_url: https://digital.lib.washington.edu
+    institution_names:
+      - University of Washington
+    priority: 3
+    crawled: true
+  # --- Priority 4: Campaign partner schools (probed) ---
+  - id: air_force_institute_of_technology
+    name: Air Force Institute of Technology
+    platform: digital_commons
+    base_url: https://scholar.afit.edu
+    institution_names:
+      - Air Force Institute of Technology
+    priority: 4
+    crawled: true
+  - id: boise_state_university
+    name: Boise State University
+    platform: digital_commons
+    base_url: https://scholarworks.boisestate.edu
+    institution_names:
+      - Boise State University
+    priority: 4
+    crawled: true
+  - id: colorado_school_of_mines
+    name: Colorado School of Mines
+    platform: dspace_rest
+    base_url: https://repository.mines.edu
+    institution_names:
+      - Colorado School of Mines
+    priority: 4
+    crawled: false
+  - id: michigan_technological_university
+    name: Michigan Technological University
+    platform: digital_commons
+    base_url: https://digitalcommons.mtu.edu
+    institution_names:
+      - Michigan Technological University
+    priority: 4
+    crawled: false
+  - id: montana_state_university
+    name: Montana State University
+    platform: dspace_rest
+    base_url: https://scholarworks.montana.edu
+    institution_names:
+      - Montana State University
+    priority: 4
+    crawled: false
+  - id: northern_arizona_university
+    name: Northern Arizona University
+    platform: eprints
+    base_url: https://openknowledge.nau.edu
+    institution_names:
+      - Northern Arizona University
+    priority: 4
+    crawled: false
+  - id: southern_methodist_university
+    name: Southern Methodist University
+    platform: digital_commons
+    base_url: https://scholar.smu.edu
+    institution_names:
+      - Southern Methodist University
+    priority: 4
+    crawled: false
+  - id: university_of_kansas
+    name: University of Kansas
+    platform: dspace_rest
+    base_url: https://kuscholarworks.ku.edu
+    institution_names:
+      - University of Kansas
+    priority: 4
+    crawled: false
+  - id: university_of_manitoba
+    name: University of Manitoba
+    platform: dspace_rest
+    base_url: https://mspace.lib.umanitoba.ca
+    institution_names:
+      - University of Manitoba
+    priority: 4
+    crawled: false
+  - id: university_of_minnesota
+    name: University of Minnesota
+    platform: dspace_rest
+    base_url: https://conservancy.umn.edu
+    institution_names:
+      - University of Minnesota
+    priority: 4
+    crawled: false
+  - id: university_of_montana
+    name: University of Montana
+    platform: digital_commons
+    base_url: https://scholarworks.umt.edu
+    institution_names:
+      - University of Montana
+    priority: 4
+    crawled: false
+  - id: university_of_southern_mississippi
+    name: University of Southern Mississippi
+    platform: digital_commons
+    base_url: https://aquila.usm.edu
+    institution_names:
+      - University of Southern Mississippi
+    priority: 4
+    crawled: false
+  - id: university_of_texas_at_austin
+    name: University of Texas at Austin
+    platform: dspace_rest
+    base_url: https://repositories.lib.utexas.edu
+    institution_names:
+      - University of Texas at Austin
+    priority: 4
+    crawled: false
+  - id: university_of_toronto
+    name: University of Toronto
+    platform: dspace_rest
+    base_url: https://tspace.library.utoronto.ca
+    institution_names:
+      - University of Toronto
+    priority: 4
+    crawled: false
+  - id: university_of_wisconsin_milwaukee
+    name: University of Wisconsin-Milwaukee
+    platform: digital_commons
+    base_url: https://dc.uwm.edu
+    institution_names:
+      - University of Wisconsin-Milwaukee
+    priority: 4
+    crawled: false
+  - id: universit_du_qu_bec_montr_al
+    name: Université du Québec à Montréal
+    platform: eprints
+    base_url: https://archipel.uqam.ca
+    institution_names:
+      - Université du Québec à Montréal
+    priority: 4
+    crawled: false
+  - id: yale_university
+    name: Yale University
+    platform: digital_commons
+    base_url: https://elischolar.library.yale.edu
+    institution_names:
+      - Yale University
+    priority: 4
+    crawled: false

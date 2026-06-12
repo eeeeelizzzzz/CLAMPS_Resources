@@ -1,0 +1,10 @@
+# Paste your Cookie header on the line below (one line only).
+# How to get it while logged into AMS:
+#   1. Open any AMS PDF in Chrome/Safari
+#   2. Open DevTools (Cmd+Option+I) -> Network tab
+#   3. Reload the page, click the .pdf request
+#   4. Under Request Headers, copy the full "Cookie:" value
+#   5. Paste below (without the word "Cookie:")
+#
+# Then: cp ams_cookies.txt.example ams_cookies.txt  (and edit)
+# Run:  python scripts/scan_pdfs.py --cookies-file ams_cookies.txt --limit 10

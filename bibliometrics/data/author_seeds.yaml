@@ -1,0 +1,180 @@
+description: Author/group seeds for Channel D discovery (filter=authorships.author.id).
+global_floor_year: 2015
+usage: >-
+  Query each author ID with per-campaign floor year (deployment year − 2).
+  PDF scan confirms CLAMPS use when metadata is silent.
+notes: >-
+  OpenAlex IDs verified against anchor/ground-truth papers (Jun 2025).
+  Re-resolve if an author merges profiles or changes affiliation.
+
+authors:
+  # --- CLAMPS operators / facility team ---
+  - name: Timothy J. Wagner
+    openalex_id: A5012351961
+    role: clamps_operator
+    campaigns: [all]
+    institutions: [University of Wisconsin–Madison, NOAA NSSL]
+    notes: CLAMPS facility lead; Wagner 2019 overview
+
+  - name: Tyler M. Bell
+    openalex_id: A5050063500
+    role: clamps_operator
+    campaigns: [all]
+    institutions: [University of Oklahoma]
+    notes: OU/NSSL CLAMPS operator; LAPSE-RATE data paper
+
+  - name: Petra M. Klein
+    openalex_id: A5058042237
+    role: clamps_operator
+    campaigns: [all]
+    institutions: [University of Oklahoma]
+    notes: OU CLAMPS PI
+
+  - name: David D. Turner
+    openalex_id: A5051549321
+    role: frequent_coauthor
+    campaigns: [PECAN, VORTEX-SE, LAFE, CHEESEHEAD, TRACER, Perdigão]
+    institutions: [NOAA Global Systems Laboratory]
+    notes: NOAA PSL/GSL; frequent CLAMPS coauthor
+
+  # --- Frequent CLAMPS science coauthors ---
+  - name: Elizabeth Smith
+    openalex_id: A5067018770
+    role: frequent_coauthor
+    campaigns: [PECAN, PERiLS, CHEESEHEAD, TRACER, PBLTops]
+    institutions: [University of Oklahoma, NOAA NSSL]
+    notes: OU; not other Elizabeth Smith homographs
+
+  - name: Phillip B. Chilson
+    openalex_id: A5087167503
+    role: frequent_coauthor
+    campaigns: [LAPSE-RATE]
+    institutions: [University of Oklahoma]
+    notes: OU; UAS/3D Mesonet
+
+  - name: Xuguang Wang
+    openalex_id: A5101598362
+    role: frequent_coauthor
+    campaigns: [PECAN]
+    institutions: [University of Oklahoma]
+    notes: OU data assimilation
+
+  - name: Gijs de Boer
+    openalex_id: A5010881190
+    role: frequent_coauthor
+    campaigns: [LAPSE-RATE, TRACER, SPLASH-SAIL]
+    institutions: [CIRES, NOAA]
+    notes: UAS and boundary-layer profiling
+
+  - name: James O. Pinto
+    openalex_id: A5064360340
+    role: frequent_coauthor
+    campaigns: [PECAN, LAPSE-RATE, SPLASH-SAIL]
+    institutions: [NSF NCAR]
+    notes: NCAR boundary-layer science
+
+  - name: Hristo G. Chipilski
+    openalex_id: A5001694042
+    role: frequent_coauthor
+    campaigns: [PECAN]
+    institutions: [University of Oklahoma]
+    notes: PECAN assimilation case studies
+
+  - name: Samuel K. Degelia
+    openalex_id: A5044704218
+    role: frequent_coauthor
+    campaigns: [PECAN]
+    institutions: [University of Oklahoma]
+    notes: PECAN profiler assimilation
+
+  - name: Sean Waugh
+    openalex_id: A5053557927
+    role: frequent_coauthor
+    campaigns: [LAPSE-RATE]
+    institutions: [NOAA NSSL]
+    notes: LAPSE-RATE radiosonde/profiler datasets
+
+  - name: Francesca M. Lappin
+    openalex_id: A5069491345
+    role: frequent_coauthor
+    campaigns: [LAPSE-RATE, TRACER]
+    institutions: [University of Oklahoma]
+    notes: Boundary-layer thermodynamics
+
+  - name: Tyler Ashley
+    openalex_id: A5109026631
+    role: frequent_coauthor
+    campaigns: [AWAKEN]
+    institutions: [University of Oklahoma]
+    notes: AWAKEN wind-energy profiling
+
+  - name: Michael C. Coniglio
+    openalex_id: A5076992127
+    role: frequent_coauthor
+    campaigns: [PECAN, VORTEX-SE]
+    institutions: [NOAA NSSL]
+    notes: Assimilation and forecasting
+
+  - name: Temple R. Lee
+    openalex_id: A5088924165
+    role: frequent_coauthor
+    campaigns: [VORTEX-SE, CHEESEHEAD]
+    institutions: [NOAA ATDD]
+    notes: Tower and profiler observations
+
+  - name: Matthew B. Wilson
+    openalex_id: null
+    role: frequent_coauthor
+    campaigns: [TORUS, PERiLS]
+    institutions: []
+    notes: NEEDS_REVIEW — resolve from TORUS/PERiLS papers
+
+  # --- Campaign PIs / anchor-paper author groups ---
+  - name: Bart Geerts
+    openalex_id: A5010610341
+    role: campaign_pi
+    campaigns: [PECAN]
+    institutions: [University of Wyoming]
+    notes: PECAN overview PI
+
+  - name: Robin L. Tanamachi
+    openalex_id: A5071893846
+    role: campaign_pi
+    campaigns: [VORTEX-SE]
+    institutions: [Purdue University]
+    notes: VORTEX-SE profiler characterization
+
+  - name: Adam L. Houston
+    openalex_id: A5018075510
+    role: campaign_pi
+    campaigns: [TORUS]
+    institutions: [University of Nebraska–Lincoln]
+    notes: TORUS overview PI
+
+  - name: Brian J. Butterworth
+    openalex_id: A5039761592
+    role: campaign_pi
+    campaigns: [CHEESEHEAD]
+    institutions: [University of Wisconsin–Madison]
+    notes: CHEESEHEAD overview lead author
+
+  - name: Julie K. Lundquist
+    openalex_id: A5091611341
+    role: campaign_pi
+    campaigns: [LAPSE-RATE, AWAKEN, Perdigão]
+    institutions: [University of Colorado Boulder]
+    notes: Multi-campaign wind/profiler science
+
+  - name: Volker Wulfmeyer
+    openalex_id: A5032267791
+    role: campaign_pi
+    campaigns: [LAFE]
+    institutions: [University of Hohenheim]
+    notes: LAFE overview PI
+
+  - name: Patrick Moriarty
+    openalex_id: A5046247200
+    role: campaign_pi
+    campaigns: [AWAKEN]
+    institutions: [NREL]
+    notes: AWAKEN overview lead

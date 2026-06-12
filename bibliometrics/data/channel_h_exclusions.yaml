@@ -1,0 +1,132 @@
+# Institutions excluded from Channel H (institutional repository / IR search).
+# They remain in thesis_institutions.yaml for Channel F (OpenAlex thesis discovery).
+#
+# Numbers match the core_met (1–67) and campaign_partner (1–65) school lists.
+
+institutions:
+  # core_met
+  - name: University of South Alabama
+    tier: core_met
+    number: 55
+  - name: Jackson State University
+    tier: core_met
+    number: 59
+  - name: Jacksonville State University
+    tier: core_met
+    number: 60
+  - name: Ball State University
+    tier: core_met
+    number: 61
+  - name: Western Illinois University
+    tier: core_met
+    number: 62
+  - name: Central Michigan University
+    tier: core_met
+    number: 63
+  - name: Northern Vermont University
+    tier: core_met
+    number: 64
+  - name: State University of New York at Oswego
+    tier: core_met
+    number: 65
+  - name: Valparaiso University
+    tier: core_met
+    number: 66
+  - name: Millersville University
+    tier: core_met
+    number: 67
+  - name: San Diego State University
+    tier: core_met
+    number: 29
+  - name: University of Massachusetts Amherst
+    tier: core_met
+    number: 38
+  - name: University of Northern Colorado
+    tier: core_met
+    number: 45
+  - name: Mississippi State University
+    tier: core_met
+    number: 19
+  - name: San Francisco State University
+    tier: core_met
+    number: 22
+  - name: Rice University
+    tier: core_met
+    number: 26
+  - name: University of Maine
+    tier: core_met
+    number: 40
+
+  # campaign_partner
+  - name: University of Wisconsin-Eau Claire
+    tier: campaign_partner
+    number: 3
+  - name: Western Kentucky University
+    tier: campaign_partner
+    number: 4
+  - name: University of Northern Iowa
+    tier: campaign_partner
+    number: 41
+  - name: Texas A&M University-Corpus Christi
+    tier: campaign_partner
+    number: 7
+  - name: University of Louisiana at Lafayette
+    tier: campaign_partner
+    number: 8
+  - name: University of Denver
+    tier: campaign_partner
+    number: 39
+  - name: Metropolitan State University of Denver
+    tier: campaign_partner
+    number: 40
+  - name: Wake Forest University
+    tier: campaign_partner
+    number: 57
+  - name: Cooperative Institute for Research in Environmental Sciences
+    tier: campaign_partner
+    number: 5
+  - name: National Center for Atmospheric Research
+    tier: campaign_partner
+    number: 6
+  - name: University of Memphis
+    tier: campaign_partner
+    number: 15
+  - name: University of Mississippi
+    tier: campaign_partner
+    number: 16
+  - name: University of Nevada, Las Vegas
+    tier: campaign_partner
+    number: 37
+  - name: University of California, San Diego
+    tier: campaign_partner
+    number: 34
+  - name: California Institute of Technology
+    tier: campaign_partner
+    number: 35
+  - name: University of Southern California
+    tier: campaign_partner
+    number: 36
+  - name: University of Michigan
+    tier: campaign_partner
+    number: 49
+  - name: West Virginia University
+    tier: campaign_partner
+    number: 53
+  - name: Ohio State University
+    tier: campaign_partner
+    number: 54
+  - name: Duke University
+    tier: campaign_partner
+    number: 56
+  - name: Western University
+    tier: campaign_partner
+    number: 58
+  - name: University of North Carolina at Charlotte
+    tier: campaign_partner
+    number: 50
+  - name: Old Dominion University
+    tier: campaign_partner
+    number: 51
+  - name: Virginia Tech
+    tier: campaign_partner
+    number: 52

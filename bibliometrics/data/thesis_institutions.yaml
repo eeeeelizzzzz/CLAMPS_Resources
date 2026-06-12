@@ -1,0 +1,1595 @@
+# Universities and research institutes for thesis/dissertation discovery (Tier 5).
+#
+# search_mode:
+#   full_phrases       — search every CLAMPS search_phrase from config.yaml
+#   campaign_compounds — search only field_campaign × search_phrase compounds
+#
+# openalex_id: fill via scripts/resolve_thesis_institution_ids.py when OpenAlex is available
+# ir_url: institutional repository for manual PDF retrieval (optional)
+
+discovery:
+  work_types:
+    - dissertation
+    # Some OSTI/NOAA theses appear as report in OpenAlex; add later if needed.
+  from_year: 2015
+
+tiers:
+  core_met:
+    description: >
+      US universities with formal atmospheric science / meteorology programs.
+      Highest yield for CLAMPS-related student research. Use full_phrases search.
+    institutions:
+      - name: University of Oklahoma
+        openalex_id: I8692664
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Oklahoma
+        ir_url: https://shareok.org
+        notes: CLAMPS home; CIMMS/NSSL; School of Meteorology
+
+      - name: Colorado State University
+        ir_url: https://mountainscholar.org
+        ir_platform: dspace_rest
+        openalex_id: I92446798
+        country: US
+        search_mode: full_phrases
+        lookup_query: Colorado State University
+        notes: Dept of Atmospheric Science; radar; boundary layer
+
+      - name: Pennsylvania State University
+        ir_url: https://etda.libraries.psu.edu
+        ir_platform: dspace_rest
+        openalex_id: I130769515
+        country: US
+        search_mode: full_phrases
+        lookup_query: Pennsylvania State University
+        notes: Meteorology and Atmospheric Science
+
+      - name: Texas A&M University
+        ir_url: https://oaktrust.library.tamu.edu
+        ir_platform: dspace_rest
+        openalex_id: I91045830
+        country: US
+        search_mode: full_phrases
+        lookup_query: Texas A&M University
+        notes: Atmospheric Sciences; severe storms
+
+      - name: University of Wyoming
+        ir_url: https://repository.uwyo.edu
+        ir_platform: digital_commons
+        openalex_id: I12834331
+        openalex_display_name: University of Wyoming
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Wyoming
+        notes: Atmospheric Science; lidar; boundary layer
+
+      - name: Florida State University
+        openalex_id: I103163165
+        openalex_display_name: Florida State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Florida State University
+        notes: Earth Ocean and Atmospheric Science
+
+      - name: University of Miami
+        openalex_id: I145608581
+        openalex_display_name: University of Miami
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Miami
+        notes: Rosenstiel School; tropical meteorology; boundary layer
+
+      - name: University of Wisconsin-Madison
+        openalex_id: I135310074
+        openalex_display_name: University of Wisconsin–Madison
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Wisconsin-Madison
+        notes: AOS; SPLASH; CHEESEHEAD
+
+      - name: University of Colorado Boulder
+        openalex_id: I188538660
+        openalex_display_name: University of Colorado Boulder
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Colorado Boulder
+        notes: ATOC/CIRES; boundary layer; LAPSE-RATE
+
+      - name: Purdue University
+        openalex_id: I117015748
+        openalex_display_name: Purdue University Northwest
+        country: US
+        search_mode: full_phrases
+        lookup_query: Purdue University
+        notes: EAPS; mesoscale; PECAN region
+
+      - name: University at Albany, SUNY
+        openalex_id: I392282
+        openalex_display_name: University at Albany, State University of New York
+        country: US
+        search_mode: full_phrases
+        lookup_query: University at Albany
+        notes: Atmospheric and Environmental Sciences; NY Mesonet
+
+      - name: North Carolina State University
+        openalex_id: I137902535
+        openalex_display_name: North Carolina State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: North Carolina State University
+        notes: Marine Earth and Atmospheric Sciences
+
+      - name: University of Illinois Urbana-Champaign
+        openalex_id: I157725225
+        openalex_display_name: University of Illinois Urbana-Champaign
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Illinois Urbana-Champaign
+        notes: Atmospheric Sciences
+
+      - name: University of Maryland, College Park
+        openalex_id: I66946132
+        openalex_display_name: University of Maryland, College Park
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Maryland College Park
+        notes: AOSC; lidar; remote sensing
+
+      - name: University of Washington
+        openalex_id: I201448701
+        openalex_display_name: University of Washington
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Washington
+        notes: Atmospheric Sciences
+
+      - name: University of Utah
+        openalex_id: I223532165
+        openalex_display_name: University of Utah
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Utah
+        notes: Atmospheric Sciences
+
+      - name: University of Arizona
+        openalex_id: I138006243
+        openalex_display_name: University of Arizona
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Arizona
+        notes: Atmospheric Sciences; hydrometeorology
+
+      - name: University of North Dakota
+        openalex_id: I24571045
+        openalex_display_name: University of North Dakota
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of North Dakota
+        notes: Atmospheric Sciences
+
+      - name: Mississippi State University
+        openalex_id: I99041443
+        openalex_display_name: Mississippi State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Mississippi State University
+        notes: Geosciences; meteorology
+
+      - name: Louisiana State University
+        openalex_id: I121820613
+        openalex_display_name: Louisiana State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Louisiana State University
+        notes: Coastal and atmospheric research
+
+      - name: San Jose State University
+        openalex_id: I51504820
+        openalex_display_name: San Jose State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: San Jose State University
+        notes: Meteorology and Climate Science
+
+      - name: San Francisco State University
+        openalex_id: I71838634
+        openalex_display_name: San Francisco State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: San Francisco State University
+        notes: Earth and Climate Sciences
+
+      - name: University of Alabama in Huntsville
+        openalex_id: I82495205
+        openalex_display_name: University of Alabama in Huntsville
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Alabama in Huntsville
+        notes: Atmospheric and Earth Science; lidar
+
+      - name: Texas Tech University
+        ir_url: https://ttu-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I12315562
+        openalex_display_name: Texas Tech University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Texas Tech University
+        notes: Geosciences; West Texas boundary layer
+
+      - name: University of Houston
+        ir_url: https://uh-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I44461941
+        openalex_display_name: University of Houston
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Houston
+        notes: Geosciences; TRACER Houston
+
+      - name: Rice University
+        openalex_id: I74775410
+        openalex_display_name: Rice University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Rice University
+        notes: TRACER Houston area
+
+      - name: New Mexico Institute of Mining and Technology
+        openalex_id: I207123951
+        openalex_display_name: New Mexico Institute of Mining and Technology
+        country: US
+        search_mode: full_phrases
+        lookup_query: New Mexico Institute of Mining and Technology
+        notes: Langmuir Laboratory; atmospheric physics
+
+      - name: University of Nevada, Reno
+        openalex_id: I134113660
+        openalex_display_name: University of Nevada, Reno
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Nevada Reno
+        notes: Atmospheric Sciences
+
+      - name: San Diego State University
+        openalex_id: I26538001
+        openalex_display_name: San Diego State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: San Diego State University
+        notes: Geography; meteorology; climate
+
+      - name: Oregon State University
+        openalex_id: I131249849
+        openalex_display_name: Oregon State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Oregon State University
+        notes: CEOAS; atmospheric sciences
+
+      - name: Cornell University
+        openalex_id: I205783295
+        openalex_display_name: Cornell University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Cornell University
+        notes: Earth and Atmospheric Sciences
+
+      - name: Massachusetts Institute of Technology
+        openalex_id: I63966007
+        openalex_display_name: Massachusetts Institute of Technology
+        country: US
+        search_mode: full_phrases
+        lookup_query: Massachusetts Institute of Technology
+        notes: EAPS
+
+      - name: Georgia Institute of Technology
+        openalex_id: I130701444
+        openalex_display_name: Georgia Institute of Technology
+        country: US
+        search_mode: full_phrases
+        lookup_query: Georgia Institute of Technology
+        notes: Earth and Atmospheric Sciences
+
+      - name: University of Virginia
+        openalex_id: I51556381
+        openalex_display_name: University of Virginia
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Virginia
+        notes: Environmental Sciences; atmospheric research
+
+      - name: University of Florida
+        openalex_id: I33213144
+        openalex_display_name: University of Florida
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Florida
+        notes: Geological Sciences; atmospheric research
+
+      - name: University of Alaska Fairbanks
+        openalex_id: I141472210
+        openalex_display_name: University of Alaska Fairbanks
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Alaska Fairbanks
+        notes: Geophysical Institute
+
+      - name: Naval Postgraduate School
+        openalex_id: I35364215
+        openalex_display_name: Naval Postgraduate School
+        country: US
+        search_mode: full_phrases
+        lookup_query: Naval Postgraduate School
+        notes: Meteorology and Oceanography
+
+      - name: University of Massachusetts Amherst
+        openalex_id: I24603500
+        openalex_display_name: University of Massachusetts Amherst
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Massachusetts Amherst
+        notes: Environmental and atmospheric research
+
+      - name: Rutgers, The State University of New Jersey
+        openalex_id: I102322142
+        openalex_display_name: Rutgers, The State University of New Jersey
+        country: US
+        search_mode: full_phrases
+        lookup_query: Rutgers University
+        notes: Environmental Sciences; meteorology
+
+      - name: University of Maine
+        openalex_id: I7947594
+        openalex_display_name: University of Maine
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Maine
+        notes: Climate Change Institute; atmospheric science
+
+      - name: Howard University
+        openalex_id: I137853757
+        openalex_display_name: Howard University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Howard University
+        notes: Atmospheric sciences program
+
+      - name: Stony Brook University
+        openalex_id: I59553526
+        openalex_display_name: Stony Brook University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Stony Brook University
+        notes: School of Marine and Atmospheric Sciences
+
+      - name: University of South Florida
+        openalex_id: I2613432
+        openalex_display_name: University of South Florida
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of South Florida
+        notes: Marine and atmospheric sciences
+
+      - name: Embry-Riddle Aeronautical University
+        openalex_id: I4405257369
+        openalex_display_name: Embry-Riddle Aeronautical University Worldwide & Online
+        country: US
+        search_mode: full_phrases
+        lookup_query: Embry-Riddle Aeronautical University
+        notes: Applied meteorology
+
+      - name: University of Northern Colorado
+        openalex_id: I71966907
+        openalex_display_name: University of Northern Colorado
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Northern Colorado
+        notes: Earth and atmospheric sciences
+
+      - name: South Dakota School of Mines and Technology
+        openalex_id: I184647316
+        openalex_display_name: South Dakota School of Mines and Technology
+        country: US
+        search_mode: full_phrases
+        lookup_query: South Dakota School of Mines
+        notes: Atmospheric and environmental sciences
+
+      - name: University of Nebraska-Lincoln
+        openalex_id: I114395901
+        openalex_display_name: University of Nebraska–Lincoln
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Nebraska Lincoln
+        notes: Earth and atmospheric sciences; TORUS
+
+      - name: Iowa State University
+        openalex_id: I173911158
+        openalex_display_name: Iowa State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Iowa State University
+        notes: Geological and atmospheric sciences
+
+      - name: University of Iowa
+        openalex_id: I126307644
+        openalex_display_name: University of Iowa
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Iowa
+        notes: IIHR; atmospheric research
+
+      - name: Kansas State University
+        openalex_id: I189590672
+        openalex_display_name: Kansas State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Kansas State University
+        notes: Geography; atmospheric science
+
+      - name: University of Missouri
+        openalex_id: I76835614
+        openalex_display_name: University of Missouri
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Missouri
+        notes: Soil-plant-atmosphere; boundary layer
+
+      - name: University of Georgia
+        openalex_id: I165733156
+        openalex_display_name: University of Georgia
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Georgia
+        notes: Geography; atmospheric research
+
+      - name: Clemson University
+        openalex_id: I8078737
+        openalex_display_name: Clemson University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Clemson University
+        notes: Environmental and biosystems engineering
+
+      - name: Auburn University
+        openalex_id: I82497590
+        openalex_display_name: Auburn University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Auburn University
+        notes: Crop/soil/environmental; boundary layer
+
+      - name: University of South Alabama
+        openalex_id: I83809506
+        openalex_display_name: University of South Alabama
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of South Alabama
+        notes: VORTEX-SE region
+
+      - name: University of Alabama
+        openalex_id: I17301866
+        openalex_display_name: University of Alabama
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Alabama
+        notes: Severe storms region
+
+      - name: University of Tennessee
+        openalex_id: I2802076678
+        openalex_display_name: University of Tennessee Medical Center
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Tennessee
+        notes: Geography; atmospheric research
+
+      - name: University of Arkansas
+        openalex_id: I2799691083
+        openalex_display_name: University of Arkansas System
+        country: US
+        search_mode: full_phrases
+        lookup_query: University of Arkansas
+        notes: Geosciences
+
+      - name: Jackson State University
+        openalex_id: I61937129
+        openalex_display_name: Jackson State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Jackson State University
+        notes: Meteorology program
+
+      - name: Jacksonville State University
+        openalex_id: I78724572
+        openalex_display_name: Jacksonville State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Jacksonville State University
+        notes: Meteorology program
+
+      - name: Ball State University
+        openalex_id: I198089087
+        openalex_display_name: Ball State University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Ball State University
+        notes: Geography/meteorology program
+
+      - name: Western Illinois University
+        openalex_id: I117942362
+        openalex_display_name: Western Illinois University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Western Illinois University
+        notes: Meteorology program
+
+      - name: Central Michigan University
+        openalex_id: I1629065
+        openalex_display_name: Central Michigan University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Central Michigan University
+        notes: Meteorology program
+
+      - name: Northern Vermont University
+        openalex_id: I4210146258
+        openalex_display_name: Northern Vermont University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Northern Vermont University
+        notes: Former Lyndon State; meteorology program
+
+      - name: State University of New York at Oswego
+        openalex_id: I43742981
+        openalex_display_name: State University of New York at Oswego
+        country: US
+        search_mode: full_phrases
+        lookup_query: SUNY Oswego
+        notes: Meteorology program
+
+      - name: Valparaiso University
+        openalex_id: I149744451
+        openalex_display_name: Valparaiso University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Valparaiso University
+        notes: Meteorology; storm observation
+
+      - name: Millersville University
+        openalex_id: I104651037
+        openalex_display_name: Millersville University
+        country: US
+        search_mode: full_phrases
+        lookup_query: Millersville University
+        notes: Meteorology program
+
+  campaign_partner:
+    description: >
+      Universities and institutes frequently involved in CLAMPS field campaigns
+      but without standalone met departments. Use campaign_compounds only to limit noise.
+    institutions:
+      - name: University of Kentucky
+        ir_url: https://uknowledge.uky.edu
+        ir_platform: digital_commons
+        openalex_id: I143302722
+        openalex_display_name: University of Kentucky
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Kentucky
+        notes: TORUS; mesoscale modeling
+
+      - name: Oklahoma State University
+        openalex_id: I115475287
+        openalex_display_name: Oklahoma State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Oklahoma State University
+        notes: TORUS; AWAKEN wind
+
+      - name: University of Wisconsin-Eau Claire
+        openalex_id: I124727415
+        openalex_display_name: University of Wisconsin–Eau Claire
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Wisconsin-Eau Claire
+        notes: WiscoDISCO
+
+      - name: Western Kentucky University
+        openalex_id: I94339441
+        openalex_display_name: Western Kentucky University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Western Kentucky University
+        notes: NY Mesonet evaluation
+
+      - name: Cooperative Institute for Research in Environmental Sciences
+        openalex_id: I161675122
+        openalex_display_name: Cooperative Institute for Research in Environmental Sciences
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Cooperative Institute for Research in Environmental Sciences
+        notes: CIRES; CU Boulder affiliate; LAPSE-RATE
+
+      - name: National Center for Atmospheric Research
+        openalex_id: I107766831
+        openalex_display_name: NSF National Center for Atmospheric Research
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: National Center for Atmospheric Research
+        notes: NCAR; many student theses
+
+      - name: Texas A&M University-Corpus Christi
+        ir_url: https://tamucc-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I96749437
+        openalex_display_name: Texas A&M University – Corpus Christi
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Texas A&M University Corpus Christi
+        notes: Gulf coast meteorology
+
+      - name: University of Louisiana at Lafayette
+        openalex_id: I79516672
+        openalex_display_name: University of Louisiana at Lafayette
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Louisiana at Lafayette
+        notes: Gulf coast; boundary layer
+
+      - name: University of Southern Mississippi
+        openalex_id: I44854399
+        openalex_display_name: University of Southern Mississippi
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Southern Mississippi
+        notes: Marine; hurricane research
+
+      - name: University of Wisconsin-Milwaukee
+        openalex_id: I43579087
+        openalex_display_name: University of Wisconsin–Milwaukee
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Wisconsin-Milwaukee
+        notes: CHEESEHEAD region
+
+      - name: University of Minnesota
+        openalex_id: I130238516
+        openalex_display_name: University of Minnesota
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Minnesota
+        notes: CHEESEHEAD; boundary layer
+
+      - name: University of Notre Dame
+        openalex_id: I107639228
+        openalex_display_name: University of Notre Dame
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Notre Dame
+        notes: PERiLS; mesoscale
+
+      - name: Indiana University
+        openalex_id: I592451
+        openalex_display_name: Indiana University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Indiana University
+        notes: PERiLS region
+
+      - name: Vanderbilt University
+        openalex_id: I200719446
+        openalex_display_name: Vanderbilt University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Vanderbilt University
+        notes: VORTEX-SE region
+
+      - name: University of Memphis
+        openalex_id: I94658018
+        openalex_display_name: University of Memphis
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Memphis
+        notes: VORTEX-SE region
+
+      - name: University of Mississippi
+        openalex_id: I368840534
+        openalex_display_name: University of Mississippi
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Mississippi
+        notes: Southeast severe storms
+
+      - name: University of North Texas
+        ir_url: https://unt-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I123534392
+        openalex_display_name: University of North Texas
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of North Texas
+        notes: North Texas meteorology
+
+      - name: Southern Methodist University
+        openalex_id: I178169726
+        openalex_display_name: Southern Methodist University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Southern Methodist University
+        notes: Dallas; PECAN region
+
+      - name: University of Texas at Austin
+        openalex_id: I86519309
+        openalex_display_name: The University of Texas at Austin
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Texas at Austin
+        notes: Jackson School; Texas campaigns
+
+      - name: University of Texas at Arlington
+        ir_url: https://uta-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I189196454
+        openalex_display_name: The University of Texas at Arlington
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Texas at Arlington
+        notes: PECAN region
+
+      - name: University of Texas at El Paso
+        ir_url: https://utep-ir.tdl.org
+        ir_platform: dspace_rest
+        openalex_id: I164936912
+        openalex_display_name: The University of Texas at El Paso
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Texas at El Paso
+        notes: Southwest boundary layer
+
+      - name: New Mexico State University
+        openalex_id: I10052268
+        openalex_display_name: New Mexico State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: New Mexico State University
+        notes: Southwest boundary layer
+
+      - name: Arizona State University
+        openalex_id: I55732556
+        openalex_display_name: Arizona State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Arizona State University
+        notes: Geographical sciences; climate
+
+      - name: Northern Arizona University
+        openalex_id: I203172682
+        openalex_display_name: Northern Arizona University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Northern Arizona University
+        notes: Southwest atmospheric research
+
+      - name: Boise State University
+        openalex_id: I120156002
+        openalex_display_name: Boise State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Boise State University
+        notes: Mountain boundary layer
+
+      - name: University of Montana
+        openalex_id: I6750721
+        openalex_display_name: University of Montana
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Montana
+        notes: Mountain meteorology
+
+      - name: Montana State University
+        openalex_id: I23732399
+        openalex_display_name: Montana State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Montana State University
+        notes: Mountain meteorology; smoke
+
+      - name: University of Idaho
+        openalex_id: I155093810
+        openalex_display_name: University of Idaho
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Idaho
+        notes: Agricultural meteorology; boundary layer
+
+      - name: Washington State University
+        openalex_id: I72951846
+        openalex_display_name: Washington State University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Washington State University
+        notes: Agricultural meteorology; boundary layer
+
+      - name: University of California, Davis
+        openalex_id: I4210160527
+        openalex_display_name: University of California Davis Medical Center
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of California Davis
+        notes: Land-atmosphere; agricultural met
+
+      - name: University of California, Berkeley
+        openalex_id: I95457486
+        openalex_display_name: University of California, Berkeley
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of California Berkeley
+        notes: ESPM; climate
+
+      - name: University of California, Los Angeles
+        openalex_id: I161318765
+        openalex_display_name: University of California, Los Angeles
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of California Los Angeles
+        notes: AOS
+
+      - name: University of California, Irvine
+        openalex_id: I4210096636
+        openalex_display_name: University of California, Irvine Medical Center
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of California Irvine
+        notes: SPLASH region
+
+      - name: University of California, San Diego
+        openalex_id: I36258959
+        openalex_display_name: University of California San Diego
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of California San Diego
+        notes: Scripps; SPLASH
+
+      - name: California Institute of Technology
+        openalex_id: I122411786
+        openalex_display_name: California Institute of Technology
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: California Institute of Technology
+        notes: GPS; atmospheric science
+
+      - name: University of Southern California
+        openalex_id: I1174212
+        openalex_display_name: University of Southern California
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Southern California
+        notes: SPLASH region
+
+      - name: University of Nevada, Las Vegas
+        openalex_id: I133999245
+        openalex_display_name: University of Nevada, Las Vegas
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Nevada Las Vegas
+        notes: Geoscience; climate
+
+      - name: Colorado School of Mines
+        openalex_id: I167576493
+        openalex_display_name: Colorado School of Mines
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Colorado School of Mines
+        notes: LAPSE-RATE; wind
+
+      - name: University of Denver
+        openalex_id: I131651094
+        openalex_display_name: University of Denver
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Denver
+        notes: LAPSE-RATE Front Range
+
+      - name: Metropolitan State University of Denver
+        openalex_id: I879689382
+        openalex_display_name: Metropolitan State University of Denver
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Metropolitan State University of Denver
+        notes: LAPSE-RATE region
+
+      - name: University of Northern Iowa
+        openalex_id: I119234918
+        openalex_display_name: University of Northern Iowa
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Northern Iowa
+        notes: Great Plains
+
+      - name: University of Kansas
+        openalex_id: I146416000
+        openalex_display_name: University of Kansas
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Kansas
+        notes: Great Plains; PERiLS
+
+      - name: Air Force Institute of Technology
+        openalex_id: I55061410
+        openalex_display_name: U.S. Air Force Institute of Technology
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Air Force Institute of Technology
+        notes: Atmospheric science theses
+
+      - name: Johns Hopkins University
+        openalex_id: I145311948
+        openalex_display_name: Johns Hopkins University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Johns Hopkins University
+        notes: Earth and planetary sciences
+
+      - name: Yale University
+        openalex_id: I32971472
+        openalex_display_name: Yale University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Yale University
+        notes: Yale School of the Environment
+
+      - name: Princeton University
+        openalex_id: I20089843
+        openalex_display_name: Princeton University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Princeton University
+        notes: GFDL; atmospheric science
+
+      - name: Columbia University
+        openalex_id: I78577930
+        openalex_display_name: Columbia University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Columbia University
+        notes: Lamont; applied physics
+
+      - name: University of Chicago
+        openalex_id: I40347166
+        openalex_display_name: University of Chicago
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Chicago
+        notes: Geophysical sciences
+
+      - name: University of Michigan
+        openalex_id: I27837315
+        openalex_display_name: University of Michigan
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of Michigan
+        notes: Climate and Space Sciences
+
+      - name: University of North Carolina at Charlotte
+        openalex_id: I102149020
+        openalex_display_name: University of North Carolina at Charlotte
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: University of North Carolina at Charlotte
+        notes: Southeast
+
+      - name: Old Dominion University
+        openalex_id: I81365321
+        openalex_display_name: Old Dominion University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Old Dominion University
+        notes: Coastal; marine meteorology
+
+      - name: Virginia Tech
+        openalex_id: I859038795
+        openalex_display_name: Virginia Tech
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Virginia Tech
+        notes: Geography; meteorology
+
+      - name: West Virginia University
+        openalex_id: I12097938
+        openalex_display_name: West Virginia University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: West Virginia University
+        notes: Mountain meteorology
+
+      - name: Ohio State University
+        openalex_id: I4210109577
+        openalex_display_name: Ohio State University Hospital
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Ohio State University
+        notes: Geography; atmospheric research
+
+      - name: Michigan Technological University
+        openalex_id: I11957088
+        openalex_display_name: Michigan Technological University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Michigan Technological University
+        notes: Great Lakes
+
+      - name: Duke University
+        openalex_id: I170897317
+        openalex_display_name: Duke University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Duke University
+        notes: Nicholas School; climate
+
+      - name: Wake Forest University
+        openalex_id: I47251452
+        openalex_display_name: Wake Forest University
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Wake Forest University
+        notes: Southeast regional research
+
+      - name: Western University
+        openalex_id: I125749732
+        openalex_display_name: Western University
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: University of Western Ontario
+        notes: Atmospheric sciences Canada
+
+      - name: McGill University
+        openalex_id: I5023651
+        openalex_display_name: McGill University
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: McGill University
+        notes: Atmospheric and oceanic sciences
+
+      - name: University of British Columbia
+        openalex_id: I141945490
+        openalex_display_name: University of British Columbia
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: University of British Columbia
+        notes: Earth Ocean and Atmospheric Sciences
+
+      - name: University of Alberta
+        openalex_id: I154425047
+        openalex_display_name: University of Alberta
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: University of Alberta
+        notes: Earth and atmospheric sciences
+
+      - name: University of Manitoba
+        openalex_id: I46247651
+        openalex_display_name: University of Manitoba
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: University of Manitoba
+        notes: Environment and geography
+
+      - name: Université du Québec à Montréal
+        openalex_id: I159129438
+        openalex_display_name: Université du Québec à Montréal
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: Université du Québec à Montréal
+        notes: Sciences de l'atmosphere
+
+      - name: University of Toronto
+        openalex_id: I185261750
+        openalex_display_name: University of Toronto
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: University of Toronto
+        notes: Physics; atmospheric research
+
+      - name: Dalhousie University
+        openalex_id: I129902397
+        openalex_display_name: Dalhousie University
+        country: CA
+        search_mode: campaign_compounds
+        lookup_query: Dalhousie University
+        notes: Ocean and atmospheric sciences
+
+  international_met:
+    description: >
+      International universities with atmospheric science programs. Lower priority;
+      use full_phrases. Good for Perdigao, lidar, and boundary-layer theses.
+    institutions:
+      - name: Universitat Politècnica de Catalunya
+        openalex_id: I9617848
+        openalex_display_name: Universitat Politècnica de Catalunya
+        country: ES
+        search_mode: full_phrases
+        lookup_query: Universitat Politècnica de Catalunya
+        ir_url: https://upcommons.upc.edu
+        notes: Lidar dissertations already in corpus
+
+      - name: University of Reading
+        ir_url: https://centaur.reading.ac.uk
+        ir_platform: eprints
+        openalex_id: I71052956
+        openalex_display_name: University of Reading
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Reading
+        notes: Meteorology department
+
+      - name: University of Leeds
+        ir_url: https://etheses.whiterose.ac.uk
+        ir_platform: eprints
+        openalex_id: I130828816
+        openalex_display_name: University of Leeds
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Leeds
+        notes: ICAS; atmospheric science
+
+      - name: University of Manchester
+        openalex_id: I28407311
+        openalex_display_name: University of Manchester
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Manchester
+        notes: Earth and environmental sciences
+
+      - name: University of East Anglia
+        openalex_id: I1118541
+        openalex_display_name: University of East Anglia
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of East Anglia
+        notes: Climate and environmental research
+
+      - name: University of Edinburgh
+        openalex_id: I98677209
+        openalex_display_name: University of Edinburgh
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Edinburgh
+        notes: GeoSciences
+
+      - name: University of Exeter
+        openalex_id: I23923803
+        openalex_display_name: University of Exeter
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Exeter
+        notes: Mathematics; climate
+
+      - name: University of Bath
+        openalex_id: I51601045
+        openalex_display_name: University of Bath
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Bath
+        notes: Perdigao UK participation
+
+      - name: University of Hertfordshire
+        openalex_id: I141584323
+        openalex_display_name: University of Hertfordshire
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Hertfordshire
+        notes: Atmospheric physics
+
+      - name: University of Birmingham
+        openalex_id: I79619799
+        openalex_display_name: University of Birmingham
+        country: GB
+        search_mode: full_phrases
+        lookup_query: University of Birmingham
+        notes: Geography; atmospheric research
+
+      - name: Imperial College London
+        openalex_id: I47508984
+        openalex_display_name: Imperial College London
+        country: GB
+        search_mode: full_phrases
+        lookup_query: Imperial College London
+        notes: Physics; atmospheric science
+
+      - name: University of Cologne
+        openalex_id: I180923762
+        openalex_display_name: University of Cologne
+        country: DE
+        search_mode: full_phrases
+        lookup_query: University of Cologne
+        notes: Geophysics and meteorology
+
+      - name: Karlsruhe Institute of Technology
+        openalex_id: I102335020
+        openalex_display_name: Karlsruhe Institute of Technology
+        country: DE
+        search_mode: full_phrases
+        lookup_query: Karlsruhe Institute of Technology
+        notes: IMK-Troposphere
+
+      - name: Ludwig-Maximilians-Universität München
+        openalex_id: I8204097
+        openalex_display_name: Ludwig-Maximilians-Universität München
+        country: DE
+        search_mode: full_phrases
+        lookup_query: Ludwig-Maximilians-Universität München
+        notes: Meteorology
+
+      - name: University of Hamburg
+        openalex_id: I159176309
+        openalex_display_name: Universität Hamburg
+        country: DE
+        search_mode: full_phrases
+        lookup_query: University of Hamburg
+        notes: Meteorology
+
+      - name: Technische Universität Darmstadt
+        openalex_id: I31512782
+        openalex_display_name: Technische Universität Darmstadt
+        country: DE
+        search_mode: full_phrases
+        lookup_query: TU Darmstadt
+        notes: Wind energy; boundary layer
+
+      - name: University of Bonn
+        openalex_id: I135140700
+        openalex_display_name: University of Bonn
+        country: DE
+        search_mode: full_phrases
+        lookup_query: University of Bonn
+        notes: Geosciences; meteorology
+
+      - name: ETH Zurich
+        openalex_id: I35440088
+        openalex_display_name: ETH Zurich
+        country: CH
+        search_mode: full_phrases
+        lookup_query: ETH Zurich
+        notes: Atmospheric and climate science
+
+      - name: École Polytechnique Fédérale de Lausanne
+        openalex_id: I4210100659
+        openalex_display_name: Formation Continue UNIL-EPFL
+        country: CH
+        search_mode: full_phrases
+        lookup_query: EPFL
+        notes: Environmental engineering
+
+      - name: Wageningen University & Research
+        openalex_id: I913481162
+        openalex_display_name: Wageningen University & Research
+        country: NL
+        search_mode: full_phrases
+        lookup_query: Wageningen University
+        notes: Meteorology and air quality
+
+      - name: Delft University of Technology
+        openalex_id: I98358874
+        openalex_display_name: Delft University of Technology
+        country: NL
+        search_mode: full_phrases
+        lookup_query: Delft University of Technology
+        notes: Wind; boundary layer
+
+      - name: University of Évora
+        openalex_id: I21803372
+        openalex_display_name: University of Évora
+        country: PT
+        search_mode: full_phrases
+        lookup_query: University of Évora
+        notes: Perdigao campaign
+
+      - name: University of Lisbon
+        openalex_id: I141596103
+        openalex_display_name: University of Lisbon
+        country: PT
+        search_mode: full_phrases
+        lookup_query: University of Lisbon
+        notes: Perdigao; boundary layer
+
+      - name: University of Granada
+        openalex_id: I4210142177
+        openalex_display_name: Pfizer-University of Granada-Junta de Andalucía Centre for Genomics and Oncological Research
+        country: ES
+        search_mode: full_phrases
+        lookup_query: University of Granada
+        notes: Andalusian atmospheric research
+
+      - name: University of Helsinki
+        openalex_id: I133731052
+        openalex_display_name: University of Helsinki
+        country: FI
+        search_mode: full_phrases
+        lookup_query: University of Helsinki
+        notes: FMI collaborations
+
+      - name: University of Tartu
+        openalex_id: I56085075
+        openalex_display_name: University of Tartu
+        country: EE
+        search_mode: full_phrases
+        lookup_query: University of Tartu
+        notes: Baltic atmospheric research
+
+      - name: University of Vienna
+        openalex_id: I129774422
+        openalex_display_name: University of Vienna
+        country: AT
+        search_mode: full_phrases
+        lookup_query: University of Vienna
+        notes: Meteorology
+
+      - name: University of Innsbruck
+        openalex_id: I190249584
+        openalex_display_name: Universität Innsbruck
+        country: AT
+        search_mode: full_phrases
+        lookup_query: University of Innsbruck
+        notes: Mountain meteorology
+
+      - name: University of Copenhagen
+        openalex_id: I124055696
+        openalex_display_name: University of Copenhagen
+        country: DK
+        search_mode: full_phrases
+        lookup_query: University of Copenhagen
+        notes: Niels Bohr Institute
+
+      - name: Norwegian University of Science and Technology
+        openalex_id: I204778367
+        openalex_display_name: Norwegian University of Science and Technology
+        country: NO
+        search_mode: full_phrases
+        lookup_query: Norwegian University of Science and Technology
+        notes: Geosciences
+
+      - name: University of Oslo
+        openalex_id: I184942183
+        openalex_display_name: University of Oslo
+        country: NO
+        search_mode: full_phrases
+        lookup_query: University of Oslo
+        notes: Meteorology
+
+      - name: Chalmers University of Technology
+        openalex_id: I66862912
+        openalex_display_name: Chalmers University of Technology
+        country: SE
+        search_mode: full_phrases
+        lookup_query: Chalmers University of Technology
+        notes: Wind energy; boundary layer
+
+      - name: Stockholm University
+        openalex_id: I161593684
+        openalex_display_name: Stockholm University
+        country: SE
+        search_mode: full_phrases
+        lookup_query: Stockholm University
+        notes: MISU
+
+      - name: Sorbonne Université
+        openalex_id: I39804081
+        openalex_display_name: Sorbonne Université
+        country: FR
+        search_mode: full_phrases
+        lookup_query: Sorbonne Université
+        notes: IPSL; LATMOS
+
+      - name: Université Paris-Saclay
+        openalex_id: I277688954
+        openalex_display_name: Université Paris-Saclay
+        country: FR
+        search_mode: full_phrases
+        lookup_query: Université Paris-Saclay
+        notes: IPSL
+
+      - name: Université Toulouse III - Paul Sabatier
+        openalex_id: I134560555
+        openalex_display_name: Université Toulouse III - Paul Sabatier
+        country: FR
+        search_mode: full_phrases
+        lookup_query: Université Toulouse III - Paul Sabatier
+        notes: CNRM region
+
+      - name: University of Trento
+        openalex_id: I193223587
+        openalex_display_name: University of Trento
+        country: IT
+        search_mode: full_phrases
+        lookup_query: University of Trento
+        notes: Mountain environmental research
+
+      - name: University of L'Aquila
+        openalex_id: I26415053
+        openalex_display_name: University of L'Aquila
+        country: IT
+        search_mode: full_phrases
+        lookup_query: University of L'Aquila
+        notes: CETEMPS
+
+      - name: University of Bologna
+        openalex_id: I9360294
+        openalex_display_name: University of Bologna
+        country: IT
+        search_mode: full_phrases
+        lookup_query: University of Bologna
+        notes: Atmospheric physics
+
+      - name: University of Canterbury
+        openalex_id: I185492890
+        openalex_display_name: University of Canterbury
+        country: NZ
+        search_mode: full_phrases
+        lookup_query: University of Canterbury
+        notes: Antarctic; atmospheric research
+
+      - name: University of Melbourne
+        openalex_id: I165779595
+        openalex_display_name: The University of Melbourne
+        country: AU
+        search_mode: full_phrases
+        lookup_query: University of Melbourne
+        notes: Earth sciences; climate
+
+      - name: Monash University
+        openalex_id: I56590836
+        openalex_display_name: Monash University
+        country: AU
+        search_mode: full_phrases
+        lookup_query: Monash University
+        notes: Earth atmosphere and environment
+
+      - name: University of Tokyo
+        openalex_id: I4210109338
+        openalex_display_name: University of Tokyo Hospital
+        country: JP
+        search_mode: full_phrases
+        lookup_query: University of Tokyo
+        notes: Atmosphere and ocean research
+
+      - name: Nanjing University
+        openalex_id: I881766915
+        openalex_display_name: Nanjing University
+        country: CN
+        search_mode: full_phrases
+        lookup_query: Nanjing University
+        notes: Atmospheric sciences
+
+      - name: Chinese Academy of Sciences
+        openalex_id: I19820366
+        openalex_display_name: Chinese Academy of Sciences
+        country: CN
+        search_mode: full_phrases
+        lookup_query: Chinese Academy of Sciences
+        notes: IAP; lidar research
+
+      - name: Seoul National University
+        openalex_id: I139264467
+        openalex_display_name: Seoul National University
+        country: KR
+        search_mode: full_phrases
+        lookup_query: Seoul National University
+        notes: Atmospheric sciences
+
+      - name: National Taiwan University
+        openalex_id: I16733864
+        openalex_display_name: National Taiwan University
+        country: TW
+        search_mode: full_phrases
+        lookup_query: National Taiwan University
+        notes: Atmospheric sciences
+
+      - name: Indian Institute of Technology Delhi
+        openalex_id: I68891433
+        openalex_display_name: Indian Institute of Technology Delhi
+        country: IN
+        search_mode: full_phrases
+        lookup_query: Indian Institute of Technology Delhi
+        notes: Atmospheric sciences
+
+      - name: University of the Witwatersrand
+        openalex_id: I192619145
+        openalex_display_name: University of the Witwatersrand
+        country: ZA
+        search_mode: full_phrases
+        lookup_query: University of the Witwatersrand
+        notes: African atmospheric research
+
+      - name: University of São Paulo
+        openalex_id: I17974374
+        openalex_display_name: Universidade de São Paulo
+        country: BR
+        search_mode: full_phrases
+        lookup_query: University of São Paulo
+        notes: Atmospheric sciences
+
+      - name: Universidad de Buenos Aires
+        openalex_id: I24354313
+        openalex_display_name: Universidad de Buenos Aires
+        country: AR
+        search_mode: full_phrases
+        lookup_query: Universidad de Buenos Aires
+        notes: South American field campaigns
+
+      - name: University of Chile
+        openalex_id: I69737025
+        openalex_display_name: University of Chile
+        country: CL
+        search_mode: full_phrases
+        lookup_query: University of Chile
+        notes: South American meteorology
+
+  related_research:
+    description: >
+      National labs and NOAA/OU affiliates. Not universities, but student and
+      postdoc theses often appear here. campaign_compounds only.
+    institutions:
+      - name: National Renewable Energy Laboratory
+        openalex_id: I1297288678
+        openalex_display_name: National Laboratory of the Rockies
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: National Renewable Energy Laboratory
+        notes: AWAKEN wind; lidar; OpenAlex lists as National Laboratory of the Rockies (NREL rename)
+
+      - name: Pacific Northwest National Laboratory
+        openalex_id: I142606810
+        openalex_display_name: Pacific Northwest National Laboratory
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Pacific Northwest National Laboratory
+        notes: Wind; boundary layer observations
+
+      - name: Argonne National Laboratory
+        openalex_id: I1282105669
+        openalex_display_name: Argonne National Laboratory
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Argonne National Laboratory
+        notes: Atmospheric measurements
+
+      - name: Brookhaven National Laboratory
+        openalex_id: I200870766
+        openalex_display_name: Brookhaven National Laboratory
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Brookhaven National Laboratory
+        notes: ARM; atmospheric science
+
+      - name: Desert Research Institute
+        openalex_id: I60138030
+        openalex_display_name: Desert Research Institute
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Desert Research Institute
+        notes: LAPSE-RATE; lidar
+
+      - name: NOAA National Severe Storms Laboratory
+        openalex_id: I4210092927
+        openalex_display_name: NOAA National Severe Storms Laboratory
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: NOAA National Severe Storms Laboratory
+        notes: NSSL student research
+
+      - name: Cooperative Institute for Mesoscale Meteorological Studies
+        openalex_id: I194601409
+        openalex_display_name: Cooperative Institute for Mesoscale Meteorological Studies
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: Cooperative Institute for Mesoscale Meteorological Studies
+        notes: CIMMS; OU/NSSL affiliate
+
+      - name: NOAA Physical Sciences Laboratory
+        openalex_id: I4210128139
+        openalex_display_name: NOAA Physical Sciences Laboratory
+        country: US
+        search_mode: campaign_compounds
+        lookup_query: NOAA Physical Sciences Laboratory
+        notes: LAPSE-RATE; WiscoDISCO

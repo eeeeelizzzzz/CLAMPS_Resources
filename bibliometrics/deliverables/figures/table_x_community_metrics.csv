@@ -1,0 +1,7 @@
+community_metric,nwc_affiliated,non_affiliated,unknown,total,notes
+Publications using CLAMPS (PDF full-text confirmed),107,459,24,590,Primary evidence of facility impact; peer-reviewed subset in Table Y
+Publications citing Wagner et al. 2019 (CLAMPS overview),3,39,3,45,Literature network / methods awareness
+Publications citing Bell et al. 2021 (LAPSE-RATE),20,0,6,26,Dataset paper citation network
+Data users (works citing CLAMPS dataset DOIs),0,0,0,0,Formal data reuse via DOI citation graph
+Student theses & dissertations (high-confidence metadata),19,10,0,29,Undercounted for OU; supplement via OU Share (Table Y)
+Classroom & field-campaign student engagement,[MANUAL],[MANUAL],[MANUAL],[MANUAL],"Fill from SoM courses, REU, campaign participant rosters"

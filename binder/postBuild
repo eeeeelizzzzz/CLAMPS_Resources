@@ -1,0 +1,39 @@
+#!/bin/bash
+# Monorepo Binder postBuild — run via: bash binder/postBuild
+# Must be invoked from CLAMPS_CaseGallery repo root (or let Binder call it).
+
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+BIB="$REPO_ROOT/bibliometrics"
+
+if [[ ! -d "$BIB/checkpoints" ]]; then
+  echo "error: $BIB/checkpoints not found." >&2
+  echo "  cwd was: $(pwd)" >&2
+  echo "  expected repo root: $REPO_ROOT" >&2
+  exit 1
+fi
+
+mkdir -p "$BIB/output/review_metrics" "$BIB/output/figures" "$REPO_ROOT/.matplotlib"
+
+if [[ ! -f "$BIB/config.yaml" ]]; then
+  cp "$BIB/config.yaml.example" "$BIB/config.yaml"
+fi
+
+shopt -s nullglob
+csv_files=("$BIB"/checkpoints/*.csv)
+shopt -u nullglob
+
+if [[ ${#csv_files[@]} -eq 0 ]]; then
+  echo "error: no CSV files in $BIB/checkpoints" >&2
+  exit 1
+fi
+
+for f in "${csv_files[@]}"; do
+  cp "$f" "$BIB/output/"
+done
+
+printf '%s\n' "openalex_id,doi,status,mention_count,matched_terms,match_strength,error" \
+  > "$BIB/output/clamps_local_scan_log.csv"
+
+echo "Binder postBuild complete: ${#csv_files[@]} checkpoints -> $BIB/output/"
