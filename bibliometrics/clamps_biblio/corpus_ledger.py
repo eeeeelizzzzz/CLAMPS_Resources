@@ -30,15 +30,27 @@ FUNNEL_STEPS: list[tuple[str, str]] = [
 ]
 
 
+def _discovery_channel_series(disc: pd.DataFrame) -> pd.Series:
+    """Channel key per row; checkpoints may only have discovery_source."""
+    if "discovery_channel" in disc.columns:
+        return disc["discovery_channel"].astype(str)
+    if "discovery_source" in disc.columns:
+        from clamps_biblio.work_keys import channel_bucket
+
+        return disc["discovery_source"].map(channel_bucket).astype(str)
+    return pd.Series(dtype=str)
+
+
 def discovery_channel_counts(root: Path) -> pd.DataFrame:
     """Count works per discovery channel from the discovery checkpoint."""
     path = root / "output" / "clamps_papers_discovered_channels.csv"
     if not path.exists():
         return pd.DataFrame(columns=["channel", "label", "works"])
     disc = pd.read_csv(path)
-    if "discovery_channel" not in disc.columns:
+    channels = _discovery_channel_series(disc)
+    if channels.empty:
         return pd.DataFrame(columns=["channel", "label", "works"])
-    counts = disc["discovery_channel"].astype(str).value_counts().sort_index()
+    counts = channels.value_counts().sort_index()
     rows = [
         {
             "channel": ch,
