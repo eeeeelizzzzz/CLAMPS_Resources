@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLAMPS Case Figure Reproduction</title>
+  <meta name="description" content="Reproduce the gallery instrument-template 4-panel figure for ci_c1 (2020-07-30) via Binder.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>Case figure reproduction</h1>
+      <p>
+        Rebuild the gallery <strong>instrument-template 4-panel</strong> figure for
+        <strong>ci_c1</strong> (NWCRIL2020 CLAMPS1, 2020-07-30 UTC) from bundled plot-ready data.
+        The same observational day appears in the gallery as the merged CI / gravity-waves C1 entry.
+      </p>
+      <div class="header-actions">
+        <a href="../index.html" class="header-link">Case Gallery</a>
+        <a href="../bibliometrics/index.html" class="header-link">Bibliometrics</a>
+        <a href="index.html" class="header-link header-link--active" aria-current="page">Figure notebook</a>
+        <a href="README.md" class="header-link">Documentation</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <h2>Example output</h2>
+      <p>
+        The notebook runs the same plotting code used for the case gallery site (vendored from the HPC processing pipeline).
+        Inputs are pre-staged NetCDF files — WINDoe and fuzzy PBL are not re-computed in the notebook.
+      </p>
+    </section>
+
+    <figure class="figure-panel">
+      <figcaption class="figure-panel__header">
+        ci_c1 — instrument template (reference from bundled data)
+      </figcaption>
+      <div class="figure-panel__body">
+        <img
+          src="../images/ci_c1_instrument_template_4panel.png"
+          alt="Four-panel CLAMPS1 instrument overview for 2020-07-30 CI case."
+          width="1200"
+          height="1300"
+          loading="lazy"
+        >
+      </div>
+    </figure>
+
+    <div class="table-panel" style="max-width: 52rem; margin: 0 auto; padding: 1.5rem;">
+      <h2>Run on Binder</h2>
+      <p>
+        Launches JupyterLab with the example data and plotting code (~1–2 min to run all cells after the environment builds).
+      </p>
+      <p>
+        <a href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb">
+          <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder">
+        </a>
+      </p>
+      <p>
+        <a href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb">
+          Open <code>notebooks/reproduce_ci_c1.ipynb</code> on Binder
+        </a>
+      </p>
+
+      <h2>Run locally</h2>
+      <pre><code>cd case_reproduce
+bash scripts/link_data.sh
+python code/case_gallery/plot_instrument.py ci_c1 --force</code></pre>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        Requires Python 3.12+, matplotlib, numpy, netCDF4, pyyaml, pandas, scipy.
+        See <a href="README.md">README.md</a> for a full local setup and Git LFS notes for the data bundle.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

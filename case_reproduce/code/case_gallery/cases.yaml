@@ -1,0 +1,6 @@
+# Binder demo — NWCRIL2020 CLAMPS1, 2020-07-30 (gallery ci_c1 / gravity_waves_c1).
+cases:
+  ci_c1:
+    category: ci
+    date: "2020-07-30"
+    project: NWCRIL2020

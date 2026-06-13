@@ -1,6 +1,11 @@
 # Repo-wide ignores
 .DS_Store
 
+# Case figure reproduction working files
+case_reproduce/output/
+case_reproduce/.venv/
+case_reproduce/.matplotlib/
+
 # Bibliometrics working files (also in bibliometrics/.gitignore)
 bibliometrics/output/
 bibliometrics/.venv/

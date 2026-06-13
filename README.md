@@ -3,9 +3,11 @@
 This repository contains a GitHub Pages site showcasing CLAMPS example cases with instrument overview figures. Each case has a detail page that can be extended with additional plots and content. An example of data visualization code is also provided.
 **Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/)
 
-**Bibliometrics (726-work review corpus):** [bibliometrics/index.html](bibliometrics/index.html)
-This part of the repository contains a minumum working implementation of the bibliometric analysis approach used. A method walkthrough is provided as an interactive notebook. View it directly: 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+**Bibliometrics (726-work review corpus):** [bibliometrics/index.html](bibliometrics/index.html)  
+[![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+
+**Case figure reproduction (`ci_c1`, 2020-07-30):** [case_reproduce/index.html](case_reproduce/index.html)  
+[![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 
 ## Structure
 
@@ -15,7 +17,8 @@ This part of the repository contains a minumum working implementation of the bib
 | `gallery.html` | Card gallery with searchable case menu |
 | `case.html?id=…` | Individual case pages |
 | `bibliometrics/` | Review-paper bibliometric pipeline + Binder notebook |
-| `binder/` | MyBinder environment (repo root; builds `bibliometrics/`) |
+| `case_reproduce/` | Instrument-template figure notebook + example data (`ci_c1`) |
+| `binder/` | MyBinder environment (repo root; bibliometrics + case figure) |
 | `data/cases.json` | Case metadata (dates, titles, images, tags) |
 | `images/` | Combined instrument overview figures |
 | `js/` | Page logic (ES modules) |

@@ -4,10 +4,27 @@
     "date": "2016-08-02",
     "title": "Nocturnal Low-Level Jet",
     "subtitle": "CLAMPS2",
-    "campaign": "BLISSFUL",
+    "campaign": "NWC Ops",
     "location": "Oklahoma",
     "image": "images/nllj_c2_instrument_template_4panel.png",
-    "tags": ["boundary layer", "nocturnal"]
+    "tags": ["boundary layer", "nocturnal"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "A nocturnal low-level jet (NLLJ) sampled at the Norman, Oklahoma home base (NWC/NSSL). This is routine CLAMPS2 operations data from 2016 — not a BLISSFUL deployment (BLISSFUL was a separate 2021 Oklahoma campaign). After sunset the surface layer decouples and southwesterly flow accelerates into a wind-speed maximum a few hundred meters above ground. CLAMPS2 combines thermodynamic profiling (TROPoe / AERI–MWR), Doppler-lidar winds (WINDoe), and turbulence (DLFP) to capture the jet and the stable layer beneath it."
+      },
+      {
+        "type": "text",
+        "title": "What to look for",
+        "content": "In the overnight hours (roughly 03–12 UTC), Panel C shows a jet core near 0.5 km with speeds exceeding 15 m s⁻¹ and southwesterly barbs. Panels A and B show a shallow, stable, moist layer capped below ~0.3 km (fuzzy PBLH line). Panel D stays quiescent until afternoon, when deep mixing develops. Together this illustrates how CLAMPS resolves kinematic and thermodynamic structure through the stable-to-convective transition."
+      },
+      {
+        "type": "text",
+        "title": "Instruments",
+        "content": "θᵥ and water vapor: TROPoe (AERI + microwave radiometer). Horizontal wind: WINDoe VAD from DL-PPI. Turbulence: DLFP vertical-velocity variance (σ²_w, log scale). Black line on all panels: fuzzy PBL height estimate."
+      }
+    ]
   },
   {
     "id": "nllj_c1",
@@ -110,7 +127,7 @@
   },
   {
     "id": "ci_c2",
-    "date": "2023-07-20",
+    "date": "2023-07-03",
     "title": "Convection Initiation",
     "subtitle": "CLAMPS2",
     "campaign": "AWAKEN 23",
@@ -123,7 +140,7 @@
     "date": "2023-08-05",
     "title": "Gravity Waves",
     "subtitle": "CLAMPS2",
-    "campaign": "BLISSFUL",
+    "campaign": "AWAKEN 23",
     "location": "Oklahoma",
     "image": "images/gravity_waves_c2_instrument_template_4panel.png",
     "tags": ["gravity waves"]
