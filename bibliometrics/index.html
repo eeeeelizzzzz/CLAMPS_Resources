@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CLAMPS Review Bibliometrics</title>
-  <meta name="description" content="726-work CLAMPS review corpus, Binder notebook, and full bibliometric pipeline.">
+  <meta name="description" content="726-work CLAMPS review corpus, bibliometric figures, summary tables, Binder notebook, and full pipeline.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -25,7 +25,152 @@
   </header>
 
   <main>
-    <div class="table-panel" style="max-width: 52rem; margin: 2rem auto; padding: 1.5rem;">
+    <section class="content-section">
+      <h2>Corpus figures</h2>
+      <p>
+        Annual bibliometric summaries from the 726-work review corpus:
+        a two-panel bar chart (affiliation and work type, with CLAMPS1/CLAMPS2 deployment months)
+        and a campaign-by-year heatmap.
+        Regenerate with <code>python scripts/plot_review_figures.py</code> or the Binder notebook below.
+      </p>
+    </section>
+
+    <figure class="figure-panel">
+      <figcaption class="figure-panel__header">
+        Annual corpus counts with CLAMPS deployments
+      </figcaption>
+      <div class="figure-panel__body">
+        <img
+          src="figures/fig_annual_bars_with_deployments.png"
+          alt="Two-panel figure: top panel shows all works and published literature by year split by NWC affiliation; bottom panel shows work type by year. CLAMPS1 and CLAMPS2 deployment months are overlaid as crimson and blue lines on both panels."
+          width="1200"
+          height="1400"
+          loading="lazy"
+        >
+      </div>
+    </figure>
+
+    <figure class="figure-panel">
+      <figcaption class="figure-panel__header">
+        Campaign by publication year
+      </figcaption>
+      <div class="figure-panel__body">
+        <img
+          src="figures/fig_campaign_by_year.png"
+          alt="Heatmap of CLAMPS works tagged by field campaign and publication year."
+          width="1200"
+          height="675"
+          loading="lazy"
+        >
+      </div>
+    </figure>
+
+    <section class="content-section">
+      <h2>Summary tables</h2>
+      <p>
+        Tabular exports accompanying the figures.
+        <a href="figures/table_corpus_summary.csv">Corpus summary (CSV)</a>
+        &middot;
+        <a href="figures/table_impact_summary.csv">Impact summary (CSV)</a>
+      </p>
+    </section>
+
+    <div class="table-panel" style="margin-bottom: 1.25rem;">
+      <table class="case-table" aria-label="Corpus summary by subset">
+        <thead>
+          <tr>
+            <th scope="col">Subset</th>
+            <th scope="col">Notes</th>
+            <th scope="col">NWC affiliated</th>
+            <th scope="col">Non-NWC</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Full review corpus</td>
+            <td>726 works; all inclusion streams</td>
+            <td>166</td>
+            <td>560</td>
+            <td>726</td>
+          </tr>
+          <tr>
+            <td>Articles + reports</td>
+            <td>Publication-type subset</td>
+            <td>107</td>
+            <td>483</td>
+            <td>590</td>
+          </tr>
+          <tr>
+            <td>Peer-reviewed articles &amp; review papers</td>
+            <td>Excludes peer-review comments</td>
+            <td>98</td>
+            <td>419</td>
+            <td>517</td>
+          </tr>
+          <tr>
+            <td>Theses &amp; dissertations</td>
+            <td>Manual acceptance via Channel H/F</td>
+            <td>19</td>
+            <td>10</td>
+            <td>29</td>
+          </tr>
+          <tr>
+            <td>All datasets</td>
+            <td>107 validated deposits; affiliation not applied</td>
+            <td>—</td>
+            <td>—</td>
+            <td>107</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-panel" style="margin-bottom: 2rem;">
+      <table class="case-table" aria-label="Impact and PDF-use summary">
+        <thead>
+          <tr>
+            <th scope="col">Impact metric</th>
+            <th scope="col">Count</th>
+            <th scope="col">NWC</th>
+            <th scope="col">Non-NWC</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Peer-reviewed — high-confidence metadata</td>
+            <td>517</td>
+            <td>98</td>
+            <td>419</td>
+            <td>Upper bound before PDF verification</td>
+          </tr>
+          <tr>
+            <td>Peer-reviewed — PDF CLAMPS confirmed</td>
+            <td>517</td>
+            <td>98</td>
+            <td>419</td>
+            <td>Conservative impact count from full-text search</td>
+          </tr>
+          <tr>
+            <td>Substantive use — Tier 1+2 (PDF-confirmed)</td>
+            <td>21</td>
+            <td>3</td>
+            <td>18</td>
+            <td>Data use, analysis, or discussion</td>
+          </tr>
+          <tr>
+            <td>Theses — metadata (all fields)</td>
+            <td>29</td>
+            <td>19</td>
+            <td>10</td>
+            <td>Includes non-meteorology false positives</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-panel" style="max-width: 52rem; margin: 0 auto; padding: 1.5rem;">
       <h2>Quick reproduction (Binder)</h2>
       <p>
         Launch the Jupyter notebook on MyBinder (~20 s to rebuild corpus and figures after the environment builds).
@@ -45,6 +190,11 @@
       <pre><code>cd bibliometrics
 bash setup.sh
 bash verify.sh</code></pre>
+      <p style="font-size: 0.9rem; color: var(--text-muted);">
+        After regenerating figures, refresh page assets:
+        <code>cp output/figures/fig_campaign_by_year.png figures/</code>
+        and update <code>figures/fig_annual_bars_with_deployments.png</code> from your combined bar-chart export.
+      </p>
 
       <h2>Full operational pipeline</h2>
       <p>

@@ -1,0 +1,8 @@
+impact_metric,count,nwc_affiliated,non_affiliated,notes
+Peer-reviewed publications — high-confidence metadata,517,98,419,Upper bound before PDF verification
+Peer-reviewed publications — PDF CLAMPS confirmed,517,98,419,Conservative impact count from full-text search
+"Substantive use — Tier 1+2 (peer-reviewed, PDF-confirmed)",21,3,18,"Data use, analysis, or discussion — excludes peripheral refs and false positives"
+Data / instrument use — Tier 1 only (peer-reviewed),0,0,0,"Dataset DOI, repository URL, grant, or CLAMPS deployment in methods/results"
+Excluded — false positives (Tier 0),0,0,0,Word collision or unrelated topic; removed from substantive counts
+Theses & dissertations — metadata (all fields),29,19,10,Includes non-meteorology false positives
+Theses & dissertations — PDF CLAMPS confirmed,0,0,0,Small sample; OU theses require repository search
