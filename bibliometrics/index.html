@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLAMPS Review Bibliometrics</title>
+  <meta name="description" content="726-work CLAMPS review corpus, Binder notebook, and full bibliometric pipeline.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>CLAMPS Review Bibliometrics</h1>
+      <p>
+        Reproducible bibliometric analysis for the CLAMPS mobile profiling facility review:
+        a <strong>726-work corpus</strong> (570 articles, 20 reports, 107 datasets, 29 theses),
+        figures, and summary tables.
+      </p>
+      <div class="header-actions">
+        <a href="../index.html" class="header-link">Case Gallery</a>
+        <a href="index.html" class="header-link header-link--active" aria-current="page">Bibliometrics</a>
+        <a href="README.md" class="header-link">Documentation</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="table-panel" style="max-width: 52rem; margin: 2rem auto; padding: 1.5rem;">
+      <h2>Quick reproduction (Binder)</h2>
+      <p>
+        Launch the Jupyter notebook on MyBinder (~20 s to rebuild corpus and figures after the environment builds).
+      </p>
+      <p>
+        <a href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb">
+          <img src="https://mybinder.org/badge_logo.svg" alt="Launch Binder">
+        </a>
+      </p>
+      <p>
+        <a href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb">
+          Open <code>notebooks/reproduce.ipynb</code> on Binder
+        </a>
+      </p>
+
+      <h2>Download and run locally</h2>
+      <pre><code>cd bibliometrics
+bash setup.sh
+bash verify.sh</code></pre>
+
+      <h2>Full operational pipeline</h2>
+      <p>
+        For OpenAlex discovery, PDF/HTML scanning, and facility-specific configuration, see
+        <a href="OPERATIONS.md">OPERATIONS.md</a> and <a href="PIPELINE.md">PIPELINE.md</a>.
+        Permanent archive and citation: <a href="ZENODO.md">ZENODO.md</a> and <a href="CITATION.cff">CITATION.cff</a>.
+      </p>
+    </div>
+  </main>
+</body>
+</html>

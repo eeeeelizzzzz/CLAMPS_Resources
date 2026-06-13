@@ -56,10 +56,11 @@ See `checkpoints/README.md`.
 |------|------------|
 | `clamps_review_corpus_clean.csv` | 726 |
 | `clamps_review_corpus.csv` | 726 (internal) |
-| `figures/fig08_*` | Affiliation + work-type panels |
-| `figures/supp_fig_s1_*` | Campaign heatmap |
-| `figures/table_x_community_metrics.csv` | Community counts |
-| `figures/table_y_impact_metrics.csv` | Impact tiers |
+| `figures/fig_affiliation_*` | Affiliation panels by year |
+| `figures/fig_work_type_*` | Work-type panels with deployments |
+| `figures/fig_campaign_*` | Campaign heatmap |
+| `figures/table_corpus_summary.csv` | Corpus counts by subset |
+| `figures/table_impact_summary.csv` | Impact tiers and theses |
 | `review_metrics/pdf_use_classification.csv` | PDF use tiers |
 
 ## Python package (`clamps_biblio/`)

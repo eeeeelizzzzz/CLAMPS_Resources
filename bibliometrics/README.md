@@ -2,9 +2,10 @@
 
 Reproducible bibliometric analysis for the CLAMPS mobile profiling facility review paper.
 Builds a **726-work corpus** (570 articles, 20 reports, 107 datasets, 29 theses) and
-generates Fig. 8, campaign heatmap (S1), and Tables X/Y.
+generates annual bibliometric figures and summary tables.
 
-This repository is **upload-ready**: Binder demo + full operational code for local use.
+This package lives in the [CLAMPS Case Gallery](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/) monorepo.
+Binder reads `binder/` at the **repository root** and runs notebooks under `bibliometrics/`.
 
 ---
 
@@ -16,28 +17,39 @@ This repository is **upload-ready**: Binder demo + full operational code for loc
 | **Scripts + `OPERATIONS.md`** | Full pipeline you can download and adapt | Researchers implementing their own bibliometrics |
 | **Zenodo DOI** | Permanent archive for citation | Anyone citing the corpus or code |
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/USER/REPO/HEAD?urlpath=lab%2Ftree%2Fnotebooks%2Freproduce.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
-> Replace `USER/REPO` in the Binder badge after publishing to GitHub. See `ZENODO.md`.
+**Binder launch URL:**  
+`https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb`
 
 ---
 
 ## Quick start — Binder (no install)
 
 1. Click the Binder badge above (first launch may take 3–5 min to build).
-2. Open `notebooks/reproduce.ipynb`.
-3. Run all cells → 726-work corpus + figures.
+2. Open `notebooks/reproduce.ipynb` (Binder should open it directly).
+3. Run all cells → 726-work corpus + figures in `output/figures/`.
+
+`binder/postBuild` at the repo root copies checkpoints into `bibliometrics/output/` before you run the notebook.
 
 ---
 
 ## Quick start — local
 
 ```bash
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp config.yaml.example config.yaml   # set openalex.mailto
+cd bibliometrics
 bash setup.sh                        # restore checkpoints → output/
 bash verify.sh                       # rebuild + verify against deliverables/
+```
+
+Or step by step:
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+cp config.yaml.example config.yaml   # set openalex.mailto for full pipeline
+python scripts/build_review_corpus.py
+python scripts/plot_review_figures.py --no-archive
 ```
 
 ---
@@ -66,12 +78,24 @@ For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from 
 
 ---
 
+## Key outputs (after `plot_review_figures.py`)
+
+| File | Description |
+|------|-------------|
+| `fig_affiliation_by_year_with_deployments.png` | NWC vs non-NWC by year + deployment months |
+| `fig_work_type_by_year_with_deployments.png` | Work-type stacks by year |
+| `fig_campaign_by_year.png` | Campaign × year heatmap |
+| `table_corpus_summary.csv` | Corpus subset counts |
+| `table_impact_summary.csv` | PDF tier / impact metrics |
+
+---
+
 ## Repository layout
 
 ```
+bibliometrics/
 ├── notebooks/reproduce.ipynb   Binder entry point
-├── binder/                     Binder environment (no Playwright)
-├── scripts/                    18 pipeline scripts (full operational code)
+├── scripts/                    Pipeline scripts
 ├── clamps_biblio/              Core Python package
 ├── data/                       Discovery config + manual review decisions
 ├── checkpoints/                Frozen intermediates for quick reproduction
@@ -89,13 +113,6 @@ For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from 
 - **Corpus:** Zenodo data DOI (see `ZENODO.md`; update `CITATION.cff`)
 - **Software:** Zenodo software DOI from GitHub release
 - **Paper:** CLAMPS review manuscript
-
----
-
-## Related (later)
-
-Interactive **CLAMPS Case Gallery** (observation data visualization) will be a separate
-repository with its own Binder notebook.
 
 ## License
 

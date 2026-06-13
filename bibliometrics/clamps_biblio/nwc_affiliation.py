@@ -208,39 +208,64 @@ def affiliation_detail(institutions: str, entities: list[NwcEntity] | None = Non
     return NON_AFFILIATED
 
 
+def _override_key_doi(doi: str) -> str | None:
+    from clamps_biblio.pdf_resolver import normalize_doi
+
+    clean = str(doi).strip()
+    if not clean or clean.lower() in ("nan", "none"):
+        return None
+    normalized = normalize_doi(clean)
+    return f"doi::{normalized.lower()}" if normalized else None
+
+
+def _normalize_override_affiliation(raw: str) -> str:
+    aff = str(raw).strip().lower()
+    if aff in ("nwc", "nwc_affiliated"):
+        return NWC_AFFILIATED
+    if aff in ("non", "non-nwc", "non_affiliated"):
+        return NON_AFFILIATED
+    if aff in ("exclude", "excluded", "none"):
+        return EXCLUDED
+    return aff
+
+
 def load_affiliation_overrides(path: Path | None) -> dict[str, dict[str, str]]:
-    """Load manual affiliation fixes keyed by openalex_id."""
+    """Load manual affiliation fixes keyed by openalex_id and/or DOI."""
     if not path or not path.exists():
         return {}
     df = pd.read_csv(path)
-    if "openalex_id" not in df.columns or "affiliation" not in df.columns:
+    if "affiliation" not in df.columns:
         return {}
     overrides: dict[str, dict[str, str]] = {}
     for _, row in df.iterrows():
-        oid = str(row["openalex_id"]).strip()
-        aff = str(row["affiliation"]).strip().lower()
-        if aff in ("nwc", "nwc_affiliated"):
-            aff = NWC_AFFILIATED
-        elif aff in ("non", "non-nwc", "non_affiliated"):
-            aff = NON_AFFILIATED
-        elif aff in ("exclude", "excluded", "none"):
-            aff = EXCLUDED
-        overrides[oid] = {
-            "affiliation": aff,
+        payload = {
+            "affiliation": _normalize_override_affiliation(row["affiliation"]),
             "notes": str(row.get("notes", "") or ""),
         }
+        oid = str(row.get("openalex_id", "")).strip()
+        if oid and oid.lower() not in ("", "nan", "none"):
+            overrides[oid] = payload
+        doi_key = _override_key_doi(str(row.get("doi", "")))
+        if doi_key:
+            overrides[doi_key] = payload
     return overrides
 
 
 def apply_affiliation_overrides(df: pd.DataFrame, overrides: dict[str, dict[str, str]]) -> pd.DataFrame:
-    if not overrides or "openalex_id" not in df.columns:
+    if not overrides:
         return df
     out = df.copy()
     for idx, row in out.iterrows():
         oid = str(row.get("openalex_id", "")).strip()
-        if oid not in overrides:
+        if oid.lower() in ("", "nan", "none"):
+            oid = ""
+        o = overrides.get(oid) if oid else None
+        if o is None:
+            doi_key = _override_key_doi(str(row.get("doi", "")))
+            if doi_key:
+                o = overrides.get(doi_key)
+        if o is None:
             continue
-        o = overrides[oid]
         out.at[idx, "affiliation"] = o["affiliation"]
         if o["affiliation"] == NWC_AFFILIATED:
             out.at[idx, "affiliation_detail"] = "NWC (manual override)"

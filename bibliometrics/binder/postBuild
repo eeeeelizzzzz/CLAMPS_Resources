@@ -1,6 +1,9 @@
 #!/bin/bash
+# Standalone bibliometrics Binder postBuild (repo root = bibliometrics/).
 set -euo pipefail
-# Binder postBuild: prepare workspace for quick reproduction notebook.
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
 
 mkdir -p output/review_metrics output/figures .matplotlib
 
@@ -8,12 +11,20 @@ if [[ ! -f config.yaml ]]; then
   cp config.yaml.example config.yaml
 fi
 
-for f in checkpoints/*.csv; do
+shopt -s nullglob
+csv_files=(checkpoints/*.csv)
+shopt -u nullglob
+
+if [[ ${#csv_files[@]} -eq 0 ]]; then
+  echo "error: no CSV files in $ROOT/checkpoints" >&2
+  exit 1
+fi
+
+for f in "${csv_files[@]}"; do
   cp "$f" output/
 done
 
-if [[ ! -s output/clamps_local_scan_log.csv ]]; then
-  echo "openalex_id,doi,status,mention_count,matched_terms,match_strength,error" > output/clamps_local_scan_log.csv
-fi
+printf '%s\n' "openalex_id,doi,status,mention_count,matched_terms,match_strength,error" \
+  > output/clamps_local_scan_log.csv
 
-echo "Binder postBuild complete: checkpoints restored to output/"
+echo "Binder postBuild complete: ${#csv_files[@]} checkpoints -> output/"

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Generate Fig. 8, Fig. 9, Tables X/Y, and Supp. Fig. S1 for CLAMPS review paper."""
+"""Generate bibliometric figures and summary tables for the CLAMPS review corpus."""
 
 from __future__ import annotations
 
 import argparse
 import sys
+import warnings
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -36,6 +37,14 @@ from clamps_biblio.review_metrics_data import (
 AFFIL_ORDER = (NWC_AFFILIATED, NON_AFFILIATED, UNKNOWN)
 AFFIL_LEGEND_ORDER = (NWC_AFFILIATED, NON_AFFILIATED)
 
+# Generic output filenames (no manuscript figure numbers)
+FIG_AFFILIATION = "fig_affiliation_by_year"
+FIG_AFFILIATION_DEPLOY = "fig_affiliation_by_year_with_deployments"
+FIG_WORK_TYPE_DEPLOY = "fig_work_type_by_year_with_deployments"
+FIG_CAMPAIGN = "fig_campaign_by_year"
+TABLE_CORPUS_SUMMARY = "table_corpus_summary"
+TABLE_IMPACT_SUMMARY = "table_impact_summary"
+
 # Fig. 8: one hue family per evidence tier; affiliation = dark / light shade (NWC, Non-NWC)
 TIER_AFFIL_COLORS: list[tuple[str, str, str]] = [
     ("#4A4A4A", "#8A8A8A", "#C4C4C4"),  # all works — manual review (gray)
@@ -61,7 +70,7 @@ DEPLOYMENT_PLATFORM_LABELS = {
     "CLAMPS2": "C2",
 }
 DEPLOYMENT_LABEL = "Months deployed"
-DEPLOYMENT_LEGEND_LABEL = "Months\ndeployed"
+DEPLOYMENT_LEGEND_LABEL = DEPLOYMENT_LABEL
 BAR_ALPHA_WITH_DEPLOYMENTS = 0.78
 FIG8_MAX_YEAR = 2026
 FIG8_PROVISIONAL_START_YEAR = 2025
@@ -487,7 +496,7 @@ def _add_fig8_type_key(ax: plt.Axes, *, deployment_lines: bool = False) -> None:
 
     tier_labels = ["All works", "Published\nliterature"]
     if deployment_lines:
-        tier_labels.append(DEPLOYMENT_LEGEND_LABEL)
+        tier_labels.append(DEPLOYMENT_LABEL)
     type_labels = [CORPUS_CLASS_LABELS[c] for c in CORPUS_CLASS_ORDER]
     n_tiers = len(tier_labels)
     n_cols = len(CORPUS_CLASS_ORDER)
@@ -738,76 +747,37 @@ def _rebuild_affiliation_long_df(years: list[int], pivots: list[pd.DataFrame]) -
     return pd.DataFrame(long_rows)
 
 
-def _add_work_type_key(ax: plt.Axes) -> None:
-    """Legend: work-type swatches (grey row, gold row) and C1/C2 deployment lines."""
-    from matplotlib.patches import Rectangle
-
-    fig = ax.figure
-    fig.canvas.draw()
-    ax_px = ax.get_window_extent()
-
-    fontsize = 8
-    swatch_pt = 35.0
-    swatch_h = swatch_pt / ax_px.height
-    swatch_w = swatch_pt / ax_px.width
-    col_gap = 14.0 / ax_px.width
-    row_gap = 8.0 / ax_px.height
-    label_pad = 3.0 / ax_px.height
-    label_h = (fontsize * 1.15) / ax_px.height
-    text_kw = {"fontsize": fontsize, "transform": ax.transAxes}
-
-    x0 = 0.118
-    grey_types = ("article", "thesis")
-    gold_types = ("report", "dataset")
-
-    def _draw_type_row(classes: tuple[str, ...], y_bottom: float) -> float:
-        for idx, cls in enumerate(classes):
-            x = x0 + idx * (swatch_w + col_gap)
-            ax.add_patch(
-                Rectangle(
-                    (x, y_bottom),
-                    swatch_w,
-                    swatch_h,
-                    transform=ax.transAxes,
-                    facecolor=WORK_TYPE_COLORS[cls],
-                    edgecolor="none",
-                    zorder=21,
-                    clip_on=False,
-                )
-            )
-            ax.text(
-                x + swatch_w / 2,
-                y_bottom - label_pad,
-                CORPUS_CLASS_LABELS[cls],
-                ha="center",
-                va="top",
-                zorder=22,
-                **text_kw,
-            )
-        return y_bottom - swatch_h - label_pad - label_h
-
-    y_grey = 0.93
-    y_after_grey = _draw_type_row(grey_types, y_grey)
-    y_after_gold = _draw_type_row(gold_types, y_after_grey - row_gap)
-    y_dep = y_after_gold - row_gap
-    ax.text(x0 - 8.0 / ax_px.width, y_dep + swatch_h / 2, DEPLOYMENT_LEGEND_LABEL, ha="right", va="center", zorder=22, **text_kw)
-    for idx, platform in enumerate(DEPLOYMENT_PLATFORMS):
-        x = x0 + idx * (swatch_w + col_gap)
+def _draw_deployment_line_key(
+    ax: plt.Axes,
+    *,
+    x_grid: float,
+    col_gap: float,
+    swatch_w: float,
+    row_y: float,
+    swatch_h: float,
+    ax_px_height: float,
+    fontsize: int = 8,
+) -> None:
+    """C1/C2 line swatches in the first two grid columns; labels below the lines."""
+    line_y = row_y + swatch_h * 0.62
+    label_y = row_y - 6.0 / ax_px_height
+    for aff_idx, platform in enumerate(DEPLOYMENT_PLATFORMS):
+        x0 = x_grid + aff_idx * (swatch_w + col_gap)
+        x1 = x0 + swatch_w
         color = DEPLOYMENT_PLATFORM_COLORS[platform]
-        mid_y = y_dep + swatch_h / 2
         ax.plot(
-            [x + swatch_w * 0.1, x + swatch_w * 0.9],
-            [mid_y, mid_y],
+            [x0 + swatch_w * 0.12, x1 - swatch_w * 0.12],
+            [line_y, line_y],
             transform=ax.transAxes,
             color=color,
-            linewidth=3.2,
+            linewidth=3.0,
             solid_capstyle="round",
             zorder=22,
             clip_on=False,
         )
         ax.plot(
-            [x + swatch_w * 0.5],
-            [mid_y],
+            [x0 + swatch_w * 0.5],
+            [line_y],
             transform=ax.transAxes,
             color=color,
             linewidth=0,
@@ -817,17 +787,116 @@ def _add_work_type_key(ax: plt.Axes) -> None:
             clip_on=False,
         )
         ax.text(
-            x + swatch_w / 2,
-            y_dep - 4.0 / ax_px.height,
+            x0 + swatch_w / 2,
+            label_y,
             DEPLOYMENT_PLATFORM_LABELS[platform],
             ha="center",
             va="top",
-            fontsize=8,
+            fontsize=fontsize,
             fontweight="bold",
             color=color,
             transform=ax.transAxes,
             zorder=24,
         )
+
+
+def _add_work_type_key(ax: plt.Axes) -> None:
+    """Legend: work-type swatches (label left, swatch right) and deployment lines."""
+    from matplotlib.patches import Rectangle
+
+    fig = ax.figure
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    ax_px = ax.get_window_extent()
+
+    fontsize = 8
+    swatch_pt = 22.0
+    swatch_h = swatch_pt / ax_px.height
+    swatch_w = swatch_pt / ax_px.width
+    row_gap_pt = 7.0
+    row_gap = row_gap_pt / ax_px.height
+    label_to_swatch_pt = 8.0
+    pad_x_pt, pad_top_pt, pad_bottom_pt = 4.0, 8.0, 4.0
+    pad_x = pad_x_pt / ax_px.width
+    pad_top = pad_top_pt / ax_px.height
+    pad_bottom = pad_bottom_pt / ax_px.height
+    text_kw = {"fontsize": fontsize, "transform": ax.transAxes}
+
+    def _text_px(text: str) -> tuple[float, float]:
+        tmp = ax.text(0, 0, text, transform=ax.transAxes, fontsize=fontsize)
+        bb = tmp.get_window_extent(renderer)
+        tmp.remove()
+        return bb.width, bb.height
+
+    type_items = [(CORPUS_CLASS_LABELS[c], c) for c in CORPUS_CLASS_ORDER]
+    label_w_px = max(_text_px(label)[0] for label, _ in type_items)
+    row_h_px = max(swatch_pt, _text_px("Ag")[1])
+
+    label_x = 0.118
+    swatch_x = label_x + label_w_px / ax_px.width + label_to_swatch_pt / ax_px.width
+    y_top = 0.945
+    first_row_y = y_top - 1.0 / ax_px.height - row_h_px / ax_px.height
+
+    row_ys = [first_row_y - i * (row_h_px / ax_px.height + row_gap) for i in range(len(type_items))]
+    sep_y = row_ys[-1] - row_gap - 2.0 / ax_px.height
+    dep_row_y = sep_y - row_gap - row_h_px / ax_px.height
+
+    bg_left = label_x - pad_x
+    bg_right = swatch_x + 2 * swatch_w + 20.0 / ax_px.width + pad_x
+    bg_bottom = dep_row_y - pad_bottom - 14.0 / ax_px.height
+    bg_top = y_top + pad_top
+
+    ax.add_patch(
+        Rectangle(
+            (bg_left, bg_bottom),
+            bg_right - bg_left,
+            bg_top - bg_bottom,
+            transform=ax.transAxes,
+            facecolor="white",
+            edgecolor="none",
+            zorder=20,
+            clip_on=False,
+        )
+    )
+
+    for (label, cls), row_y in zip(type_items, row_ys):
+        mid_y = row_y + (row_h_px / ax_px.height) / 2
+        ax.text(label_x, mid_y, label, ha="left", va="center", zorder=22, **text_kw)
+        ax.add_patch(
+            Rectangle(
+                (swatch_x, row_y + (row_h_px / ax_px.height - swatch_h) / 2),
+                swatch_w,
+                swatch_h,
+                transform=ax.transAxes,
+                facecolor=WORK_TYPE_COLORS[cls],
+                edgecolor="none",
+                zorder=21,
+                clip_on=False,
+            )
+        )
+
+    ax.plot(
+        [bg_left, bg_right],
+        [sep_y, sep_y],
+        transform=ax.transAxes,
+        color="#999999",
+        linewidth=0.9,
+        zorder=21,
+        clip_on=False,
+    )
+
+    dep_mid_y = dep_row_y + (row_h_px / ax_px.height) / 2
+    ax.text(label_x, dep_mid_y, DEPLOYMENT_LABEL, ha="left", va="center", zorder=22, **text_kw)
+    _draw_deployment_line_key(
+        ax,
+        x_grid=swatch_x,
+        col_gap=swatch_w + 14.0 / ax_px.width,
+        swatch_w=swatch_w,
+        row_y=dep_row_y + (row_h_px / ax_px.height - swatch_h) / 2,
+        swatch_h=swatch_h,
+        ax_px_height=ax_px.height,
+        fontsize=fontsize,
+    )
 
 
 def plot_fig8_work_type_with_deployments(
@@ -854,8 +923,8 @@ def plot_fig8_work_type_with_deployments(
                 }
             )
     export_df = pd.concat([long_df, pd.DataFrame(deploy_rows)], ignore_index=True)
-    export_df.to_csv(out_dir / "fig08_work_type_with_deployments_data.csv", index=False)
-    deploy_aligned.to_csv(out_dir / "fig08_work_type_deployment_months_by_year.csv")
+    export_df.to_csv(out_dir / f"{FIG_WORK_TYPE_DEPLOY}_data.csv", index=False)
+    deploy_aligned.to_csv(out_dir / f"{FIG_WORK_TYPE_DEPLOY}_deployment_months_by_year.csv")
 
     n_years = len(years)
     bar_width = 0.72
@@ -904,7 +973,7 @@ def plot_fig8_work_type_with_deployments(
 
     for ext in ("png", "pdf"):
         fig.canvas.draw()
-        fig.savefig(out_dir / f"fig08_work_type_by_year_with_deployments.{ext}", dpi=300, bbox_inches="tight")
+        fig.savefig(out_dir / f"{FIG_WORK_TYPE_DEPLOY}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -989,7 +1058,7 @@ def _add_fig8_color_key(ax: plt.Axes, *, deployment_lines: bool = False) -> None
 
     tier_labels = ["All works", "Published\nliterature"]
     if deployment_lines:
-        tier_labels.append(DEPLOYMENT_LEGEND_LABEL)
+        tier_labels.append(DEPLOYMENT_LABEL)
     affil_labels = ["NWC", "Other"]
     n_tiers = len(tier_labels)
     n_cols = len(AFFIL_LEGEND_ORDER)
@@ -1017,7 +1086,8 @@ def _add_fig8_color_key(ax: plt.Axes, *, deployment_lines: bool = False) -> None
     grid_right = x_grid + n_cols * swatch_w + (n_cols - 1) * col_gap
     bg_left = tier_label_x - max_tier_label_w_px / ax_px.width - pad_x
     bg_right = grid_right + pad_x
-    bg_bottom = row_ys[-1] - pad_bottom
+    deploy_label_extra = (14.0 / ax_px.height) if deployment_lines else 0.0
+    bg_bottom = row_ys[-1] - pad_bottom - deploy_label_extra
     bg_top = y_top + pad_top
 
     ax.add_patch(
@@ -1061,49 +1131,16 @@ def _add_fig8_color_key(ax: plt.Axes, *, deployment_lines: bool = False) -> None
             **text_kw,
         )
         if deployment_lines and tier_idx == n_tiers - 1:
-            line_offset = 5.0 / ax_px.height
-            text_offset = 4.0 / ax_px.height
-            for aff_idx, platform in enumerate(DEPLOYMENT_PLATFORMS):
-                x0 = x_grid + aff_idx * (swatch_w + col_gap)
-                x1 = x0 + swatch_w
-                mid_y = row_y + swatch_h / 2
-                line_y = mid_y - line_offset
-                text_y = mid_y + text_offset
-                color = DEPLOYMENT_PLATFORM_COLORS[platform]
-                ax.plot(
-                    [x0 + swatch_w * 0.1, x1 - swatch_w * 0.1],
-                    [line_y, line_y],
-                    transform=ax.transAxes,
-                    color=color,
-                    linewidth=3.2,
-                    solid_capstyle="round",
-                    zorder=22,
-                    clip_on=False,
-                )
-                ax.plot(
-                    [x0 + swatch_w * 0.5],
-                    [line_y],
-                    transform=ax.transAxes,
-                    color=color,
-                    linewidth=0,
-                    marker="o",
-                    markersize=4.5,
-                    zorder=23,
-                    clip_on=False,
-                )
-                cx = x0 + swatch_w / 2
-                ax.text(
-                    cx,
-                    text_y,
-                    DEPLOYMENT_PLATFORM_LABELS[platform],
-                    ha="center",
-                    va="center",
-                    fontsize=9,
-                    fontweight="bold",
-                    color=color,
-                    transform=ax.transAxes,
-                    zorder=24,
-                )
+            _draw_deployment_line_key(
+                ax,
+                x_grid=x_grid,
+                col_gap=col_gap,
+                swatch_w=swatch_w,
+                row_y=row_y,
+                swatch_h=swatch_h,
+                ax_px_height=ax_px.height,
+                fontsize=fontsize,
+            )
         else:
             for aff_idx in range(n_cols):
                 ax.add_patch(
@@ -1129,8 +1166,8 @@ def plot_fig8(frames: dict[str, pd.DataFrame], tier_df: pd.DataFrame, out_dir: P
     years = _extend_fig8_years(years)
     pivots = [p.reindex(years, fill_value=0) for p in pivots]
     long_df = _rebuild_affiliation_long_df(years, pivots)
-    long_df.to_csv(out_dir / "fig08_data.csv", index=False)
-    tier_df.to_csv(out_dir / "fig08_totals_by_tier.csv", index=False)
+    long_df.to_csv(out_dir / f"{FIG_AFFILIATION}_data.csv", index=False)
+    tier_df.to_csv(out_dir / f"{FIG_AFFILIATION}_totals_by_tier.csv", index=False)
 
     n_years = len(years)
     n_tiers = len(TIER_FRAME_KEYS)
@@ -1176,7 +1213,7 @@ def plot_fig8(frames: dict[str, pd.DataFrame], tier_df: pd.DataFrame, out_dir: P
     _add_fig8_color_key(ax)
     for ext in ("png", "pdf"):
         fig.canvas.draw()
-        fig.savefig(out_dir / f"fig08_affiliation_by_year_tier.{ext}", dpi=300, bbox_inches="tight")
+        fig.savefig(out_dir / f"{FIG_AFFILIATION}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
 
 
@@ -1226,9 +1263,9 @@ def plot_fig8_with_deployments(
                 }
             )
     export_df = pd.concat([long_df, pd.DataFrame(deploy_rows)], ignore_index=True)
-    export_df.to_csv(out_dir / "fig08_with_deployments_data.csv", index=False)
-    tier_df.to_csv(out_dir / "fig08_with_deployments_totals_by_tier.csv", index=False)
-    deploy_aligned.to_csv(out_dir / "fig08_deployment_months_by_year.csv")
+    export_df.to_csv(out_dir / f"{FIG_AFFILIATION_DEPLOY}_data.csv", index=False)
+    tier_df.to_csv(out_dir / f"{FIG_AFFILIATION_DEPLOY}_totals_by_tier.csv", index=False)
+    deploy_aligned.to_csv(out_dir / f"{FIG_AFFILIATION_DEPLOY}_deployment_months_by_year.csv")
 
     n_years = len(years)
     n_tiers = len(TIER_FRAME_KEYS)
@@ -1282,65 +1319,48 @@ def plot_fig8_with_deployments(
     _add_fig8_color_key(ax, deployment_lines=True)
     for ext in ("png", "pdf"):
         fig.canvas.draw()
-        fig.savefig(out_dir / f"fig08_affiliation_by_year_tier_with_deployments.{ext}", dpi=300, bbox_inches="tight")
+        fig.savefig(out_dir / f"{FIG_AFFILIATION_DEPLOY}.{ext}", dpi=300, bbox_inches="tight")
     plt.close(fig)
+
+
+def _affil_counts(df: pd.DataFrame) -> dict[str, int | str]:
+    """NWC vs non-NWC counts (unknown already folded into non-NWC in enrich())."""
+    return {
+        "nwc_affiliated": int((df["affiliation"] == NWC_AFFILIATED).sum()),
+        "non_affiliated": int((df["affiliation"] == NON_AFFILIATED).sum()),
+        "total": len(df),
+    }
 
 
 def build_table_x(frames: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """
-    Table X — community-building (pubs, users, students).
-    Distinct from Fig. 8: summary metrics for community adoption, not tier breakdown.
+    Corpus summary table for the review paper (counts by subset).
+    Does not include legacy citation-network rows (Wagner/Bell seeds).
     """
-    disc = frames["discovered"]
-    pdf = frames["pdf_confirmed"]
-    hc = frames["high_confidence"]
+    all_works = frames["flagged_yd"]
+    pub = frames["pdf_confirmed"]
+    peer = pub[pub["is_peer_reviewed"]]
+    theses = all_works[all_works["corpus_class"] == "thesis"]
+    datasets = all_works[all_works["corpus_class"] == "dataset"]
 
-    data_users = disc[disc["discovery_source"].astype(str).str.startswith("dataset_cites:")]
-    wagner = disc[disc["discovery_source"].astype(str).str.contains("Wagner", na=False)]
-    bell = disc[disc["discovery_source"].astype(str).str.contains("Bell", na=False)]
-    theses_hc = hc[hc["is_thesis"]]
+    def row(metric: str, df: pd.DataFrame, notes: str = "") -> dict:
+        return {"metric": metric, "notes": notes, **_affil_counts(df)}
 
-    def split_counts(df: pd.DataFrame) -> dict[str, int]:
-        return {
-            "nwc_affiliated": int((df["affiliation"] == NWC_AFFILIATED).sum()),
-            "non_affiliated": int((df["affiliation"] == NON_AFFILIATED).sum()),
-            "unknown": int((df["affiliation"] == UNKNOWN).sum()),
-            "total": len(df),
-        }
-
-    rows = [
+    rows: list[dict] = [
+        row("Full review corpus", all_works, "726 works; all inclusion streams"),
+        row("Articles + reports", pub, "Publication-type subset"),
+        row(
+            "Peer-reviewed articles & review papers",
+            peer,
+            "OpenAlex types article/review/letter; excludes peer-review comments",
+        ),
+        row("Theses & dissertations", theses, "Manual acceptance via Channel H/F"),
         {
-            "community_metric": "Publications using CLAMPS (PDF full-text confirmed)",
-            **split_counts(pdf),
-            "notes": "Primary evidence of facility impact; peer-reviewed subset in Table Y",
-        },
-        {
-            "community_metric": "Publications citing Wagner et al. 2019 (CLAMPS overview)",
-            **split_counts(wagner),
-            "notes": "Literature network / methods awareness",
-        },
-        {
-            "community_metric": "Publications citing Bell et al. 2021 (LAPSE-RATE)",
-            **split_counts(bell),
-            "notes": "Dataset paper citation network",
-        },
-        {
-            "community_metric": "Data users (works citing CLAMPS dataset DOIs)",
-            **split_counts(data_users),
-            "notes": "Formal data reuse via DOI citation graph",
-        },
-        {
-            "community_metric": "Student theses & dissertations (high-confidence metadata)",
-            **split_counts(theses_hc),
-            "notes": "Undercounted for OU; supplement via OU Share (Table Y)",
-        },
-        {
-            "community_metric": "Classroom & field-campaign student engagement",
-            "nwc_affiliated": "[MANUAL]",
-            "non_affiliated": "[MANUAL]",
-            "unknown": "[MANUAL]",
-            "total": "[MANUAL]",
-            "notes": "Fill from SoM courses, REU, campaign participant rosters",
+            "metric": "All datasets",
+            "total": len(datasets),
+            "nwc_affiliated": "",
+            "non_affiliated": "",
+            "notes": "107 validated deposits; affiliation not applied",
         },
     ]
     return pd.DataFrame(rows)
@@ -1348,13 +1368,9 @@ def build_table_x(frames: dict[str, pd.DataFrame]) -> pd.DataFrame:
 
 def build_table_y(
     frames: dict[str, pd.DataFrame],
-    local_hits: int,
     use_classified: pd.DataFrame | None = None,
 ) -> pd.DataFrame:
-    """
-    Table Y — practical impact (a)(b)(c).
-    Distinct from Table X: conservative impact counts, not community network metrics.
-    """
+    """Impact metrics: peer-reviewed counts, PDF use tiers, and theses."""
     hc = frames["high_confidence"]
     pdf = frames["pdf_confirmed"]
     peer_pdf = pdf[pdf["is_peer_reviewed"]]
@@ -1362,12 +1378,12 @@ def build_table_y(
     theses_hc = hc[hc["is_thesis"]]
 
     def row(metric: str, df: pd.DataFrame, notes: str) -> dict:
+        counts = _affil_counts(df)
         return {
             "impact_metric": metric,
-            "count": len(df),
-            "nwc_affiliated": int((df["affiliation"] == NWC_AFFILIATED).sum()),
-            "non_affiliated": int((df["affiliation"] == NON_AFFILIATED).sum()),
-            "unknown": int((df["affiliation"] == UNKNOWN).sum()),
+            "count": counts["total"],
+            "nwc_affiliated": counts["nwc_affiliated"],
+            "non_affiliated": counts["non_affiliated"],
             "notes": notes,
         }
 
@@ -1381,71 +1397,46 @@ def build_table_y(
         ]
         excluded = use_classified[use_classified["use_tier"] == 0]
         use_rows = [
-            {
-                "impact_metric": "(a) Substantive use — Tier 1+2 (peer-reviewed, PDF-confirmed)",
-                "count": len(substantive),
-                "nwc_affiliated": int((substantive["affiliation"] == NWC_AFFILIATED).sum()),
-                "non_affiliated": int((substantive["affiliation"] == NON_AFFILIATED).sum()),
-                "unknown": int((substantive["affiliation"] == UNKNOWN).sum()),
-                "notes": "Data use, analysis, or discussion — excludes peripheral refs and false positives",
-            },
-            {
-                "impact_metric": "(a) Data / instrument use — Tier 1 only (peer-reviewed)",
-                "count": len(tier1),
-                "nwc_affiliated": int((tier1["affiliation"] == NWC_AFFILIATED).sum()),
-                "non_affiliated": int((tier1["affiliation"] == NON_AFFILIATED).sum()),
-                "unknown": int((tier1["affiliation"] == UNKNOWN).sum()),
-                "notes": "Dataset DOI, repository URL, grant, or CLAMPS deployment in methods/results",
-            },
-            {
-                "impact_metric": "(a) Excluded — false positives (Tier 0)",
-                "count": len(excluded),
-                "nwc_affiliated": int((excluded["affiliation"] == NWC_AFFILIATED).sum()),
-                "non_affiliated": int((excluded["affiliation"] == NON_AFFILIATED).sum()),
-                "unknown": int((excluded["affiliation"] == UNKNOWN).sum()),
-                "notes": "Word collision or unrelated topic; removed from substantive counts",
-            },
+            row(
+                "Substantive use — Tier 1+2 (peer-reviewed, PDF-confirmed)",
+                substantive,
+                "Data use, analysis, or discussion — excludes peripheral refs and false positives",
+            ),
+            row(
+                "Data / instrument use — Tier 1 only (peer-reviewed)",
+                tier1,
+                "Dataset DOI, repository URL, grant, or CLAMPS deployment in methods/results",
+            ),
+            row(
+                "Excluded — false positives (Tier 0)",
+                excluded,
+                "Word collision or unrelated topic; removed from substantive counts",
+            ),
         ]
 
     return pd.DataFrame(
         [
             row(
-                "(a) Peer-reviewed publications — high-confidence metadata",
+                "Peer-reviewed publications — high-confidence metadata",
                 hc[hc["is_peer_reviewed"]],
                 "Upper bound before PDF verification",
             ),
             row(
-                "(a) Peer-reviewed publications — PDF CLAMPS confirmed",
+                "Peer-reviewed publications — PDF CLAMPS confirmed",
                 peer_pdf,
                 "Conservative impact count from full-text search",
             ),
             *use_rows,
-            {
-                "impact_metric": "(a) Additional peer-reviewed PDFs (manual download)",
-                "count": local_hits,
-                "nwc_affiliated": "",
-                "non_affiliated": "",
-                "unknown": "",
-                "notes": "Paywalled/OA papers verified locally; affiliation TBD",
-            },
             row(
-                "(b) Theses & dissertations — metadata (all fields)",
+                "Theses & dissertations — metadata (all fields)",
                 theses_hc,
                 "Includes non-meteorology false positives",
             ),
             row(
-                "(b) Theses & dissertations — PDF CLAMPS confirmed",
+                "Theses & dissertations — PDF CLAMPS confirmed",
                 theses_pdf,
                 "Small sample; OU theses require repository search",
             ),
-            {
-                "impact_metric": "(c) Classroom / student engagement (courses, REU, demos)",
-                "count": "[MANUAL]",
-                "nwc_affiliated": "[MANUAL]",
-                "non_affiliated": "[MANUAL]",
-                "unknown": "[MANUAL]",
-                "notes": "Educational impact; not captured by bibliometric pipeline",
-            },
         ]
     )
 
@@ -1672,7 +1663,9 @@ def plot_supp_s1(frames: dict[str, pd.DataFrame], campaigns: list[str], out_dir:
             )
     _style_axes(ax_hm)
 
-    fig.tight_layout()
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", UserWarning)
+        fig.tight_layout()
     # Match bar-panel data width to heatmap (y tick labels differ in width).
     pos_hm = ax_hm.get_position()
     pos_bar = ax_bar.get_position()
@@ -1707,7 +1700,7 @@ def plot_supp_s1(frames: dict[str, pd.DataFrame], campaigns: list[str], out_dir:
     fig.canvas.draw()
     for ext in ("png", "pdf"):
         fig.savefig(
-            out_dir / f"supp_fig_s1_campaign_by_year.{ext}",
+            out_dir / f"{FIG_CAMPAIGN}.{ext}",
             dpi=300,
             bbox_inches="tight",
             bbox_extra_artists=[annual_sum_label],
@@ -1720,8 +1713,8 @@ def plot_supp_s1(frames: dict[str, pd.DataFrame], campaigns: list[str], out_dir:
     for y in pivot.columns:
         export[f"articles_{int(y)}"] = pivot_articles[int(y)].astype(int).values
         export[f"non_articles_{int(y)}"] = pivot_non_article[int(y)].astype(int).values
-    export.to_csv(out_dir / "supp_fig_s1_campaign_year_data.csv")
-    year_totals.rename("unique_works").to_csv(out_dir / "supp_fig_s1_year_totals.csv", header=True)
+    export.to_csv(out_dir / f"{FIG_CAMPAIGN}_year_data.csv")
+    year_totals.rename("unique_works").to_csv(out_dir / f"{FIG_CAMPAIGN}_year_totals.csv", header=True)
 
 
 def table_to_latex(df: pd.DataFrame, path: Path, caption: str, label: str) -> None:
@@ -1805,7 +1798,6 @@ def main() -> None:
         n_pub = len(frames["pdf_confirmed"])
         print(f"Using review corpus: {n_all} all works, {n_pub} published literature (article+report)")
     campaigns = load_campaign_names(ROOT)
-    local_hits = int((frames["local_log"]["status"] == "mentions_found").sum())
     use_classified = classify_pdf_confirmed(
         frames["pdf_confirmed"], frames["mentions"], id_col="openalex_id"
     )
@@ -1825,38 +1817,35 @@ def main() -> None:
     plot_fig8_work_type_with_deployments(frames, deploy_pivot, out_dir)
 
     table_x = build_table_x(frames)
-    table_y = build_table_y(frames, local_hits, use_classified)
-    table_x.to_csv(out_dir / "table_x_community_metrics.csv", index=False)
-    table_y.to_csv(out_dir / "table_y_impact_metrics.csv", index=False)
+    table_y = build_table_y(frames, use_classified)
+    table_x.to_csv(out_dir / f"{TABLE_CORPUS_SUMMARY}.csv", index=False)
+    table_y.to_csv(out_dir / f"{TABLE_IMPACT_SUMMARY}.csv", index=False)
 
-    # LaTeX-friendly exports (numeric columns only for cleaner tables)
-    tx_pub = table_x[
-        ["community_metric", "nwc_affiliated", "non_affiliated", "unknown", "total"]
-    ]
-    ty_pub = table_y[["impact_metric", "count", "nwc_affiliated", "non_affiliated", "unknown"]]
+    tx_pub = table_x[["metric", "nwc_affiliated", "non_affiliated", "total"]]
+    ty_pub = table_y[["impact_metric", "count", "nwc_affiliated", "non_affiliated"]]
     table_to_latex(
         tx_pub,
-        out_dir / "table_x_community_metrics.tex",
-        f"Community-building metrics for CLAMPS (publications, data users, and students). {NWC_AFFILIATION_CAPTION}",
-        "tab:community",
+        out_dir / f"{TABLE_CORPUS_SUMMARY}.tex",
+        f"Corpus summary by subset. {NWC_AFFILIATION_CAPTION}",
+        "tab:corpus",
     )
     table_to_latex(
         ty_pub,
-        out_dir / "table_y_impact_metrics.tex",
-        "Practical impact metrics complementing CLAMPS data-volume statistics.",
+        out_dir / f"{TABLE_IMPACT_SUMMARY}.tex",
+        "Impact metrics complementing CLAMPS data-volume statistics.",
         "tab:impact",
     )
 
     plot_supp_s1(frames, campaigns, out_dir)
 
     print(f"Figures and tables written to {out_dir}/")
-    print("  fig08_affiliation_by_year_tier.png/pdf")
-    print("  fig08_affiliation_by_year_tier_with_deployments.png/pdf")
-    print("  fig08_work_type_by_year_with_deployments.png/pdf")
+    print(f"  {FIG_AFFILIATION}.png/pdf")
+    print(f"  {FIG_AFFILIATION_DEPLOY}.png/pdf")
+    print(f"  {FIG_WORK_TYPE_DEPLOY}.png/pdf")
     print("  ../review_metrics/list_unknown_affiliation.csv")
-    print("  table_x_community_metrics.csv / .tex")
-    print("  table_y_impact_metrics.csv / .tex")
-    print("  supp_fig_s1_campaign_by_year.png/pdf")
+    print(f"  {TABLE_CORPUS_SUMMARY}.csv / .tex")
+    print(f"  {TABLE_IMPACT_SUMMARY}.csv / .tex")
+    print(f"  {FIG_CAMPAIGN}.png/pdf")
 
 
 if __name__ == "__main__":

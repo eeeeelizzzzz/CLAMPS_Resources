@@ -50,11 +50,11 @@ for wt, n in ref["work_type"].value_counts().sort_index().items():
 
 # Key figures exist
 figs = [
-    "fig08_affiliation_by_year_tier_with_deployments.png",
-    "fig08_work_type_by_year_with_deployments.png",
-    "supp_fig_s1_campaign_by_year.png",
-    "table_x_community_metrics.csv",
-    "table_y_impact_metrics.csv",
+    "fig_affiliation_by_year_with_deployments.png",
+    "fig_work_type_by_year_with_deployments.png",
+    "fig_campaign_by_year.png",
+    "table_corpus_summary.csv",
+    "table_impact_summary.csv",
 ]
 for f in figs:
     if not (root / "output/figures" / f).exists():

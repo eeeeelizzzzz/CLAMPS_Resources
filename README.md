@@ -4,6 +4,9 @@ A GitHub Pages site showcasing CLAMPS example cases with instrument overview fig
 
 **Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/)
 
+**Bibliometrics (726-work review corpus):** [bibliometrics/index.html](bibliometrics/index.html) ·
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+
 ## Structure
 
 | Path | Purpose |
@@ -11,6 +14,8 @@ A GitHub Pages site showcasing CLAMPS example cases with instrument overview fig
 | `index.html` | Home page with a sortable case table |
 | `gallery.html` | Card gallery with searchable case menu |
 | `case.html?id=…` | Individual case pages |
+| `bibliometrics/` | Review-paper bibliometric pipeline + Binder notebook |
+| `binder/` | MyBinder environment (repo root; builds `bibliometrics/`) |
 | `data/cases.json` | Case metadata (dates, titles, images, tags) |
 | `images/` | Combined instrument overview figures |
 | `js/` | Page logic (ES modules) |

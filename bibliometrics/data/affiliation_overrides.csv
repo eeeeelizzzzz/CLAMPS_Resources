@@ -1,25 +1,27 @@
-openalex_id,affiliation,notes
-https://openalex.org/W4391970826,nwc_affiliated,AWAKEN CLAMPS1 AERI dataset (NSSL)
-https://openalex.org/W4399064046,nwc_affiliated,AWAKEN CLAMPS1 AERI dataset (NSSL)
-https://openalex.org/W4396912835,nwc_affiliated,AWAKEN CLAMPS2 AERI dataset (NSSL)
-https://openalex.org/W4399023221,nwc_affiliated,AWAKEN CLAMPS2 MWR dataset (NSSL)
-https://openalex.org/W4399064052,nwc_affiliated,AWAKEN CLAMPS1 lidar dataset (NSSL)
-https://openalex.org/W4399064051,nwc_affiliated,AWAKEN CLAMPS2 lidar dataset (NSSL)
-https://openalex.org/W4399318251,nwc_affiliated,AWAKEN CLAMPS2 lidar dataset (NSSL)
-https://openalex.org/W4396813233,nwc_affiliated,AWAKEN CLAMPS1 lidar dataset (NSSL)
-https://openalex.org/W4389361176,nwc_affiliated,TRACER CLAMPS1 AERI dataset (NSSL)
-https://openalex.org/W4389362081,nwc_affiliated,TRACER CLAMPS1 lidar dataset (NSSL)
-https://openalex.org/W4389362024,nwc_affiliated,TRACER CLAMPS1 lidar dataset (NSSL)
-https://openalex.org/W4389361193,nwc_affiliated,TRACER CLAMPS2 AERI/MWR dataset (NSSL)
-https://openalex.org/W4389362028,nwc_affiliated,TRACER CLAMPS2 lidar dataset (NSSL)
-https://openalex.org/W4389362029,nwc_affiliated,TRACER CLAMPS2 lidar dataset (NSSL)
-https://openalex.org/W4389361155,nwc_affiliated,TRACER CLAMPS2 MWR dataset (NSSL)
-https://openalex.org/W4391691015,non_affiliated,2023 dissertation (non-NWC)
-https://openalex.org/W2969644247,non_affiliated,2019 dissertation (non-NWC)
-https://openalex.org/W7123680238,exclude,Not relevant CLAMPS match
-https://openalex.org/W4409261264,exclude,Not relevant CLAMPS match
-https://openalex.org/W4281381432,exclude,Not relevant CLAMPS match
-https://openalex.org/W4200437512,exclude,Not relevant CLAMPS match
-https://openalex.org/W4300114282,exclude,Not relevant CLAMPS match
-https://openalex.org/W3083863319,exclude,Not relevant CLAMPS match
-https://openalex.org/W2625915256,exclude,Not relevant CLAMPS match
+openalex_id,doi,affiliation,notes
+https://openalex.org/W4391970826,,nwc_affiliated,AWAKEN CLAMPS1 AERI dataset (NSSL)
+https://openalex.org/W4399064046,,nwc_affiliated,AWAKEN CLAMPS1 AERI dataset (NSSL)
+https://openalex.org/W4396912835,,nwc_affiliated,AWAKEN CLAMPS2 AERI dataset (NSSL)
+https://openalex.org/W4399023221,,nwc_affiliated,AWAKEN CLAMPS2 MWR dataset (NSSL)
+https://openalex.org/W4399064052,,nwc_affiliated,AWAKEN CLAMPS1 lidar dataset (NSSL)
+https://openalex.org/W4399064051,,nwc_affiliated,AWAKEN CLAMPS2 lidar dataset (NSSL)
+https://openalex.org/W4399318251,,nwc_affiliated,AWAKEN CLAMPS2 lidar dataset (NSSL)
+https://openalex.org/W4396813233,,nwc_affiliated,AWAKEN CLAMPS1 lidar dataset (NSSL)
+https://openalex.org/W4389361176,,nwc_affiliated,TRACER CLAMPS1 AERI dataset (NSSL)
+https://openalex.org/W4389362081,,nwc_affiliated,TRACER CLAMPS1 lidar dataset (NSSL)
+https://openalex.org/W4389362024,,nwc_affiliated,TRACER CLAMPS1 lidar dataset (NSSL)
+https://openalex.org/W4389361193,,nwc_affiliated,TRACER CLAMPS2 AERI/MWR dataset (NSSL)
+https://openalex.org/W4389362028,,nwc_affiliated,TRACER CLAMPS2 lidar dataset (NSSL)
+https://openalex.org/W4389362029,,nwc_affiliated,TRACER CLAMPS2 lidar dataset (NSSL)
+https://openalex.org/W4389361155,,nwc_affiliated,TRACER CLAMPS2 MWR dataset (NSSL)
+https://openalex.org/W4391691015,,non_affiliated,2023 dissertation (non-NWC)
+https://openalex.org/W2969644247,,non_affiliated,2019 dissertation (non-NWC)
+https://openalex.org/W7123680238,,exclude,Not relevant CLAMPS match
+https://openalex.org/W4409261264,,exclude,Not relevant CLAMPS match
+https://openalex.org/W4281381432,,exclude,Not relevant CLAMPS match
+https://openalex.org/W4200437512,,exclude,Not relevant CLAMPS match
+https://openalex.org/W4300114282,,exclude,Not relevant CLAMPS match
+https://openalex.org/W3083863319,,exclude,Not relevant CLAMPS match
+https://openalex.org/W2625915256,,exclude,Not relevant CLAMPS match
+,10.26023/1weq-qsqg-zx0f,nwc_affiliated,OU dataset registry deposit
+https://openalex.org/W4365211706,,nwc_affiliated,TRACER UAS CopterSonde Profiles (OU)

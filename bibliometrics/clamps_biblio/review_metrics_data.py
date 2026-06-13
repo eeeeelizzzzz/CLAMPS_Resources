@@ -67,6 +67,8 @@ def enrich(df: pd.DataFrame, root: Path | None = None) -> pd.DataFrame:
     out["is_thesis"] = out["type"].astype(str).isin(THESIS_TYPES)
     overrides = load_affiliation_overrides(_affiliation_overrides_path(root))
     out = apply_affiliation_overrides(out, overrides)
+    # Treat missing OpenAlex affiliation as non-NWC for counts and figures.
+    out.loc[out["affiliation"] == UNKNOWN, "affiliation"] = NON_AFFILIATED
     return out
 
 
