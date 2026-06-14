@@ -13,7 +13,8 @@ This repository contains a GitHub Pages site showcasing CLAMPS example cases wit
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Home page with a sortable case table |
+| `index.html` | Site home — links to case gallery and bibliometrics sections |
+| `case-table.html` | Sortable case table |
 | `gallery.html` | Card gallery with searchable case menu |
 | `case.html?id=…` | Individual case pages |
 | `bibliometrics/` | Review-paper bibliometric pipeline + Binder notebook |

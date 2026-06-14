@@ -1,6 +1,6 @@
 # Case gallery — instrument template reproduction
 
-Interactive walkthrough for **loading plot-ready CLAMPS inputs** and building the gallery **4-panel instrument figure** for one case (no THREDDS, no WINDoe re-run in the notebook).
+Interactive walkthrough for **loading plot-ready CLAMPS inputs** and building the gallery **4-panel instrument figure** for one case. Each notebook cell reads NetCDF variables, performs array work, and plots explicitly — no project wrapper functions (no THREDDS, no WINDoe re-run in the notebook).
 
 **Demo case:** `ci_c1` — NWCRIL2020 CLAMPS1, **2020-07-30 UTC**. The gallery merges this day with `gravity_waves_c1` (same inputs, different science tag).
 
@@ -23,13 +23,12 @@ Interactive walkthrough for **loading plot-ready CLAMPS inputs** and building th
 cd case_reproduce
 bash scripts/link_data.sh
 python -m venv .venv && source .venv/bin/activate
-pip install matplotlib numpy netCDF4 pyyaml pandas scipy ipykernel
+pip install matplotlib numpy netCDF4 pandas ipykernel jupyterlab
 export MPLCONFIGDIR="$PWD/.matplotlib"
-export PYTHONPATH="$PWD/code"
-python code/case_gallery/plot_instrument.py ci_c1 --force
+jupyter lab notebooks/reproduce_ci_c1.ipynb
 ```
 
-Or open the notebook in Jupyter Lab from `case_reproduce/`.
+Batch plotting for all gallery cases: `python code/case_gallery/plot_instrument.py ci_c1 --force` (wrapper around the same steps).
 
 ## Structure
 

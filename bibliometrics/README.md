@@ -88,6 +88,15 @@ For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from 
 | `table_corpus_summary.csv` | Corpus subset counts |
 | `table_impact_summary.csv` | PDF tier / impact metrics |
 
+**GitHub Pages:** PNGs and summary CSVs for [bibliometrics/index.html](index.html) live in `figures/` (not gitignored `output/`). After regenerating:
+
+```bash
+cp output/figures/fig_campaign_by_year.png figures/
+# combined two-panel bar chart (affiliation + work type with deployments):
+# save/export as figures/fig_annual_bars_with_deployments.png
+cp output/figures/table_*.csv figures/
+```
+
 ---
 
 ## Repository layout

@@ -3,183 +3,64 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CLAMPS Case Gallery</title>
-  <meta name="description" content="A directory of CLAMPS example cases with instrument visualizations.">
+  <title>CLAMPS Case Gallery &amp; Bibliometrics</title>
+  <meta name="description" content="CLAMPS example cases, figure reproduction notebooks, and review-paper bibliometric analysis.">
   <base href="./">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="site-header__inner">
-      <h1>CLAMPS Case Gallery</h1>
+      <h1>CLAMPS resources</h1>
       <p>
-        Example boundary-layer and mesoscale cases observed with the Collaborative
-        Lower Atmospheric Mobile Profiling System (CLAMPS). Select a row to open
-        a case, or browse the full gallery with preview figures.
+        Example boundary-layer and mesoscale cases from the Collaborative Lower
+        Atmospheric Mobile Profiling System (CLAMPS), plus bibliometric analysis
+        from the CLAMPS facility review corpus.
       </p>
       <div class="header-actions">
-        <a href="index.html" class="header-link header-link--active" aria-current="page">Case Table</a>
+        <a href="index.html" class="header-link header-link--active" aria-current="page">Home</a>
+        <a href="case-table.html" class="header-link">Case Table</a>
         <a href="gallery.html" class="header-link">Full Gallery</a>
-        <a href="bibliometrics/index.html" class="header-link">Bibliometrics</a>
         <a href="case_reproduce/index.html" class="header-link">Figure notebook</a>
+        <a href="bibliometrics/index.html" class="header-link">Bibliometrics</a>
+        <a href="README.md" class="header-link">Documentation</a>
       </div>
     </div>
   </header>
 
   <main>
-    <div class="table-panel">
-      <table class="case-table" aria-label="CLAMPS example cases">
-        <thead>
-          <tr>
-            <th scope="col">
-              <button type="button" class="case-table__sort" data-column="date" aria-sort="ascending">
-                Date <span class="case-table__sort-indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th scope="col">
-              <button type="button" class="case-table__sort" data-column="platform" aria-sort="none">
-                Platform <span class="case-table__sort-indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th scope="col">
-              <button type="button" class="case-table__sort" data-column="title" aria-sort="none">
-                Case type <span class="case-table__sort-indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th scope="col">
-              <button type="button" class="case-table__sort" data-column="campaign" aria-sort="none">
-                Campaign <span class="case-table__sort-indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-            <th scope="col">
-              <button type="button" class="case-table__sort" data-column="location" aria-sort="none">
-                Location <span class="case-table__sort-indicator" aria-hidden="true"></span>
-              </button>
-            </th>
-          </tr>
-        </thead>
-        <tbody id="case-table-body">
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=nllj_c2" data-date="2016-08-02" data-platform="CLAMPS2" data-title="Nocturnal Low-Level Jet" data-campaign="NWC Ops" data-location="Oklahoma">
-            <td><a href="case.html?id=nllj_c2">August 2, 2016</a></td>
-            <td>CLAMPS2</td>
-            <td>Nocturnal Low-Level Jet</td>
-            <td>NWC Ops</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=nllj_c1" data-date="2018-08-26" data-platform="CLAMPS1" data-title="Nocturnal Low-Level Jet" data-campaign="TRACER" data-location="Texas">
-            <td><a href="case.html?id=nllj_c1">August 26, 2018</a></td>
-            <td>CLAMPS1</td>
-            <td>Nocturnal Low-Level Jet</td>
-            <td>TRACER</td>
-            <td>Texas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=stable_bad_dl_c1" data-date="2019-01-25" data-platform="CLAMPS1" data-title="Stable Boundary Layer — Degraded Lidar Quality" data-campaign="PERiLS 22" data-location="Arkansas">
-            <td><a href="case.html?id=stable_bad_dl_c1">January 25, 2019</a></td>
-            <td>CLAMPS1</td>
-            <td>Stable Boundary Layer — Degraded Lidar Quality</td>
-            <td>PERiLS 22</td>
-            <td>Arkansas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=ci_gravity_waves_c1" data-date="2020-07-30" data-platform="CLAMPS1" data-title="Convection Initiation &amp; Gravity Waves" data-campaign="NWCRIL 20" data-location="Oklahoma">
-            <td><a href="case.html?id=ci_gravity_waves_c1">July 30, 2020</a></td>
-            <td>CLAMPS1</td>
-            <td>Convection Initiation &amp; Gravity Waves</td>
-            <td>NWCRIL 20</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=diurnal_c2" data-date="2021-07-06" data-platform="CLAMPS2" data-title="Diurnal Cycle" data-campaign="BLISSFUL" data-location="Oklahoma">
-            <td><a href="case.html?id=diurnal_c2">July 6, 2021</a></td>
-            <td>CLAMPS2</td>
-            <td>Diurnal Cycle</td>
-            <td>BLISSFUL</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=sea_breeze_c1" data-date="2022-07-17" data-platform="CLAMPS1" data-title="Sea Breeze" data-campaign="TRACER" data-location="Texas">
-            <td><a href="case.html?id=sea_breeze_c1">July 17, 2022</a></td>
-            <td>CLAMPS1</td>
-            <td>Sea Breeze</td>
-            <td>TRACER</td>
-            <td>Texas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=sea_breeze_c2" data-date="2022-07-17" data-platform="CLAMPS2" data-title="Sea Breeze" data-campaign="TRACER" data-location="Texas">
-            <td><a href="case.html?id=sea_breeze_c2">July 17, 2022</a></td>
-            <td>CLAMPS2</td>
-            <td>Sea Breeze</td>
-            <td>TRACER</td>
-            <td>Texas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=deep_cbl_c1" data-date="2022-07-20" data-platform="CLAMPS1" data-title="Deep Convective Boundary Layer" data-campaign="TRACER" data-location="Texas">
-            <td><a href="case.html?id=deep_cbl_c1">July 20, 2022</a></td>
-            <td>CLAMPS1</td>
-            <td>Deep Convective Boundary Layer</td>
-            <td>TRACER</td>
-            <td>Texas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=stable_good_dl_c2" data-date="2022-12-02" data-platform="CLAMPS2" data-title="Stable Boundary Layer — Good Lidar Quality" data-campaign="NWC Ops" data-location="Oklahoma">
-            <td><a href="case.html?id=stable_good_dl_c2">December 2, 2022</a></td>
-            <td>CLAMPS2</td>
-            <td>Stable Boundary Layer — Good Lidar Quality</td>
-            <td>NWC Ops</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=cold_pool_c2" data-date="2023-06-28" data-platform="CLAMPS2" data-title="Cold Pool" data-campaign="PERiLS 23" data-location="Arkansas">
-            <td><a href="case.html?id=cold_pool_c2">June 28, 2023</a></td>
-            <td>CLAMPS2</td>
-            <td>Cold Pool</td>
-            <td>PERiLS 23</td>
-            <td>Arkansas</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=ci_c2" data-date="2023-07-03" data-platform="CLAMPS2" data-title="Convection Initiation" data-campaign="AWAKEN 23" data-location="Oklahoma">
-            <td><a href="case.html?id=ci_c2">July 3, 2023</a></td>
-            <td>CLAMPS2</td>
-            <td>Convection Initiation</td>
-            <td>AWAKEN 23</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=gravity_waves_c2" data-date="2023-08-05" data-platform="CLAMPS2" data-title="Gravity Waves" data-campaign="AWAKEN 23" data-location="Oklahoma">
-            <td><a href="case.html?id=gravity_waves_c2">August 5, 2023</a></td>
-            <td>CLAMPS2</td>
-            <td>Gravity Waves</td>
-            <td>AWAKEN 23</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=deep_cbl_c2" data-date="2023-08-25" data-platform="CLAMPS2" data-title="Deep Convective Boundary Layer" data-campaign="AWAKEN 23" data-location="Oklahoma">
-            <td><a href="case.html?id=deep_cbl_c2">August 25, 2023</a></td>
-            <td>CLAMPS2</td>
-            <td>Deep Convective Boundary Layer</td>
-            <td>AWAKEN 23</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=la_interaction_c1" data-date="2023-09-01" data-platform="CLAMPS1" data-title="Land–Atmosphere Interaction" data-campaign="AWAKEN 23" data-location="Oklahoma">
-            <td><a href="case.html?id=la_interaction_c1">September 1, 2023</a></td>
-            <td>CLAMPS1</td>
-            <td>Land–Atmosphere Interaction</td>
-            <td>AWAKEN 23</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=sharp_grad_c2" data-date="2026-03-14" data-platform="CLAMPS2" data-title="Sharp Gradient" data-campaign="NWC Ops" data-location="Oklahoma">
-            <td><a href="case.html?id=sharp_grad_c2">March 14, 2026</a></td>
-            <td>CLAMPS2</td>
-            <td>Sharp Gradient</td>
-            <td>NWC Ops</td>
-            <td>Oklahoma</td>
-          </tr>
-          <tr class="case-table__row" tabindex="0" role="link" data-href="case.html?id=fropa_c2" data-date="2026-03-27" data-platform="CLAMPS2" data-title="Frontal Passage" data-campaign="NWC Ops" data-location="Oklahoma">
-            <td><a href="case.html?id=fropa_c2">March 27, 2026</a></td>
-            <td>CLAMPS2</td>
-            <td>Frontal Passage</td>
-            <td>NWC Ops</td>
-            <td>Oklahoma</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="hub-grid">
+      <section class="hub-card content-section">
+        <h2>Example cases</h2>
+        <p>
+          Browse instrument overview figures for representative CLAMPS observation
+          days — boundary-layer regimes, mesoscale features, and campaign contexts
+          from CLAMPS1 and CLAMPS2 deployments.
+        </p>
+        <ul class="hub-links">
+          <li><a href="case-table.html">Case table</a> — sortable list of all cases</li>
+          <li><a href="gallery.html">Full gallery</a> — searchable cards with preview figures</li>
+          <li><a href="case_reproduce/index.html">Figure notebook</a> — reproduce a gallery figure in Binder</li>
+        </ul>
+      </section>
+
+      <section class="hub-card content-section">
+        <h2>Review bibliometrics</h2>
+        <p>
+          Reproducible bibliometric analysis for the CLAMPS mobile profiling
+          facility review: a <strong>726-work corpus</strong> (570 articles,
+          20 reports, 107 datasets, 29 theses), summary figures, tables, and
+          a Binder notebook for the full pipeline.
+        </p>
+        <ul class="hub-links">
+          <li><a href="bibliometrics/index.html">Bibliometrics overview</a> — corpus figures and summary tables</li>
+        </ul>
+      </section>
     </div>
   </main>
 
   <footer class="site-footer">
-    CLAMPS Case Gallery &middot; University of Oklahoma
+    CLAMPS Case Gallery &amp; Bibliometrics &middot; University of Oklahoma
   </footer>
-
-  <script type="module" src="js/home.js"></script>
 </body>
 </html>

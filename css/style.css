@@ -438,6 +438,37 @@ main {
   font-size: 0.95rem;
 }
 
+.content-section p + p {
+  margin-top: 0.75rem;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.25rem;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.hub-card h2 {
+  font-size: 1.25rem;
+}
+
+.hub-links {
+  margin: 1rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.hub-links li + li {
+  margin-top: 0.45rem;
+}
+
 .placeholder-note {
   border-style: dashed;
   background: #fafbfd;

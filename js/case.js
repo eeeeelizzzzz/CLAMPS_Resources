@@ -16,7 +16,7 @@ async function init() {
   if (!caseId) {
     content.innerHTML = `
       <div class="error-state">
-        <p>No case selected. <a href="index.html">Return to the gallery</a>.</p>
+        <p>No case selected. <a href="case-table.html">Return to the case table</a>.</p>
       </div>
     `;
     return;
@@ -30,7 +30,7 @@ async function init() {
       content.innerHTML = `
         <div class="error-state">
           <p>Case not found: <strong>${caseId}</strong></p>
-          <p><a href="index.html">Return to the gallery</a></p>
+          <p><a href="case-table.html">Return to the case table</a></p>
         </div>
       `;
       return;
