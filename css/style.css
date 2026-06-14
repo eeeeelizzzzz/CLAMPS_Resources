@@ -119,6 +119,26 @@ main {
   padding: 2rem 1.5rem 3rem;
 }
 
+.page-actions {
+  margin-bottom: 1.5rem;
+}
+
+.doc-button {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.doc-button:hover {
+  background: var(--accent-light);
+  text-decoration: none;
+}
+
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -501,6 +521,15 @@ main {
   color: var(--text-muted);
   border-top: 1px solid var(--border);
   text-align: center;
+}
+
+.site-footer a {
+  color: inherit;
+  font-weight: 500;
+}
+
+.site-footer a:hover {
+  color: var(--accent);
 }
 
 .empty-state {
