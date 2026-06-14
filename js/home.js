@@ -1,11 +1,11 @@
-import { loadCases, sortTableCases, renderCaseTableBody } from "./app.js";
+import { loadCases, sortTableCases, renderCaseTableBody, saveTableSort, loadTableSort } from "./app.js";
 
 const table = document.querySelector(".case-table");
 const tableBody = document.getElementById("case-table-body");
 const tableHead = table?.querySelector("thead");
 
 let allCases = [];
-let currentSort = { column: "date", direction: "asc" };
+let currentSort = loadTableSort();
 
 function getCaseIdFromRow(row) {
   const href = row.dataset.href;
@@ -81,6 +81,7 @@ function renderTable() {
   tableBody.innerHTML = renderCaseTableBody(sorted);
   bindTableRows();
   updateSortIndicators();
+  saveTableSort(currentSort);
 }
 
 function handleSortClick(event) {
@@ -125,6 +126,7 @@ async function init() {
     // Keep cases parsed from the static table rows.
   }
 
+  saveTableSort(currentSort);
   updateSortIndicators();
 }
 

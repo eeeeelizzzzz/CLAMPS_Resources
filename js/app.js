@@ -38,8 +38,15 @@ const CASE_ALIASES = {
   sea_breeze_c2: "sea_breeze",
 };
 
+const TABLE_SORT_STORAGE_KEY = "clampsCaseGallery.tableSort";
+const DEFAULT_TABLE_SORT = { column: "date", direction: "asc" };
+
+function resolveCaseId(id) {
+  return CASE_ALIASES[id] || id;
+}
+
 function getCaseById(cases, id) {
-  const resolvedId = CASE_ALIASES[id] || id;
+  const resolvedId = resolveCaseId(id);
   return cases.find((entry) => entry.id === resolvedId);
 }
 
@@ -112,6 +119,46 @@ function sortTableCases(cases, column, direction) {
     if (compare !== 0) return compare * factor;
     return a.id.localeCompare(b.id) * factor;
   });
+}
+
+function loadTableSort() {
+  try {
+    const raw = sessionStorage.getItem(TABLE_SORT_STORAGE_KEY);
+    if (!raw) {
+      return { ...DEFAULT_TABLE_SORT };
+    }
+
+    const parsed = JSON.parse(raw);
+    if (
+      TABLE_SORT_COLUMNS[parsed.column] &&
+      (parsed.direction === "asc" || parsed.direction === "desc")
+    ) {
+      return parsed;
+    }
+  } catch {
+    // Ignore invalid stored sort state.
+  }
+
+  return { ...DEFAULT_TABLE_SORT };
+}
+
+function saveTableSort(sort) {
+  sessionStorage.setItem(TABLE_SORT_STORAGE_KEY, JSON.stringify(sort));
+}
+
+function getCaseNeighbors(cases, caseId, sort = loadTableSort()) {
+  const sorted = sortTableCases(cases, sort.column, sort.direction);
+  const resolvedId = resolveCaseId(caseId);
+  const index = sorted.findIndex((entry) => entry.id === resolvedId);
+
+  if (index === -1) {
+    return { prev: null, next: null };
+  }
+
+  return {
+    prev: index > 0 ? sorted[index - 1] : null,
+    next: index < sorted.length - 1 ? sorted[index + 1] : null,
+  };
 }
 
 function filterCases(cases, query) {
@@ -189,6 +236,43 @@ function renderCaseTableBody(cases) {
   }
 
   return cases.map(renderCaseTableRow).join("");
+}
+
+function renderCaseNavLink(entry, direction) {
+  const isPrev = direction === "prev";
+  const arrow = isPrev ? "←" : "→";
+  const label = isPrev ? "Previous case" : "Next case";
+
+  return `
+    <a
+      class="case-nav__link case-nav__link--${direction}"
+      href="${casePageUrl(entry.id)}"
+    >
+      <span class="case-nav__direction">${isPrev ? `${arrow} ${label}` : `${label} ${arrow}`}</span>
+      <span class="case-nav__title">${entry.title}</span>
+      <span class="case-nav__meta">${formatDate(entry.date)} · ${entry.subtitle}</span>
+    </a>
+  `;
+}
+
+function renderCaseNav(prev, next) {
+  if (!prev && !next) {
+    return "";
+  }
+
+  const prevHtml = prev
+    ? renderCaseNavLink(prev, "prev")
+    : `<span class="case-nav__spacer" aria-hidden="true"></span>`;
+  const nextHtml = next
+    ? renderCaseNavLink(next, "next")
+    : `<span class="case-nav__spacer" aria-hidden="true"></span>`;
+
+  return `
+    <nav class="case-nav" aria-label="Case navigation">
+      ${prevHtml}
+      ${nextHtml}
+    </nav>
+  `;
 }
 
 function renderCaseCard(entry) {
@@ -290,7 +374,11 @@ export {
   formatDate,
   getCaseById,
   getQueryParam,
+  resolveCaseId,
   casePageUrl,
+  loadTableSort,
+  saveTableSort,
+  getCaseNeighbors,
   sortCases,
   sortTableCases,
   filterCases,
@@ -298,6 +386,7 @@ export {
   renderCaseCard,
   renderCardTags,
   renderTags,
+  renderCaseNav,
   renderFigures,
   renderSections,
 };

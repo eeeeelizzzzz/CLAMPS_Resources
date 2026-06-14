@@ -3,9 +3,11 @@ import {
   formatDate,
   getCaseById,
   getQueryParam,
+  getCaseNeighbors,
   renderTags,
   renderFigures,
   renderSections,
+  renderCaseNav,
 } from "./app.js";
 import { renderCaseMath } from "./math.js";
 
@@ -39,7 +41,11 @@ async function init() {
 
     document.title = `${entry.title} — CLAMPS Case Gallery`;
 
+    const { prev, next } = getCaseNeighbors(cases, caseId);
+
     content.innerHTML = `
+      ${renderCaseNav(prev, next)}
+
       <header class="case-header">
         <h1>${entry.title}</h1>
         <div class="case-meta">
@@ -54,6 +60,8 @@ async function init() {
       ${renderFigures(entry)}
 
       ${renderSections(entry.sections)}
+
+      ${renderCaseNav(prev, next)}
     `;
     renderCaseMath(content);
   } catch (error) {
