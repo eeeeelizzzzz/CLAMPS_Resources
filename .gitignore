@@ -1,5 +1,7 @@
 # Repo-wide ignores
 .DS_Store
+__pycache__/
+*.py[cod]
 
 # Case figure reproduction working files
 case_reproduce/output/

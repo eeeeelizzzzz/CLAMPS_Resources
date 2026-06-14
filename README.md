@@ -29,7 +29,8 @@ This repository contains a GitHub Pages site showcasing CLAMPS example cases wit
 
 1. Place the combined plot PNG in `images/` using the naming pattern `{case_id}_instrument_template_4panel.png`.
 2. Add or edit an entry in `data/cases.json` with `id`, `date`, `title`, `subtitle` (`CLAMPS1` or `CLAMPS2`), `campaign`, `location`, `image` (or `images` for multi-figure cases), and optional thematic `tags`.
-3. For future per-case content, add a `sections` array to the case entry. Supported section types include `text`, `html`, and `image` (see `js/app.js`).
+3. For future per-case content, add a `sections` array to the case entry. Supported section types include `text`, `list`, `html`, and `image` (see `js/app.js`).
+4. Instrument-template suptitles use **deployment metadata** from `cases.json` (`{campaign} · {location} · {subtitle}`). To refresh titles on existing PNGs: `python3 scripts/fix_gallery_suptitles.py`.
 
 
 ## GitHub Pages deployment

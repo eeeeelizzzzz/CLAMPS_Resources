@@ -29,6 +29,7 @@ from awaken_la_diagnostics import (  # noqa: E402
     load_fuzzy_pblh,
 )
 from case_gallery.case_lib import CaseSpec, find_case_files, find_pbl_file, get_case  # noqa: E402
+from case_gallery.gallery_suptitle import format_suptitle, load_gallery_image_metadata  # noqa: E402
 from case_gallery.plot_limits import (  # noqa: E402
     limits_for_case,
     q_ticks,
@@ -80,10 +81,19 @@ def plot_instrument(case_id: str, *, force: bool = False) -> Path:
 
     wind_title = format_wind_panel_title(wind_source)
 
-    suptitle = (
-        f"{case.project} CLAMPS{case.platform[-1]}\n"
-        f"{case_date.isoformat()} · CLAMPS observations · PBLH (fuzzy logic)"
-    )
+    gallery_meta = load_gallery_image_metadata().get(case_id)
+    if gallery_meta:
+        suptitle = format_suptitle(
+            gallery_meta["campaign"],
+            gallery_meta["location"],
+            gallery_meta["subtitle"],
+            datetime.strptime(gallery_meta["date"], "%Y-%m-%d").date(),
+        )
+    else:
+        suptitle = (
+            f"{case.project} CLAMPS{case.platform[-1]}\n"
+            f"{case_date.isoformat()} · CLAMPS observations · PBLH (fuzzy logic)"
+        )
 
     os.environ.setdefault("MPLCONFIGDIR", str(MPLCONFIG_DIR))
     plot_four_panel_template(

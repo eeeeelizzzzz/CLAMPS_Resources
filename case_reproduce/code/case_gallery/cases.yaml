@@ -1,4 +1,5 @@
-# Binder demo — NWCRIL2020 CLAMPS1, 2020-07-30 (gallery ci_c1 / gravity_waves_c1).
+# Reproduction pipeline cases (plot_instrument / Binder).
+# Gallery metadata (campaign, city) lives in data/cases.json at repo root.
 cases:
   ci_c1:
     category: ci

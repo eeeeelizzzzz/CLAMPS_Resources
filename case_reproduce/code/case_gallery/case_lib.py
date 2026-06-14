@@ -23,15 +23,17 @@ from paths import (
 # Approximate CLAMPS site coordinates by campaign (lat °N, lon °E, alt m MSL)
 PROJECT_SITES: dict[str, tuple[float, float, float]] = {
     "TRACER": (29.617, -95.75, 15.0),
+    "NWCRIL2020": (35.01, -97.52, 360.0),
+    "Norman": (35.01, -97.52, 360.0),
+    "NWC Ops": (35.01, -97.52, 360.0),
+    "VORTEX-USA": (34.67, -86.53, 200.0),
+    "BLISSFUL": (34.35, -97.49, 310.0),
+    "AWAKEN": (36.15, -97.38, 320.0),
+    "AWAKEN2023": (36.15, -97.38, 320.0),
     "PERiLS2022": (30.15, -92.20, 10.0),
     "PERiLS2023": (30.15, -92.20, 10.0),
-    "AWAKEN": (36.3798, -97.5234, 321.0),
-    "AWAKEN2023": (36.3798, -97.5234, 321.0),
-    "Norman": (35.01, -97.52, 360.0),
-    "BLISSFUL": (32.30, -90.85, 80.0),
     "SPLASH": (36.61, -121.64, 50.0),
     "PBLtops": (36.61, -97.49, 318.0),
-    "NWCRIL2020": (36.61, -97.49, 318.0),
 }
 
 _DEFAULT_SITE = PROJECT_SITES["Norman"]

@@ -34,6 +34,8 @@ function formatDate(isoDate) {
 const CASE_ALIASES = {
   ci_c1: "ci_gravity_waves_c1",
   gravity_waves_c1: "ci_gravity_waves_c1",
+  sea_breeze_c1: "sea_breeze",
+  sea_breeze_c2: "sea_breeze",
 };
 
 function getCaseById(cases, id) {
@@ -256,6 +258,19 @@ function renderSections(sections) {
           <section class="content-section">
             <h2>${section.title}</h2>
             <img src="${section.src}" alt="${section.alt || section.title}" loading="lazy">
+          </section>
+        `;
+      }
+
+      if (section.type === "list") {
+        const items = (section.items || [])
+          .map((item) => `<li>${item}</li>`)
+          .join("");
+
+        return `
+          <section class="content-section">
+            <h2>${section.title}</h2>
+            <ul>${items}</ul>
           </section>
         `;
       }

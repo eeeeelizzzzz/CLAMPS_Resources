@@ -5,24 +5,29 @@
     "title": "Nocturnal Low-Level Jet",
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
-    "location": "Oklahoma",
+    "location": "Norman, OK",
     "image": "images/nllj_c2_instrument_template_4panel.png",
-    "tags": ["boundary layer", "nocturnal"],
+    "tags": ["boundary layer", "nocturnal", "wind"],
     "sections": [
       {
         "type": "text",
         "title": "Case overview",
-        "content": "A nocturnal low-level jet (NLLJ) sampled at the Norman, Oklahoma home base (NWC/NSSL). This is routine CLAMPS2 operations data from 2016 — not a BLISSFUL deployment (BLISSFUL was a separate 2021 Oklahoma campaign). After sunset the surface layer decouples and southwesterly flow accelerates into a wind-speed maximum a few hundred meters above ground. CLAMPS2 combines thermodynamic profiling (TROPoe / AERI–MWR), Doppler-lidar winds (WINDoe), and turbulence (DLFP) to capture the jet and the stable layer beneath it."
+        "content": "This case showcases a classic, strongly developed Nocturnal Low-Level Jet (NLLJ) observed by CLAMPS2 in Norman, Oklahoma. As the daytime convective mixing ceases early in the period, a sharp surface-based inversion forms, decoupling the residual layer from surface friction. This triggers a classic inertial oscillation, accelerating southerly winds within the lower kilometer of the atmosphere. Overnight, a distinct veering (clockwise turning) of the wind profile is evident both with height—shifting from southerly at the surface to south-westerly above the jet core in a response to warm air advection—and over time as the inertial wave evolves. The jet reaches its peak intensity during the overnight hours before rapidly mixing out after sunrise as the daytime convective boundary layer (CBL) develops"
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Thermal Structure & Inversion (Panel A): Following 03:00 UTC, the virtual potential temperature ($\\theta_v$) shows the rapid development of a strong surface-based stable layer (indicated by the cooler blue/white shading near the surface). Convective heating begins around 12:00–13:00 UTC, driving a rapid rise in the fuzzy-logic Planetary Boundary Layer Height (PBLH) from ~250 m up to 1.75 km by late afternoon.",
+          "Moisture Transport (Panel B): Strong southerly advection maintains a deep layer of high specific humidity ($q \\approx 12\\text{ to } 15\\text{ g kg}^{-1}$) below 1.0 km throughout the nocturnal period, providing the classic moisture-tongue setup typical of Great Plains high-impact weather environments.",
+          "The Jet Core (Panel C): The NLLJ becomes clearly defined by 03:00 UTC, with a core height centered between 250 m and 600 m. Peak horizontal wind speeds exceed $15\\text{ m s}^{-1}$ between 04:00 UTC and 10:00 UTC. The wind barbs show remarkably steady southerly-to-southwesterly flow throughout the jet's lifespan.",
+          "Turbulence & Mixing (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) shows an exceptionally quiet nocturnal boundary layer beneath the jet core. However, right around 13:00 UTC, a stark explosion of turbulent kinetic energy tracks perfectly with the rising PBLH, marking the breakdown of the jet via solar heating and convective thermals."
+        ]
       },
       {
         "type": "text",
-        "title": "What to look for",
-        "content": "In the overnight hours (roughly 03–12 UTC), Panel C shows a jet core near 0.5 km with speeds exceeding 15 m s⁻¹ and southwesterly barbs. Panels A and B show a shallow, stable, moist layer capped below ~0.3 km (fuzzy PBLH line). Panel D stays quiescent until afternoon, when deep mixing develops. Together this illustrates how CLAMPS resolves kinematic and thermodynamic structure through the stable-to-convective transition."
-      },
-      {
-        "type": "text",
-        "title": "Instruments",
-        "content": "θᵥ and water vapor: TROPoe (AERI + microwave radiometer). Horizontal wind: WINDoe VAD from DL-PPI. Turbulence: DLFP vertical-velocity variance (σ²_w, log scale). Black line on all panels: fuzzy PBL height estimate."
+        "title": "Additional Visualizations",
+        "content": "To further illustrate the development and decay of the NLLJ, we have included additional figures here. These visualizations are not the standard instrument review set, but are included here to provide a more complete picture of the case."
       }
     ]
   },
@@ -31,28 +36,62 @@
     "date": "2018-08-26",
     "title": "Nocturnal Low-Level Jet",
     "subtitle": "CLAMPS1",
-    "campaign": "TRACER",
-    "location": "Texas",
+    "campaign": "NWC Ops",
+    "location": "Norman, OK",
     "image": "images/nllj_c1_instrument_template_4panel.png",
-    "tags": ["boundary layer", "nocturnal"]
+    "tags": ["boundary layer", "nocturnal"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case showcases a beautifully resolved, high-intensity Nocturnal Low-Level Jet (NLLJ) captured by the CLAMPS1 platform in Norman, Oklahoma. Following sunset, a rapid decoupling of the boundary layer isolates the residual layer from surface friction, instigating a classic inertial oscillation. This drives a significant acceleration of the southerly wind field just above a shallow, surface-based radiation inversion. Throughout the evening, strong veering (clockwise turning) of the wind profile is highly visible both with height and across time as the ageostrophic wind vector rotates. The jet maintains its integrity until approximately 12:00 UTC, after which solar heating triggers a rapid morning transition into a deep daytime convective boundary layer (CBL)."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Thermal Structure & Inversion (Panel A): A shallow, strong surface-based stable layer forms rapidly after 02:00 UTC, keeping the immediate surface cool ($\\theta_v < 300\\text{ K}$, shown in blue/white). The morning transition begins after 12:00 UTC, showing an interesting two-stage boundary layer growth: an initial shallow convective lift to ~500 m between 14:00 and 16:00 UTC, followed by a rapid burst up to nearly 1.9 km by 22:00 UTC.",
+          "Moisture Transport (Panel B): Steady low-level advection maintains a deep layer of high specific humidity ($q \\approx 11\\text{ to }14\\text{ g kg}^{-1}$) capped entirely below 1.0 km during the nocturnal period. Once the CBL deepens past 16:00 UTC, this moisture is efficiently mixed through the full 2.0 km column, resulting in a drop in near-surface specific humidity.",
+          "The Jet Core (Panel C): The NLLJ stabilizes by 04:00 UTC, with its core centered slightly higher than the 2016 case, sitting between 500 m and 750 m. Peak horizontal wind speeds exceed $15\\text{ m s}^{-1}$ (bright yellow) continuously between 05:00 and 10:00 UTC. The wind barbs capture a classic inertial rotation: at 500 m, winds clock from south-southeast at 02:00 UTC, to purely southerly at 05:00 UTC, to south-southwesterly by 09:00 UTC.",
+          "Turbulence & Mixing (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) highlights an extraordinarily quiescent nocturnal environment beneath the jet, with variance plunging to near-baseline levels ($10^{-2}\\text{ m}^2\\text{ s}^{-2}$). The daytime turbulent decay of the jet is spectacular, with thermal updrafts and downdrafts completely dominating the column after 16:00 UTC."
+        ]
+      }
+    ]
   },
   {
     "id": "stable_bad_dl_c1",
     "date": "2019-01-25",
     "title": "Stable Boundary Layer — Degraded Lidar Quality",
     "subtitle": "CLAMPS1",
-    "campaign": "PERiLS 22",
-    "location": "Arkansas",
+    "campaign": "VORTEX-USA",
+    "location": "Courtland, AL",
     "image": "images/stable_bad_dl_c1_instrument_template_4panel.png",
-    "tags": ["stable boundary layer"]
+    "tags": ["stable boundary layer"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This wintertime case illustrates a classic operational limitation of Doppler lidar systems within the CLAMPS platform. Following a cold or clean air mass passage, lidar observing can be limited under very low aerosol concentrations. Because Doppler lidars rely on atmospheric aerosols (such as dust, smoke, or pollution) to backscatter the transmitted laser pulse, a lack of particulate matter results in a low signal-to-noise ratio (SNR). Consequently, the lidar is unable to retrieve horizontal wind vectors or vertical velocity statistics across much of the column, despite the thermodynamic instruments continuing to capture the evolution of a cold, stable air mass."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Thermal Structure (Panel A): Unlike the summer cases, the virtual potential temperature ($\\theta_v$) is extremely cold, hovering between 270 K and 280 K throughout the entire period. A persistent, shallow stable layer remains pinned beneath 150 m. Between 08:00 UTC and 14:00 UTC, a distinct elevated cooling event ($\\theta_v < 272\\text{ K}$, deep blue) descends from 1.25 km down to 0.5 km, marking a cold advection or frontal feature that the AERI/MWR thermodynamic retrievals successfully capture.",
+          "Moisture Sublimation/Deficit (Panel B): Atmospheric moisture is exceptionally scarce, with specific humidity ($q$) flatlined near $1\\text{ to }3\\text{ g kg}^{-1}$ through the entire 2.0 km column. This extremely dry, cold continental air mass typically correlates with pristine, aerosol-poor air.",
+          "Lidar Data Fragmentation & Noise (Panel C): The horizontal wind plot (retrieved via DLVAD) shows a near-total failure of the retrieval algorithm. Outside of a small pocket around 07:00–10:00 UTC, the panel is dominated by random, unphysical speckle and chaotic wind barbs. This is a classic visual signature of the algorithm trying to process random atmospheric background noise because the actual laser backscatter signal has fallen below the instrument's detection threshold.",
+          "Vertical Velocity Variance Dropouts (Panel D): The $\\sigma_w^2$ panel similarly reveals severe data fragmentation. While a brief plume of turbulent variance is resolved between 07:00 UTC and 11:00 UTC (coinciding with the shifting feature seen in the temperature profile), the rest of the 24-hour period is largely blank or speckled with unphysical noise, showcasing the total loss of vertical velocity tracking due to the aerosol data gap."
+        ]
+      }
+    ]
   },
   {
     "id": "ci_gravity_waves_c1",
     "date": "2020-07-30",
     "title": "Convection Initiation & Gravity Waves",
     "subtitle": "CLAMPS1",
-    "campaign": "NWCRIL 20",
-    "location": "Oklahoma",
+    "campaign": "NWCRIL 2020",
+    "location": "Norman, OK",
     "images": [
       {
         "src": "images/ci_c1_instrument_template_4panel.png",
@@ -63,7 +102,24 @@
         "label": "Gravity waves"
       }
     ],
-    "tags": ["convection", "initiation", "gravity waves"]
+    "tags": ["convection", "initiation", "gravity waves"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case captures the complex interaction between a nocturnal low-level jet, wave dynamics, and subsequent convection initiation (CI). Prior to 11:00 UTC, a well-defined NLLJ dominates the lower kilometer. Around 11:00 UTC, an incoming mesoscale disturbance abruptly disrupts the jet. This interaction excites a classic atmospheric bore visible as massive, periodic vertical undulations in the thermodynamic and moisture fields between 11:00 and 16:00 UTC. The intense, localized vertical lifting supplied by these waves successfully hoists a deep layer of low-level moisture past the capping inversion, destabilizing the environment and triggering deep convection later in the period."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Dramatic Wave Undulations (Panel A): Between 11:00 UTC and 16:00 UTC, the virtual potential temperature ($\\theta_v$) profiles reveal a spectacular undulating wave structure. The fuzzy-logic boundary layer height (PBLH) line oscillates violently, tracking a massive initial crest up to 1.1 km at 12:00 UTC, dropping into a trough at 13:00 UTC, and surging back to 1.1 km at 14:00 UTC. This periodic lifting and dropping is the classic thermodynamic signature of an atmospheric bore train.",
+          "The Moisture Pump (Panel B): Prior to the wave's arrival, an incredibly rich reservoir of moisture ($q \\approx 15\\text{ to }18\\text{ g kg}^{-1}$) is confined below 1.0 km. As the wave train passes, it acts as a mechanical pump, physically hoisting this deep moisture layer upward by more than 1 km during the wave crests. This substantial vertical displacement is critical for breaching the nocturnal capping inversion to initiate convection.",
+          "Jet Termination & Wind Shift (Panel C): A strong NLLJ with horizontal wind speeds exceeding $15\\text{ m s}^{-1}$ is active from 02:00 to 11:00 UTC. Right at 11:00 UTC, the jet is abruptly sheared and terminated by the arriving boundary. Following the boundary passage, the kinematic profile exhibits structural transitions that match the wave periodicity, followed by deep directional shifting later in the day as convective cells develop.",
+          "Wave-Induced Turbulence & Storm Growth (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) transitions from a stratified, quiet nocturnal regime to showing distinct bursts of enhanced turbulence that align perfectly with the wave crests. After 16:00 UTC, the widespread, intense variance throughout the entire 2.0 km column marks the realization of deep convective mixing and storm development."
+        ]
+      }
+    ]
   },
   {
     "id": "diurnal_c2",
@@ -71,9 +127,26 @@
     "title": "Diurnal Cycle",
     "subtitle": "CLAMPS2",
     "campaign": "BLISSFUL",
-    "location": "Oklahoma",
+    "location": "Washington, OK",
     "image": "images/diurnal_c2_instrument_template_4panel.png",
-    "tags": ["diurnal", "boundary layer"]
+    "tags": ["diurnal", "boundary layer"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case captures a highly complex diurnal boundary layer cycle observed by CLAMPS2 during the BLISSFUL campaign. The standard daytime convective boundary layer (CBL) is disrupted during the late afternoon and evening by nearby convection. Rather than undergoing a clean, progressive collapse at sunset (~01:00 UTC), the boundary layer interacts with an incoming convective outflow boundary around 23:30 UTC. This mesoscale feature physically hoists the local air mass and triggers a period of reinvigorated boundary layer mixing right at sunset. The subsequent nocturnal period is characterized by a delayed shutdown of surface-based turbulence and prominent, periodic gravity-wave-like undulations trapped within the upper boundary layer and residual layer."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Daytime Convection & Cloud Cover (18:00–22:00 UTC): As seen in image_c3451e.jpg (Panels A & B), the automated retrieval flags a series of cloud bases between 1.25 km and 1.5 km (black/white scatter points). This aligns perfectly with the cloud symbols and strong, alternating thermal updraft/downdraft cores resolved in the high-resolution vertical velocity scan (CLAMPS2stare.jpg).",
+          "Convective Outflow & Forced Ascent (~23:30 UTC): Right before sunset, a sharp mesoscale boundary impacts the site. This event is marked in image_c3451e.jpg by a sudden structural shift in $\\theta_v$ and moisture, alongside a brief uptick in wind speed (Panel C). The underlying mechanism is explicitly exposed in CLAMPS2stare.jpg as a narrow, intense column of deep vertical ascent ($w > 1\\text{ m s}^{-1}$) forced by the convective outflow.",
+          "Reinvigorated Mixing & Delayed Sunset Shutdown (00:00–03:00 UTC): While solar forcing diminishes around 01:00 UTC, the boundary passage mechanically rejuvenates turbulent mixing. Panel D of image_c3451e.jpg shows that vertical velocity variance ($\\sigma_w^2$) remains elevated deep into the evening. CLAMPS2stare.jpg details this as a multi-stage transition: a burst of post-boundary mixing followed by a significantly delayed, gradual decay of surface-based eddies extending past 03:00 UTC.",
+          "Nocturnal Wave Features & Intermittent Turbulence (01:00–06:00 UTC): Once the surface fully decouples, the stable nocturnal boundary layer locks in near the ground ($<250\\text{ m}$). However, the upper boundary layer remains highly dynamic. Panel D displays persistent bands of elevated variance aloft, which CLAMPS2stare.jpg successfully resolves as a continuous train of periodic, wave-like vertical velocity oscillations paired with pockets of intermittent shear-driven turbulence in the residual layer."
+        ]
+      }
+    ]
   },
   {
     "id": "deep_cbl_c1",
@@ -81,29 +154,78 @@
     "title": "Deep Convective Boundary Layer",
     "subtitle": "CLAMPS1",
     "campaign": "TRACER",
-    "location": "Texas",
+    "location": "Aldine, TX",
     "image": "images/deep_cbl_c1_instrument_template_4panel.png",
-    "tags": ["convective boundary layer"]
+    "tags": ["convective boundary layer"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case showcases the rapid growth and evolution of an exceptionally deep, well-mixed daytime Convective Boundary Layer (CBL) captured by the CLAMPS1 platform. Following a typical suppressed nocturnal regime, intense solar heating drives a textbook morning boundary layer transition starting around 12:00 UTC. Driven by strong surface buoyancy fluxes, the boundary layer rapidly grows through the morning and afternoon, with the fuzzy-logic PBLH completely surpassing the 2.0 km level by 18:30 UTC. This case perfectly demonstrates the power of thermodynamic and kinematic instrument synergy in observing full-column boundary layer destabilization and deep convective mixing."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Intense Afternoon Buoyancy (Panel A): Following the morning transition, virtual potential temperature ($\\theta_v$) reveals uniform, deep vertical warming. By 18:00 UTC, a thoroughly mixed thermal profile exceeding $312\\text{ K}$ (deep red shading) spans from the surface all the way to the top of the plot. The black PBLH tracking line reaches its maximum altitude of 2.0 km around 18:30 UTC and stays pegged there for several hours.",
+          "Vertical Moisture Dilution (Panel B): Prior to sunrise, high specific humidity ($q \\approx 15\\text{ to }18\\text{ g kg}^{-1}$) is trapped close to the surface beneath the nocturnal inversion. As the CBL expands vertically, this moisture is efficiently redistributed through a much larger volume. This process thins out the near-surface moisture concentration while simultaneously transporting water vapor up to the 2.0 km level.",
+          "Momentum Uniformization (Panel C): As the convective thermals maximize their mixing efficiency between 17:00 UTC and 22:00 UTC, the horizontal wind profile becomes highly uniform with height. The horizontal wind speed drops significantly to less than $5\\text{ m s}^{-1}$ (deep purple shading), demonstrating a classic weak-gradient afternoon CBL where convective overturning dominates over horizontal advection.",
+          "Vigorous Thermal Updrafts (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) provides the ultimate proof of an active CBL. Starting at 13:00 UTC, there is a massive explosion of turbulent kinetic energy ($1\\text{ to }10\\text{ m}^2\\text{ s}^{-2}$, bright yellow), showing intense thermal updrafts and downdrafts that map identically onto the rising PBLH boundary line."
+        ]
+      }
+    ]
   },
   {
-    "id": "sea_breeze_c1",
+    "id": "sea_breeze",
     "date": "2022-07-17",
     "title": "Sea Breeze",
-    "subtitle": "CLAMPS1",
+    "subtitle": "CLAMPS1 & CLAMPS2",
     "campaign": "TRACER",
-    "location": "Texas",
-    "image": "images/sea_breeze_c1_instrument_template_4panel.png",
-    "tags": ["sea breeze", "coastal"]
-  },
-  {
-    "id": "sea_breeze_c2",
-    "date": "2022-07-17",
-    "title": "Sea Breeze",
-    "subtitle": "CLAMPS2",
-    "campaign": "TRACER",
-    "location": "Texas",
-    "image": "images/sea_breeze_c2_instrument_template_4panel.png",
-    "tags": ["sea breeze", "coastal"]
+    "location": "Greater Houston, TX",
+    "images": [
+      {
+        "src": "images/sea_breeze_c1_instrument_template_4panel.png",
+        "label": "CLAMPS1 — Aldine, TX (inland)",
+        "location": "Aldine, TX",
+        "subtitle": "CLAMPS1"
+      },
+      {
+        "src": "images/sea_breeze_c2_instrument_template_4panel.png",
+        "label": "CLAMPS2 — La Marque, TX (coastal)",
+        "location": "La Marque, TX",
+        "subtitle": "CLAMPS2"
+      }
+    ],
+    "tags": ["sea breeze", "coastal"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case highlights the simultaneous observation of a classic Gulf Coast sea breeze event by two co-deployed CLAMPS platforms during the TRACER campaign in the greater Houston, Texas area. CLAMPS2 was positioned near the coast (south of Houston toward Galveston, image_c32f1d.jpg), while CLAMPS1 was deployed further inland (north of Houston in Aldine, image_c32f39.jpg). Together, these datasets capture the landward progression of rich marine air and the deep convective boundary layer (CBL) growth. Crucially, this case documents a common tropical coastal testing limitation: severe overnight lidar signal dropouts caused by dew condensing onto the lidar lens scanner window as high-moisture air cools to its dewpoint."
+      },
+      {
+        "type": "list",
+        "title": "Coastal marine boundary layer vs. inland modification",
+        "items": [
+          "Thermal Environment (Panels A): CLAMPS2 (Coastal) exhibits a significantly tempered thermal profile overnight and early in the day due to marine proximity. In contrast, CLAMPS1 (Inland) displays a more pronounced diurnal temperature swing, with warmer afternoon virtual potential temperatures ($\\theta_v \\approx 312\\text{ K}$) and a deeper convective boundary layer reaching nearly 2.0 km by 18:00 UTC.",
+          "Moisture Profiles (Panels B): Both sites exhibit a remarkably wet boundary layer, but the marine source is distinct at the coast. CLAMPS2 sustains an ultra-rich moisture column ($q \\approx 15\\text{ to }18\\text{ g kg}^{-1}$) extending up to 1.5 km during the overnight hours. At CLAMPS1, this high moisture is slightly more suppressed and shallower ($<1.0\\text{ km}$) before daytime mixing distributes it upward."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Lidar lens condensation analysis (Panels C & D)",
+        "content": "The most striking feature of this multi-station comparison is the timing and duration of the data dropouts (white gaps in $\\sigma_w^2$ and blank/purple blocks in the wind profiles):"
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "CLAMPS2 (Coastal — image_c32f1d.jpg): Situated close to the Gulf moisture source, the air mass reaches saturation rapidly as overnight cooling takes place. This triggers a massive, prolonged lens condensation event lasting nearly 6.5 hours (from ~07:30 UTC to 14:00 UTC), completely attenuating the lidar beam until solar heating evaporates the moisture off the window.",
+          "CLAMPS1 (Inland — image_c32f39.jpg): Farther inland at Aldine, lower relative humidity delays saturation. The lens condensation window is heavily mitigated, lasting only about 2 hours (from ~10:30 UTC to 12:30 UTC).",
+          "The Complementary Benefit: While the Doppler Lidars are blinded by dew, the AERI and MWR thermodynamic profiles (Panels A and B) remain entirely unbothered, demonstrating the resilience of a multi-instrument suite in saturated environments."
+        ]
+      }
+    ]
   },
   {
     "id": "stable_good_dl_c2",
@@ -111,69 +233,196 @@
     "title": "Stable Boundary Layer — Good Lidar Quality",
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
-    "location": "Oklahoma",
+    "location": "Norman, OK",
     "image": "images/stable_good_dl_c2_instrument_template_4panel.png",
-    "tags": ["stable boundary layer"]
+    "tags": ["stable boundary layer"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This winter case provides a textbook example of a strongly stratified stable boundary layer (SBL) under high-shear conditions. Unlike summer cases where intense solar insulation rapidly erodes nocturnal structures, the weak wintertime sun is unable to break the robust low-level thermal inversion, allowing stable stratification to dominate the entire diurnal cycle. Crucially, this case demonstrates good Doppler lidar data quality. The instrument successfully maintains a high signal-to-noise ratio throughout the deep column, beautifully capturing an intense, low-level synoptic wind maximum exceeding $25\\text{ m s}^{-1}$ and the shear-driven turbulence it generates."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Persistent Thermal Inversion (Panel A): Near-surface virtual potential temperature ($\\theta_v$) remains locked in a cold state ($< 285\\text{ K}$, deep blue shading) throughout the entire 24 hours. The fuzzy-logic boundary layer height (PBLH) line remains heavily suppressed below 250 m for the first 13 hours. Even during peak daylight hours (15:00 to 21:00 UTC), there is no true convective breakout; the inversion merely modifies slightly, rising to a shallow ~500 m.",
+          "Dry Continental Air Mass (Panel B): Consistent with a cold post-frontal or continental winter air mass, the specific humidity ($q$) is extremely low, flatlining between $3\\text{ to }5\\text{ g kg}^{-1}$ throughout the 2.0 km column.",
+          "High-Velocity Wind Maximum (Panel C): In stark contrast to the pixelated noise of aerosol-depleted cases, the horizontal wind field is exceptionally clean and complete. A powerful low-level wind maximum is observed between 00:00 UTC and 08:00 UTC, with wind speeds peaking above $25\\text{ m s}^{-1}$ (bright yellow core) between 500 m and 1.0 km. The wind barbs capture strong westerly winds aloft shifting to north-westerly over time.",
+          "Shear-Driven Turbulence (Panel D): The vertical velocity variance ($\\sigma_w^2$) beautifully maps the fluid dynamics of the column. Between 00:00 and 07:00 UTC, the intense vertical wind shear underneath the jet core mechanically generates a deep layer of turbulence ($1\\text{ to }2\\text{ m}^2\\text{ s}^{-2}$). Once the core wind speed diminishes after 08:00 UTC, the mechanical engine shuts off, and the column plunges into an exceptionally quiet, non-turbulent laminar state ($\\le 10^{-2}\\text{ m}^2\\text{ s}^{-2}$, dark green) typical of an unperturbed SBL."
+        ]
+      }
+    ]
   },
   {
     "id": "cold_pool_c2",
     "date": "2023-06-28",
     "title": "Cold Pool",
     "subtitle": "CLAMPS2",
-    "campaign": "PERiLS 23",
-    "location": "Arkansas",
+    "campaign": "AWAKEN",
+    "location": "Orlando, OK",
     "image": "images/cold_pool_c2_instrument_template_4panel.png",
-    "tags": ["convection", "cold pool"]
+    "tags": ["convection", "cold pool"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case captures the arrival and subsequent modification of a deep convective cold pool observed by CLAMPS2 during the AWAKEN campaign. Prior to 04:30 UTC, the environment is characterized by a typical undisturbed summer night. At 04:30 UTC, an aggressive outflow boundary from nearby convection impacts the site. This density current drives an instantaneous drop in core temperature, an abrupt wind shift to strong northerly flow, and a massive surge in low-level water vapor. Following the frontal passage, the highly stratified, stable wake of the cold pool remains pinned to the surface for nearly ten hours before daytime solar insolation begins to slowly modify and break down the feature."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Thermal Discontinuity & Cold Pool Stratification (Panel A): At 04:30 UTC, the virtual potential temperature ($\\theta_v$) plummets instantly as the cold pool cuts through the column, dropping near-surface temperatures below $300\\text{ K}$ (blue shading). Automated retrieval flags track an ascending cloud base (black dots) rising from 0.6 km to 1.7 km along the heavily sloped leading edge of the density current. The cold air mass subsequently establishes a resilient, surface-based stable layer (~250 to 500 m deep) that resists erosion until past 14:00 UTC.",
+          "The Post-Frontal Moisture Surge (Panel B): The arriving cold pool acts as an intense moisture conveyor, driving specific humidity ($q$) up to peak values exceeding $16\\text{ to }18\\text{ g kg}^{-1}$ (deep blue shading) right at 04:30 UTC. This exceptionally moist profile remains locked within the shallow, post-frontal boundary layer, remaining starkly isolated from the drier air in the residual layer aloft.",
+          "Abrupt Directional Wind Shift (Panel C): The kinematic boundary layer undergoes a complete reorganization at 04:30 UTC. Weak southerly/southwesterly flow is instantly replaced by a sharp veering to northerly/northwesterly winds. Interestingly, a powerful, elevated post-frontal wind maximum ($> 18\\text{ m s}^{-1}$, yellow/green core) develops between 11:00 UTC and 14:00 UTC between 0.75 km and 1.5 km, gliding smoothly directly over the cold, stable surface film.",
+          "Frontal Head Turbulence vs. Wake Suppression (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) masterfully maps the mechanical forces at play. The leading edge of the cold pool (~04:30 UTC) exhibits a violent column-wide burst of turbulence ($>5\\text{ m}^2\\text{ s}^{-2}$, bright yellow), marking the intense mechanical shearing and forced lifting at the density current's head. Immediately behind this feature, the interior wake of the cold pool becomes strongly stratified and laminar (dark green), keeping surface-based turbulence completely suppressed for the remainder of the night."
+        ]
+      },
+      {
+        "type": "list",
+        "title": "Planned additional visualizations",
+        "items": [
+          "Surface meteogram (the hydrostatic pressure jump): A stacked 1D time series of surface temperature, wind speed/gusts, and station pressure from the CLAMPS2 trailer weather station. Convective cold pools possess a classic surface signature: a sudden thermodynamic drop paired with a sharp hydrostatic pressure jump (thunder-high) and wind gust. This grounds the 04:30 UTC upper-air boundary arrival with precise surface verification.",
+          "Regional NEXRAD radar reflectivity mosaic: A multi-panel horizontal radar layout or animated GIF tracking the convective line or decaying mesoscale convective system (MCS) responsible for shedding this outflow boundary across the AWAKEN domain. It provides essential spatial context, allowing users to see the exact orientation and forward speed of the gust front before it collided with the CLAMPS2 platform."
+        ]
+      }
+    ]
   },
   {
     "id": "ci_c2",
     "date": "2023-07-03",
     "title": "Convection Initiation",
     "subtitle": "CLAMPS2",
-    "campaign": "AWAKEN 23",
-    "location": "Oklahoma",
+    "campaign": "AWAKEN",
+    "location": "Orlando, OK",
     "image": "images/ci_c2_instrument_template_4panel.png",
-    "tags": ["convection", "initiation"]
+    "tags": ["convection", "initiation"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case from the AWAKEN campaign captures a pristine example of daytime convective boundary layer (CBL) growth, local convection initiation (CI), and a subsequent thunderstorm overpass. The first half of the period exhibits steady solar heating and well-behaved CBL growth that peaks near 1.0 km. Between 17:30 and 18:00 UTC, deep convection initiates and overruns the site. The storm's impact on the CLAMPS2 platform is clear, characterized by heavy precipitation that completely attenuates the Doppler lidar beam, kinematic shifting from convective downdrafts, and the arrival of a deep, surface-stabilizing convective cold pool."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "CBL Growth & Deep Post-Storm Cooling (Panel A): Steady solar insolation drives classic daytime boundary layer growth after 12:00 UTC, with the fuzzy-logic PBLH lifting cleanly to 1.0 km by 17:00 UTC. At 18:00 UTC, the boundary layer is violently disrupted by the storm. Following a brief wave-like oscillation, a massive convective cold pool floods the lower atmosphere after 19:30 UTC, dropping virtual potential temperatures ($\\theta_v$) below $300\\text{ K}$ (deep blue shading) and completely pinning the PBL to the surface.",
+          "Moisture Mixing & Saturated Wake (Panel B): Ambient boundary layer moisture ($q \\approx 12\\text{ to }14\\text{ g kg}^{-1}$) is efficiently mixed vertically through the 1.0 km column during afternoon destabilization. The storm's arrival at 18:00 UTC introduces a sharp, fractured discontinuity in the water vapor field, followed by a deeply saturated, cool air mass that remains trapped under the cold pool inversion for the rest of the period.",
+          "Convective Downbursts & Outflow Shifting (Panel C): Moderate southerly and southwesterly flow characterizes the pristine daytime CBL. Right at 18:00 UTC, the wind field undergoes an intense disruption marked by a vertical column of accelerated wind speeds exceeding $15\\text{ m s}^{-1}$ (bright yellow/green shading) and highly chaotic wind barbs, tracking the passage of a powerful convective downdraft and gust front.",
+          "Precipitation Attenuation & Signal Dropout (Panel D): The vertical velocity variance ($\\sigma_w^2$) beautifully highlights active thermal updrafts and downdrafts ($1\\text{ to }10\\text{ m}^2\\text{ s}^{-2}$) expanding upward with the PBLH template. At exactly 18:00 UTC and again at 19:30 UTC, massive vertical white gaps obliterate the data stream across the entire 2.0 km column. This is the classic visual signature of heavy rainfall over the platform, which completely attenuates the Doppler lidar's laser pulse and blocks data collection."
+        ]
+      }
+    ]
   },
   {
     "id": "gravity_waves_c2",
     "date": "2023-08-05",
     "title": "Gravity Waves",
     "subtitle": "CLAMPS2",
-    "campaign": "AWAKEN 23",
-    "location": "Oklahoma",
+    "campaign": "AWAKEN",
+    "location": "Orlando, OK",
     "image": "images/gravity_waves_c2_instrument_template_4panel.png",
-    "tags": ["gravity waves"]
+    "tags": ["gravity waves"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case from the AWAKEN campaign shows wave-driven boundary layer dynamics captured by the CLAMPS2 platform. The early part of the period features a steady, decoupling nocturnal boundary layer and a modest low-level jet. The highlight of the case occurs between 10:00 UTC and 20:00 UTC, when the atmosphere supports the generation and propagation of highly coherent wave features. This includes a sharp, solitary bore-like lifting event near 11:00 UTC, followed by an extended period of deep, long-period wave undulations that heavily modulate the thermal and moisture structure of the lower 1.25 km of the atmosphere."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Bore Passage & Deep Undulations (Panel A): Prior to 10:00 UTC, a shallow stable layer is confined below 250 m. At 11:00 UTC, a classic atmospheric bore or solitary wave sharply lifts this stable layer, causing the fuzzy-logic planetary boundary layer height (PBLH) to surge up to ~0.65 km before dropping back down. Following 14:00 UTC, a massive, long-period gravity wave train takes over, characterized by dramatic cooling ($\\theta_v < 300\\text{ K}$, blue shading) that stretches up to 1.25 km and undergoes deep, periodic vertical oscillations before flattening out after 20:00 UTC.",
+          "Moisture Boundary Coherence (Panel B): The specific humidity ($q$) field in image_28c33f.jpg acts as a highly passive tracer that maps the wave features perfectly. The sharp vertical spike at 11:00 UTC matches the initial bore crest. During the afternoon gravity wave event (14:00–19:00 UTC), a distinct dry air mass ($q \\approx 6\\text{ to }8\\text{ g kg}^{-1}$, light green) is advected near the surface, with its upper boundary oscillating in perfect lockstep with the thermal wave crests and troughs aloft.",
+          "Kinematic Reorganization & Wind Maximum (Panel C): A nocturnal low-level jet with south-southwesterly winds peaking near $15\\text{ m s}^{-1}$ is observed around 0.5 km between 06:00 UTC and 10:00 UTC. The arrival of the wave features completely disrupts this regime. Post-13:00 UTC, the wind profile undergoes a severe directional shift, transitioning to strong northeasterly/easterly flow aloft ($>15\\text{ m s}^{-1}$) that rides over the undulating near-surface stable layer.",
+          "Wave-Phased Turbulence Bursts (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) highlights how these laminar wave features interact with atmospheric shear. A distinct, localized burst of enhanced turbulence marks the nose of the initial bore at 11:00 UTC. Throughout the afternoon wave train, turbulence remains largely suppressed within the core of the cold pool, but exhibits intermittent, periodic enhancements aloft that align with the shear zones generated by the passing wave tilts."
+        ]
+      }
+    ]
   },
   {
     "id": "deep_cbl_c2",
     "date": "2023-08-25",
     "title": "Deep Convective Boundary Layer",
     "subtitle": "CLAMPS2",
-    "campaign": "AWAKEN 23",
-    "location": "Oklahoma",
+    "campaign": "AWAKEN",
+    "location": "Orlando, OK",
     "image": "images/deep_cbl_c2_instrument_template_4panel.png",
-    "tags": ["convective boundary layer"]
+    "tags": ["convective boundary layer"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case study from the AWAKEN campaign shows the classic, undisturbed lifecycle of a daytime Convective Boundary Layer (CBL) captured by CLAMPS2. The early morning hours are characterized by a shallow, stable boundary layer capped by a mild residual layer. Following 13:00 UTC, solar heating rapidly erodes the nocturnal inversion, initiating a textbook convective transition. Driven by surface buoyancy, the boundary layer grows steadily throughout the afternoon, with the planetary boundary layer height (PBLH) peaking at approximately 1.25 km. This dataset beautifully illustrates the vertical uniformization of potential temperature, moisture, and momentum under the influence of vigorous daytime thermal mixing."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Progressive Thermal Mixing (Panel A): In image_28bf21.jpg, the virtual potential temperature ($\\theta_v$) profiles display a clean transition from a shallow nocturnal stable layer (< 250 m) to a deeply mixed convective column. By 18:00 UTC, solar insolation establishes a uniform mixed layer with temperatures exceeding 312 K (deep red shading). The fuzzy-logic PBLH line captures a multi-stage growth: a rapid initial ascent to 1.0 km by 17:00 UTC, followed by a secondary push up to its peak near 1.25 km by 19:30 UTC.",
+          "Vertical Moisture Uniformization (Panel B): Overnight, boundary layer moisture ($q \\approx 11\\text{ to }13\\text{ g kg}^{-1}$) remains trapped close to the surface. As convective thermals grow during the day, this moisture is mixed vertically through the full 1.25 km column. This results in a well-mixed, homogeneous water vapor profile throughout the daytime boundary layer, topped by a sharp drop in moisture at the entrainment zone.",
+          "Convective Momentum Drag & Weak Winds (Panel C): The horizontal wind field exhibits a modest southerly low-level wind maximum ($10\\text{ to }12\\text{ m s}^{-1}$) around 400 m between 05:00 UTC and 08:00 UTC. In the afternoon (16:00 to 22:00 UTC), vigorous convective overturning efficiently mixes momentum vertically. Because the background synoptic flow is weak, this process causes horizontal wind speeds within the CBL to plunge below $5\\text{ m s}^{-1}$ (deep purple shading), leaving a calm, buoyancy-dominated environment.",
+          "Vigorous Convective Thermals (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) maps the exact spatial and temporal bounds of the daytime convective engine. Starting abruptly at 14:30 UTC, a massive plume of enhanced turbulence ($1\\text{ to }10\\text{ m}^2\\text{ s}^{-2}$, bright yellow/green) expands upward, tracking in perfect alignment with the rising PBLH line through the late afternoon before decaying rapidly near sunset (~23:00 UTC)."
+        ]
+      }
+    ]
   },
   {
     "id": "la_interaction_c1",
     "date": "2023-09-01",
     "title": "Land–Atmosphere Interaction",
     "subtitle": "CLAMPS1",
-    "campaign": "AWAKEN 23",
-    "location": "Oklahoma",
+    "campaign": "AWAKEN",
+    "location": "Covington, OK",
     "image": "images/la_interaction_c1_instrument_template_4panel.png",
-    "tags": ["land–atmosphere interaction"]
+    "tags": ["land–atmosphere interaction"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case provides a comprehensive dataset for exploring land-atmosphere (L-A) interactions, demonstrating how surface energy partition controls the thermodynamic state and diurnal growth of the planetary boundary layer. The first half of the period features a strongly stratified, stable nocturnal boundary layer. Following sunrise (~12:00 UTC), a rapid accumulation of surface sensible heat flux drives a violent flip in local stability regimes. This thermodynamic forcing triggers a clean, rapid expansion of the convective boundary layer (CBL), with the boundary layer height ($z_i$) climbing from near-surface levels to over 1.25 km in less than six hours."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Thermal Evolution & Rapid Morning Erosion (Panel A): In image_28bb7f.jpg, a strong surface-based stable layer is highly evident overnight, featuring cold virtual potential temperatures ($\\theta_v < 300\\text{ K}$, deep blue shading) pinned below 250 m. Solar heating completely obliterates this inversion after 13:00 UTC, leading to a vertically uniform mixed layer ($\\theta_v \\approx 310\\text{ K}$) that supports a steadily climbing fuzzy-logic PBLH peaking near 1.4 km at 21:00 UTC.",
+          "Moisture Mixing & Dilution (Panel B): High specific humidity ($q \\approx 11\\text{ to }13\\text{ g kg}^{-1}$) remains trapped in the shallow nocturnal layer before 12:00 UTC. As the boundary layer expands in the afternoon, dry air from the residual layer is entrained downward, effectively diluting near-surface moisture and distributing water vapor uniformly throughout the 1.4 km column.",
+          "Decoupled Low-Level Flow (Panel C): The horizontal wind field captures a modest southerly nocturnal wind maximum ($10\\text{ to }12\\text{ m s}^{-1}$) around 0.5 km between 06:00 and 10:00 UTC. During the afternoon convective phase, strong vertical mixing uniformizes the wind profile, weakening the lower column winds to $<5\\text{ m s}^{-1}$ as buoyant thermals dominate over horizontal momentum.",
+          "Explosive Convective Turbulence (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) marks the exact onset of the L-A feedback loop. At 13:30 UTC, a sudden, vertical plume of high variance ($1\\text{ to }10\\text{ m}^2\\text{ s}^{-2}$, bright yellow/green shading) erupts, mapping perfectly to the expanding boundary layer height template."
+        ]
+      }
+    ]
   },
   {
     "id": "sharp_grad_c2",
     "date": "2026-03-14",
-    "title": "Sharp Gradient",
+    "title": "Sharp Gradients",
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
-    "location": "Oklahoma",
+    "location": "Norman, OK",
     "image": "images/sharp_grad_c2_instrument_template_4panel.png",
-    "tags": ["fronts", "gradients"]
+    "tags": ["fronts", "gradients"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case provides a demonstration of the CLAMPS2 platform's ability to resolve non-idealized boundary layer interactions governed by wind shear and advection. The overnight period is punctuated by a major downward momentum transport event around 08:00 UTC. Accelerating winds aloft generate intense vertical shear, tripping mechanical turbulence that dynamically alters the lower atmosphere. Crucially, this case illustrates turbulent asymmetry: the mechanical mixing successfully mixes out passive moisture near the surface, yet completely fails to break the vertical temperature stratification because $\\theta_v$ acts as an active scalar locked against gravity by continuous surface radiative cooling. Later in the day, the afternoon boundary layer exhibits an anomalous moisture recovery, where low-level southerly advection completely overpowers the drying effects of convective entrainment."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "Downward Momentum Transport & Mechanical Turbulence (~05:00–10:00 UTC): In image_1ed21b.jpg (Panel C), a distinct core of high-velocity south-westerly wind ($12\\text{ to }15\\text{ m s}^{-1}$, green shading) is observed physically sloping downward over time from the residual layer into the stable boundary layer. At exactly 08:00 UTC, this intense vertical wind shear triggers a pronounced overnight burst of vertical velocity variance ($\\sigma_w^2 \\approx 0.5\\text{ to }1\\text{ m}^2\\text{ s}^{-2}$) in Panel D. Because solar heating is completely absent at this hour, this turbulence engine is entirely mechanical.",
+          "Asymmetric Mix-Out — Moisture (Passive Scalar, Panel B): The mechanical turbulence burst acts as a highly selective atmospheric blender. The turbulence easily redistributes specific humidity ($q$), drying out the immediate near-surface layer and leaving a distinct, suspended moist layer ($q \\approx 6\\text{ to }7\\text{ g kg}^{-1}$) trapped at 1.0 km through sunrise.",
+          "Asymmetric Mix-Out — Temperature (Active Scalar, Panel A): The virtual potential temperature ($\\theta_v$) resists this mixing. Because warm air aloft is lighter than the cold air below, the turbulence cannot overcome the heavy static stability. Assisted by the earth's continuous longwave radiative cooling to space, the razor-sharp surface-based nocturnal inversion remains completely intact despite the high winds.",
+          "Anomalous Afternoon Moisture Recovery (>15:00 UTC, Panel B): Standard boundary layer theory dictates that when daytime convective mixing ramps up (seen by the solar-driven turbulence plume in Panel D after 15:00 UTC), dry air entrained from the free troposphere should dry out the boundary layer. Instead, Panel B records a massive moisture surge, with $q$ climbing past $9\\text{ g kg}^{-1}$ (deep blue shading). Panel C reveals the mechanism: the lowest 500 meters reorganizes into a highly efficient southerly conveyor, pumping rich Gulf moisture into Norman fast enough to completely overwhelm local entrainment drying."
+        ]
+      }
+    ]
   },
   {
     "id": "fropa_c2",
@@ -181,8 +430,25 @@
     "title": "Frontal Passage",
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
-    "location": "Oklahoma",
+    "location": "Norman, OK",
     "image": "images/fropa_c2_instrument_template_4panel.png",
-    "tags": ["fronts"]
+    "tags": ["fronts"],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Case overview",
+        "content": "This case captures a high-amplitude, classic synoptic cold front crosscutting the CLAMPS2 platform in Norman, Oklahoma. Prior to 09:00 UTC, Norman is embedded within a deep, warm, and high-momentum pre-frontal warm sector. At 09:00 UTC, the surface cold front arrives. Because the incoming post-frontal air mass is significantly denser, it acts as a wedge, undercutting the warm air and lifting it along a sloped frontal zone. Following the frontal passage, the northerly surge floods the region, driving drops in both temperature and moisture as a cold, dry continental polar air mass takes over the column."
+      },
+      {
+        "type": "list",
+        "title": "Highlights",
+        "items": [
+          "The Frontal Slope & Thermal Crash (Panel A): In image_1e5da0.jpg, the column exhibits a deep, uniform warm layer ($\\theta_v > 305\\text{ K}$) prior to the front. At 09:00 UTC, the cold air mass slams into the surface, with the boundary sloping upward and backward over time—reaching an altitude of 1.0 km by 13:00 UTC. Near-surface virtual potential temperature ($\\theta_v$) plummets by over 20 K into the deep blue zone ($< 285\\text{ K}$). Remarkably, the automated retrieval flags (black dots) perfectly trace cloud bases forming directly along the sloped leading edge of the front between 11:00 and 14:00 UTC, marking forced envelope condensation.",
+          "The Post-Frontal Moisture Crash (Panel B): The pre-frontal air mass carries moderate moisture ($q \\approx 9\\text{ to }11\\text{ g kg}^{-1}$). As the front passes, the forced frontal ascent keeps moisture elevated up the slope. However, once the true core of the continental air mass arrives after 13:00 UTC, specific humidity undergoes a catastrophic collapse, flatlining below $4\\text{ g kg}^{-1}$ (pale yellow shading) through the entire lower 1.5 km column.",
+          "Kinematic Frontal Discontinuity (Panel C): The wind field provides a flawless visual definition of a sharp synoptic front. Pre-frontal: intense southwesterly winds ($15\\text{ to }20\\text{ m s}^{-1}$) dominate. The interface: right at 09:00 UTC, a narrow, vertical channel of near-zero wind velocity (deep purple) marks the immediate frontal convergence zone. Post-frontal: winds instantly veer to the north-northwest, developing into an intense post-frontal wind maximum exceeding $20\\text{ m s}^{-1}$ aloft that rides directly above the surface cold pool.",
+          "Frontal Boundary Turbulence (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) transitions from a highly turbulent pre-frontal regime to a temporarily suppressed state directly beneath the dense post-frontal inversion. A second wave of enhanced variance aloft after 16:00 UTC highlights the intense mechanical shearing taking place between the surface friction layer and the raging northerly jet above it."
+        ]
+      }
+    ]
   }
 ]
