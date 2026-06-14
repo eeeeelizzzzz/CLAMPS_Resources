@@ -7,6 +7,7 @@ import {
   renderFigures,
   renderSections,
 } from "./app.js";
+import { renderCaseMath } from "./math.js";
 
 const content = document.getElementById("case-content");
 
@@ -54,6 +55,7 @@ async function init() {
 
       ${renderSections(entry.sections)}
     `;
+    renderCaseMath(content);
   } catch (error) {
     content.innerHTML = `<div class="error-state">${error.message}</div>`;
   }
