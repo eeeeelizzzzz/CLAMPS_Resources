@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CLAMPS Case Figure Reproduction</title>
-  <meta name="description" content="Reproduce the gallery instrument-template 4-panel figure for ci_c1 (2020-07-30) via Binder.">
+  <meta name="description" content="This example will produce the template 4-panel figure as shown in the case gallery, using for ci_c1 (2020-07-30) via Binder.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -12,9 +12,8 @@
     <div class="site-header__inner">
       <h1>Case figure reproduction</h1>
       <p>
-        Rebuild the gallery <strong>instrument-template 4-panel</strong> figure for
-        <strong>ci_c1</strong> (NWCRIL2020 CLAMPS1, 2020-07-30 UTC) from bundled plot-ready data.
-        The same observational day appears in the gallery as the merged CI / gravity-waves C1 entry.
+        This notebook is an example that will rebuild the gallery <strong>4-panel instrumentation temlpate</strong> figure for
+        <strong>ci_c1</strong> (NWCRIL2020 CLAMPS1, 2020-07-30 UTC) from bundled plot-ready data. The same observational day appears in the gallery as the merged CI / gravity-waves C1 entry.
       </p>
       <div class="header-actions">
         <a href="../index.html" class="header-link">Case Gallery</a>
@@ -29,14 +28,14 @@
     <section class="content-section">
       <h2>Example output</h2>
       <p>
-        The notebook runs the same plotting code used for the case gallery site (vendored from the HPC processing pipeline).
-        Inputs are pre-staged NetCDF files — WINDoe and fuzzy PBL are not re-computed in the notebook.
+        The notebook runs the same data read and plotting steps used in the code used for the case gallery site.
+        Inputs are pre-staged NetCDF files — WINDoe and fuzzy PBL are not re-computed in the notebook. This example is not an exact 1-1 duplicate of the code used to profduce all figures, but it is a close reprentation of the processes applied. 
       </p>
     </section>
 
     <figure class="figure-panel">
       <figcaption class="figure-panel__header">
-        ci_c1 — instrument template (reference from bundled data)
+        ci_c1: CLAMPS1 observation visualization including WINDoe and the fuzzy-logic-based algorithm.
       </figcaption>
       <div class="figure-panel__body">
         <img
