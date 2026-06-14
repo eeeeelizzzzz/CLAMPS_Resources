@@ -11,7 +11,13 @@ TARBALL="$ROOT/.cache/ci_c1_data.tar.gz"
 DEFAULT_URL="https://github.com/eeeeelizzzzz/CLAMPS_CaseGallery/releases/download/case-data-v1/ci_c1_data.tar.gz"
 URL="${CI_C1_DATA_URL:-$DEFAULT_URL}"
 
-if [[ -f "$MARKER" ]]; then
+has_case_data() {
+  [[ -d "$DEST/tropoe" ]] || return 1
+  find "$DEST/tropoe" "$DEST/dlfp" "$DEST/dlvad" -maxdepth 1 \
+    \( -name '*.nc' -o -name '*.cdf' \) -print -quit | grep -q .
+}
+
+if [[ -f "$MARKER" ]] && has_case_data; then
   echo "ci_c1 data already present at $DEST"
   exit 0
 fi
@@ -26,4 +32,8 @@ fi
 rm -rf "$DEST"
 mkdir -p "$ROOT/data"
 tar -xzf "$TARBALL" -C "$ROOT/data"
+if ! has_case_data; then
+  echo "error: tarball extracted but expected NetCDF inputs are missing under $DEST" >&2
+  exit 1
+fi
 echo "Extracted ci_c1 data to $DEST"

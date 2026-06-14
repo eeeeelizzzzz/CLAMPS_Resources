@@ -6,7 +6,7 @@ Plot-ready inputs for the **2020-07-30 NWCRIL2020 CLAMPS1** gallery case (`ci_c1
 
 ```
 ci_c1/
-  dlvad/ dlfp/ dlppi/ tropoe/   # archive inputs
+  dlvad/ dlfp/ dlppi/ tropoe/   # archive inputs (.nc or .cdf)
   windoe/                       # precomputed WINDoe retrieval
   pbl_fuzzy/                    # fuzzy PBL height
   figure/                       # optional reference PNG (overwritten by notebook)

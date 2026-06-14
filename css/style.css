@@ -497,6 +497,8 @@ main {
   width: 100%;
   height: auto;
   display: block;
+  max-width: 1846px;
+  margin: 0 auto;
 }
 
 .content-section {
