@@ -1,6 +1,6 @@
 # Case gallery — instrument template reproduction
 
-Interactive reproduction of the **4-panel instrument overview figure** for one gallery case using bundled plot-ready data (no THREDDS, no WINDoe re-run).
+Interactive walkthrough for **loading plot-ready CLAMPS inputs** and building the gallery **4-panel instrument figure** for one case (no THREDDS, no WINDoe re-run in the notebook).
 
 **Demo case:** `ci_c1` — NWCRIL2020 CLAMPS1, **2020-07-30 UTC**. The gallery merges this day with `gravity_waves_c1` (same inputs, different science tag).
 
@@ -12,7 +12,7 @@ Interactive reproduction of the **4-panel instrument overview figure** for one g
 ## Quick start — Binder
 
 1. Click the badge above (first build may take several minutes; data ≈ 620 MB).
-2. Run all cells in `notebooks/reproduce_ci_c1.ipynb`.
+2. Run all cells in `notebooks/reproduce_ci_c1.ipynb` (step-by-step data load + plot).
 3. Output figure: `output/case_gallery/figures/ci_c1/instrument_template_4panel.png`
 
 `binder/postBuild` at the repo root links `data/ci_c1/` into the pipeline layout before the notebook runs.
@@ -35,7 +35,7 @@ Or open the notebook in Jupyter Lab from `case_reproduce/`.
 
 | Path | Purpose |
 |------|---------|
-| `notebooks/reproduce_ci_c1.ipynb` | Binder entry point |
+| `notebooks/reproduce_ci_c1.ipynb` | Binder entry point — CLAMPS data + visualization walkthrough |
 | `code/` | Vendored gallery plotting pipeline (from HPC `clamps_viz_process`) |
 | `data/ci_c1/` | Plot-ready NetCDF inputs (~620 MB; use Git LFS) |
 | `scripts/link_data.sh` | Symlink data → `output/case_gallery/` layout |
