@@ -5,6 +5,9 @@
 case_reproduce/output/
 case_reproduce/.venv/
 case_reproduce/.matplotlib/
+case_reproduce/.cache/
+case_reproduce/ci_c1_data.tar.gz
+case_reproduce/data/ci_c1/
 
 # Bibliometrics working files (also in bibliometrics/.gitignore)
 bibliometrics/output/

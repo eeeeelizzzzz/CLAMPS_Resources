@@ -1,0 +1,6 @@
+# Trim Binder build context (repo2docker). Site assets and case data are fetched separately.
+images/
+case_reproduce/data/ci_c1/
+bibliometrics/deliverables/
+bibliometrics/output/
+.git/

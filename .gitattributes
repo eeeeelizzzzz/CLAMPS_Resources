@@ -1,3 +1,0 @@
-case_reproduce/data/** filter=lfs diff=lfs merge=lfs -text
-case_reproduce/data/**/*.cdf filter=lfs diff=lfs merge=lfs -text
-case_reproduce/data/**/*.nc filter=lfs diff=lfs merge=lfs -text

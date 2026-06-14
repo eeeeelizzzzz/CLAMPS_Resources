@@ -47,4 +47,4 @@ CBH dots are plotted only when TROPoe **`lwp` > 5 g m⁻²** (liquid water path)
 
 ## Data in git
 
-See [`data/README.md`](data/README.md) for layout and Git LFS setup before pushing large `.cdf` / `.nc` files.
+Example data (~620 MB) is **not** committed — it is downloaded from a [GitHub Release](https://github.com/eeeeelizzzzz/CLAMPS_CaseGallery/releases/tag/case-data-v1) during Binder `postBuild` or via `scripts/fetch_ci_c1_data.sh`. See [`data/README.md`](data/README.md) to publish/update the release asset.

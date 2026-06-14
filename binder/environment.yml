@@ -4,13 +4,15 @@ channels:
   - conda-forge
 dependencies:
   - python=3.12
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - pyyaml
+  - netcdf4
+  - curl
   - pip
   - pip:
       - requests>=2.31.0
-      - pandas>=2.0.0
-      - pyyaml>=6.0
-      - matplotlib>=3.8.0
       - ipywidgets>=8.0.0
-      - netCDF4>=1.6.0
-      - scipy>=1.11.0
       - ipykernel>=6.0.0

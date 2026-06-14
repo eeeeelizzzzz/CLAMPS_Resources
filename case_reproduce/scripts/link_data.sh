@@ -3,6 +3,10 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+bash "$SCRIPT_DIR/fetch_ci_c1_data.sh"
+
 DATA="$ROOT/data/ci_c1"
 OUT="$ROOT/output/case_gallery"
 

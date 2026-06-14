@@ -9,8 +9,6 @@ BIB="$REPO_ROOT/bibliometrics"
 
 if [[ ! -d "$BIB/checkpoints" ]]; then
   echo "error: $BIB/checkpoints not found." >&2
-  echo "  cwd was: $(pwd)" >&2
-  echo "  expected repo root: $REPO_ROOT" >&2
   exit 1
 fi
 
@@ -36,13 +34,11 @@ done
 printf '%s\n' "openalex_id,doi,status,mention_count,matched_terms,match_strength,error" \
   > "$BIB/output/clamps_local_scan_log.csv"
 
-echo "Binder postBuild complete: ${#csv_files[@]} checkpoints -> $BIB/output/"
+echo "Binder postBuild: ${#csv_files[@]} bibliometrics checkpoints -> $BIB/output/"
 
-# Case figure reproduction (optional if data bundle present)
+# Case figure reproduction — download release tarball, then symlink pipeline layout.
 CR="$REPO_ROOT/case_reproduce"
-if [[ -d "$CR/data/ci_c1" ]]; then
+if [[ -f "$CR/scripts/link_data.sh" ]]; then
   bash "$CR/scripts/link_data.sh"
-  echo "Case reproduce: linked ci_c1 data under $CR/output/case_gallery/"
-else
-  echo "note: $CR/data/ci_c1 not found — case figure notebook needs the data bundle"
+  echo "Case reproduce: ci_c1 data ready under $CR/output/case_gallery/"
 fi
