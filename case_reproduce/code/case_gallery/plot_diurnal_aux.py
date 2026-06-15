@@ -61,10 +61,11 @@ def _find_clamps_met_file(case: CaseSpec) -> Path:
 def _find_clamps_met_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
     aux_dir = case.clamps_root / "aux"
     ymd = calendar_date.strftime("%Y%m%d")
-    matches = sorted(p for p in aux_dir.glob("*met*.cdf") if ymd in p.name)
-    if not matches:
-        raise FileNotFoundError(f"No CLAMPS met file for {ymd} under {aux_dir}")
-    return matches[-1]
+    for pattern in ("*met*.cdf", "*mwr*a1*.cdf", "*mwr*a0*.cdf", "*mwr*.cdf"):
+        matches = sorted(p for p in aux_dir.glob(pattern) if ymd in p.name)
+        if matches:
+            return matches[-1]
+    raise FileNotFoundError(f"No CLAMPS met/MWR file for {ymd} under {aux_dir}")
 
 
 def stitch_clamps_met_surface(case: CaseSpec, period: la.PeriodAxis) -> dict[str, np.ndarray]:

@@ -97,6 +97,29 @@ class DiurnalAuxConfig:
 
 
 @dataclass(frozen=True)
+class StableGoodDlAuxConfig:
+    kind: str = "stable_good_dl"
+    rib_threshold: float = 0.25
+    met_hour_start: float = 0.0
+    met_hour_end: float = 24.0
+
+
+@dataclass(frozen=True)
+class DeepCblAuxConfig:
+    kind: str = "deep_cbl"
+    met_hour_start: float = 0.0
+    met_hour_end: float = 24.0
+    profile_max_km: float = 4.0
+
+
+@dataclass(frozen=True)
+class CiAuxConfig:
+    kind: str = "ci"
+    met_hour_start: float = 0.0
+    met_hour_end: float = 24.0
+
+
+@dataclass(frozen=True)
 class SeaBreezeAuxConfig:
     kind: str = "sea_breeze"
     coastal_case_id: str = "sea_breeze_c2"
@@ -111,6 +134,9 @@ class SeaBreezeAuxConfig:
 AuxCaseConfig = (
     NlljAuxConfig
     | StableBadDlAuxConfig
+    | StableGoodDlAuxConfig
+    | DeepCblAuxConfig
+    | CiAuxConfig
     | CiWavesAuxConfig
     | DiurnalAuxConfig
     | SeaBreezeAuxConfig
@@ -120,6 +146,9 @@ AUX_CONFIG: dict[str, AuxCaseConfig] = {
     "nllj_c1": NlljAuxConfig(),
     "nllj_c2": NlljAuxConfig(),
     "stable_bad_dl_c1": StableBadDlAuxConfig(),
+    "stable_good_dl_c2": StableGoodDlAuxConfig(),
+    "deep_cbl_c2": DeepCblAuxConfig(),
+    "ci_c2": CiAuxConfig(),
     "ci_c1": CiWavesAuxConfig(),
     "diurnal_c2": DiurnalAuxConfig(
         period_plot_start_hour=18.0,
@@ -1656,6 +1685,35 @@ def plot_auxiliary(case_id: str, *, force: bool = False) -> list[Path]:
         return _plot_nllj_auxiliary(case_id, cfg, force=force)
     if cfg.kind == "stable_bad_dl":
         return _plot_stable_bad_dl_auxiliary(case_id, cfg, force=force)
+    if cfg.kind == "stable_good_dl":
+        from case_gallery.plot_stable_good_dl_aux import plot_stable_good_dl_auxiliary
+
+        return plot_stable_good_dl_auxiliary(
+            case_id,
+            rib_threshold=cfg.rib_threshold,
+            met_hour_start=cfg.met_hour_start,
+            met_hour_end=cfg.met_hour_end,
+            force=force,
+        )
+    if cfg.kind == "deep_cbl":
+        from case_gallery.plot_deep_cbl_aux import plot_deep_cbl_auxiliary
+
+        return plot_deep_cbl_auxiliary(
+            case_id,
+            met_hour_start=cfg.met_hour_start,
+            met_hour_end=cfg.met_hour_end,
+            profile_max_km=cfg.profile_max_km,
+            force=force,
+        )
+    if cfg.kind == "ci":
+        from case_gallery.plot_ci_aux import plot_ci_auxiliary
+
+        return plot_ci_auxiliary(
+            case_id,
+            met_hour_start=cfg.met_hour_start,
+            met_hour_end=cfg.met_hour_end,
+            force=force,
+        )
     if cfg.kind == "ci_waves":
         return _plot_ci_waves_auxiliary(case_id, cfg, force=force)
     if cfg.kind == "diurnal":

@@ -318,7 +318,20 @@
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
     "location": "Norman, OK",
-    "image": "images/stable_good_dl_c2_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/stable_good_dl_c2_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/stable_good_dl_c2_aux_rib_timeheight.png",
+        "label": "Bulk Richardson number time–height"
+      },
+      {
+        "src": "images/stable_good_dl_c2_aux_surface_meteogram.png",
+        "label": "Surface meteogram"
+      }
+    ],
     "tags": ["stable boundary layer"],
     "sections": [
       {
@@ -380,7 +393,16 @@
     "subtitle": "CLAMPS2",
     "campaign": "AWAKEN",
     "location": "Orlando, OK",
-    "image": "images/ci_c2_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/ci_c2_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/ci_c2_aux_surface_meteogram.png",
+        "label": "Surface meteogram (precipitation)"
+      }
+    ],
     "tags": ["convection", "initiation"],
     "sections": [
       {
@@ -434,7 +456,20 @@
     "subtitle": "CLAMPS2",
     "campaign": "AWAKEN",
     "location": "Orlando, OK",
-    "image": "images/deep_cbl_c2_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/deep_cbl_c2_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/deep_cbl_c2_aux_surface_meteogram.png",
+        "label": "Surface meteogram"
+      },
+      {
+        "src": "images/deep_cbl_c2_aux_theta_v_q_profiles.png",
+        "label": "Hourly θ_v and q profiles (12–00 UTC)"
+      }
+    ],
     "tags": ["convective boundary layer"],
     "sections": [
       {
