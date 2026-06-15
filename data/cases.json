@@ -6,7 +6,24 @@
     "subtitle": "CLAMPS2",
     "campaign": "NWC Ops",
     "location": "Norman, OK",
-    "image": "images/nllj_c2_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/nllj_c2_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/nllj_c2_aux_vertical_profiles_peak_jet.png",
+        "label": "Vertical profiles at peak jet"
+      },
+      {
+        "src": "images/nllj_c2_aux_raw_w_timeheight.png",
+        "label": "Raw vertical velocity time–height"
+      },
+      {
+        "src": "images/nllj_c2_aux_io_hodograph.png",
+        "label": "I/O hodograph"
+      }
+    ],
     "tags": ["boundary layer", "nocturnal", "wind"],
     "sections": [
       {
@@ -38,7 +55,24 @@
     "subtitle": "CLAMPS1",
     "campaign": "NWC Ops",
     "location": "Norman, OK",
-    "image": "images/nllj_c1_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/nllj_c1_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/nllj_c1_aux_vertical_profiles_peak_jet.png",
+        "label": "Vertical profiles at peak jet"
+      },
+      {
+        "src": "images/nllj_c1_aux_raw_w_timeheight.png",
+        "label": "Raw vertical velocity time–height"
+      },
+      {
+        "src": "images/nllj_c1_aux_io_hodograph.png",
+        "label": "I/O hodograph"
+      }
+    ],
     "tags": ["boundary layer", "nocturnal"],
     "sections": [
       {
@@ -65,7 +99,20 @@
     "subtitle": "CLAMPS1",
     "campaign": "VORTEX-USA",
     "location": "Courtland, AL",
-    "image": "images/stable_bad_dl_c1_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/stable_bad_dl_c1_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/stable_bad_dl_c1_aux_dlfp_snr_timeheight.png",
+        "label": "DL-FP SNR time–height"
+      },
+      {
+        "src": "images/stable_bad_dl_c1_aux_metar_meteogram.png",
+        "label": "METAR surface meteogram"
+      }
+    ],
     "tags": ["stable boundary layer"],
     "sections": [
       {
@@ -98,6 +145,18 @@
         "label": "Convection initiation"
       },
       {
+        "src": "images/ci_c1_aux_surface_meteogram.png",
+        "label": "Surface meteogram (CLAMPS1)"
+      },
+      {
+        "src": "images/ci_c1_aux_dlfp_w_zoom_timeheight.png",
+        "label": "DL-FP vertical velocity zoom"
+      },
+      {
+        "src": "images/ci_c1_20200730_88Dloop.gif",
+        "label": "NEXRAD 88D reflectivity loop"
+      },
+      {
         "src": "images/gravity_waves_c1_instrument_template_4panel.png",
         "label": "Gravity waves"
       }
@@ -128,7 +187,28 @@
     "subtitle": "CLAMPS2",
     "campaign": "BLISSFUL",
     "location": "Washington, OK",
-    "image": "images/diurnal_c2_instrument_template_4panel.png",
+    "images": [
+      {
+        "src": "images/diurnal_c2_instrument_template_4panel.png",
+        "label": "Standard CLAMPS observations"
+      },
+      {
+        "src": "images/diurnal_c2_aux_surface_meteogram.png",
+        "label": "Surface meteogram"
+      },
+      {
+        "src": "images/diurnal_c2_aux_skewt_overlay.png",
+        "label": "Skew-T overlay (radiosonde comparison)"
+      },
+      {
+        "src": "images/diurnal_c2_aux_rib_timeheight.png",
+        "label": "Bulk Richardson number time–height"
+      },
+      {
+        "src": "images/diurnal_c2_CLAMPS2stare.png",
+        "label": "DL-FP vertical stare"
+      }
+    ],
     "tags": ["diurnal", "boundary layer"],
     "sections": [
       {
