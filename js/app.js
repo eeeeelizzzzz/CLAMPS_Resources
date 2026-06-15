@@ -201,9 +201,16 @@ function renderCardTags(entry) {
   return `${metaHtml}${themeHtml}`;
 }
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
 function renderCaseTableRow(entry) {
   const url = casePageUrl(entry.id);
-  const title = entry.title.replace(/"/g, "&quot;");
 
   return `
     <tr
@@ -211,17 +218,17 @@ function renderCaseTableRow(entry) {
       tabindex="0"
       role="link"
       data-href="${url}"
-      data-date="${entry.date}"
-      data-platform="${entry.subtitle}"
-      data-title="${title}"
-      data-campaign="${entry.campaign}"
-      data-location="${entry.location}"
+      data-date="${escapeHtml(entry.date)}"
+      data-platform="${escapeHtml(entry.subtitle)}"
+      data-title="${escapeHtml(entry.title)}"
+      data-campaign="${escapeHtml(entry.campaign)}"
+      data-location="${escapeHtml(entry.location)}"
     >
       <td><a href="${url}">${formatDate(entry.date)}</a></td>
-      <td>${entry.subtitle}</td>
-      <td>${entry.title}</td>
-      <td>${entry.campaign}</td>
-      <td>${entry.location}</td>
+      <td>${escapeHtml(entry.subtitle)}</td>
+      <td>${escapeHtml(entry.title)}</td>
+      <td>${escapeHtml(entry.campaign)}</td>
+      <td>${escapeHtml(entry.location)}</td>
     </tr>
   `;
 }

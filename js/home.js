@@ -119,15 +119,17 @@ async function init() {
     const fetched = await loadCases();
     if (fetched.length > 0) {
       allCases = fetched;
-      renderTable();
-      return;
     }
   } catch {
     // Keep cases parsed from the static table rows.
   }
 
-  saveTableSort(currentSort);
-  updateSortIndicators();
+  if (allCases.length > 0) {
+    renderTable();
+  } else {
+    saveTableSort(currentSort);
+    updateSortIndicators();
+  }
 }
 
 init();
