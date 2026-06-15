@@ -28,8 +28,21 @@ from awaken_la_diagnostics import (  # noqa: E402
     build_profiler_cross_section,
     load_fuzzy_pblh,
 )
-from case_gallery.case_lib import CaseSpec, find_case_files, find_pbl_file, get_case  # noqa: E402
-from case_gallery.gallery_suptitle import format_suptitle, load_gallery_image_metadata  # noqa: E402
+from case_gallery.case_lib import (  # noqa: E402
+    CaseSpec,
+    figure_suptitle,
+    find_case_files,
+    find_pbl_file,
+    get_case,
+)
+from case_gallery.extended_period import (  # noqa: E402
+    case_period,
+    stitch_cloud_base,
+    stitch_pbl,
+    stitch_profiler_cross_section,
+    stitch_snr_ceiling,
+    stitch_wind,
+)
 from case_gallery.plot_limits import (  # noqa: E402
     limits_for_case,
     q_ticks,
@@ -50,27 +63,48 @@ def _day_period(case_date: date) -> la.PeriodAxis:
     return la.PeriodAxis(start=start, end=end)
 
 
+def _instrument_suptitle(case: CaseSpec) -> str:
+    if case.period_extend_hours > 0:
+        total_h = 24 + case.period_extend_hours
+        return figure_suptitle(
+            case,
+            subtitle=(
+                f"CLAMPS observations · PBLH (fuzzy logic) · "
+                f"{total_h} h UTC ({case.case_date.isoformat()} + "
+                f"{case.period_extend_hours} h)"
+            ),
+        )
+    return figure_suptitle(case)
+
+
 def plot_instrument(case_id: str, *, force: bool = False) -> Path:
     case = get_case(case_id)
     files = find_case_files(case)
-    pbl_path = find_pbl_file(case)
     limits = limits_for_case(case_id)
-
     prefer = "dlvad" if case_id in DLVAD_WIND_CASES else "auto"
-    wind, wind_source = load_case_winds(case, prefer=prefer)
 
-    case_date = case.case_date
-    period = _day_period(case_date)
-    prof = build_profiler_cross_section(
-        files.tropoe, files.dlfp, max_km=CROSS_SECTION_MAX_KM, apply_tropoe_qc=False
-    )
-    pbl = load_fuzzy_pblh(pbl_path)
-
-    dlvad_snr = load_dlvad_snr(files.dlvad)
-    snr_h, snr_z = dlvad_snr_ceiling(dlvad_snr, threshold=DLVAD_SNR_THRESHOLD)
-    snr_z = smooth_snr_ceiling(snr_h, snr_z)
-
-    cb_h, cb_z = load_cloud_base(files.tropoe)
+    if case.period_extend_hours > 0:
+        period = case_period(case)
+        prof = stitch_profiler_cross_section(
+            case, period, max_km=CROSS_SECTION_MAX_KM
+        )
+        wind, wind_source = stitch_wind(case, period, prefer=prefer)
+        pbl = stitch_pbl(case, period)
+        snr_h, snr_z = stitch_snr_ceiling(case, period)
+        snr_z = smooth_snr_ceiling(snr_h, snr_z)
+        cb_h, cb_z = stitch_cloud_base(case, period)
+    else:
+        period = _day_period(case.case_date)
+        wind, wind_source = load_case_winds(case, prefer=prefer)
+        prof = build_profiler_cross_section(
+            files.tropoe, files.dlfp, max_km=CROSS_SECTION_MAX_KM, apply_tropoe_qc=False
+        )
+        pbl = load_fuzzy_pblh(find_pbl_file(case))
+        snr_h, snr_z = dlvad_snr_ceiling(
+            load_dlvad_snr(files.dlvad), threshold=DLVAD_SNR_THRESHOLD
+        )
+        snr_z = smooth_snr_ceiling(snr_h, snr_z)
+        cb_h, cb_z = load_cloud_base(files.tropoe)
 
     out_dir = case.figure_dir
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -80,20 +114,7 @@ def plot_instrument(case_id: str, *, force: bool = False) -> Path:
         return out_path
 
     wind_title = format_wind_panel_title(wind_source)
-
-    gallery_meta = load_gallery_image_metadata().get(case_id)
-    if gallery_meta:
-        suptitle = format_suptitle(
-            gallery_meta["campaign"],
-            gallery_meta["location"],
-            gallery_meta["subtitle"],
-            datetime.strptime(gallery_meta["date"], "%Y-%m-%d").date(),
-        )
-    else:
-        suptitle = (
-            f"{case.project} CLAMPS{case.platform[-1]}\n"
-            f"{case_date.isoformat()} · CLAMPS observations · PBLH (fuzzy logic)"
-        )
+    suptitle = _instrument_suptitle(case)
 
     os.environ.setdefault("MPLCONFIGDIR", str(MPLCONFIG_DIR))
     plot_four_panel_template(
@@ -102,7 +123,7 @@ def plot_instrument(case_id: str, *, force: bool = False) -> Path:
         snr_h,
         snr_z,
         pbl,
-        case_date,
+        case.case_date,
         period,
         out_path,
         sigma_wspd_max=DEFAULT_SIGMA_WSPD_MAX,

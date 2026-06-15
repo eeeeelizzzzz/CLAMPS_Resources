@@ -23,17 +23,18 @@ from paths import (
 # Approximate CLAMPS site coordinates by campaign (lat °N, lon °E, alt m MSL)
 PROJECT_SITES: dict[str, tuple[float, float, float]] = {
     "TRACER": (29.617, -95.75, 15.0),
-    "NWCRIL2020": (35.01, -97.52, 360.0),
-    "Norman": (35.01, -97.52, 360.0),
-    "NWC Ops": (35.01, -97.52, 360.0),
-    "VORTEX-USA": (34.67, -86.53, 200.0),
-    "BLISSFUL": (34.35, -97.49, 310.0),
-    "AWAKEN": (36.15, -97.38, 320.0),
-    "AWAKEN2023": (36.15, -97.38, 320.0),
     "PERiLS2022": (30.15, -92.20, 10.0),
     "PERiLS2023": (30.15, -92.20, 10.0),
+    "AWAKEN": (36.3798, -97.5234, 321.0),
+    "AWAKEN2023": (36.3798, -97.5234, 321.0),
+    "Norman": (35.01, -97.52, 360.0),
+    "NWC Ops": (35.01, -97.52, 360.0),
+    "VORTEX-USA": (35.01, -97.52, 360.0),
+    "BLISSFUL": (32.30, -90.85, 80.0),
     "SPLASH": (36.61, -121.64, 50.0),
     "PBLtops": (36.61, -97.49, 318.0),
+    "NWCRIL2020": (36.61, -97.49, 318.0),
+    "NWCRIL 2020": (36.61, -97.49, 318.0),
 }
 
 _DEFAULT_SITE = PROJECT_SITES["Norman"]
@@ -55,9 +56,12 @@ class CaseSpec:
     id: str
     category: str
     project: str
+    title: str
     platform: str
     case_date: date
     reuse_awaken: bool = False
+    period_extend_hours: int = 0
+    dlfp_platform: str | None = None  # stare DL-FP when co-located (e.g. C1 for C2 cases)
     source: str = ""
     lat: float = 0.0
     lon: float = 0.0
@@ -140,6 +144,20 @@ def get_source(source_key: str) -> dict[str, Any]:
     return sources[source_key]
 
 
+def _default_title(category: str) -> str:
+    return category.replace("_", " ").title()
+
+
+def figure_suptitle(
+    case: CaseSpec,
+    subtitle: str = "CLAMPS observations · PBLH (fuzzy logic)",
+) -> str:
+    return (
+        f"{case.title} · {case.project} CLAMPS{case.platform[-1]}\n"
+        f"{case.case_date.isoformat()} · {subtitle}"
+    )
+
+
 def load_cases(yaml_path: Path | None = None) -> dict[str, CaseSpec]:
     path = yaml_path or CASES_YAML
     with path.open(encoding="utf-8") as f:
@@ -151,9 +169,12 @@ def load_cases(yaml_path: Path | None = None) -> dict[str, CaseSpec]:
             id=case_id,
             category=spec["category"],
             project=spec["project"],
+            title=str(spec.get("title") or _default_title(spec["category"])),
             platform=platform_from_case_id(case_id),
             case_date=_parse_date(spec["date"]),
             reuse_awaken=bool(spec.get("reuse_awaken", False)),
+            period_extend_hours=int(spec.get("period_extend_hours", 0)),
+            dlfp_platform=spec.get("dlfp_platform"),
             source=spec.get("source", case_id),
             lat=float(spec.get("lat", lat)),
             lon=float(spec.get("lon", lon)),
@@ -169,38 +190,139 @@ def get_case(case_id: str) -> CaseSpec:
     return cases[case_id]
 
 
+def _filter_platform(paths: list[Path], platform: str) -> list[Path]:
+    plat = platform.upper()
+    needles = (f"{plat}.", f"clamps{plat[-1].lower()}")
+    return [p for p in paths if any(n in p.name for n in needles)]
+
+
 def _one_file(
     directory: Path,
     pattern: str,
     label: str,
     *,
     prefer_ymd: str | None = None,
+    prefer_platform: str | None = None,
+    fallback_platform: str | None = None,
 ) -> Path:
     if not directory.is_dir():
         raise FileNotFoundError(f"Missing {label} directory: {directory}")
     matches = sorted(directory.glob(pattern))
     if not matches:
         raise FileNotFoundError(f"No {label} file matching {pattern} in {directory}")
+    pool = matches
     if prefer_ymd:
         dated = [p for p in matches if prefer_ymd in p.name]
-        if dated:
-            return dated[-1]
-    return matches[-1]
+        if not dated:
+            raise FileNotFoundError(
+                f"No {label} file for {prefer_ymd} matching {pattern} in {directory}"
+            )
+        pool = dated
+    if prefer_platform:
+        plat_matches = _filter_platform(pool, prefer_platform)
+        if not plat_matches and fallback_platform:
+            plat_matches = _filter_platform(pool, fallback_platform)
+        if not plat_matches:
+            raise FileNotFoundError(
+                f"No {label} file for platform {prefer_platform} "
+                f"({prefer_ymd or 'any date'}) in {directory}"
+            )
+        return plat_matches[-1]
+    return pool[-1]
+
+
+def _dlfp_prefer_platform(case: CaseSpec) -> str:
+    return (case.dlfp_platform or case.platform).upper()
+
+
+def _dlfp_fallback_platform(case: CaseSpec) -> str | None:
+    prefer = _dlfp_prefer_platform(case)
+    if prefer != case.platform.upper():
+        return case.platform
+    return "C1" if case.platform.upper() == "C2" else None
 
 
 def find_case_files(case: CaseSpec) -> CaseFiles:
+    return find_case_files_for_date(case, case.case_date)
+
+
+def find_case_files_for_date(case: CaseSpec, calendar_date: date) -> CaseFiles:
     root = case.clamps_root
-    ymd = case.case_date.strftime("%Y%m%d")
+    ymd = calendar_date.strftime("%Y%m%d")
+    plat = case.platform
+    dlfp_plat = _dlfp_prefer_platform(case)
     return CaseFiles(
-        dlppi=_one_file(root / "dlppi", "*dlppi*", "DL PPI", prefer_ymd=ymd),
-        dlvad=_one_file(root / "dlvad", "*dlvad*", "DLVAD", prefer_ymd=ymd),
-        dlfp=_one_file(root / "dlfp", "*dlfp*", "DLFP", prefer_ymd=ymd),
-        tropoe=_one_file(root / "tropoe", "*", "TROPoe/AERIoe", prefer_ymd=ymd),
+        dlppi=_one_file(root / "dlppi", "*dlppi*", "DL PPI", prefer_ymd=ymd, prefer_platform=plat),
+        dlvad=_one_file(root / "dlvad", "*dlvad*", "DLVAD", prefer_ymd=ymd, prefer_platform=plat),
+        dlfp=_one_file(
+            root / "dlfp",
+            "*dlfp*",
+            "DLFP",
+            prefer_ymd=ymd,
+            prefer_platform=dlfp_plat,
+            fallback_platform=_dlfp_fallback_platform(case),
+        ),
+        tropoe=_one_file(root / "tropoe", "*", "TROPoe/AERIoe", prefer_ymd=ymd, prefer_platform=plat),
+    )
+
+
+def find_profiler_files_for_date(case: CaseSpec, calendar_date: date) -> tuple[Path, Path]:
+    root = case.clamps_root
+    ymd = calendar_date.strftime("%Y%m%d")
+    plat = case.platform
+    dlfp_plat = _dlfp_prefer_platform(case)
+    return (
+        _one_file(root / "tropoe", "*", "TROPoe/AERIoe", prefer_ymd=ymd, prefer_platform=plat),
+        _one_file(
+            root / "dlfp",
+            "*dlfp*",
+            "DLFP",
+            prefer_ymd=ymd,
+            prefer_platform=dlfp_plat,
+            fallback_platform=_dlfp_fallback_platform(case),
+        ),
+    )
+
+
+def find_dlppi_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
+    ymd = calendar_date.strftime("%Y%m%d")
+    return _one_file(
+        case.clamps_root / "dlppi",
+        "*dlppi*",
+        "DL PPI",
+        prefer_ymd=ymd,
+        prefer_platform=case.platform,
+    )
+
+
+def find_dlvad_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
+    ymd = calendar_date.strftime("%Y%m%d")
+    return _one_file(
+        case.clamps_root / "dlvad",
+        "*dlvad*",
+        "DLVAD",
+        prefer_ymd=ymd,
+        prefer_platform=case.platform,
+    )
+
+
+def find_tropoe_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
+    ymd = calendar_date.strftime("%Y%m%d")
+    return _one_file(
+        case.clamps_root / "tropoe",
+        "*",
+        "TROPoe/AERIoe",
+        prefer_ymd=ymd,
+        prefer_platform=case.platform,
     )
 
 
 def find_windoe_file(case: CaseSpec) -> Path:
-    ymd = case.case_date.strftime("%Y%m%d")
+    return find_windoe_file_for_date(case, case.case_date)
+
+
+def find_windoe_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
+    ymd = calendar_date.strftime("%Y%m%d")
     plat = case.platform.lower()
     patterns = [
         f"{case.windoe_rootname}.{ymd}*.nc",
@@ -217,10 +339,15 @@ def find_windoe_file(case: CaseSpec) -> Path:
 
 
 def find_pbl_file(case: CaseSpec) -> Path:
-    path = case.pbl_dir / case.pbl_nc_name
+    return find_pbl_file_for_date(case, case.case_date)
+
+
+def find_pbl_file_for_date(case: CaseSpec, calendar_date: date) -> Path:
+    ymd = calendar_date.strftime("%Y%m%d")
+    path = case.pbl_dir / f"{ymd}_{case.platform}fuzzyPBLh.nc"
     if path.is_file():
         return path
-    matches = sorted(case.pbl_dir.glob(f"*{case.case_date.strftime('%Y%m%d')}*fuzzy*.nc"))
+    matches = sorted(case.pbl_dir.glob(f"*{ymd}*fuzzy*.nc"))
     if matches:
         return matches[-1]
-    raise FileNotFoundError(f"No PBL fuzzy output in {case.pbl_dir}")
+    raise FileNotFoundError(f"No PBL fuzzy output in {case.pbl_dir} for {ymd}")

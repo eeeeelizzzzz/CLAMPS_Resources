@@ -398,22 +398,10 @@ def _configure_period_xaxes(axes, period: la.PeriodAxis, case_date: date) -> Non
         ax.axvspan(0.0, 24.0, color="0.92", alpha=0.22, zorder=0)
 
 
-def _finalize_figure(fig, output_path: Path, *, apply_default_pads: bool = True, **kwargs) -> None:
-    if apply_default_pads:
-        fig.set_constrained_layout_pads(w_pad=0.06, h_pad=0.06, hspace=0.10)
+def _finalize_figure(fig, output_path: Path, **kwargs) -> None:
     fig.savefig(output_path, **SAVE_KW)
     plt.close(fig)
     print("  saved instrument_template_4panel.png")
-
-
-def _apply_figure_suptitle(fig, suptitle: str) -> None:
-    fig.suptitle(suptitle, fontsize=10, y=0.995)
-    fig.set_constrained_layout_pads(
-        w_pad=0.08,
-        h_pad=0.06,
-        hspace=0.10,
-        rect=(0, 0, 1, 0.93),
-    )
 
 
 def plot_four_panel_template(
@@ -538,7 +526,5 @@ def plot_four_panel_template(
     _configure_period_xaxes(time_axes, period, case_date)
     axes[-1].set_xlabel("UTC time", labelpad=10)
     if suptitle:
-        _apply_figure_suptitle(fig, suptitle)
-        _finalize_figure(fig, output_path, apply_default_pads=False)
-    else:
-        _finalize_figure(fig, output_path)
+        fig.suptitle(suptitle, fontsize=10)
+    _finalize_figure(fig, output_path)

@@ -1,7 +1,108 @@
-# Reproduction pipeline cases (plot_instrument / Binder).
-# Gallery metadata (campaign, city) lives in data/cases.json at repo root.
+# Case gallery — final science selections (2026-06).
+# Categories without a C1 or C2 case are omitted. Staging via data_link.
+#
+# Date ranges resolved to single representative days:
+#   deep_cbl_c2: 2023-08-25 (from 08/25–08/26 AWAKEN)
+#   nllj_c1:     2018-08-26 (from 08/24–08/28 Norman)
+#   nllj_c2:     2016-08-02 (from 08/01–08/04 Norman)
+
 cases:
   ci_c1:
     category: ci
     date: "2020-07-30"
-    project: NWCRIL2020
+    project: NWCRIL 2020
+    title: CI & Waves
+  ci_c2:
+    category: ci
+    date: "2023-07-03"
+    project: AWAKEN
+    title: Convection Initiation
+
+  cold_pool_c2:
+    category: cold_pool
+    date: "2023-06-28"
+    project: AWAKEN
+    title: Cold Pool
+
+  deep_cbl_c1:
+    category: deep_cbl
+    date: "2022-07-20"
+    project: TRACER
+    title: Deep CBL
+  deep_cbl_c2:
+    category: deep_cbl
+    date: "2023-08-25"
+    project: AWAKEN
+    title: Deep CBL
+
+  diurnal_c2:
+    category: diurnal
+    date: "2021-07-06"
+    project: BLISSFUL
+    title: Diurnal Cycle
+    period_extend_hours: 6  # include 00–06 UTC on the following day
+    dlfp_platform: C1  # co-located CLAMPS1 stare (C2 PPI deployment)
+
+  fropa_c2:
+    category: fropa
+    date: "2026-03-27"
+    project: NWC Ops
+    title: FROPA
+
+  gravity_waves_c1:
+    category: gravity_waves
+    date: "2020-07-30"
+    project: NWCRIL 2020
+    title: Gravity Waves
+  gravity_waves_c2:
+    category: gravity_waves
+    date: "2023-08-05"
+    project: AWAKEN
+    title: Gravity Waves
+
+  la_interaction_c1:
+    category: la_interaction
+    date: "2023-09-01"
+    project: AWAKEN
+    title: L-A Interaction
+    reuse_awaken: false
+
+  nllj_c1:
+    category: nllj
+    date: "2018-08-26"
+    project: NWC Ops
+    title: NLLJ
+  nllj_c2:
+    category: nllj
+    date: "2016-08-02"
+    project: NWC Ops
+    title: NLLJ
+
+  sharp_grad_c2:
+    category: sharp_grad
+    date: "2026-03-14"
+    project: NWC Ops
+    title: Sharp Gradients
+
+  stable_good_dl_c2:
+    category: stable_good_dl
+    date: "2022-12-02"
+    project: NWC Ops
+    title: SBL (good DL)
+
+  stable_bad_dl_c1:
+    category: stable_bad_dl
+    date: "2019-01-25"
+    project: VORTEX-USA
+    title: SBL (bad DL)
+
+  sea_breeze_c1:
+    category: sea_breeze
+    date: "2022-07-17"
+    project: TRACER
+    title: Seabreeze
+  sea_breeze_c2:
+    category: sea_breeze
+    date: "2022-07-17"
+    project: TRACER
+    title: Seabreeze

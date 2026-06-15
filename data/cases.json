@@ -134,16 +134,18 @@
       {
         "type": "text",
         "title": "Case overview",
-        "content": "This case captures a highly complex diurnal boundary layer cycle observed by CLAMPS2 during the BLISSFUL campaign. The standard daytime convective boundary layer (CBL) is disrupted during the late afternoon and evening by nearby convection. Rather than undergoing a clean, progressive collapse at sunset (~01:00 UTC), the boundary layer interacts with an incoming convective outflow boundary around 23:30 UTC. This mesoscale feature physically hoists the local air mass and triggers a period of reinvigorated boundary layer mixing right at sunset. The subsequent nocturnal period is characterized by a delayed shutdown of surface-based turbulence and prominent, periodic gravity-wave-like undulations trapped within the upper boundary layer and residual layer."
-      },
+        "content": "This 30-hour case study captures a highly complex diurnal boundary layer cycle observed by CLAMPS2 during the BLISSFUL campaign, extending from 00:00 UTC on July 6 to 06:00 UTC on July 7, 2021. The standard afternoon convective boundary layer (CBL) growth is significantly disrupted during the evening transition by nearby convective activity. Rather than undergoing a clean, progressive stabilization at sunset (~01:00 UTC), the boundary layer interacts with an incoming convective outflow boundary at approximately 23:30 UTC. This mesoscale feature forces a deep vertical ascent that mechanically rejuvenates turbulent mixing right at sunset. The subsequent nocturnal period is characterized by a delayed shutdown of surface-based eddies and prominent, periodic gravity-wave-like undulations trapped within the residual layer."},
       {
         "type": "list",
         "title": "Highlights",
         "items": [
-          "Daytime Convection & Cloud Cover (18:00–22:00 UTC): In Panels A & B, the automated retrieval flags a series of cloud bases between 1.25 km and 1.5 km (black/white scatter points). This aligns with strong, alternating thermal updraft/downdraft cores in the vertical velocity field.",
+          "Daytime Convection & Cloud Cover (18:00–22:00 UTC) [Panel A & B]: Strong solar insulation drives a deep mixed layer with virtual potential temperatures ($\\theta_v$) reaching 310 to 312 K. Automated retrieval algorithms flag a series of cloud bases between 1.25 km and 1.5 km (black scatter points). This matches the elevated planetary boundary layer height (PBLH) tracking line, which stays fully expanded near 1.5 km.",
           "Convective Outflow & Forced Ascent (~23:30 UTC): Right before sunset, a sharp mesoscale boundary impacts the site. This event is marked by a sudden structural shift in $\\theta_v$ and moisture, alongside a brief uptick in wind speed (Panel C). The underlying mechanism appears as a narrow, intense column of deep vertical ascent ($w > 1\\text{ m s}^{-1}$) forced by the convective outflow.",
           "Reinvigorated Mixing & Delayed Sunset Shutdown (00:00–03:00 UTC): While solar forcing diminishes around 01:00 UTC, the boundary passage mechanically rejuvenates turbulent mixing. Panel D shows that vertical velocity variance ($\\sigma_w^2$) remains elevated deep into the evening—a multi-stage transition with a burst of post-boundary mixing followed by a significantly delayed, gradual decay of surface-based eddies extending past 03:00 UTC.",
-          "Nocturnal Wave Features & Intermittent Turbulence (01:00–06:00 UTC): Once the surface fully decouples, the stable nocturnal boundary layer locks in near the ground ($<250\\text{ m}$). However, the upper boundary layer remains highly dynamic. Panel D displays persistent bands of elevated variance aloft, resolved as a continuous train of periodic, wave-like vertical velocity oscillations paired with pockets of intermittent shear-driven turbulence in the residual layer."
+          "Nocturnal Wave Features & Intermittent Turbulence (01:00–06:00 UTC): Once the surface fully decouples, the stable nocturnal boundary layer locks in near the ground ($<250\\text{ m}$). However, the upper boundary layer remains highly dynamic. Panel D displays persistent bands of elevated variance aloft, resolved as a continuous train of periodic, wave-like vertical velocity oscillations paired with pockets of intermittent shear-driven turbulence in the residual layer.",
+          "Forced Updraft Core (~23:30 UTC): The boundary's arrival is explicitly exposed as a narrow, highly intense column of deep vertical ascent with upward velocities exceeding 1 to 2 ${m s^{-1}}$ (dark red vertical strip), showing the direct impact of the convective outflow.",
+          "Trapped Residual Layer Waves (00:00–06:00 UTC): Above the shallow nocturnal surface layer ($<250$ m), the upper boundary layer resolves a continuous, long-period wave train. These periodic vertical velocity oscillations represent waves rippling through the stable residual layer column.",
+          "Co-located radiosonde comparisons at 20:24 and 22:20 UTC verify the high accuracy of the TROPoe profiles throughout the lower boundary layer (1000 to 700 hPa), capturing the deeply mixed, dry-adiabatic afternoon structure and demonstrate smooth vertical filtering characteristic of ground-based remote sensing instruments."
         ]
       }
     ]
@@ -194,6 +196,18 @@
         "label": "CLAMPS2 — La Marque, TX (coastal)",
         "location": "La Marque, TX",
         "subtitle": "CLAMPS2"
+      },
+      {
+        "src": "images/sea_breeze_aux_seabreeze_arrival_meteogram.png",
+        "label": "Sea breeze arrival timing (17–22:30 UTC)"
+      },
+      {
+        "src": "images/sea_breeze_aux_seabreeze_rh_snr.png",
+        "label": "Surface RH & DL-FP SNR (04–15 UTC)"
+      },
+      {
+        "src": "images/sea_breeze_goes16_houston_seabreeze.gif",
+        "label": "GOES-16 Houston area (17–24 UTC)"
       }
     ],
     "tags": ["sea breeze", "coastal"],

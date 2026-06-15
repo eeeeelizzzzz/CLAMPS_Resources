@@ -1,0 +1,41 @@
+#
+# Candidate ci_c1 — WINDoe VIP (auto-generated)
+#
+tres                     = 15
+first_guess              = 1
+max_iterations           = 8
+diagonal_covariance      = 1
+w_mean                   = 2.0
+w_lengthscale            = 1.0
+run_fast                 = 1
+
+station_lat              = 36.61
+station_lon              = -97.49
+station_alt              = 318.0
+
+raw_lidar_number         = 0
+
+proc_lidar_number        = 1
+proc_lidar_type          = 1
+proc_lidar_paths         = /home/elizabeth.smith/clamps_viz_process/output/case_gallery/staged/ci_c1/dlvad
+proc_lidar_minalt        = 0.06
+proc_lidar_maxalt        = 3.0
+proc_lidar_altitude      = 318.0
+proc_lidar_timedelta     = 15
+proc_lidar_average_uv    = 1
+
+cons_profiler_number     = 0
+insitu_number            = 0
+use_model                = 0
+
+output_rootname          = gallery_clamps1.WINDoe.c1
+output_path              = /home/elizabeth.smith/clamps_viz_process/output/case_gallery/windoe/ci_c1
+output_clobber           = 1
+keep_file_small          = 1
+
+zgrid                    = 0.000, 0.030, 0.060, 0.090, 0.120, 0.150, 0.180, 0.210, 0.240, 0.270, 0.300, 0.330, 0.360, 0.390, 0.420, 0.450, 0.480, 0.510, 0.540, 0.570, 0.600, 0.630, 0.660, 0.690, 0.720, 0.750, 0.780, 0.810, 0.840, 0.870, 0.900, 0.930, 0.960, 0.990, 1.020, 1.050, 1.080, 1.110, 1.140, 1.170, 1.200, 1.230, 1.260, 1.290, 1.320, 1.350, 1.380, 1.410, 1.440, 1.470, 1.500, 1.530, 1.560, 1.590, 1.620, 1.650, 1.680, 1.710, 1.740, 1.770, 1.800, 1.830, 1.860, 1.890, 1.920, 1.950, 1.980, 2.010, 2.040, 2.070, 2.100, 2.130, 2.160, 2.190, 2.220, 2.250, 2.280, 2.310, 2.340, 2.370, 2.400, 2.430, 2.460, 2.490, 2.520, 2.550, 2.580, 2.610, 2.640, 2.670, 2.700, 2.730, 2.760, 2.790, 2.820, 2.850, 2.880, 2.910, 2.940, 2.970, 3.000
+
+globatt_Site             = NWCRIL2020 C1
+globatt_Instruments      = CLAMPS C1 DLVAD (VAD winds)
+globatt_Dataset_contact  = case gallery candidates
+globatt_Processing_comment = WINDoe OE winds from DLVAD; SGP monthly prior
