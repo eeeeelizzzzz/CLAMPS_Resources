@@ -60,7 +60,7 @@ async function init() {
 
       ${renderPrimaryFigures(entry)}
 
-      ${renderSections(entry.sections)}
+      ${renderSections(entry.sections, entry)}
 
       ${renderAuxiliaryFigures(entry)}
 

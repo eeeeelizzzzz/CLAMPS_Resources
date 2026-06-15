@@ -13,18 +13,25 @@
       },
       {
         "src": "images/nllj_c2_aux_vertical_profiles_peak_jet.png",
-        "label": "Vertical profiles at peak jet"
+        "label": "Vertical profiles at peak jet",
+        "caption": "Line profiles of virtual potential temperature and specific humidity during peak NLLJ intensity, resolving the sharp surface inversion and jet-core thermodynamic structure."
       },
       {
         "src": "images/nllj_c2_aux_raw_w_timeheight.png",
-        "label": "Raw vertical velocity time–height"
+        "label": "Raw vertical velocity time–height",
+        "caption": "Unfiltered Doppler lidar vertical velocity ($w$) from zenith stares, capturing the abrupt onset of convective mixing as the nocturnal jet breaks down after sunrise."
       },
       {
         "src": "images/nllj_c2_aux_io_hodograph.png",
-        "label": "I/O hodograph"
+        "label": "I/O hodograph",
+        "caption": "Inertial-oscillation hodograph at 600 m AGL showing the clockwise ageostrophic wind rotation that drives NLLJ acceleration overnight."
       }
     ],
-    "tags": ["boundary layer", "nocturnal", "wind"],
+    "tags": [
+      "boundary layer",
+      "nocturnal",
+      "wind"
+    ],
     "sections": [
       {
         "type": "text",
@@ -57,19 +64,26 @@
       },
       {
         "src": "images/nllj_c1_aux_vertical_profiles_peak_jet.png",
-        "label": "Vertical profiles at peak jet"
+        "label": "Vertical profiles at peak jet",
+        "caption": "Multi-hour line profiles of $\\theta_v$ and $q$ tracking the progressive erosion of the nocturnal inversion and two-stage morning boundary-layer growth."
       },
       {
         "src": "images/nllj_c1_aux_raw_w_timeheight.png",
-        "label": "Raw vertical velocity time–height"
+        "label": "Raw vertical velocity time–height",
+        "caption": "Raw DL-FP vertical velocity time–height scan resolving high-frequency turbulent structure during jet decay and deep convective mixing after 16:00 UTC."
       },
       {
         "src": "images/nllj_c1_aux_io_hodograph.png",
-        "label": "I/O hodograph"
+        "label": "I/O hodograph",
+        "caption": "Hodograph at 600 m AGL modeling the inertial wind rotation from south-southeast through southerly to south-southwesterly flow within the jet core."
       }
     ],
-    "tags": ["boundary layer", "nocturnal", "wind"],
- "sections": [
+    "tags": [
+      "boundary layer",
+      "nocturnal",
+      "wind"
+    ],
+    "sections": [
       {
         "type": "text",
         "title": "Case overview",
@@ -101,15 +115,21 @@
       },
       {
         "src": "images/stable_bad_dl_c1_aux_dlfp_snr_timeheight.png",
-        "label": "DL-FP SNR time–height"
+        "label": "DL-FP SNR time–height",
+        "caption": "DL-FP signal-to-noise ratio ($\\mathrm{SNR}+1$) time–height. Gray regions below the detection threshold correspond to periods when kinematic retrievals fail in aerosol-poor air."
       },
       {
         "src": "images/stable_bad_dl_c1_aux_metar_meteogram.png",
-        "label": "METAR surface meteogram"
+        "label": "METAR surface meteogram",
+        "caption": "METAR surface observations documenting the intensely clean post-frontal high-pressure regime (MSLP $> 1028$ hPa) and unrestricted visibility characteristic of aerosol-depleted winter air masses."
       }
     ],
-    "tags": ["stable", "limitations","winter"],
-"sections": [
+    "tags": [
+      "stable",
+      "limitations",
+      "winter"
+    ],
+    "sections": [
       {
         "type": "text",
         "title": "Case overview",
@@ -141,18 +161,27 @@
       },
       {
         "src": "images/ci_c1_aux_surface_meteogram.png",
-        "label": "Surface meteogram (CLAMPS1)"
+        "label": "Surface meteogram (CLAMPS1)",
+        "caption": "CLAMPS1 surface pressure, wind, temperature, and humidity time series diagnosing the bore arrival at 11:20 UTC via hydrostatic pressure jump, wind shift, and gust spike."
       },
       {
         "src": "images/ci_c1_aux_dlfp_w_zoom_timeheight.png",
-        "label": "DL-FP vertical velocity zoom"
+        "label": "DL-FP vertical velocity zoom",
+        "caption": "High-resolution DL-FP vertical velocity during the 11:00–16:00 UTC gravity wave train, revealing coherent updraft and downdraft cores exceeding $\\pm 2\\,\\mathrm{m\\,s^{-1}}$."
       },
       {
         "src": "images/ci_c1_20200730_88Dloop.gif",
-        "label": "NEXRAD 88D reflectivity loop"
+        "label": "NEXRAD 88D reflectivity loop",
+        "caption": "KTLX WSR-88D reflectivity loop tracking the convective outflow boundary marching eastward over the Norman platform."
       }
     ],
-    "tags": ["convection", "CI", "gravity waves", "boundaries", "bore"],
+    "tags": [
+      "convection",
+      "CI",
+      "gravity waves",
+      "boundaries",
+      "bore"
+    ],
     "sections": [
       {
         "type": "text",
@@ -185,22 +214,30 @@
       },
       {
         "src": "images/diurnal_c2_aux_surface_meteogram.png",
-        "label": "Surface meteogram"
+        "label": "Surface meteogram",
+        "caption": "High-cadence surface meteogram capturing the convective outflow pressure jump, temperature drop, and wind spike at $\\sim$23:30 UTC."
       },
       {
         "src": "images/diurnal_c2_aux_skewt_overlay.png",
-        "label": "Skew-T overlay (radiosonde comparison)"
+        "label": "Skew-T overlay (radiosonde comparison)",
+        "caption": "TROPoe thermodynamic profiles compared with co-located radiosonde soundings at 20:24 and 22:20 UTC, validating retrieval accuracy through the afternoon mixed layer."
       },
       {
         "src": "images/diurnal_c2_aux_rib_timeheight.png",
-        "label": "Bulk Richardson number time–height"
+        "label": "Bulk Richardson number time–height",
+        "caption": "Bulk Richardson number $Ri_b$ time–height cross-section identifying shear-driven unstable layers ($Ri_b < 0.25$) aloft during the nocturnal period."
       },
       {
         "src": "images/diurnal_c2_CLAMPS2stare.png",
-        "label": "DL-FP vertical stare"
+        "label": "DL-FP vertical stare",
+        "caption": "Annotated DL-FP vertical stare showing the post-boundary updraft core, delayed surface-eddy decay, and trapped residual-layer gravity waves."
       }
     ],
-    "tags": ["diurnal", "boundary layer", "CBL"],
+    "tags": [
+      "diurnal",
+      "boundary layer",
+      "CBL"
+    ],
     "sections": [
       {
         "type": "text",
@@ -236,22 +273,32 @@
       },
       {
         "src": "images/deep_cbl_c1_aux_tropoe_t_q_profiles_18_19.png",
-        "label": "TROPoe $\\theta_v$ and $q$ profiles at 18 and 19 UTC"
+        "label": "TROPoe $\\theta_v$ and $q$ profiles at 18 and 19 UTC",
+        "caption": "Standalone TROPoe $\\theta_v$ and $q$ profiles at 18:00 and 19:00 UTC with retrieval quality metrics (RMSA, RMSR), illustrating early-afternoon infrared-continuum artifacts in the Houston marine environment."
       },
       {
         "src": "images/deep_cbl_c1_aux_surface_meteogram.png",
-        "label": "Surface meteogram (full day)"
+        "label": "Surface meteogram (full day)",
+        "caption": "24-hour surface temperature, humidity, and pressure providing regional context for the ultra-moist Gulf Coast boundary layer during TRACER."
       },
       {
         "src": "images/deep_cbl_c1_aux_surface_meteogram_17_20.png",
-        "label": "Surface meteogram (17–20 UTC)"
+        "label": "Surface meteogram (17–20 UTC)",
+        "caption": "Afternoon surface meteogram subset showing peak temperatures near $36^\\circ\\mathrm{C}$ with persistently high relative humidity despite intense solar heating."
       },
       {
         "src": "images/deep_cbl_c1_aux_mixed_layer_profiles.png",
-        "label": "Mixed-layer vertical profiles"
+        "label": "Mixed-layer vertical profiles",
+        "caption": "Step-wise midday $\\theta_v$ and $q$ profiles documenting progressive erosion of the morning capping inversion as the convective boundary layer deepens."
       }
     ],
-    "tags": ["boundary layer", "retrieval quality", "CBL", "coastal", "limitations"],
+    "tags": [
+      "boundary layer",
+      "retrieval quality",
+      "CBL",
+      "coastal",
+      "limitations"
+    ],
     "sections": [
       {
         "type": "text",
@@ -293,19 +340,27 @@
       },
       {
         "src": "images/sea_breeze_aux_seabreeze_arrival_meteogram.png",
-        "label": "Sea breeze arrival timing (17–22:30 UTC)"
+        "label": "Sea breeze arrival timing (17–22:30 UTC)",
+        "caption": "Multi-station surface comparison mapping sea-breeze frontal arrival at coastal CLAMPS2 ($\\sim$17:50 UTC) and inland CLAMPS1 ($\\sim$21:35 UTC) via temperature, dewpoint, wind, and RH signatures."
       },
       {
         "src": "images/sea_breeze_aux_seabreeze_rh_snr.png",
-        "label": "Surface RH & DL-FP SNR (04–15 UTC)"
+        "label": "Surface RH & DL-FP SNR (04–15 UTC)",
+        "caption": "Surface relative humidity overlaid on lowest-gate DL-FP SNR for CLAMPS2 (coastal) and CLAMPS1 (inland), quantifying lens-condensation dropout windows driven by overnight saturation."
       },
       {
         "src": "images/sea_breeze_goes16_houston_seabreeze.gif",
-        "label": "GOES-16 Houston area (17–24 UTC)"
+        "label": "GOES-16 Houston area (17–24 UTC)",
+        "caption": "GOES-16 visible imagery (17–24 UTC) showing the sea-breeze front advancing inland across the greater Houston area."
       }
     ],
-    "tags": ["sea breeze", "coastal", "boundaries", "limitations"],
-   "sections": [
+    "tags": [
+      "sea breeze",
+      "coastal",
+      "boundaries",
+      "limitations"
+    ],
+    "sections": [
       {
         "type": "text",
         "title": "Case overview",
@@ -340,14 +395,20 @@
       },
       {
         "src": "images/stable_good_dl_c2_aux_rib_timeheight.png",
-        "label": "Bulk Richardson number time–height"
+        "label": "Bulk Richardson number time–height",
+        "caption": "Bulk Richardson number $Ri_b$ mapping mechanically generated turbulence ($Ri_b < 0.25$) beneath the nocturnal low-level jet and the transition to laminar flow aloft."
       },
       {
         "src": "images/stable_good_dl_c2_aux_surface_meteogram.png",
-        "label": "Surface meteogram"
+        "label": "Surface meteogram",
+        "caption": "Norman surface observations documenting sub-zero dewpoints, falling pressure, and the synoptic draw that sustains the high-velocity wind maximum."
       }
     ],
-    "tags": ["stable", "boundary layer", "winter"],
+    "tags": [
+      "stable",
+      "boundary layer",
+      "winter"
+    ],
     "sections": [
       {
         "type": "text",
@@ -380,22 +441,31 @@
       },
       {
         "src": "images/cold_pool_c2_aux_surface_meteogram.png",
-        "label": "OK Mesonet surface meteogram (NRMN)"
+        "label": "OK Mesonet surface meteogram (NRMN)",
+        "caption": "Oklahoma Mesonet NRMN meteogram verifying the 22:00 UTC cold-pool arrival with $10^\\circ\\mathrm{C}$ temperature crash, $3$ hPa pressure jump, northerly gust front, and heavy rainfall."
       },
       {
         "src": "images/cold_pool_c2_aux_dlfp_w_timeheight.png",
-        "label": "DL-FP vertical velocity time–height"
+        "label": "DL-FP vertical velocity time–height",
+        "caption": "Full-day DL-FP vertical velocity stare resolving the narrow updraft–downdraft couplet at the cold-pool head and subsequent gravity-wave features."
       },
       {
         "src": "images/cold_pool_c2_aux_zoom_w_wspd_18_00utc.png",
-        "label": "Evening zoom: $w$ and wind speed (18–00 UTC)"
+        "label": "Evening zoom: $w$ and wind speed (18–00 UTC)",
+        "caption": "Evening zoom coupling high-resolution DL-FP $w$ (top) with 5 min WINDoe wind speed (bottom) during outflow passage; subsidence cores reach $-2\\,\\mathrm{m\\,s^{-1}}$."
       },
       {
         "src": "images/cold_pool_c2_ktlx_20160917_2000.gif",
-        "label": "KTLX radar reflectivity (20 UTC)"
+        "label": "KTLX radar reflectivity (20 UTC)",
+        "caption": "KTLX base reflectivity and radial velocity at 20 UTC showing the severe cell west of Norman and the outrunning gust-front discontinuity approaching the platform."
       }
     ],
-    "tags": ["convection", "cold pool", "outflow", "boundaries"],
+    "tags": [
+      "convection",
+      "cold pool",
+      "outflow",
+      "boundaries"
+    ],
     "sections": [
       {
         "type": "text",
@@ -430,10 +500,15 @@
       },
       {
         "src": "images/ci_c2_aux_surface_meteogram.png",
-        "label": "Surface meteogram (precipitation)"
+        "label": "Surface meteogram (precipitation)",
+        "caption": "Surface temperature, pressure, wind, and precipitation rate documenting storm arrival at 18:00 UTC, including core rain rates exceeding $110\\,\\mathrm{mm\\,h^{-1}}$."
       }
     ],
-    "tags": ["convection", "CI", "CBL"],
+    "tags": [
+      "convection",
+      "CI",
+      "CBL"
+    ],
     "sections": [
       {
         "type": "text",
@@ -466,22 +541,31 @@
       },
       {
         "src": "images/gravity_waves_c2_aux_surface_meteogram.png",
-        "label": "Surface meteogram (full day)"
+        "label": "Surface meteogram (full day)",
+        "caption": "Full-period surface meteogram providing thermodynamic and kinematic context for the nocturnal jet, bore passage, and afternoon wave train."
       },
       {
         "src": "images/gravity_waves_c2_aux_surface_meteogram_0_14.png",
-        "label": "Surface meteogram (00–14 UTC)"
+        "label": "Surface meteogram (00–14 UTC)",
+        "caption": "Morning subset (00–14 UTC) highlighting surface conditions during the solitary bore event near 11 UTC."
       },
       {
         "src": "images/gravity_waves_c2_aux_dlfp_w_timeheight.png",
-        "label": "DL-FP vertical velocity (00–14 UTC)"
+        "label": "DL-FP vertical velocity (00–14 UTC)",
+        "caption": "DL-FP vertical velocity (00–14 UTC) resolving laminar wave structures and the localized turbulent burst at the bore nose."
       },
       {
         "src": "images/gravity_waves_c2_88d_20230805_1100.png",
-        "label": "NEXRAD 88D reflectivity (11 UTC)"
+        "label": "NEXRAD 88D reflectivity (11 UTC)",
+        "caption": "KTLX 88D reflectivity at 11 UTC showing regional convective and mesoscale structure associated with the wave-generating environment."
       }
     ],
-    "tags": ["gravity waves", "bore", "boundaries", "stable"],
+    "tags": [
+      "gravity waves",
+      "bore",
+      "boundaries",
+      "stable"
+    ],
     "sections": [
       {
         "type": "text",
@@ -514,26 +598,34 @@
       },
       {
         "src": "images/deep_cbl_c2_aux_surface_meteogram.png",
-        "label": "Surface meteogram"
+        "label": "Surface meteogram",
+        "caption": "Surface temperature and relative humidity time series grounding the afternoon sensible-heating engine (peak $38.2^\\circ\\mathrm{C}$, RH $\\rightarrow 23\\%$) that drives convective thermals."
       },
       {
         "src": "images/deep_cbl_c2_aux_mixed_layer_profiles.png",
-        "label": "Midday $\\theta_v$ and $q$ snapshots (15, 18, 21 UTC)"
+        "label": "Midday $\\theta_v$ and $q$ snapshots (15, 18, 21 UTC)",
+        "caption": "Midday $\\theta_v$ and $q$ profile snapshots at 15, 18, and 21 UTC quantifying step-wise homogenization of the mixed layer."
       },
       {
         "src": "images/deep_cbl_c2_aux_raw_w_timeheight.png",
-        "label": "Vertical velocity $w$ (DL-FP, 12–00 UTC)"
+        "label": "Vertical velocity $w$ (DL-FP, 12–00 UTC)",
+        "caption": "Un-averaged DL-FP $w$ stare showing convective updraft and downdraft plumes that terminate abruptly at the $\\sim$1.2 km capping inversion."
       },
       {
         "src": "images/deep_cbl_c2_aux_sigma_w2_over_U_timeheight.png",
-        "label": "Normalized $\\sigma_w^2 / w^{*2}$ (12–00 UTC)"
+        "label": "Normalized $\\sigma_w^2 / w^{*2}$ (12–00 UTC)",
+        "caption": "Normalized vertical velocity variance $\\sigma_w^2 / w^{*2}$ contoured through peak heating, tracking the altitude of maximum turbulent intensity."
       },
       {
         "src": "images/deep_cbl_c2_aux_sigma_w2_over_U_profile.png",
-        "label": "$\\sigma_w^2 / w^{*2}$ and temperature snapshot (18:30 UTC)"
+        "label": "$\\sigma_w^2 / w^{*2}$ and temperature snapshot (18:30 UTC)",
+        "caption": "18:30 UTC profile snapshot comparing empirical $\\sigma_w^2 / w^{*2}$ (maximum $\\approx 0.44$ at $z/z_i \\approx 0.37$) against convective similarity-theory expectations."
       }
     ],
-    "tags": ["CBL", "mature CBL"],
+    "tags": [
+      "CBL",
+      "mature CBL"
+    ],
     "sections": [
       {
         "type": "text",
@@ -570,14 +662,19 @@
       },
       {
         "src": "images/la_interaction_c1_la_coupling_pblh_cumH_stability.png",
-        "label": "Cumulative surface fluxes vs $z_i$ and stability regimes"
+        "label": "Cumulative surface fluxes vs $z_i$ and stability regimes",
+        "caption": "Cumulative surface sensible ($\\int |H|\\,dt$) and latent ($\\int |LE|\\,dt$) heat fluxes alongside Obukhov stability ($-h/L$) regimes that drive the morning transition from stable to convective conditions."
       },
       {
         "src": "images/la_interaction_c1_aux_lcl_pblh_timeseries.png",
-        "label": "Surface LCL vs CLAMPS $z_i$"
+        "label": "Surface LCL vs CLAMPS $z_i$",
+        "caption": "Surface lifting condensation level compared with CLAMPS fuzzy-logic $z_i$, showing overnight LCL–$z_i$ coupling and afternoon divergence as dry entrainment deepens the CBL."
       }
     ],
-    "tags": ["land–atmosphere interaction", "CBL"],
+    "tags": [
+      "land–atmosphere interaction",
+      "CBL"
+    ],
     "sections": [
       {
         "type": "text",
@@ -610,23 +707,32 @@
       },
       {
         "src": "images/sharp_grad_c2_aux_rib_timeheight.png",
-        "label": "Bulk Richardson number $Ri_b$ (00–12 UTC)"
+        "label": "Bulk Richardson number $Ri_b$ (00–12 UTC)",
+        "caption": "Bulk Richardson number $Ri_b$ (00–12 UTC) mapping mechanically generated turbulence pockets ($Ri_b < 0.25$) beneath the descending nocturnal wind maximum."
       },
       {
         "src": "images/sharp_grad_c2_aux_scalar_asymmetry_profiles.png",
-        "label": "Scalar asymmetry — $\\theta_v$ and $q$ (06, 09, 12, 18 UTC)"
+        "label": "Scalar asymmetry — $\\theta_v$ and $q$ (06, 09, 12, 18 UTC)",
+        "caption": "$\\theta_v$ and $q$ profile snapshots at 06, 09, 12, and 18 UTC demonstrating asymmetric evolution of active (temperature) and passive (moisture) scalar gradients under stable stratification."
       },
       {
         "src": "images/sharp_grad_c2_aux_q_zi_timeseries.png",
-        "label": "Low- and mid-level $q$ vs $z_i$ (00–00 UTC)"
+        "label": "Low- and mid-level $q$ vs $z_i$ (00–00 UTC)",
+        "caption": "Near-surface ($0$–$250$ m) and mid-level ($750$–$1000$ m) specific humidity tracked against $z_i$, capturing the moisture-gradient reversal during shear-driven turbulent mixing."
       },
       {
         "src": "images/sharp_grad_c2_aux_q_wind_timeheight.png",
-        "label": "$q$ time–height with wind barbs (03–18 UTC)"
+        "label": "$q$ time–height with wind barbs (03–18 UTC)",
+        "caption": "Zoomed $q$ time–height (03–18 UTC) with wind-barb overlay resolving the sloped channel of low-level drying tied to the nocturnal mixing window."
       }
     ],
-    "tags": ["fronts", "gradients", "boundaries", "stable"],
-   "sections": [
+    "tags": [
+      "fronts",
+      "gradients",
+      "boundaries",
+      "stable"
+    ],
+    "sections": [
       {
         "type": "text",
         "title": "Case overview",
@@ -659,18 +765,25 @@
       },
       {
         "src": "images/fropa_c2_KTLX_88D_20230327_0900.png",
-        "label": "KTLX 88D reflectivity at 09:00 UTC"
+        "label": "KTLX 88D reflectivity at 09:00 UTC",
+        "caption": "KTLX 88D reflectivity fine line and radial velocity discontinuity over Norman at 08:56 UTC, verifying synoptic cold-frontal timing against in situ observations."
       },
       {
         "src": "images/fropa_c2_aux_surface_meteogram.png",
-        "label": "Norman Mesonet surface meteogram (06–15 UTC)"
+        "label": "Norman Mesonet surface meteogram (06–15 UTC)",
+        "caption": "Norman Mesonet NRMN surface observations (06–15 UTC) documenting the 09:00 UTC pressure jump, temperature crash, and abrupt wind shift at frontal passage."
       },
       {
         "src": "images/fropa_c2_aux_frontogenesis_timeheight.png",
-        "label": "Frontogenesis magnitude (06–15 UTC)"
+        "label": "Frontogenesis magnitude (06–15 UTC)",
+        "caption": "Frontogenesis magnitude $\\mathcal{F}$ computed with a translating-front approximation ($c \\approx 6.0\\,\\mathrm{m\\,s^{-1}}$), peaking along the sloped frontal zone between 12:00 and 13:00 UTC."
       }
     ],
-    "tags": ["fronts", "boundaries", "stable"],
+    "tags": [
+      "fronts",
+      "boundaries",
+      "stable"
+    ],
     "sections": [
       {
         "type": "text",

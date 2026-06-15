@@ -319,13 +319,87 @@ function splitCaseFigures(entry) {
   return { primary, auxiliary };
 }
 
+function figureBasename(src) {
+  return src.split("/").pop().replace(/\.[^.]+$/, "");
+}
+
+function figureAnchorId(src) {
+  return `figure-${figureBasename(src)}`;
+}
+
+function buildFigureRefMap(entry) {
+  const map = new Map();
+
+  for (const figure of getCaseImages(entry)) {
+    const basename = figureBasename(figure.src).toLowerCase();
+    map.set(basename, {
+      id: figureAnchorId(figure.src),
+      label: figure.label,
+    });
+  }
+
+  return map;
+}
+
+const FIGURE_FILENAME_PATTERN =
+  /\b([a-zA-Z0-9][a-zA-Z0-9_.-]+\.(?:png|jpe?g|gif))\b/gi;
+
+const FOUR_PANEL_CAPTION =
+  'A four-panel visualization of observations available from the CLAMPS facility. $z_{i}$ is traced on top of all panels using the fuzzy logic algorithm presented in <a href="https://amt.copernicus.org/articles/17/4087/2024/" target="_blank" rel="noopener noreferrer">Smith and Carlin (2024)</a>. (A) Virtual potential temperature and (B) water vapor mixing ratio as retrieved from TROPoe. The base instrumentation used in the retrieval is listed in the panel title(s). Where cloud bases are detected (by the Doppler lidar) and the retrieval has sufficient LWC, clouds are designated by black markers. (C) Horizontal wind profiles from Doppler lidar observations. When WINDoe is used, DL PPI scans are the basis of the retrieval. The gray dashed line shows the level where standard VAD-based wind profiles lose signal. Levels where the WINDoe uncertainty is larger than 2 $m s^{-1}$ show up as fainter colorfill. Wind barbs in those uncertain layers are plotted as black with white outlines. (D) Vertical velocity variance is computed from 1-s vertically pointed stares and has an intensity (i.e., SNR) filter applied to exclude noise.';
+
+function getFigureCaption(figure) {
+  if (figure.caption) {
+    return figure.caption;
+  }
+
+  if (isFourPanelFigure(figure)) {
+    return FOUR_PANEL_CAPTION;
+  }
+
+  return "";
+}
+
+function renderFigureCaption(figure, entry) {
+  const caption = getFigureCaption(figure);
+
+  if (!caption) {
+    return "";
+  }
+
+  const figureRefMap = entry ? buildFigureRefMap(entry) : new Map();
+  const linkedCaption = linkifyFigureRefs(caption, figureRefMap);
+
+  return `
+    <figcaption class="figure-panel__caption">
+      <p>${linkedCaption}</p>
+    </figcaption>
+  `;
+}
+
+function linkifyFigureRefs(text, figureRefMap) {
+  if (!text || figureRefMap.size === 0) {
+    return text;
+  }
+
+  return text.replace(FIGURE_FILENAME_PATTERN, (match) => {
+    const basename = match.replace(/\.[^.]+$/, "").toLowerCase();
+    const ref = figureRefMap.get(basename);
+
+    if (!ref) {
+      return match;
+    }
+
+    return `<a href="#${ref.id}" class="figure-ref">${escapeHtml(ref.label)}</a>`;
+  });
+}
+
 function renderFigurePanel(figure, entry, extraClass = "") {
   const className = extraClass
     ? `figure-panel ${extraClass}`
     : "figure-panel";
 
   return `
-    <figure class="${className}">
+    <figure class="${className}" id="${figureAnchorId(figure.src)}">
       <figcaption class="figure-panel__header">${figure.label}</figcaption>
       <div class="figure-panel__body">
         <img
@@ -333,6 +407,7 @@ function renderFigurePanel(figure, entry, extraClass = "") {
           alt="${entry.title} — ${figure.label}"
         >
       </div>
+      ${renderFigureCaption(figure, entry)}
     </figure>
   `;
 }
@@ -372,7 +447,7 @@ function renderFigures(entry) {
   return figures.map((figure) => renderFigurePanel(figure, entry)).join("");
 }
 
-function renderSections(sections) {
+function renderSections(sections, entry) {
   if (!sections || sections.length === 0) {
     return `
       <section class="content-section placeholder-note">
@@ -382,13 +457,15 @@ function renderSections(sections) {
     `;
   }
 
+  const figureRefMap = entry ? buildFigureRefMap(entry) : new Map();
+
   return sections
     .map((section) => {
       if (section.type === "html") {
         return `
           <section class="content-section">
             <h2>${section.title}</h2>
-            ${section.content}
+            ${linkifyFigureRefs(section.content, figureRefMap)}
           </section>
         `;
       }
@@ -404,7 +481,7 @@ function renderSections(sections) {
 
       if (section.type === "list") {
         const items = (section.items || [])
-          .map((item) => `<li>${item}</li>`)
+          .map((item) => `<li>${linkifyFigureRefs(item, figureRefMap)}</li>`)
           .join("");
 
         return `
@@ -418,7 +495,7 @@ function renderSections(sections) {
       return `
         <section class="content-section">
           <h2>${section.title}</h2>
-          <p>${section.content}</p>
+          <p>${linkifyFigureRefs(section.content, figureRefMap)}</p>
         </section>
       `;
     })

@@ -478,6 +478,12 @@ main {
   box-shadow: var(--shadow);
   overflow: hidden;
   margin-bottom: 2rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.figure-panel:target {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light), var(--shadow);
 }
 
 .figure-panel__header {
@@ -499,6 +505,23 @@ main {
   display: block;
   max-width: 1846px;
   margin: 0 auto;
+}
+
+.figure-panel__caption {
+  padding: 0.85rem 1.25rem 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  background: #fafbfd;
+}
+
+.figure-panel__caption p {
+  margin: 0;
+}
+
+.figure-panel__caption .katex {
+  font-size: 1em;
 }
 
 .case-figures--auxiliary {
@@ -537,6 +560,13 @@ main {
 
 .content-section li + li {
   margin-top: 0.5rem;
+}
+
+a.figure-ref {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.15em;
 }
 
 .content-section .katex {
