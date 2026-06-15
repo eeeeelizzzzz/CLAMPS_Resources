@@ -35,16 +35,11 @@
         "type": "list",
         "title": "Highlights",
         "items": [
-          "Thermal Structure & Inversion (Panel A): Following 03:00 UTC, the virtual potential temperature ($\\theta_v$) shows the rapid development of a strong surface-based stable layer (indicated by the cooler blue/white shading near the surface). Convective heating begins around 12:00–13:00 UTC, driving a rapid rise in the fuzzy-logic Planetary Boundary Layer Height (PBLH) from ~250 m up to 1.75 km by late afternoon.",
-          "Moisture Transport (Panel B): Strong southerly advection maintains a deep layer of high specific humidity ($q \\approx 12\\text{ to } 15\\text{ g kg}^{-1}$) below 1.0 km throughout the nocturnal period, providing the classic moisture-tongue setup typical of Great Plains high-impact weather environments.",
-          "The Jet Core (Panel C): The NLLJ becomes clearly defined by 03:00 UTC, with a core height centered between 250 m and 600 m. Peak horizontal wind speeds exceed $15\\text{ m s}^{-1}$ between 04:00 UTC and 10:00 UTC. The wind barbs show remarkably steady southerly-to-southwesterly flow throughout the jet's lifespan.",
-          "Turbulence & Mixing (Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) shows an exceptionally quiet nocturnal boundary layer beneath the jet core. However, right around 13:00 UTC, a stark explosion of turbulent kinetic energy tracks perfectly with the rising PBLH, marking the breakdown of the jet via solar heating and convective thermals."
+          "Thermal Structure & Inversion (Standard CLAMPS Observations, Panel A): Following 03:00 UTC, the virtual potential temperature ($\\theta_v$) shows the rapid development of a strong surface-based stable layer (indicated by the cooler blue/white shading near the surface). Convective heating begins around 12:00–13:00 UTC, driving a rapid rise in the fuzzy-logic Planetary Boundary Layer Height (PBLH) from ~250 m up to 1.75 km by late afternoon.",
+          "Moisture Transport (Standard CLAMPS Observations, Panel B): Strong southerly advection maintains a deep layer of high specific humidity ($q \\approx 12\\text{ to } 15\\text{ g kg}^{-1}$) below 1.0 km throughout the nocturnal period, providing the classic moisture-tongue setup typical of Great Plains high-impact weather environments.",
+          "The Jet Core (Standard CLAMPS Observations, Panel C): The NLLJ becomes clearly defined by 03:00 UTC, with a core height centered between 250 m and 600 m. Peak horizontal wind speeds exceed $15\\text{ m s}^{-1}$ between 04:00 UTC and 10:00 UTC. The wind barbs show remarkably steady southerly-to-southwesterly flow throughout the jet's lifespan.",
+          "Turbulence & Mixing (Standard CLAMPS Observations, Panel D): The Doppler Lidar vertical velocity variance ($\\sigma_w^2$) shows an exceptionally quiet nocturnal boundary layer beneath the jet core. However, right around 13:00 UTC, a stark explosion of turbulent kinetic energy tracks perfectly with the rising PBLH, marking the breakdown of the jet via solar heating and convective thermals."
         ]
-      },
-      {
-        "type": "text",
-        "title": "Additional Visualizations",
-        "content": "To further illustrate the development and decay of the NLLJ, we have included additional figures here. These visualizations are not the standard instrument review set, but are included here to provide a more complete picture of the case."
       }
     ]
   },

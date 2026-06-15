@@ -5,7 +5,8 @@ import {
   getQueryParam,
   getCaseNeighbors,
   renderTags,
-  renderFigures,
+  renderPrimaryFigures,
+  renderAuxiliaryFigures,
   renderSections,
   renderCaseNav,
 } from "./app.js";
@@ -57,9 +58,11 @@ async function init() {
         ${renderTags(entry.tags)}
       </header>
 
-      ${renderFigures(entry)}
+      ${renderPrimaryFigures(entry)}
 
       ${renderSections(entry.sections)}
+
+      ${renderAuxiliaryFigures(entry)}
 
       ${renderCaseNav(prev, next)}
     `;

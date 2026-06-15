@@ -501,6 +501,10 @@ main {
   margin: 0 auto;
 }
 
+.case-figures--auxiliary {
+  margin-top: 0.25rem;
+}
+
 .content-section {
   background: var(--surface);
   border: 1px solid var(--border);

@@ -296,24 +296,73 @@ function renderCaseCard(entry) {
   `;
 }
 
-function renderFigures(entry) {
-  const images = getCaseImages(entry);
+function isFourPanelFigure(figure) {
+  return figure.src.includes("instrument_template_4panel");
+}
 
-  return images
-    .map(
-      (figure) => `
-        <figure class="figure-panel">
-          <figcaption class="figure-panel__header">${figure.label}</figcaption>
-          <div class="figure-panel__body">
-            <img
-              src="${figure.src}"
-              alt="${entry.title} — ${figure.label}"
-            >
-          </div>
-        </figure>
-      `
-    )
-    .join("");
+function splitCaseFigures(entry) {
+  const images = getCaseImages(entry);
+  const primary = images.filter(isFourPanelFigure);
+  const auxiliary = images.filter((figure) => !isFourPanelFigure(figure));
+
+  if (primary.length === 0 && images.length > 0) {
+    return { primary: [images[0]], auxiliary: images.slice(1) };
+  }
+
+  return { primary, auxiliary };
+}
+
+function renderFigurePanel(figure, entry, extraClass = "") {
+  const className = extraClass
+    ? `figure-panel ${extraClass}`
+    : "figure-panel";
+
+  return `
+    <figure class="${className}">
+      <figcaption class="figure-panel__header">${figure.label}</figcaption>
+      <div class="figure-panel__body">
+        <img
+          src="${figure.src}"
+          alt="${entry.title} — ${figure.label}"
+        >
+      </div>
+    </figure>
+  `;
+}
+
+function renderPrimaryFigures(entry) {
+  const { primary } = splitCaseFigures(entry);
+
+  if (primary.length === 0) {
+    return "";
+  }
+
+  return `
+    <div class="case-figures case-figures--primary">
+      ${primary.map((figure) => renderFigurePanel(figure, entry)).join("")}
+    </div>
+  `;
+}
+
+function renderAuxiliaryFigures(entry) {
+  const { auxiliary } = splitCaseFigures(entry);
+
+  if (auxiliary.length === 0) {
+    return "";
+  }
+
+  return `
+    <div class="case-figures case-figures--auxiliary">
+      ${auxiliary.map((figure) => renderFigurePanel(figure, entry)).join("")}
+    </div>
+  `;
+}
+
+function renderFigures(entry) {
+  const { primary, auxiliary } = splitCaseFigures(entry);
+  const figures = [...primary, ...auxiliary];
+
+  return figures.map((figure) => renderFigurePanel(figure, entry)).join("");
 }
 
 function renderSections(sections) {
@@ -388,5 +437,7 @@ export {
   renderTags,
   renderCaseNav,
   renderFigures,
+  renderPrimaryFigures,
+  renderAuxiliaryFigures,
   renderSections,
 };
