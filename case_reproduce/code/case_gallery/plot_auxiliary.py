@@ -120,6 +120,18 @@ class CiAuxConfig:
 
 
 @dataclass(frozen=True)
+class GravityWavesAuxConfig:
+    kind: str = "gravity_waves"
+    w_hour_start: float = 0.0
+    w_hour_end: float = 14.0
+    w_vmax: float = 2.0
+    met_hour_start: float = 0.0
+    met_hour_end: float = 24.0
+    met_zoom_hour_start: float = 0.0
+    met_zoom_hour_end: float = 14.0
+
+
+@dataclass(frozen=True)
 class SeaBreezeAuxConfig:
     kind: str = "sea_breeze"
     coastal_case_id: str = "sea_breeze_c2"
@@ -137,6 +149,7 @@ AuxCaseConfig = (
     | StableGoodDlAuxConfig
     | DeepCblAuxConfig
     | CiAuxConfig
+    | GravityWavesAuxConfig
     | CiWavesAuxConfig
     | DiurnalAuxConfig
     | SeaBreezeAuxConfig
@@ -149,6 +162,7 @@ AUX_CONFIG: dict[str, AuxCaseConfig] = {
     "stable_good_dl_c2": StableGoodDlAuxConfig(),
     "deep_cbl_c2": DeepCblAuxConfig(),
     "ci_c2": CiAuxConfig(),
+    "gravity_waves_c2": GravityWavesAuxConfig(),
     "ci_c1": CiWavesAuxConfig(),
     "diurnal_c2": DiurnalAuxConfig(
         period_plot_start_hour=18.0,
@@ -1712,6 +1726,20 @@ def plot_auxiliary(case_id: str, *, force: bool = False) -> list[Path]:
             case_id,
             met_hour_start=cfg.met_hour_start,
             met_hour_end=cfg.met_hour_end,
+            force=force,
+        )
+    if cfg.kind == "gravity_waves":
+        from case_gallery.plot_gravity_waves_aux import plot_gravity_waves_auxiliary
+
+        return plot_gravity_waves_auxiliary(
+            case_id,
+            w_hour_start=cfg.w_hour_start,
+            w_hour_end=cfg.w_hour_end,
+            w_vmax=cfg.w_vmax,
+            met_hour_start=cfg.met_hour_start,
+            met_hour_end=cfg.met_hour_end,
+            met_zoom_hour_start=cfg.met_zoom_hour_start,
+            met_zoom_hour_end=cfg.met_zoom_hour_end,
             force=force,
         )
     if cfg.kind == "ci_waves":
