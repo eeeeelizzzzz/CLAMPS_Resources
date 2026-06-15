@@ -142,7 +142,7 @@
     "images": [
       {
         "src": "images/ci_c1_instrument_template_4panel.png",
-        "label": "Convection initiation"
+        "label": "Standard CLAMPS observations"
       },
       {
         "src": "images/ci_c1_aux_surface_meteogram.png",
@@ -155,10 +155,6 @@
       {
         "src": "images/ci_c1_20200730_88Dloop.gif",
         "label": "NEXRAD 88D reflectivity loop"
-      },
-      {
-        "src": "images/gravity_waves_c1_instrument_template_4panel.png",
-        "label": "Gravity waves"
       }
     ],
     "tags": ["convection", "initiation", "gravity waves"],
@@ -248,7 +244,11 @@
       },
       {
         "src": "images/deep_cbl_c1_aux_surface_meteogram.png",
-        "label": "Surface meteogram"
+        "label": "Surface meteogram (full day)"
+      },
+      {
+        "src": "images/deep_cbl_c1_aux_surface_meteogram_17_20.png",
+        "label": "Surface meteogram (17–20 UTC)"
       },
       {
         "src": "images/deep_cbl_c1_aux_mixed_layer_profiles.png",
