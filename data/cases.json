@@ -232,7 +232,7 @@
     "title": "Deep Convective Boundary Layer",
     "subtitle": "CLAMPS1",
     "campaign": "TRACER",
-    "location": "Houston, TX",
+    "location": "Aldine, TX",
     "images": [
       {
         "src": "images/deep_cbl_c1_instrument_template_4panel.png",
@@ -379,7 +379,7 @@
     "date": "2016-09-17",
     "title": "Cold Pool",
     "subtitle": "CLAMPS2",
-    "campaign": "VORTEX-USA",
+    "campaign": "NWC Ops",
     "location": "Norman, OK",
     "images": [
       {
@@ -408,7 +408,7 @@
       {
         "type": "text",
         "title": "Case overview",
-        "content": "This case documents a convective cold-pool event observed by CLAMPS2 in Norman, Oklahoma during VORTEX-USA on 17 September 2016. The standard 4-panel view captures the full UTC day, while auxiliary figures focus on the evening transition when outflow-modified boundary-layer structure is most evident. A high-cadence (5 min) WINDoe retrieval from 18–00 UTC is used in the zoom panel to resolve wind evolution with finer temporal detail than the daily 15 min product. Surface context comes from the Norman Mesonet station (NRMN), and KTLX radar imagery provides regional convective context around 20 UTC."
+        "content": "This case documents a convective cold-pool event observed by CLAMPS2 in Norman, Oklahoma during NWC Ops on 17 September 2016. The standard 4-panel view captures the full UTC day, while auxiliary figures focus on the evening transition when outflow-modified boundary-layer structure is most evident. A high-cadence (5 min) WINDoe retrieval from 18–00 UTC is used in the zoom panel to resolve wind evolution with finer temporal detail than the daily 15 min product. Surface context comes from the Norman Mesonet station (NRMN), and KTLX radar imagery provides regional convective context around 20 UTC."
       },
       {
         "type": "list",
