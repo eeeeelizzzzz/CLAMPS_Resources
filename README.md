@@ -1,6 +1,6 @@
 # CLAMPS Case Gallery and Bibliometrics
 
-[![DOI](https://zenodo.org/badge/1264420761.svg)](https://doi.org/10.5281/zenodo.20709965)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20709965.svg)](https://doi.org/10.5281/zenodo.20709965)
 
 This repository contains a GitHub Pages site showcasing CLAMPS example cases with instrument overview figures. Each case has a detail page that can be extended with additional plots and content. An example of data visualization code is also provided.
 **Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/index.html)
