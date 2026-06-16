@@ -1,13 +1,13 @@
 # CLAMPS Case Gallery and Bibliometrics
 
+[![DOI](https://zenodo.org/badge/1264420761.svg)](https://doi.org/10.5281/zenodo.20709965)
+
 This repository contains a GitHub Pages site showcasing CLAMPS example cases with instrument overview figures. Each case has a detail page that can be extended with additional plots and content. An example of data visualization code is also provided.
-**Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/)
+**Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/index.html)
 
-**Bibliometrics (726-work review corpus):** [bibliometrics/index.html](bibliometrics/index.html)  
-[![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+**Bibliometrics (726-work review corpus)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
-**Case figure reproduction (`ci_c1`, 2020-07-30):** [case_reproduce/index.html](case_reproduce/index.html)  
-[![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
+**Case figure reproduction (`ci_c1`, 2020-07-30)**[![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 
 ## Structure
 
