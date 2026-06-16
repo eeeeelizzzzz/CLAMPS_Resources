@@ -1,5 +1,10 @@
 # Repo-wide ignores
 .DS_Store
+
+# BAMS supplemental PDF build artifacts
+output/supplement/
+supplement/latex/clamps_case_gallery_supplement.pdf
+supplement/latex/.DS_Store
 __pycache__/
 *.py[cod]
 

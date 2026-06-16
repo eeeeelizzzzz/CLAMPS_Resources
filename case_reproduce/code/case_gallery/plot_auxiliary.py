@@ -48,15 +48,25 @@ SNR_LINEAR_VMIN = 10.0 ** (SNR_DB_VMIN / 10.0)  # display floor for sub-threshol
 SNR_LINEAR_VMAX = 10.0 ** (SNR_DB_VMAX / 10.0)  # −10 dB → linear SNR 0.1 → intensity 1.1
 SNR_LINEAR_THRESHOLD = DLFP_SNR_THRESHOLD - 1.0  # intensity 1.01 → SNR 0.01 → −20 dB
 SNR_DB_QC = 10.0 * np.log10(SNR_LINEAR_THRESHOLD)  # −20 dB
-WD_COLOR = "0.45"
+WD_COLOR = "0.62"
 WS_COLOR = "0.15"
 THETA_COLOR = "0.15"
 
+PROFILE_LW = 1.8
 PROFILE_TIME_STYLES: tuple[dict[str, float | str], ...] = (
-    {"hour": 0.0, "label": "00Z", "lighten": 0.55, "lw": 1.2, "ls": "-"},
-    {"hour": 6.0, "label": "06Z", "lighten": 0.0, "lw": 2.5, "ls": "-"},
-    {"hour": 12.0, "label": "12Z", "lighten": 0.55, "lw": 1.2, "ls": "--"},
+    {"hour": 0.0, "label": "00Z", "lw": PROFILE_LW, "ls": "-"},
+    {"hour": 6.0, "label": "06Z", "lw": PROFILE_LW, "ls": "--"},
+    {"hour": 12.0, "label": "12Z", "lw": PROFILE_LW, "ls": ":"},
 )
+
+
+@dataclass(frozen=True)
+class FropaAuxConfig:
+    kind: str = "fropa"
+    met_hour_start: float = 6.0
+    met_hour_end: float = 15.0
+    front_hour_start: float = 6.0
+    front_hour_end: float = 15.0
 
 
 @dataclass(frozen=True)
@@ -144,7 +154,8 @@ class SeaBreezeAuxConfig:
 
 
 AuxCaseConfig = (
-    NlljAuxConfig
+    FropaAuxConfig
+    | NlljAuxConfig
     | StableBadDlAuxConfig
     | StableGoodDlAuxConfig
     | DeepCblAuxConfig
@@ -170,6 +181,7 @@ AUX_CONFIG: dict[str, AuxCaseConfig] = {
     ),
     "sea_breeze_c1": SeaBreezeAuxConfig(),
     "sea_breeze_c2": SeaBreezeAuxConfig(),
+    "fropa_c2": FropaAuxConfig(),
 }
 
 
@@ -406,7 +418,6 @@ def plot_vertical_profiles_peak_jet(
     for style in (profile_times[0], profile_times[2], profile_times[1]):
         target = float(style["hour"])
         lw = float(style["lw"])
-        lighten = float(style["lighten"])
         ls = str(style["ls"])
         label = str(style["label"])
 
@@ -424,19 +435,13 @@ def plot_vertical_profiles_peak_jet(
             v[np.isfinite(v)],
         ])
 
-        ws_c = _shade_color(WS_COLOR, lighten=lighten)
-        wd_c = _shade_color(WD_COLOR, lighten=lighten)
-        u_c = _shade_color(WS_COLOR, lighten=lighten)
-        v_c = _shade_color(WD_COLOR, lighten=lighten)
-        tv_c = _shade_color(THETA_COLOR, lighten=lighten)
-
-        ax_speed.plot(ws, z_w, color=ws_c, lw=lw, ls=ls, label=label)
-        ax_dir.plot(wd, z_w, color=wd_c, lw=lw, ls="-")
-        ax_uv.plot(u, z_w, color=u_c, lw=lw, ls=ls)
-        ax_uv.plot(v, z_w, color=v_c, lw=lw, ls=ls)
+        ax_speed.plot(ws, z_w, color=WS_COLOR, lw=lw, ls=ls, label=label)
+        ax_dir.plot(wd, z_w, color=WD_COLOR, lw=lw, ls=ls)
+        ax_uv.plot(u, z_w, color=WS_COLOR, lw=lw, ls=ls)
+        ax_uv.plot(v, z_w, color=WD_COLOR, lw=lw, ls=ls)
 
         ok = np.isfinite(theta_v) & np.isfinite(z_t)
-        ax_theta.plot(theta_v[ok], z_t[ok], color=tv_c, lw=lw, ls=ls)
+        ax_theta.plot(theta_v[ok], z_t[ok], color=THETA_COLOR, lw=lw, ls=ls)
 
     wind_xpad = 1.0
     all_wind = np.concatenate(wind_vals)
@@ -1758,6 +1763,19 @@ def plot_auxiliary(case_id: str, *, force: bool = False) -> list[Path]:
             rh_snr_hour_end=cfg.rh_snr_hour_end,
             bin_minutes=cfg.bin_minutes,
             force=force,
+        )
+    if cfg.kind == "fropa":
+        from case_gallery.plot_fropa_aux import plot_fropa_auxiliary
+
+        gallery = Path(__file__).resolve().parents[3] / "images"
+        return plot_fropa_auxiliary(
+            case_id,
+            met_hour_start=cfg.met_hour_start,
+            met_hour_end=cfg.met_hour_end,
+            front_hour_start=cfg.front_hour_start,
+            front_hour_end=cfg.front_hour_end,
+            force=force,
+            gallery_images_dir=gallery if gallery.is_dir() else None,
         )
     raise ValueError(f"Unknown auxiliary config kind: {cfg.kind!r}")
 

@@ -25,6 +25,16 @@ This repository contains a GitHub Pages site showcasing CLAMPS example cases wit
 | `js/` | Page logic (ES modules) |
 | `css/style.css` | Shared styles |
 
+## BAMS supplemental PDF
+
+Build a submission-ready case-gallery PDF from `data/cases.json`:
+
+```bash
+python3 scripts/build_supplement_pdf.py
+```
+
+See [scripts/supplement/README.md](scripts/supplement/README.md) for requirements, options, and manual `pdflatex` steps.
+
 ## Adding or updating cases
 
 1. Place the combined plot PNG in `images/` using the naming pattern `{case_id}_instrument_template_4panel.png`.
