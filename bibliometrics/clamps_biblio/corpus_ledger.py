@@ -26,7 +26,7 @@ FUNNEL_STEPS: list[tuple[str, str]] = [
     ("Add validated datasets", "Seed registry + discovered deposits"),
     ("Add ground-truth bypass", "Mandatory registry works"),
     ("Add manual theses", "Channel H/F with manual_flag=y"),
-    ("Final corpus", "726 works after deduplication across streams"),
+    ("Final collection", "726 works after deduplication across streams"),
 ]
 
 
@@ -137,7 +137,7 @@ def merge_stream_counts(root: Path) -> pd.DataFrame:
         corpus = pd.read_csv(corpus_path)
         rows.append(
             {
-                "stream": "Final corpus (deduplicated)",
+                "stream": "Final collection (deduplicated)",
                 "source_file": corpus_path.name,
                 "works": len(corpus),
                 "description": "Unique works after merge; 61 overlaps removed",
@@ -297,11 +297,11 @@ def inclusion_stream_counts(root: Path) -> pd.DataFrame:
     streams = merge_stream_counts(root)
     if streams.empty:
         return streams
-    return streams[~streams["stream"].astype(str).str.startswith("Final corpus")].copy()
+    return streams[~streams["stream"].astype(str).str.startswith("Final collection")].copy()
 
 
 def corpus_composition(root: Path) -> pd.DataFrame:
-    """Work-type breakdown of the finalized review corpus."""
+    """Work-type breakdown of the finalized review collection."""
     path = root / "output" / "clamps_review_corpus_clean.csv"
     if not path.exists():
         path = root / "output" / "clamps_review_corpus.csv"
@@ -338,7 +338,7 @@ def fulltext_impact_funnel(root: Path) -> pd.DataFrame:
 
     rows = [
         {
-            "step": "Published literature in corpus",
+            "step": "Published literature in collection",
             "works": len(pub),
             "notes": "Articles, reports, and preprints (590 of 726 total works)",
         },

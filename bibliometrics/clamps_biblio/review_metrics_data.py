@@ -125,7 +125,7 @@ def _enrich_corpus_df(df: pd.DataFrame, root: Path | None) -> pd.DataFrame:
 
 def load_corpus_review_frames(root: Path) -> dict[str, pd.DataFrame]:
     """
-    Review-article corpus: all finalized works plus a published-literature subset.
+    Review-article collection: all finalized works plus a published-literature subset.
 
     - flagged_yd / All works: full clamps_review_corpus.csv
     - pdf_confirmed / Published literature: corpus_class article or report
@@ -133,7 +133,7 @@ def load_corpus_review_frames(root: Path) -> dict[str, pd.DataFrame]:
     corpus_path = root / "output" / "clamps_review_corpus.csv"
     if not corpus_path.exists():
         raise FileNotFoundError(
-            f"Review corpus not found: {corpus_path}\n"
+            f"Review collection not found: {corpus_path}\n"
             "Run: python scripts/build_review_corpus.py"
         )
 

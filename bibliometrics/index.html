@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CLAMPS Review Bibliometrics</title>
-  <meta name="description" content="726-work CLAMPS review corpus, bibliometric figures, summary tables, Binder notebook, and full pipeline.">
+  <meta name="description" content="726-work CLAMPS review collection, bibliometric figures, summary tables, Binder notebook, and full pipeline.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
       <h1>CLAMPS Review Bibliometrics</h1>
       <p>
         Reproducible bibliometric analysis for the CLAMPS mobile profiling facility review:
-        a <strong>726-work corpus</strong> (570 articles, 20 reports, 107 datasets, 29 theses),
+        a <strong>726-work collection</strong> (570 articles, 20 reports, 107 datasets, 29 theses),
         figures, and summary tables.
       </p>
       <div class="header-actions">
@@ -36,9 +36,9 @@
     </div>
 
     <section class="content-section">
-      <h2>Corpus figures</h2>
+      <h2>Collection figures</h2>
       <p>
-        Annual bibliometric summaries from the 726-work review corpus:
+        Annual bibliometric summaries from the 726-work review collection:
         a two-panel bar chart (affiliation and work type, with CLAMPS1/CLAMPS2 deployment months)
         and a campaign-by-year heatmap.
         Regenerate with <code>python scripts/plot_review_figures.py</code> or the Binder notebook below.
@@ -47,7 +47,7 @@
 
     <figure class="figure-panel">
       <figcaption class="figure-panel__header">
-        Annual corpus counts with CLAMPS deployments
+        Annual collection counts with CLAMPS deployments
       </figcaption>
       <div class="figure-panel__body">
         <img
@@ -79,14 +79,14 @@
       <h2>Summary tables</h2>
       <p>
         Tabular exports accompanying the figures.
-        <a href="figures/table_corpus_summary.csv">Corpus summary (CSV)</a>
+        <a href="figures/table_corpus_summary.csv">Collection summary (CSV)</a>
         &middot;
         <a href="figures/table_impact_summary.csv">Impact summary (CSV)</a>
       </p>
     </section>
 
     <div class="table-panel" style="margin-bottom: 1.25rem;">
-      <table class="case-table" aria-label="Corpus summary by subset">
+      <table class="case-table" aria-label="Collection summary by subset">
         <thead>
           <tr>
             <th scope="col">Subset</th>
@@ -98,7 +98,7 @@
         </thead>
         <tbody>
           <tr>
-            <td>Full review corpus</td>
+            <td>Full review collection</td>
             <td>726 works; all inclusion streams</td>
             <td>166</td>
             <td>560</td>
@@ -183,7 +183,7 @@
     <div class="table-panel" style="max-width: 52rem; margin: 0 auto; padding: 1.5rem;">
       <h2>Quick reproduction (Binder)</h2>
       <p>
-        Launch the Jupyter notebook on MyBinder (~20 s to rebuild corpus and figures after the environment builds).
+        Launch the Jupyter notebook on MyBinder (~20 s to rebuild the collection and figures after the environment builds).
       </p>
       <p>
         <a href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb">

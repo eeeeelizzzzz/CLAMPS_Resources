@@ -1,10 +1,10 @@
-CLAMPS review corpus (clean export)
+CLAMPS review collection (clean export)
 =====================================
 File: clamps_review_corpus_clean.csv
 Works: 726
 
 This file supports the bibliometric figures in the CLAMPS review paper.
-One row per work in the finalized review corpus.
+One row per work in the finalized review collection.
 
 Column guide
 ------------

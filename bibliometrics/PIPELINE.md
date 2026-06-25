@@ -4,8 +4,8 @@ Two paths are supported:
 
 | Path | Time | Requires |
 |------|------|----------|
-| **A. Quick** (checkpoints → corpus → figures) | ~2 min | `setup.sh` only |
-| **B. Full** (OpenAlex discovery → scan → corpus → figures) | days | API access, AMS cookies, manual review |
+| **A. Quick** (checkpoints → collection → figures) | ~2 min | `setup.sh` only |
+| **B. Full** (OpenAlex discovery → scan → collection → figures) | days | API access, AMS cookies, manual review |
 
 ---
 
@@ -90,7 +90,7 @@ python scripts/build_theses_master_list.py
 # (In this repo, 29 theses are pre-flagged in checkpoints/clamps_theses_master_list.csv)
 ```
 
-### Phase 5: Corpus assembly
+### Phase 5: Collection assembly
 
 ```bash
 python scripts/ensure_mandatory_corpus_inputs.py
@@ -161,5 +161,5 @@ Channel definitions: `data/discovery_channels.yaml`
 | OpenAlex 429 rate limit | Increase `openalex_delay` in config.yaml |
 | AMS PDF 403 | Add `ams_cookies.txt` from institutional session |
 | Missing `clamps_local_scan_log.csv` | `setup.sh` creates empty stub |
-| Corpus count ≠ 726 | Ensure checkpoints restored; run `ensure_mandatory_corpus_inputs.py` |
+| Collection count ≠ 726 | Ensure checkpoints restored; run `ensure_mandatory_corpus_inputs.py` |
 | Playwright errors | `playwright install chromium` |

@@ -1,7 +1,7 @@
 # CLAMPS Review Bibliometric Pipeline
 
 Reproducible bibliometric analysis for the CLAMPS mobile profiling facility review paper.
-Builds a **726-work corpus** (570 articles, 20 reports, 107 datasets, 29 theses) and
+Builds a **726-work collection** (570 articles, 20 reports, 107 datasets, 29 theses) and
 generates annual bibliometric figures and summary tables.
 
 This package lives in the [CLAMPS Resources](https://eeeeelizzzzz.github.io/CLAMPS_Resources/) monorepo.
@@ -15,7 +15,7 @@ Binder reads `binder/` at the **repository root** and runs notebooks under `bibl
 |-------|------|----------|
 | **Binder notebook** | Interactive quick reproduction (~20 s) | Reviewers, curious readers |
 | **Scripts + `OPERATIONS.md`** | Full pipeline you can download and adapt | Researchers implementing their own bibliometrics |
-| **Zenodo DOI** | Permanent archive for citation | Anyone citing the corpus or code |
+| **Zenodo DOI** | Permanent archive for citation | Anyone citing the collection or code |
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
@@ -28,7 +28,7 @@ Binder reads `binder/` at the **repository root** and runs notebooks under `bibl
 
 1. Click the Binder badge above (first launch may take 3–5 min to build).
 2. Open `notebooks/reproduce.ipynb` (Binder should open it directly).
-3. Run all cells → 726-work corpus + figures in `output/figures/`.
+3. Run all cells → 726-work collection + figures in `output/figures/`.
 
 `binder/postBuild` at the repo root copies checkpoints into `bibliometrics/output/` before you run the notebook.
 
@@ -56,7 +56,7 @@ python scripts/plot_review_figures.py --no-archive
 
 ## Full operational pipeline (your own machine)
 
-For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from scratch:
+For OpenAlex discovery, PDF/HTML scanning, thesis review, and collection build from scratch:
 
 1. Install: `pip install -r requirements.txt && playwright install chromium`
 2. Configure: `config.yaml` + files in `data/` (see **`OPERATIONS.md`**)
@@ -66,7 +66,7 @@ For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from 
 
 ---
 
-## Corpus composition (726 works)
+## Collection composition (726 works)
 
 | Source | Count | Description |
 |--------|------:|-------------|
@@ -85,7 +85,7 @@ For OpenAlex discovery, PDF/HTML scanning, thesis review, and corpus build from 
 | `fig_affiliation_by_year_with_deployments.png` | NWC vs non-NWC by year + deployment months |
 | `fig_work_type_by_year_with_deployments.png` | Work-type stacks by year |
 | `fig_campaign_by_year.png` | Campaign × year heatmap |
-| `table_corpus_summary.csv` | Corpus subset counts |
+| `table_corpus_summary.csv` | Collection subset counts |
 | `table_impact_summary.csv` | PDF tier / impact metrics |
 
 **GitHub Pages:** PNGs and summary CSVs for [bibliometrics/index.html](index.html) live in `figures/` (not gitignored `output/`). After regenerating:
@@ -119,7 +119,7 @@ bibliometrics/
 
 ## Citation
 
-- **Corpus:** Zenodo data DOI (see `ZENODO.md`; update `CITATION.cff`)
+- **Collection:** Zenodo data DOI (see `ZENODO.md`; update `CITATION.cff`)
 - **Software:** Zenodo concept DOI [10.5281/zenodo.20709965](https://doi.org/10.5281/zenodo.20709965) from GitHub release (see `CITATION.cff`)
 - **Paper:** CLAMPS review manuscript
 

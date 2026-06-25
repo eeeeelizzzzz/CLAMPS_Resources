@@ -1,5 +1,5 @@
 metric,notes,nwc_affiliated,non_affiliated,total
-Full review corpus,726 works; all inclusion streams,166,560,726
+Full review collection,726 works; all inclusion streams,166,560,726
 Articles + reports,Publication-type subset,107,483,590
 Peer-reviewed articles & review papers,OpenAlex types article/review/letter; excludes peer-review comments,98,419,517
 Theses & dissertations,Manual acceptance via Channel H/F,19,10,29

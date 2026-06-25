@@ -23,13 +23,13 @@ Each new GitHub release can get a new Zenodo version DOI (versioned); the concep
 
 ---
 
-## Dataset DOI (corpus CSV)
+## Dataset DOI (collection CSV)
 
 1. Zenodo → New upload → Upload files:
    - `deliverables/clamps_review_corpus_clean.csv`
    - `deliverables/clamps_review_corpus_clean_README.txt`
 2. Resource type: **Dataset**
-3. Title: e.g. "CLAMPS review bibliometric corpus (726 works)"
+3. Title: e.g. "CLAMPS review bibliometric collection (726 works)"
 4. Description: one paragraph on discovery channels and inclusion rules (from README).
 5. Related identifier: link to software Zenodo DOI and the review paper.
 6. Publish → copy DOI.
@@ -55,6 +55,6 @@ Badge template (replace `USER` and `REPO`):
 
 ## What to put in the paper
 
-> "The 726-work bibliometric corpus is available at [data DOI]. Analysis code and an interactive reproduction notebook are available at [software DOI]."
+> "The 726-work bibliometric collection is available at [data DOI]. Analysis code and an interactive reproduction notebook are available at [software DOI]."
 
 Optional: link to Binder for interactive exploration.

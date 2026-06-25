@@ -8,7 +8,7 @@ GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling Syste
 
 **Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_Resources/](https://eeeeelizzzzz.github.io/CLAMPS_Resources/index.html)
 
-**Bibliometrics (726-work review corpus)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+**Bibliometrics (726-work review collection)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
 **Case figure reproduction (`ci_c1`, 2020-07-30)** [![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 

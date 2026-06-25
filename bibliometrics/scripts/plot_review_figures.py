@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate bibliometric figures and summary tables for the CLAMPS review corpus."""
+"""Generate bibliometric figures and summary tables for the CLAMPS review collection."""
 
 from __future__ import annotations
 
@@ -674,7 +674,7 @@ def _align_fig8_year_axes(
 
 
 def year_corpus_type_counts(df: pd.DataFrame) -> tuple[list[int], pd.DataFrame, pd.DataFrame]:
-    """Per-year counts by corpus_class for the full review corpus."""
+    """Per-year counts by corpus_class for the full review collection."""
     work = df.copy()
     work["year"] = pd.to_numeric(work["year"], errors="coerce")
     work = work[work["year"].notna()].copy()
@@ -1343,7 +1343,7 @@ def _has_fulltext_evidence(row: pd.Series) -> bool:
 
 def build_table_x(frames: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """
-    Corpus summary table for the review paper (counts by subset).
+    Collection summary table for the review paper (counts by subset).
     Does not include legacy citation-network rows (Wagner/Bell seeds).
     """
     all_works = frames["flagged_yd"]
@@ -1355,7 +1355,7 @@ def build_table_x(frames: dict[str, pd.DataFrame]) -> pd.DataFrame:
         return {"metric": metric, "notes": notes, **_affil_counts(df)}
 
     rows: list[dict] = [
-        row("Full review corpus", all_works, "726 works; all inclusion streams"),
+        row("Full review collection", all_works, "726 works; all inclusion streams"),
         row(
             "Published literature",
             pub,
@@ -1393,9 +1393,9 @@ def build_table_y(
 
     rows: list[dict] = [
         row(
-            "Published literature (review corpus)",
+            "Published literature (review collection)",
             pub,
-            "Baseline: all articles, reports, and preprints in the 726-work corpus",
+            "Baseline: all articles, reports, and preprints in the 726-work collection",
         ),
     ]
 
@@ -1419,7 +1419,7 @@ def build_table_y(
 
     rows.append(
         row(
-            "Theses (review corpus)",
+            "Theses (review collection)",
             theses,
             "29 manual theses; full-text scan coverage is limited",
         )
@@ -1454,7 +1454,7 @@ def campaign_year_matrix(
     overrides: pd.DataFrame | None = None,
 ) -> tuple[pd.DataFrame, pd.Series, pd.DataFrame, pd.DataFrame]:
     """
-    Campaign × year counts for review-corpus works (all corpus classes).
+    Campaign × year counts for review-collection works (all corpus classes).
     Mention signals (CLAMPS, AERI, lidar, etc.) are collapsed to one work count per cell.
     Untagged works use the Non-Specific row; multi-campaign works appear on each named row.
 
@@ -1542,7 +1542,7 @@ def _extend_supp_s1_years(
 
 def plot_supp_s1(frames: dict[str, pd.DataFrame], campaigns: list[str], out_dir: Path) -> None:
     """
-    Supp. Fig. S1 — campaign × year heatmap for all review-corpus works.
+    Supp. Fig. S1 — campaign × year heatmap for all review-collection works.
     Signals are aggregated (one count per work per campaign-year); time on x-axis.
     """
     pdf = frames["flagged_yd"]
@@ -1568,7 +1568,7 @@ def plot_supp_s1(frames: dict[str, pd.DataFrame], campaigns: list[str], out_dir:
     x = np.arange(n_years)
     x_half = 0.5
 
-    # Marginal: unique review-corpus works per year (deduplicated across campaigns)
+    # Marginal: unique review-collection works per year (deduplicated across campaigns)
     totals = year_totals.values.astype(float)
     bar_peak = float(totals.max()) if len(totals) and totals.max() > 0 else 1.0
     bar_colors = [SUPP_S1_TOTAL_BAR_CMAP(0.35 + 0.65 * (v / bar_peak)) for v in totals]
@@ -1769,7 +1769,7 @@ def main() -> None:
 
     corpus_path = ROOT / "output" / "clamps_review_corpus.csv"
     if not args.legacy_hc and not corpus_path.exists():
-        print("Building review corpus...")
+        print("Building review collection...")
         import subprocess
 
         subprocess.run(
@@ -1782,7 +1782,7 @@ def main() -> None:
     if "review_corpus" in frames:
         n_all = len(frames["flagged_yd"])
         n_pub = len(frames["pdf_confirmed"])
-        print(f"Using review corpus: {n_all} all works, {n_pub} published literature (article+report)")
+        print(f"Using review collection: {n_all} all works, {n_pub} published literature (article+report)")
     campaigns = load_campaign_names(ROOT)
     use_classified = classify_pdf_confirmed(
         frames["pdf_confirmed"], frames["mentions"], id_col="openalex_id"
@@ -1812,7 +1812,7 @@ def main() -> None:
     table_to_latex(
         tx_pub,
         out_dir / f"{TABLE_CORPUS_SUMMARY}.tex",
-        f"Corpus summary by subset. {NWC_AFFILIATION_CAPTION}",
+        f"Collection summary by subset. {NWC_AFFILIATION_CAPTION}",
         "tab:corpus",
     )
     table_to_latex(

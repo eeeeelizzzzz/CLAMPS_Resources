@@ -2,7 +2,7 @@
 
 This repository ships two things:
 
-1. **Quick reproduction** — `notebooks/reproduce.ipynb` + Binder (rebuild the published 726-work corpus)
+1. **Quick reproduction** — `notebooks/reproduce.ipynb` + Binder (rebuild the published 726-work collection)
 2. **Full operational pipeline** — `scripts/` + `clamps_biblio/` (run discovery through figures for a new instrument or campaign)
 
 ---
@@ -48,7 +48,7 @@ bash verify.sh
 Defines channels A–G (facility search, campaign queries, dataset citations, author seeds, ground truth).
 Adjust query budgets, confidence rules, and channel enable flags.
 
-### 3. Registries (required for a rigorous corpus)
+### 3. Registries (required for a rigorous collection)
 
 | File | Purpose |
 |------|---------|
@@ -83,7 +83,7 @@ Adjust query budgets, confidence rules, and channel enable flags.
 | 2 PDF/HTML scan | `resolve_pdf_urls*.py`, `scan_pdfs.py`, `apply_manual_scan_*.py` | scan logs + mentions |
 | 3 Deposits | `build_data_deposits_export.py`, `ensure_mandatory_corpus_inputs.py` | `clamps_data_deposits.csv` |
 | 4 Theses | `triage_thesis_repos.py`, `build_theses_master_list.py` + manual review | `clamps_theses_master_list.csv` |
-| 5 Corpus | `build_review_corpus.py`, `export_review_corpus_clean.py` | 726-work clean CSV |
+| 5 Collection | `build_review_corpus.py`, `export_review_corpus_clean.py` | 726-work clean CSV |
 | 6 Figures | `plot_review_figures.py` | Fig. 8, S1, Tables X/Y |
 
 See `PIPELINE.md` for exact commands and caveats (AMS cookies, rate limits).
@@ -94,7 +94,7 @@ See `PIPELINE.md` for exact commands and caveats (AMS cookies, rate limits).
 
 | Artifact | Where | DOI? |
 |----------|-------|------|
-| Clean corpus CSV | Zenodo | **Yes** (primary data citation) |
+| Clean collection CSV | Zenodo | **Yes** (primary data citation) |
 | This repository (tagged release) | GitHub + Zenodo | **Yes** (software citation) |
 | Binder notebook | GitHub (this repo) | Link from README; cite Zenodo |
 | Query inventory / scan logs | Supplement or Zenodo | Optional |

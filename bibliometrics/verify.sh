@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Quick verification: rebuild corpus + figures from checkpoints and compare to deliverables.
+# Quick verification: rebuild collection + figures from checkpoints and compare to deliverables.
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
@@ -17,7 +17,7 @@ if [[ ! -f config.yaml ]]; then
   cp config.yaml.example config.yaml
 fi
 
-echo "==> Building review corpus"
+echo "==> Building review collection"
 python scripts/ensure_mandatory_corpus_inputs.py
 python scripts/build_review_corpus.py
 python scripts/export_review_corpus_clean.py
@@ -66,7 +66,7 @@ if errors:
         print(f"  - {e}")
     sys.exit(1)
 
-print(f"OK: {len(clean)}-work corpus, figures and tables regenerated successfully.")
+print(f"OK: {len(clean)}-work collection, figures and tables regenerated successfully.")
 PY
 
 echo "Verification complete."

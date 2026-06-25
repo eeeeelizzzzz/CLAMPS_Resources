@@ -1111,7 +1111,7 @@ tiers:
         search_mode: full_phrases
         lookup_query: Universitat Politècnica de Catalunya
         ir_url: https://upcommons.upc.edu
-        notes: Lidar dissertations already in corpus
+        notes: Lidar dissertations already in collection
 
       - name: University of Reading
         ir_url: https://centaur.reading.ac.uk

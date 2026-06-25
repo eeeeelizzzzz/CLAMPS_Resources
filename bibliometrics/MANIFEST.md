@@ -20,7 +20,7 @@ Publishable bibliometric pipeline snapshot. Parent project files outside `biblio
 | `ensure_mandatory_corpus_inputs.py` | 3/5 | Promote seed dataset DOIs |
 | `triage_thesis_repos.py` | 4 | Auto-triage thesis candidates |
 | `build_theses_master_list.py` | 4 | Deduplicated thesis list |
-| `build_review_corpus.py` | 5 | **Merge → 726-work corpus** |
+| `build_review_corpus.py` | 5 | **Merge → 726-work collection** |
 | `export_review_corpus_clean.py` | 5 | Zenodo-ready clean export |
 | `plot_review_figures.py` | 6 | **Figures + Tables X/Y** |
 | `classify_pdf_use.py` | 6 | PDF use-tier classification (Table Y) |
@@ -59,7 +59,7 @@ See `checkpoints/README.md`.
 | `figures/fig_affiliation_*` | Affiliation panels by year |
 | `figures/fig_work_type_*` | Work-type panels with deployments |
 | `figures/fig_campaign_*` | Campaign heatmap |
-| `figures/table_corpus_summary.csv` | Corpus counts by subset |
+| `figures/table_corpus_summary.csv` | Collection counts by subset |
 | `figures/table_impact_summary.csv` | Impact tiers and theses |
 | `review_metrics/pdf_use_classification.csv` | PDF use tiers |
 
@@ -67,7 +67,7 @@ See `checkpoints/README.md`.
 
 27 modules. Key entry points:
 
-- `review_metrics_data.py` — corpus + frame loading for figures
+- `review_metrics_data.py` — collection + frame loading for figures
 - `nwc_affiliation.py` — NWC co-author classification
 - `discovered_channels.py` — channel merge/dedupe
 - `openalex_client.py` — OpenAlex API
@@ -78,7 +78,7 @@ See `checkpoints/README.md`.
 
 | File | Role |
 |------|------|
-| `notebooks/reproduce.ipynb` | Quick-path notebook (corpus + figures) |
+| `notebooks/reproduce.ipynb` | Quick-path notebook (collection + figures) |
 | `binder/environment.yml` | Binder deps (no Playwright) |
 | `binder/postBuild` | Restore checkpoints on Binder launch |
 | `OPERATIONS.md` | Adapt full pipeline for another facility |
