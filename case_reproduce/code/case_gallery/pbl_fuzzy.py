@@ -42,7 +42,7 @@ SNR_CUTOFF = 1.01
 MAX_GATE_KM = 4.0
 MAX_GATES = 278  # legacy fuzzy scripts (~5 km at CLAMPS spacing)
 
-AUTHOR_LIST = "Elizabeth Smith (NOAA-NSSL); Jacob Carlin (OU-CIMMS/NSSL)"
+AUTHOR_LIST = "Elizabeth Smith (NOAA-NSSL); Jacob Carlin (OU-CIWRO/NSSL)"
 CONTACT_LIST = "elizabeth.smith@noaa.gov"
 
 
