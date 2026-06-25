@@ -20,7 +20,7 @@ Large NetCDF files are **not** in the git repo — they bloat Binder builds past
 
 Instead, `scripts/fetch_ci_c1_data.sh` downloads a tarball from a GitHub Release:
 
-`https://github.com/eeeeelizzzzz/CLAMPS_CaseGallery/releases/download/case-data-v1/ci_c1_data.tar.gz`
+`https://github.com/eeeeelizzzzz/CLAMPS_Resources/releases/download/case-data-v1/ci_c1_data.tar.gz`
 
 Binder `postBuild` and the notebook call this automatically.
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Monorepo Binder postBuild — run via: bash binder/postBuild
-# Must be invoked from CLAMPS_CaseGallery repo root (or let Binder call it).
+# Must be invoked from CLAMPS_Resources repo root (or let Binder call it).
 
 set -euo pipefail
 

@@ -4,7 +4,7 @@ Reproducible bibliometric analysis for the CLAMPS mobile profiling facility revi
 Builds a **726-work corpus** (570 articles, 20 reports, 107 datasets, 29 theses) and
 generates annual bibliometric figures and summary tables.
 
-This package lives in the [CLAMPS Case Gallery](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/) monorepo.
+This package lives in the [CLAMPS Resources](https://eeeeelizzzzz.github.io/CLAMPS_Resources/) monorepo.
 Binder reads `binder/` at the **repository root** and runs notebooks under `bibliometrics/`.
 
 ---
@@ -17,10 +17,10 @@ Binder reads `binder/` at the **repository root** and runs notebooks under `bibl
 | **Scripts + `OPERATIONS.md`** | Full pipeline you can download and adapt | Researchers implementing their own bibliometrics |
 | **Zenodo DOI** | Permanent archive for citation | Anyone citing the corpus or code |
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
 **Binder launch URL:**  
-`https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb`
+`https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb`
 
 ---
 

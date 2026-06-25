@@ -8,7 +8,7 @@ MARKER="$DEST/.export_complete"
 TARBALL="$ROOT/.cache/ci_c1_data.tar.gz"
 
 # Default: GitHub Release asset (see case_reproduce/data/README.md).
-DEFAULT_URL="https://github.com/eeeeelizzzzz/CLAMPS_CaseGallery/releases/download/case-data-v1/ci_c1_data.tar.gz"
+DEFAULT_URL="https://github.com/eeeeelizzzzz/CLAMPS_Resources/releases/download/case-data-v1/ci_c1_data.tar.gz"
 URL="${CI_C1_DATA_URL:-$DEFAULT_URL}"
 
 has_case_data() {

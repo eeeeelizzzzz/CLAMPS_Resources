@@ -4,11 +4,11 @@
 
 GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling System (CLAMPS): facility information, curated example cases, first-decade deployment history, bibliometric analysis, and figure-reproduction notebooks.
 
-**Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/index.html)
+**Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_Resources/](https://eeeeelizzzzz.github.io/CLAMPS_Resources/index.html)
 
-**Bibliometrics (726-work review corpus)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
+**Bibliometrics (726-work review corpus)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
-**Case figure reproduction (`ci_c1`, 2020-07-30)** [![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
+**Case figure reproduction (`ci_c1`, 2020-07-30)** [![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 
 ## Structure
 
@@ -56,7 +56,7 @@ Deployment records live in `data/deployments.json`. Each page can include campai
 
 1. Push this repository to GitHub.
 2. In the repo settings, enable **Pages** with source **Deploy from branch** → `main` → `/ (root)`.
-3. The site will be published at `https://<username>.github.io/CLAMPS_CaseGallery/`.
+3. The site will be published at `https://<username>.github.io/CLAMPS_Resources/`.
 
 ## Acknowledgements
 Site layout/initial implementation of this case gallery web interface were developed with assistance from Cursor AI (2026). Case selection, figures, and scientific content were curated by the human author (Elizabeth Smith). All generative AI assistance was reviewed by the human author. 

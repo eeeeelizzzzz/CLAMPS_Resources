@@ -4,10 +4,10 @@ Interactive walkthrough for **loading plot-ready CLAMPS inputs** and building th
 
 **Demo case:** `ci_c1` — NWCRIL2020 CLAMPS1, **2020-07-30 UTC**. The gallery merges this day with `gravity_waves_c1` (same inputs, different science tag).
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 
 **Binder launch URL:**  
-`https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb`
+`https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb`
 
 ## Quick start — Binder
 
@@ -46,4 +46,4 @@ CBH dots are plotted only when TROPoe **`lwp` > 5 g m⁻²** (liquid water path)
 
 ## Data in git
 
-Example data (~620 MB) is **not** committed — it is downloaded from a [GitHub Release](https://github.com/eeeeelizzzzz/CLAMPS_CaseGallery/releases/tag/case-data-v1) during Binder `postBuild` or via `scripts/fetch_ci_c1_data.sh`. See [`data/README.md`](data/README.md) to publish/update the release asset.
+Example data (~620 MB) is **not** committed — it is downloaded from a [GitHub Release](https://github.com/eeeeelizzzzz/CLAMPS_Resources/releases/tag/case-data-v1) during Binder `postBuild` or via `scripts/fetch_ci_c1_data.sh`. See [`data/README.md`](data/README.md) to publish/update the release asset.
