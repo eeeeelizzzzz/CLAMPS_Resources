@@ -1,5 +1,7 @@
 # CLAMPS Resources
 
+<img src="images/outreach/CLAMPS-bot.png" alt="CLAMPS Bot mascot (Multitron)" width="96" align="right">
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20709965.svg)](https://doi.org/10.5281/zenodo.20709965)
 
 GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling System (CLAMPS): facility information, curated example cases, first-decade deployment history, bibliometric analysis, and figure-reproduction notebooks.
