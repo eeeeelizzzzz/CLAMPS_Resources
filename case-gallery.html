@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Case Gallery — CLAMPS Resources</title>
+  <meta name="description" content="Curated CLAMPS example cases with instrument overview figures and reproducible plotting notebooks.">
+  <base href="./">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>Case Gallery</h1>
+      <p>
+        A curated set of representative CLAMPS observation days — boundary-layer
+        regimes, mesoscale features, and campaign contexts from CLAMPS1 and CLAMPS2
+        deployments. Each case includes standard instrument overview figures and
+        optional auxiliary diagnostics.
+      </p>
+      <div class="header-actions">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="clamps-info.html" class="header-link">CLAMPS Info</a>
+        <a href="case-gallery.html" class="header-link header-link--active" aria-current="page">Case Gallery</a>
+        <a href="deployments.html" class="header-link">Deployment History</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <h2>About the gallery</h2>
+      <p>
+        The case gallery accompanies the BAMS CLAMPS facility review. It highlights
+        days that illustrate the breadth of boundary-layer and mesoscale phenomena
+        captured by the mobile profiling system — from nocturnal low-level jets and
+        stable layers to sea breezes, convection initiation, and wind-farm wakes.
+        Cases are selected for scientific representativeness and figure clarity, not
+        as a comprehensive archive of all CLAMPS data.
+      </p>
+      <p>
+        Each case page presents a four-panel instrument overview (thermodynamics,
+        moisture, winds, and vertical-velocity variance) plus optional auxiliary
+        figures and interpretive notes. A supplemental PDF and figure-reproduction
+        notebook are also available.
+      </p>
+    </section>
+
+    <div class="action-grid">
+      <a href="case-table.html" class="action-card">
+        <span class="action-card__title">Case table</span>
+        <span class="action-card__desc">Sortable directory of all curated cases</span>
+      </a>
+      <a href="gallery.html" class="action-card">
+        <span class="action-card__title">Full gallery</span>
+        <span class="action-card__desc">Searchable cards with preview figures</span>
+      </a>
+      <a href="case_reproduce/index.html" class="action-card">
+        <span class="action-card__title">Figure notebook</span>
+        <span class="action-card__desc">Reproduce a gallery figure in Binder</span>
+      </a>
+      <button type="button" id="surprise-me" class="action-card action-card--button">
+        <span class="action-card__title">Surprise me</span>
+        <span class="action-card__desc">Jump to a random case page</span>
+      </button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    CLAMPS Resources &middot; Elizabeth Smith, NOAA/NSSL Research Meteorologist &middot; GitHub <a href="https://github.com/eeeeelizzzzz">@eeeeelizzzzz</a>
+  </footer>
+
+  <script type="module" src="js/case-gallery-landing.js"></script>
+</body>
+</html>

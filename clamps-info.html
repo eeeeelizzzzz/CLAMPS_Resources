@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLAMPS Info — CLAMPS Resources</title>
+  <meta name="description" content="Overview of the CLAMPS mobile profiling facilities, instruments, data access, and bibliometric analysis.">
+  <base href="./">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>CLAMPS Info</h1>
+      <p>
+        The Collaborative Lower Atmospheric Mobile Profiling System (CLAMPS) combines
+        Doppler lidar, microwave radiometer, and AERI thermodynamic profiling in a
+        transportable trailer platform operated by NOAA/NSSL and the University of Oklahoma.
+      </p>
+      <div class="header-actions">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="clamps-info.html" class="header-link header-link--active" aria-current="page">CLAMPS Info</a>
+        <a href="case-gallery.html" class="header-link">Case Gallery</a>
+        <a href="deployments.html" class="header-link">Deployment History</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <h2>What is CLAMPS?</h2>
+      <p>
+        CLAMPS was designed to measure profiles of temperature, water vapor, and wind
+        in the lowest several kilometers of the atmosphere at high temporal resolution.
+        The integrated instrument suite supports research on convection initiation,
+        boundary-layer evolution, mesoscale dynamics, wind-energy applications, and
+        operational nowcasting concepts. Two sibling facilities — CLAMPS1 (2015) and
+        CLAMPS2 (2016) — have been deployed across field campaigns throughout the
+        United States and abroad.
+      </p>
+      <p>
+        For complete facility documentation, instrument history, retrieval methods,
+        and science applications, see the
+        <a href="https://doi.org/10.1175/bams-d-17-0165.1" target="_blank" rel="noopener noreferrer">Wagner et al. (2019) BAMS overview paper</a>
+        and the accompanying review manuscript that this site supports.
+      </p>
+    </section>
+
+    <div class="facility-grid">
+      <figure class="facility-card">
+        <img src="images/facility/clamps1.jpg" alt="CLAMPS-1 mobile profiling trailer" loading="lazy">
+        <figcaption>
+          <strong>CLAMPS1</strong> — funded by NSF, NSSL, and OU; constructed in 2015.
+          Collaboratively maintained and operated by OU and NSSL.
+        </figcaption>
+      </figure>
+      <figure class="facility-card">
+        <img src="images/facility/clamps2.jpeg" alt="CLAMPS-2 mobile profiling trailer" loading="lazy">
+        <figcaption>
+          <strong>CLAMPS2</strong> — built in 2016 by NOAA/NSSL as a sibling system.
+          Maintained and operated by NSSL/CIMMS with frequent coordinated deployments
+          alongside CLAMPS1.
+        </figcaption>
+      </figure>
+    </div>
+
+    <section class="content-section">
+      <h2>Instrument suite</h2>
+      <ul>
+        <li><strong>Doppler lidar</strong> — scanning and staring wind profiles, turbulence, and cloud-base detection</li>
+        <li><strong>Microwave radiometer (MWR)</strong> — temperature and moisture profiles, including through some cloud layers</li>
+        <li><strong>AERI</strong> — high-spectral-resolution infrared radiance for TROPoe thermodynamic retrievals</li>
+        <li><strong>Surface met &amp; radiosondes</strong> — supporting surface observations and balloon launches</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>Official resources</h2>
+      <div class="action-grid">
+        <a href="https://www.nssl.noaa.gov/tools/clamps/" class="action-card" target="_blank" rel="noopener noreferrer">
+          <span class="action-card__title">NSSL CLAMPS webpage</span>
+          <span class="action-card__desc">Facility overview, instrumentation, and references</span>
+        </a>
+        <a href="https://apps.nssl.noaa.gov/CLAMPS/data/index.html" class="action-card" target="_blank" rel="noopener noreferrer">
+          <span class="action-card__title">CLAMPS Data Viewer</span>
+          <span class="action-card__desc">Realtime and archived profile displays</span>
+        </a>
+        <a href="https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/catalog.html" class="action-card" target="_blank" rel="noopener noreferrer">
+          <span class="action-card__title">CLAMPS THREDDS archive</span>
+          <span class="action-card__desc">Campaign and operations data catalogs</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Bibliometrics</h2>
+      <p>
+        This site includes a reproducible bibliometric analysis of the
+        <strong>726-work CLAMPS review corpus</strong> (570 articles, 20 reports,
+        107 datasets, 29 theses) developed for the facility review paper. Summary
+        figures, tables, and a Binder notebook reproduce the full pipeline.
+      </p>
+      <p>
+        <a href="bibliometrics/index.html" class="doc-button">Bibliometrics overview</a>
+        <a
+          href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb"
+          class="doc-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Open Binder notebook</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    CLAMPS Resources &middot; Elizabeth Smith, NOAA/NSSL Research Meteorologist &middot; GitHub <a href="https://github.com/eeeeelizzzzz">@eeeeelizzzzz</a>
+  </footer>
+</body>
+</html>

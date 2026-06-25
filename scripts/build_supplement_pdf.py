@@ -21,6 +21,30 @@ DEFAULT_INTRO = REPO_ROOT / "scripts" / "supplement" / "intro.tex"
 TEX_BASENAME = "clamps_case_gallery_supplement"
 
 LATEX_SPECIAL = re.compile(r"([\\%#&_{}~^])")
+HTML_LINK = re.compile(
+    r'<a\s+href="([^"]+)"(?:\s+target="[^"]*")?(?:\s+rel="[^"]*")?>'
+    r"(.*?)</a>",
+    re.IGNORECASE | re.DOTALL,
+)
+HREF_PLACEHOLDER = "@@HREF{index}@@"
+
+
+def stash_html_links(text: str, hrefs: list[str]) -> str:
+    """Replace HTML anchors with placeholders and collect LaTeX \\href commands."""
+
+    def replace(match: re.Match[str]) -> str:
+        url = match.group(1).replace("%", r"\%")
+        label = escape_latex_plain(match.group(2))
+        hrefs.append(rf"\href{{{url}}}{{{label}}}")
+        return HREF_PLACEHOLDER.format(index=len(hrefs) - 1)
+
+    return HTML_LINK.sub(replace, text)
+
+
+def restore_href_placeholders(text: str, hrefs: list[str]) -> str:
+    for index, href in enumerate(hrefs):
+        text = text.replace(HREF_PLACEHOLDER.format(index=index), href)
+    return text
 
 
 def format_date(iso_date: str) -> str:
@@ -45,6 +69,8 @@ def latex_mixed(text: str) -> str:
     if not text:
         return ""
 
+    hrefs: list[str] = []
+    text = stash_html_links(text, hrefs)
     parts: list[str] = []
     index = 0
     while index < len(text):
@@ -60,7 +86,7 @@ def latex_mixed(text: str) -> str:
             break
         parts.append(text[start : end + 1])
         index = end + 1
-    return "".join(parts)
+    return restore_href_placeholders("".join(parts), hrefs)
 
 
 def is_four_panel_figure(src: str) -> bool:

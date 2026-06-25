@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deployment History — CLAMPS Resources</title>
+  <meta name="description" content="Sortable table of CLAMPS field deployments from 2015–2024.">
+  <base href="./">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1>Deployment History</h1>
+      <p>
+        CLAMPS1 and CLAMPS2 field deployments from the first decade (2015–2024).
+        Twenty-two campaign pages — some combining multiple stints — with photos,
+        deployment notes, and reference links.
+      </p>
+      <div class="header-actions">
+        <a href="index.html" class="header-link">Home</a>
+        <a href="clamps-info.html" class="header-link">CLAMPS Info</a>
+        <a href="case-gallery.html" class="header-link">Case Gallery</a>
+        <a href="deployments.html" class="header-link header-link--active" aria-current="page">Deployment History</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="table-panel">
+      <table class="case-table deployment-table" aria-label="CLAMPS field deployments">
+        <thead>
+          <tr>
+            <th scope="col">
+              <button type="button" class="case-table__sort" data-column="date" aria-sort="ascending">
+                Dates <span class="case-table__sort-indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="case-table__sort" data-column="location" aria-sort="none">
+                Location <span class="case-table__sort-indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="case-table__sort" data-column="platform" aria-sort="none">
+                CLAMPS <span class="case-table__sort-indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+            <th scope="col">
+              <button type="button" class="case-table__sort" data-column="campaign" aria-sort="none">
+                Project <span class="case-table__sort-indicator" aria-hidden="true"></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="deployment-table-body">
+          <tr>
+            <td colspan="4" class="empty-state">Loading deployments…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    CLAMPS Resources &middot; Elizabeth Smith, NOAA/NSSL Research Meteorologist &middot; GitHub <a href="https://github.com/eeeeelizzzzz">@eeeeelizzzzz</a>
+  </footer>
+
+  <script type="module" src="js/deployments-table.js"></script>
+</body>
+</html>

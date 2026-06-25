@@ -1,26 +1,32 @@
-# CLAMPS Case Gallery and Bibliometrics
+# CLAMPS Resources
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20709965.svg)](https://doi.org/10.5281/zenodo.20709965)
 
-This repository contains a GitHub Pages site showcasing CLAMPS example cases with instrument overview figures. Each case has a detail page that can be extended with additional plots and content. An example of data visualization code is also provided.
+GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling System (CLAMPS): facility information, curated example cases, first-decade deployment history, bibliometric analysis, and figure-reproduction notebooks.
+
 **Live site:** [https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/](https://eeeeelizzzzz.github.io/CLAMPS_CaseGallery/index.html)
 
 **Bibliometrics (726-work review corpus)** [![Binder — bibliometrics](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb)
 
-**Case figure reproduction (`ci_c1`, 2020-07-30)**[![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
+**Case figure reproduction (`ci_c1`, 2020-07-30)** [![Binder — case figure](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_CaseGallery/HEAD?urlpath=lab/tree/case_reproduce/notebooks/reproduce_ci_c1.ipynb)
 
 ## Structure
 
 | Path | Purpose |
 |------|---------|
-| `index.html` | Site home — links to case gallery and bibliometrics sections |
+| `index.html` | Site home — links to CLAMPS Info, Case Gallery, and Deployment History |
+| `clamps-info.html` | Facility overview, photos, official links, bibliometrics entry |
+| `case-gallery.html` | Case gallery landing (table, full gallery, notebook, surprise me) |
 | `case-table.html` | Sortable case table |
 | `gallery.html` | Card gallery with searchable case menu |
 | `case.html?id=…` | Individual case pages |
+| `deployments.html` | Sortable deployment history (2015–2024) |
+| `deployment.html?id=…` | Individual deployment pages |
 | `bibliometrics/` | Review-paper bibliometric pipeline + Binder notebook |
 | `case_reproduce/` | Instrument-template figure notebook + example data (`ci_c1`) |
 | `binder/` | MyBinder environment (repo root; bibliometrics + case figure) |
 | `data/cases.json` | Case metadata (dates, titles, images, tags) |
+| `data/deployments.json` | Deployment metadata (campaigns, dates, references) |
 | `images/` | Combined instrument overview figures |
 | `js/` | Page logic (ES modules) |
 | `css/style.css` | Shared styles |
@@ -42,6 +48,9 @@ See [scripts/supplement/README.md](scripts/supplement/README.md) for requirement
 3. For future per-case content, add a `sections` array to the case entry. Supported section types include `text`, `list`, `html`, and `image` (see `js/app.js`).
 4. Instrument-template suptitles use **deployment metadata** from `cases.json` (`{campaign} · {location} · {subtitle}`). To refresh titles on existing PNGs: `python3 scripts/fix_gallery_suptitles.py`.
 
+## Adding or updating deployments
+
+Deployment records live in `data/deployments.json`. Each page can include campaign photos with captions, combined subproject stints (e.g. VORTEX-USA, TRACER, AWAKEN), reference DOIs, and related website links. Source deployment intervals are tracked in `bibliometrics/data/clamps_deployments.csv`.
 
 ## GitHub Pages deployment
 

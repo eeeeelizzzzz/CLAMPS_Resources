@@ -20,7 +20,7 @@ async function init() {
   if (!caseId) {
     content.innerHTML = `
       <div class="error-state">
-        <p>No case selected. <a href="case-table.html">Return to the case table</a>.</p>
+        <p>No case selected. <a href="case-gallery.html">Return to the case gallery</a>.</p>
       </div>
     `;
     return;
@@ -34,13 +34,13 @@ async function init() {
       content.innerHTML = `
         <div class="error-state">
           <p>Case not found: <strong>${caseId}</strong></p>
-          <p><a href="case-table.html">Return to the case table</a></p>
+          <p><a href="case-gallery.html">Return to the case gallery</a></p>
         </div>
       `;
       return;
     }
 
-    document.title = `${entry.title} — CLAMPS Case Gallery`;
+    document.title = `${entry.title} — CLAMPS Resources`;
 
     const { prev, next } = getCaseNeighbors(cases, caseId);
 

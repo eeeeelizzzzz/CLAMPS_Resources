@@ -604,6 +604,131 @@ a.figure-ref {
   margin-top: 0.45rem;
 }
 
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.facility-card {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.facility-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.facility-card figcaption {
+  padding: 1rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.1rem 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  text-decoration: none;
+  text-align: left;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(26, 35, 50, 0.1);
+  text-decoration: none;
+}
+
+.action-card--button {
+  cursor: pointer;
+  font: inherit;
+  width: 100%;
+}
+
+.action-card__title {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.action-card__desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.deployment-full-name {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.deployment-hero {
+  margin-top: 1.5rem;
+}
+
+.deployment-photos {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.deployment-photo {
+  margin: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.deployment-photo__body {
+  background: #eef2f7;
+}
+
+.deployment-photo__body img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.deployment-photo figcaption {
+  padding: 0.9rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.deployment-subprojects {
+  min-width: 720px;
+}
+
+.deployment-subprojects td:last-child {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 18rem;
+}
+
 .placeholder-note {
   border-style: dashed;
   background: #fafbfd;

@@ -1,0 +1,889 @@
+[
+  {
+    "id": "pecan",
+    "campaign": "PECAN",
+    "full_name": "Plains Elevated Convection at Night",
+    "period": "Summer 2015",
+    "start_date": "2015-06-01",
+    "end_date": "2015-08-31",
+    "location": "Central Great Plains (Mobile)",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "CLAMPS1's first field deployment. One of a fleet of mobile PISAs with a focus on low-level jets. Operated on all IOPs and UFOs.",
+    "summary": "PECAN set out to investigate nocturnal convection initiation, bores, and low-level jets over the Great Plains. It was a large, collaborative project that included NOAA, NASA, and NSF in addition to universities. Operating as a mobile PECAN Integrated Sounding Array (PISA), CLAMPS1 provided continuous thermodynamic and kinematic profiling to study nocturnal boundary layers over the central Great Plains.",
+    "photos": [
+      {
+        "src": "images/PECAN.JPG",
+        "caption": "Scientists show the CLAMPS1 trailer to a local family during a mission in rural Kansas. An irrigator from the nearby farm drives by and greets the family."
+      }
+    ],
+    "references": [
+      {
+        "label": "Geerts et al. 2017 PECAN overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-15-00257.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — PECAN field project",
+        "url": "https://www.eol.ucar.edu/field_projects/pecan"
+      }
+    ]
+  },
+  {
+    "id": "vortex-usa",
+    "campaign": "VORTEX-USA",
+    "full_name": "Verification of the Origins of Rotation in Tornadoes Experiment — United States",
+    "period": "2016 – 2023",
+    "start_date": "2016-03-01",
+    "end_date": "2023-05-31",
+    "location": "Southeast US",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "VORTEX-USA includes VORTEX-SE and PERiLS deployments. CLAMPS1 and CLAMPS2 deployed in several locations across Alabama, Mississippi, and Arkansas. In PERiLS years, CopterSonde UAS operated alongside CLAMPS.",
+    "summary": "The VORTEX program supported the construction of CLAMPS2. Designed to profile pre-storm and storm environments across the southeastern and mid-South U.S., this work supported tornado and quasi-linear convective system research under the VORTEX-USA program. CLAMPS facilities supported multiple VORTEX-SE and PERiLS deployments across the southeastern United States from 2016 through 2023. Individual subprojects are listed below.",
+    "photos": [
+      {
+        "src": "images/VORTEX_all.svg",
+        "caption": "Data collection domains from various projects under the VORTEX-SE/VORTEX-USA umbrella are plotted on a map of the United States."
+      },
+      {
+        "src": "images/VORTEX_allCLAMPS.png",
+        "caption": "All sites where CLAMPS facilities were deployed during various VORTEX-SE/VORTEX-USA missions are shown on a map of the Southeast US region."
+      },
+      {
+        "src": "images/PERiLS.png",
+        "caption": "Scientists prepare a weather balloon for release next to CLAMPS in Lake Village, AR."
+      },
+      {
+        "src": "images/PERILS-UAS.png",
+        "caption": "Scientists land a CopterSonde weather sensing UAS near the CLAMPS site in Lake Village, AR."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "VORTEX-SE 2016",
+        "platform": "CLAMPS1",
+        "period": "March – May 2016",
+        "location": "Near Belle Mina, Alabama",
+        "notes": "CLAMPS2 construction was delayed, so CLAMPS1 was deployed in its place."
+      },
+      {
+        "name": "VORTEX-SE 2017",
+        "platform": "CLAMPS2",
+        "period": "February – March 2017",
+        "location": "Near Scottsboro, Alabama",
+        "notes": "First VORTEX outing for CLAMPS2; focused on the cold-season severe weather period."
+      },
+      {
+        "name": "VORTEX-SE 2018",
+        "platform": "CLAMPS2",
+        "period": "March – May 2018",
+        "location": "Near Belle Mina, Alabama",
+        "notes": "Onboard Doppler lidar failed and was returned to the manufacturer; replacement lidar data provided by NOAA ARL."
+      },
+      {
+        "name": "VORTEX-SE/Meso 2018–2019",
+        "platform": "CLAMPS1 & CLAMPS2",
+        "period": "CLAMPS1: Nov 2018 – Apr 2019; CLAMPS2: Feb – Apr 2019",
+        "location": "CLAMPS1: Near Courtland, Alabama; CLAMPS2: Near Cullman, Alabama",
+        "notes": "Broader regional coverage focusing on pre-event radiosonde releases across the southeastern US."
+      },
+      {
+        "name": "PERiLS 2022",
+        "platform": "CLAMPS1 & CLAMPS2",
+        "period": "February – April 2022",
+        "location": "CLAMPS1: Lake Village, Arkansas; CLAMPS2: Yazoo City, Mississippi",
+        "notes": "Large-scale study of tornado-producing quasi-linear convective systems (QLCSs). CopterSonde UAS flew nearby."
+      },
+      {
+        "name": "PERiLS 2023",
+        "platform": "CLAMPS2",
+        "period": "February – May 2023",
+        "location": "Lake Village, Arkansas",
+        "notes": "CLAMPS1 was absent due to maintenance requirements. CLAMPS2 co-deployed with CopterSonde UAS."
+      }
+    ],
+    "references": [
+      {
+        "label": "Kosiba et al. 2024 PERiLS overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-22-0064.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — VORTEX-SE field project",
+        "url": "https://www.eol.ucar.edu/field_projects/vortex-se"
+      },
+      {
+        "label": "NOAA/NSSL — VORTEX-USA",
+        "url": "https://www.nssl.noaa.gov/projects/vortex/"
+      },
+      {
+        "label": "NSSL THREDDS — PERiLS data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/PERiLS/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "minimpex",
+    "campaign": "miniMPEX",
+    "full_name": "Mini-Mesoscale Predictability EXperiment",
+    "period": "Spring 2017",
+    "start_date": "2017-03-01",
+    "end_date": "2017-05-31",
+    "location": "Central and northern Great Plains (Mobile)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Nimble project collecting pre- and near-storm observations for numerical modeling. Run concurrently with CLAMPS1 VORTEX-SE; originally CLAMPS2 was intended for the VORTEX mission, but construction delays prevented that deployment.",
+    "summary": "MiniMPEX was an NSSL-supported project and CLAMPS2's first field deployment, designed to collect targeted pre- and near-storm profiling observations to evaluate mesoscale predictability. This project had CLAMPS operate as a mobile facility, deploying across the Great Plains (mainly in Oklahoma and the Texas panhandle) for hours or less to collect near-storm datasets.",
+    "photos": [
+      {
+        "src": "images/miniMPEX.jpg",
+        "caption": "The CLAMPS2 facility deployed for the first time during the miniMPEX project. It is pictured here under stormy skies at sunset; it is so new it doesn't have any logos on it yet."
+      }
+    ],
+    "references": [],
+    "websites": []
+  },
+  {
+    "id": "epic",
+    "campaign": "EPIC",
+    "full_name": "Environmental Profiling and Initiation of Convection",
+    "period": "October 2016 & May 2017",
+    "start_date": "2016-10-29",
+    "end_date": "2017-05-31",
+    "location": "Northern Oklahoma (ARM SGP & Mesonet)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Two short deployments: EPIC-1 (calibration/validation) and EPIC-2 (operational UAS evaluation).",
+    "summary": "EPIC was an NSSL-supported project aimed at providing reference boundary-layer profiles for fixed- and rotary-wing UAS intercomparisons and evaluating the operational value of UAS observations. CLAMPS2 supported two EPIC stints in Oklahoma — a two-day ARM SGP calibration study (EPIC-1) and a five-day Mesonet-site evaluation (EPIC-2).",
+    "photos": [
+      {
+        "src": "images/EPIC.jpeg",
+        "caption": "A NSSL researcher inflates a weather balloon to launch from the CLAMPS facility."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "EPIC-1",
+        "platform": "CLAMPS2",
+        "period": "October 29–30, 2016",
+        "location": "Near DOE ARM SGP central facility (Northern Oklahoma)",
+        "notes": "Calibration and validation study providing reference data for fixed/rotary-wing UAS."
+      },
+      {
+        "name": "EPIC-2",
+        "platform": "CLAMPS2",
+        "period": "May 2017 (5 days)",
+        "location": "Near Medford, Oklahoma Mesonet site",
+        "notes": "Evaluated the operational value of UAS observations."
+      }
+    ],
+    "references": [
+      {
+        "label": "Koch et al. 2018 EPIC (JTECH)",
+        "url": "https://doi.org/10.1175/JTECH-D-18-0101.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NOAA/NSSL — EPIC",
+        "url": "https://www.nssl.noaa.gov/projects/epic/"
+      }
+    ]
+  },
+  {
+    "id": "perdigao",
+    "campaign": "Perdigão",
+    "full_name": "Perdigão multi-scale mountain wind experiment",
+    "period": "Spring 2017",
+    "start_date": "2017-04-01",
+    "end_date": "2017-06-30",
+    "location": "Central Portugal",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "Overseas deployment to Portugal. Deployed in a modular setup in a valley to study flow over complex terrain. Co-located with CU-Boulder lidar and tethered balloon systems.",
+    "summary": "Perdigão was part of the broader New European Wind Atlas effort, aiming to characterize multi-scale flows in complex (but near-idealized) mountain terrain. This was CLAMPS's first overseas deployment; instruments were shipped and deployed modularly because the full trailer could not be transported. The broader campaign included many sites and a huge number of towers across the valley.",
+    "photos": [
+      {
+        "src": "images/perdigao.JPG",
+        "caption": "The CLAMPS trailer was too large to ship overseas, so its 3 core instruments were deployed modularly on the ground with a small enclosure for the datasystem."
+      }
+    ],
+    "references": [
+      {
+        "label": "Fernando et al. 2019 Perdigão overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-17-0227.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — Perdigão field project",
+        "url": "https://www.eol.ucar.edu/field_projects/perdig%C3%A3o"
+      }
+    ]
+  },
+  {
+    "id": "rivors",
+    "campaign": "RIVoRS",
+    "full_name": "Rivers of Vorticity in Supercells",
+    "period": "May – June 2017",
+    "start_date": "2017-05-01",
+    "end_date": "2017-06-30",
+    "location": "Central Great Plains (Texas to North Dakota; Mobile)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Mobile campaign tracking supercells to capture near-surface measurements of \"vorticity rivers.\"",
+    "summary": "Aimed at documenting environmental conditions and near-surface vorticity structures in supercells across the Great Plains, CLAMPS2 operated in a mobile capacity from Texas to North Dakota, chasing supercells for the RIVoRS field campaign.",
+    "photos": [
+      {
+        "src": "images/rivors.jpg",
+        "caption": "The CLAMPS facility is shown on a deployment in the northern Great Plains; a tornado is visible in the distance."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NOAA/NSSL — RIVoRS",
+        "url": "https://www.nssl.noaa.gov/projects/rivors/"
+      }
+    ]
+  },
+  {
+    "id": "lafe",
+    "campaign": "LAFE",
+    "full_name": "Land-Atmosphere Feedback Experiment",
+    "period": "August 2017",
+    "start_date": "2017-08-01",
+    "end_date": "2017-08-31",
+    "location": "Near the ARM SGP Central Facility (Oklahoma)",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "CLAMPS collaborated with the U-Wisc. SPARC to collect lidar scans cross-track to the deployment's central RHI along with thermodynamic information.",
+    "summary": "The project aimed to quantify land–atmosphere feedback and test similarity theory. Boundary-layer profilers like CLAMPS allowed researchers to analyze the surface friction velocity, the horizontal variability of temperature, moisture, and wind, and the variability of surface fluxes over the SGP site. CLAMPS1 deployed near the ARM SGP site for LAFE and coordinated operations with the U-Wisc. SPARC facility.",
+    "photos": [
+      {
+        "src": "images/LAFE.jpg",
+        "caption": "While deployed near the ARM SGP site for LAFE, a heavy period of rain caused the CLAMPS deployment site to flood; it actually sank in the mud requiring re-leveling of the instrumentation!"
+      }
+    ],
+    "references": [
+      {
+        "label": "Wulfmeyer et al. 2018 LAFE overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-17-0009.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "DOE ARM — LAFE campaign (SGP 2017)",
+        "url": "https://armgov.svcs.arm.gov/research/campaigns/sgp2017lafe"
+      }
+    ]
+  },
+  {
+    "id": "lapse-rate",
+    "campaign": "LAPSE-RATE",
+    "full_name": "Lower Atmosphere Process Studies at Elevation – a Remotely-piloted Aircraft Team Experiment",
+    "period": "July 2018",
+    "start_date": "2018-07-01",
+    "end_date": "2018-07-31",
+    "location": "San Luis Valley, Colorado",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "Part of the ISARRA annual meeting Flight Week; provided contextual data for UAS intercomparisons via remote sensors and several balloons.",
+    "summary": "Designed to provide boundary-layer context for UAS intercomparisons and other data collection missions during ISARRA Flight Week, CLAMPS1 deployed in the San Luis Valley to support the LAPSE-RATE experiment as part of the ISARRA annual meeting's Flight Week.",
+    "photos": [
+      {
+        "src": "images/LAPSERATE.png",
+        "caption": "The CLAMPS facility deployed in the San Luis valley for this UAS-centric project."
+      }
+    ],
+    "references": [
+      {
+        "label": "de Boer et al. 2020 LAPSE-RATE overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-19-0050.1"
+      }
+    ],
+    "websites": []
+  },
+  {
+    "id": "torus",
+    "campaign": "TORUS",
+    "full_name": "Targeted Observation by Radars and UAS of Supercells",
+    "period": "2019, 2022, 2023",
+    "start_date": "2019-05-01",
+    "end_date": "2023-06-30",
+    "location": "Great Plains (Mobile)",
+    "platform": "CLAMPS2 lidar (mobile truck)",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "CLAMPS2 Doppler lidar was loaned for TORUS 2019 and 2022 (V2 truck, dual lidar mode). Only the dedicated truck lidar has been used on the truck since.",
+    "summary": "To support supercell targeting with NSSL-deployed Doppler lidar, the CLAMPS2 Doppler lidar was loaned rather than deploying as a full CLAMPS trailer to build out the first prototype NSSL Mobile Lidar Truck for TORUS 2019. That platform informed subsequent dedicated lidar-truck design and operations. The TORUS lidar truck effort collected near-storm profiles of horizontal wind and vertical velocity in storm inflow sectors.",
+    "photos": [
+      {
+        "src": "images/TORUS1.jpg",
+        "caption": "The CLAMPS2 lidar was mounted in the bed of a pickup truck in the first year of TORUS."
+      },
+      {
+        "src": "images/TORUS2.jpg",
+        "caption": "After learning about this mode of deployment, NSSL acquired an additional lidar. For TORUS 2022, an upgraded version of the lidar truck was fielded for the first time using the new, dedicated lidar and the CLAMPS2 lidar side by side to evaluate different scanning approaches. In the years since, the lidar truck has operated with just one lidar."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "TORUS 2019",
+        "platform": "CLAMPS2 lidar on NSSL Mobile Lidar Truck (v1)",
+        "period": "May – June 2019",
+        "location": "Great Plains (Mobile)",
+        "notes": "The CLAMPS2 lidar was borrowed for use on the NSSL Mobile Lidar Truck (v1)."
+      },
+      {
+        "name": "TORUS 2022",
+        "platform": "CLAMPS2 lidar on NSSL Mobile Lidar Truck (v2)",
+        "period": "May – June 2022",
+        "location": "Great Plains (Mobile)",
+        "notes": "Delayed by COVID-19. The CLAMPS2 lidar was borrowed again for the upgraded NSSL Mobile Lidar Truck (v2)."
+      },
+      {
+        "name": "TORUS LITE / 2023",
+        "platform": "NSSL truck (standalone lidar)",
+        "period": "May – June 2023",
+        "location": "Great Plains (Mobile)",
+        "notes": "Smaller version focused on airborne UAS data. CLAMPS2 lidar was not used; NSSL truck ran exclusively with its own lidar."
+      }
+    ],
+    "references": [
+      {
+        "label": "Houston et al. 2024 TORUS overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-23-0265.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — TORUS field project",
+        "url": "https://www.eol.ucar.edu/field_projects/torus"
+      },
+      {
+        "label": "NSSL THREDDS — TORUS data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/TORUS/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "sgp-mpd-compare",
+    "campaign": "SGP-MPD Compare",
+    "full_name": "ARM SGP Micropulse DIAL demonstration",
+    "period": "May – July 2019",
+    "start_date": "2019-05-01",
+    "end_date": "2019-07-31",
+    "location": "ARM SGP site (E41), Oklahoma",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "No photos available. No lidar data collected by CLAMPS (loaned to TORUS 2019); not needed at the site since ARM operated its own lidar.",
+    "summary": "For this mission, CLAMPS2 operated at ARM SGP E41 to provide additional AERI-based thermodynamic observations to expand the existing suite of observations at the site. These profiles were used for the evaluation of micropulse DIAL water-vapor systems.",
+    "photos": [],
+    "references": [],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — MPD-Net demonstration",
+        "url": "https://www.eol.ucar.edu/field_projects/mpd-netdemo"
+      },
+      {
+        "label": "NSSL THREDDS — vDIAL data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/vDIAL/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "cheesehead",
+    "campaign": "CHEESEHEAD",
+    "full_name": "Chequamegon Heterogeneous Ecosystem Energy-balance Study Enabled by a High-density Extensive Array of Detectors",
+    "period": "September – October 2019",
+    "start_date": "2019-09-01",
+    "end_date": "2019-10-31",
+    "location": "North-central Wisconsin",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "CLAMPS1: Near Lakeland airport. CLAMPS2: Near Prentice airport. Deployed in a forested area with several other instruments including NOAA PSL radar wind profilers.",
+    "summary": "Both CLAMPS facilities deployed in Wisconsin at forested sites alongside many partner instruments as part of the CHEESEHEAD project, which studied land–atmosphere interactions over a heterogeneous forest canopy and investigated how the lower atmosphere responds to spatial heterogeneity in surface energy and water exchanges.",
+    "photos": [
+      {
+        "src": "images/CHEESEHEAD.jpg",
+        "caption": "A CLAMPS facility is shown at one of the deployment sites used for this project alongside several partner instruments."
+      }
+    ],
+    "references": [
+      {
+        "label": "Butterworth et al. 2021 CHEESEHEAD overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-19-0346.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — CHEESEHEAD field project",
+        "url": "https://www.eol.ucar.edu/field_projects/cheesehead"
+      },
+      {
+        "label": "UW-Madison — CHEESEHEAD19 flux project",
+        "url": "https://flux.aos.wisc.edu/projects/2018/6/19/cheesehead19"
+      },
+      {
+        "label": "NSSL THREDDS — CHEESEHEAD data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/CHEESEHEAD/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "nwcril",
+    "campaign": "NWCRIL",
+    "full_name": "NWC readiness testing",
+    "period": "June 2020",
+    "start_date": "2020-06-01",
+    "end_date": "2020-06-30",
+    "location": "National Weather Center (Norman, Oklahoma)",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "Deployed right outside the National Weather Center between it and the Radar Innovation Lab. This site is very near the operational radiosonde launch site for Norman's NWS WFO.",
+    "summary": "Conceived after the COVID-19 driven shutdown of all operations to restore operational readiness after extended downtime, this deployment focused on CLAMPS1 assessment, calibration, and post-dormancy readiness testing.",
+    "photos": [
+      {
+        "src": "images/NWCRIL.jpg",
+        "caption": "The CLAMPS facility is pictured in the vehicle compound at the National Weather Center."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NSSL THREDDS — NWCRIL2020 data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/NWCRIL2020/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "pbltops",
+    "campaign": "PBLTops",
+    "full_name": "Planetary Boundary Layer Tops validation",
+    "period": "August – September 2020",
+    "start_date": "2020-08-01",
+    "end_date": "2020-09-30",
+    "location": "Oklahoma & Louisiana",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "CLAMPS2: OU Westheimer Airport (full project). CLAMPS1: KAEFS (1st half); Shreveport, Louisiana NWS office (2nd half). Also collected KOUN radar data.",
+    "summary": "The PBLTops project deployed the CLAMPS facilities to provide boundary-layer profiles in order to validate NWS WSR-88D dual-polarization radar height estimates. Both CLAMPS systems collected profiling data at separate sites to support polarimetric boundary-layer height validation, investigating questions regarding distance to the radar (Westheimer and KAEFS deployments) and environmental conditions (Westheimer and Shreveport deployments).",
+    "photos": [
+      {
+        "src": "images/PBLTOPS1.jpg",
+        "caption": "CLAMPS1 deployed at the Shreveport, LA NWS office during part of this project."
+      },
+      {
+        "src": "images/PBLTops2.jpg",
+        "caption": "CLAMPS2 deployed at the research area used by NSSL near the Max Westheimer Airport. You can see the original Norman Doppler radar dish in the background along with the KCRI radar."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "PBLTops — CLAMPS2",
+        "platform": "CLAMPS2",
+        "period": "August – September 2020",
+        "location": "OU Westheimer Airport",
+        "notes": ""
+      },
+      {
+        "name": "PBLTops — CLAMPS1",
+        "platform": "CLAMPS1",
+        "period": "August – September 2020",
+        "location": "KAEFS (1st half); Shreveport, LA NWS office (2nd half)",
+        "notes": ""
+      }
+    ],
+    "references": [
+      {
+        "label": "Smith & Carlin 2024 BL-top algorithm (AMT)",
+        "url": "https://doi.org/10.5194/amt-17-4087-2024"
+      },
+      {
+        "label": "Carlin et al. 2024 polarimetric BL height context (JAMC)",
+        "url": "https://doi.org/10.1175/JAMC-D-23-0231.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NSSL THREDDS — PBLtops data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/PBLtops/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "blissful",
+    "campaign": "BLISSFUL",
+    "full_name": "BLISS Field Universalization Laboratory",
+    "period": "May – June 2021",
+    "start_date": "2021-05-01",
+    "end_date": "2021-06-30",
+    "location": "KAEFS (Oklahoma)",
+    "platform": "CLAMPS1, CLAMPS2 & DL Truck",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "Combined field testing, student training, and 4 weeks of scientific boundary-layer data collection.",
+    "summary": "BLISSFUL was a post-COVID reactivation effort focused on boundary-layer intercomparison, student training, and coordinated profiling at KAEFS, specifically giving students the opportunity to propose and execute their own science missions. Both CLAMPS trailers, the NSSL Doppler lidar truck, a fleet of low-cost surface stations, CopterSonde UAS, air quality UAS, and many radiosondes were deployed at various times to Kessler Farm for combined testing and science.",
+    "photos": [
+      {
+        "src": "images/BLISSFUL.jpg",
+        "caption": "The CLAMPS facilities both deployed to the Kessler Atmospheric and Ecological Fieldstation (KAEFS), also called Kessler Farm."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "BLISS — BLISSFUL campaign",
+        "url": "https://bliss.science/opportunity/blissful-campaign/"
+      },
+      {
+        "label": "NSSL THREDDS — BLISSFUL data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/BLISSFUL/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "ncar-lotos",
+    "campaign": "NCAR LOTOS",
+    "full_name": "NCAR Lower Troposphere Observing System prototype",
+    "period": "July 2021",
+    "start_date": "2021-07-01",
+    "end_date": "2021-07-31",
+    "location": "Marshall Field Site, Colorado",
+    "platform": "CLAMPS1",
+    "platforms": [
+      "CLAMPS1"
+    ],
+    "notes": "Deployed to act as a prototype sensor node for NCAR's upcoming lower troposphere integrated network.",
+    "summary": "CLAMPS1 deployed at NCAR's Marshall Field site in Colorado to demonstrate the concept of a profiling node for NCAR's LOTOS concept. No field photos from this stint are available. Instead, the photo used here shows the new CLAMPS3 platform deployed at Marshall Field site.",
+    "photos": [
+      {
+        "src": "images/LOTOS.png",
+        "caption": "No photos are available from this deployment, however, the new CLAMPS3 facility has recently been deployed at the same site!"
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NSF/NCAR EOL — LOTOS 2021",
+        "url": "https://www.eol.ucar.edu/field_projects/lotos-2021"
+      }
+    ]
+  },
+  {
+    "id": "tracer",
+    "campaign": "TRACER",
+    "full_name": "TRacking Aerosol Convection interactions ExpeRiment",
+    "period": "August 2021 – September 2022",
+    "start_date": "2021-08-01",
+    "end_date": "2022-09-30",
+    "location": "Houston, Texas area",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "The main TRACER mission was postponed due to COVID-19. TRACER-AQ precursor was supported only by CLAMPS1 followed by the main TRACER mission a year later. CopterSonde UAS operated at the CLAMPS2 site during 2022.",
+    "summary": "TRACER-CUBIC (the CLAMPS team's sub-project) aimed to observe aerosol–convection interactions, sea-breeze regimes, and urban boundary-layer evolution near Houston. To achieve this, CLAMPS1 (inland, Aldine) and CLAMPS2 (coastal, UH Coastal Center) profiled Houston-area sites during the TRACER campaign.",
+    "photos": [
+      {
+        "src": "images/TRACER.jpg",
+        "caption": "During the main project in 2022, CopterSonde and CU-Boulder UAS operated at the CLAMPS2 site south of the city."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "TRACER-AQ",
+        "platform": "CLAMPS1",
+        "period": "August – September 2021",
+        "location": "Aldine, Texas",
+        "notes": "Air-quality-focused precursor campaign to the main TRACER mission."
+      },
+      {
+        "name": "TRACER",
+        "platform": "CLAMPS1 & CLAMPS2",
+        "period": "June – September 2022",
+        "location": "CLAMPS1: Aldine (Inland); CLAMPS2: UH Coastal Center",
+        "notes": "Observed sea breeze/urban interactions. CLAMPS2 lidar was delayed and installed later on-site due to its conflict with TORUS 2022."
+      }
+    ],
+    "references": [
+      {
+        "label": "TRACER overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-23-0331.1"
+      },
+      {
+        "label": "TRACER companion overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-23-0014.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NASA LaRC — TRACER-AQ",
+        "url": "https://www-air.larc.nasa.gov/missions/tracer-aq/"
+      },
+      {
+        "label": "DOE ARM — TRACER campaign",
+        "url": "https://www.arm.gov/research/campaigns/amf2021tracer"
+      },
+      {
+        "label": "NSSL THREDDS — TRACER data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/TRACER/catalog.html"
+      },
+      {
+        "label": "NSSL THREDDS — TRACER-AQ data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/TRACERaq/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "splash-sail",
+    "campaign": "SPLASH-SAIL",
+    "full_name": "Study of Precipitation, the Lower Atmosphere, and Surface for Hydrometeorology / Surface Atmosphere Integrated Field Laboratory",
+    "period": "October 2021 – January 2022",
+    "start_date": "2021-10-01",
+    "end_date": "2022-01-31",
+    "location": "Crested Butte, Colorado (Brush Creek site)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Lidar data is compromised for this project due generally to cold, clean air having too few aerosols to scatter the light.",
+    "summary": "Aimed at studying cold-season precipitation and surface–atmosphere exchange in complex Colorado terrain, CLAMPS2 wintered at the Brush Creek SPLASH-SAIL site in the East River watershed.",
+    "photos": [
+      {
+        "src": "images/SPLASH.jpeg",
+        "caption": "CLAMPS deployed at the Brush Creek site during the winter campaign."
+      }
+    ],
+    "references": [
+      {
+        "label": "de Boer et al. 2023 SPLASH overview (BAMS)",
+        "url": "https://doi.org/10.1175/BAMS-D-22-0147.1"
+      }
+    ],
+    "websites": [
+      {
+        "label": "NOAA PSL — SPLASH",
+        "url": "https://psl.noaa.gov/splash/"
+      },
+      {
+        "label": "NSSL THREDDS — SPLASH data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/SPLASH/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "awaken",
+    "campaign": "AWAKEN",
+    "full_name": "American WAKE ExperimeNt",
+    "period": "October 2022 – October 2023",
+    "start_date": "2022-10-01",
+    "end_date": "2023-10-31",
+    "location": "Rolling Meadows & Orlando, Oklahoma (ARM SGP)",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "CLAMPS2 (E36) considered inflow/upwind; CLAMPS1 (Rolling Meadows Golf Club) positioned between multiple large wind farms. LLNL deployed supplementary ZephIR wind lidars at both sites in year 1. In year 2, the CLAMPS1 lidar's ability to detect wind direction was compromised due to a manufacturer error blinding the orientation system.",
+    "summary": "Designed to characterize wind-farm wake impacts on boundary-layer evolution over Oklahoma wind farms, both CLAMPS systems deployed to a pair of sites near the ARM SGP region for two AWAKEN seasons, profiling boundary-layer conditions.",
+    "photos": [
+      {
+        "src": "images/AWAKEN.jpg",
+        "caption": "Both CLAMPS deployed to the vicinity around the ARM SGP site to study wind turbine effects on the boundary layer."
+      }
+    ],
+    "subprojects": [
+      {
+        "name": "AWAKEN 2022",
+        "platform": "CLAMPS1 & CLAMPS2",
+        "period": "October – December 2022",
+        "location": "CLAMPS1: Covington, Oklahoma (Golf course); CLAMPS2: Orlando, Oklahoma (ARM SGP E36)",
+        "notes": "Investigated wind turbine wakes. LLNL deployed supplementary ZephIR wind lidars at both sites."
+      },
+      {
+        "name": "AWAKEN 2023",
+        "platform": "CLAMPS1 & CLAMPS2",
+        "period": "June – October 2023",
+        "location": "Same sites as AWAKEN 2022",
+        "notes": "CLAMPS1 lidar orientation system failed, making wind direction data unreliable. Manual corrections are required using a coarser nearby reference lidar (A2)."
+      }
+    ],
+    "references": [
+      {
+        "label": "Moriarty et al. 2024 AWAKEN overview",
+        "url": "https://doi.org/10.1063/5.0141683"
+      }
+    ],
+    "websites": [
+      {
+        "label": "DOE ARM — AWAKEN 2022 campaign",
+        "url": "https://armgov.svcs.arm.gov/research/campaigns/amf2022AWAKEN"
+      },
+      {
+        "label": "U.S. DOE Wind Energy Technologies Office — AWAKEN",
+        "url": "https://wdh.energy.gov/project/awaken"
+      },
+      {
+        "label": "NSSL THREDDS — AWAKEN data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/AWAKEN/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "dual-doppler",
+    "campaign": "Dual Doppler",
+    "full_name": "Dual-Doppler lidar coordination experiment",
+    "period": "November 2023 – January 2024",
+    "start_date": "2023-11-01",
+    "end_date": "2024-01-31",
+    "location": "OU Max Westheimer Airport (Norman, Oklahoma)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Lidar deployed to the roof of the NWC and conducted low-elevation PPI scans in tandem with the NSSL truck lidar (at Westheimer) to develop dual-Doppler signal analysis methods.",
+    "summary": "Designed to provide a dataset to MIT-Lincoln Labs for developing and evaluating dual-Doppler analysis methods using coordinated scans, this project featured CLAMPS2 (lidar) scanning from the NWC roof while the NSSL lidar truck operated at Max Westheimer Airport.",
+    "photos": [
+      {
+        "src": "images/dualdop.png",
+        "caption": "The CLAMPS lidar was deployed to the roof of the NWC to conduct low angle scans while the lidar truck was positioned at the Max Westheimer airport."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NSSL THREDDS — Dual Doppler data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/DualDopp/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "mesonet-nws",
+    "campaign": "Mesonet/NWS Collaboration",
+    "full_name": "Greensight Ag UAS weather-observing demonstration",
+    "period": "August 2024",
+    "start_date": "2024-08-01",
+    "end_date": "2024-08-31",
+    "location": "KAEFS (Oklahoma)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Deployed to KAEFS and stayed in place for following campaigns. CopterSonde UAS conducted some flights alongside the Greensight platform at KAEFS.",
+    "summary": "To supply boundary-layer context for small-UAS weather network demonstrations and flight comparisons, CLAMPS2 profiled at Kessler Farm while Greensight UAS flights occurred nearby. This was the first of a series of three back-to-back deployments to KAEFS (in other words, CLAMPS stayed put). CLAMPS1 operated at the NWC.",
+    "photos": [
+      {
+        "src": "images/Mesonet.jpeg",
+        "caption": "CLAMPS deployed to the Kessler Atmospheric and Ecological Fieldstation (KAEFS), also called Kessler Farm, and operated while UAS flights occurred."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NSSL THREDDS — PreSCALES Greensight data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/SCALES/PreSCALESGreensight/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "scales",
+    "campaign": "SCALES",
+    "full_name": "Small-UAS Coordination for Atmospheric Low-Level Environmental Sampling",
+    "period": "September 2024",
+    "start_date": "2024-09-01",
+    "end_date": "2024-09-30",
+    "location": "KAEFS (Oklahoma)",
+    "platform": "CLAMPS2",
+    "platforms": [
+      "CLAMPS2"
+    ],
+    "notes": "Positioned at KAEFS to provide support to the ISARRA annual meeting Flight Week UAS platform intercomparison and SCALES science missions.",
+    "summary": "Intended to provide a profiling reference during ISARRA Flight Week UAS intercomparisons, CLAMPS2 served as a reference data source for the SCALES / ISARRA Flight Week campaign at Kessler Farm. It continued to operate through the week of science missions. This was the second in a series of three back-to-back deployments to KAEFS (CLAMPS stayed put). CLAMPS1 operated at the NWC.",
+    "photos": [
+      {
+        "src": "images/SCALES.png",
+        "caption": "CLAMPS deployed to the Kessler Atmospheric and Ecological Fieldstation (KAEFS), also called Kessler Farm, in support of the SCALES project. It served as an important reference datasource for the ISARRA flight week intercomparison."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "Zenodo — SCALES community",
+        "url": "https://zenodo.org/communities/scales/records"
+      },
+      {
+        "label": "NSSL THREDDS — SCALES data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/SCALES/catalog.html"
+      }
+    ]
+  },
+  {
+    "id": "wh2ymsie",
+    "campaign": "WH²yMSIE",
+    "full_name": "Westcoast and Heartland Hyperspectral Microwave Sensor Intensive Experiment",
+    "period": "October 2024",
+    "start_date": "2024-10-01",
+    "end_date": "2024-10-31",
+    "location": "Norman, Oklahoma (NWC & KAEFS)",
+    "platform": "CLAMPS1 & CLAMPS2",
+    "platforms": [
+      "CLAMPS1",
+      "CLAMPS2"
+    ],
+    "notes": "CLAMPS1: National Weather Center. CLAMPS2: KAEFS. CopterSonde UAS also profiled at KAEFS.",
+    "summary": "To provide ground-truth profiling datasets for simulated satellite instrument overpasses using the NASA ER-2 high-altitude aircraft, CLAMPS2 collected boundary-layer profiles during NASA ER-2 overflights alongside the CopterSonde UAS at KAEFS. This marked the last in a series of three back-to-back deployments to KAEFS, while CLAMPS1 operated concurrently at the NWC.",
+    "photos": [
+      {
+        "src": "images/Whymsie.PNG",
+        "caption": "CLAMPS deployed to the Kessler Atmospheric and Ecological Fieldstation (KAEFS), also called Kessler Farm, to collect boundary layer profiles during the period that NASA's aircraft flew over. CopterSonde UAS also profiled at the site."
+      }
+    ],
+    "references": [],
+    "websites": [
+      {
+        "label": "NASA — WHyMSIE campaign",
+        "url": "https://earth.gsfc.nasa.gov/climate/campaigns/WHyMSIE"
+      },
+      {
+        "label": "NSSL THREDDS — WHyMSIE data archive",
+        "url": "https://data.nssl.noaa.gov/thredds/catalog/FRDD/CLAMPS/campaigns/WHyMSIE/catalog.html"
+      }
+    ]
+  }
+]
