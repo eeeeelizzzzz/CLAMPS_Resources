@@ -9,6 +9,7 @@ import {
   renderDeploymentPhotos,
   renderDeploymentSubprojects,
 } from "./deployments.js";
+import { renderClampsBotAside } from "./outreach.js";
 
 const content = document.getElementById("deployment-content");
 
@@ -80,6 +81,8 @@ async function init() {
       </section>
 
       ${notesHtml}
+
+      ${deploymentId === "splash-sail" ? renderClampsBotAside() : ""}
 
       ${renderDeploymentSubprojects(entry.subprojects)}
 

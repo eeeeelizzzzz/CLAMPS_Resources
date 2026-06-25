@@ -656,6 +656,119 @@ a.figure-ref {
   line-height: 1.5;
 }
 
+.clamps-bot-aside {
+  margin: 1.5rem 0;
+}
+
+.clamps-bot-aside__panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.clamps-bot-aside__img {
+  flex-shrink: 0;
+  width: 27rem;
+  height: auto;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+.clamps-bot-aside__title {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.clamps-bot-aside__formal {
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.clamps-bot-aside__lead {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.clamps-bot-aside__facts {
+  margin: 0 0 0.85rem;
+}
+
+.clamps-bot-aside__facts > div + div {
+  margin-top: 0.85rem;
+}
+
+.clamps-bot-aside__facts dt {
+  margin: 0 0 0.25rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.clamps-bot-aside__facts dd {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.clamps-bot-aside__storymap {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.clamps-bot-aside--compact .clamps-bot-aside__img {
+  width: 9rem;
+}
+
+.clamps-bot-aside--compact .clamps-bot-aside__formal {
+  margin-bottom: 0.55rem;
+}
+
+.clamps-bot-aside:not(.clamps-bot-aside--compact) .clamps-bot-aside__panel {
+  gap: 1.5rem;
+  padding: 1.35rem 1.5rem;
+}
+
+.clamps-bot-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.clamps-bot-footer img {
+  width: 2.25rem;
+  height: auto;
+}
+
+@media (max-width: 540px) {
+  .clamps-bot-aside__panel {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .clamps-bot-aside:not(.clamps-bot-aside--compact) .clamps-bot-aside__img {
+    width: 22.5rem;
+  }
+}
+
 .action-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));

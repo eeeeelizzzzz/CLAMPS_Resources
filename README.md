@@ -34,7 +34,7 @@ GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling Syste
 
 ## BAMS supplemental PDF
 
-Build a submission-ready case-gallery PDF from `data/cases.json`:
+This repository includes a build script that generates a printable case-gallery PDF from `data/cases.json`:
 
 ```bash
 python3 scripts/build_supplement_pdf.py
