@@ -36,7 +36,7 @@ export function renderClampsBotAside({ compact = false, imagePrefix = "" } = {})
 
   if (compact) {
     return `
-      <aside class="clamps-bot-aside${compactClass}">
+      <aside class="clamps-bot-aside clamps-bot-aside--outreach${compactClass}">
         <div class="clamps-bot-aside__panel">
           ${clampsBotImage(imagePrefix)}
           <div class="clamps-bot-aside__body">
@@ -53,7 +53,7 @@ export function renderClampsBotAside({ compact = false, imagePrefix = "" } = {})
   }
 
   return `
-    <aside class="clamps-bot-aside${compactClass}">
+    <aside class="clamps-bot-aside clamps-bot-aside--outreach${compactClass}">
       <div class="clamps-bot-aside__panel">
         ${clampsBotImage(imagePrefix)}
         <div class="clamps-bot-aside__body">

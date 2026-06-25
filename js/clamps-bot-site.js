@@ -9,10 +9,6 @@ function imagePrefix() {
 }
 
 function injectAside() {
-  if (document.querySelector(".clamps-bot-aside")) {
-    return;
-  }
-
   const prefix = imagePrefix();
   const mounts = document.querySelectorAll("[data-clamps-bot-mount]");
 
@@ -21,6 +17,10 @@ function injectAside() {
       const compact = mount.dataset.clampsBot === "compact";
       mount.outerHTML = renderClampsBotAside({ compact, imagePrefix: prefix });
     });
+    return;
+  }
+
+  if (document.querySelector(".clamps-bot-aside--outreach")) {
     return;
   }
 
