@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CLAMPS Info — CLAMPS Resources</title>
-  <meta name="description" content="Overview of the CLAMPS mobile profiling facilities, instruments, data access, and bibliometric analysis.">
+  <meta name="description" content="Overview of CLAMPS mobile profiling facilities (CLAMPS1–4), instruments, data access, and bibliometric analysis.">
   <base href="./">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,8 +14,11 @@
       <h1>CLAMPS Info</h1>
       <p>
         The Collaborative Lower Atmospheric Mobile Profiling System (CLAMPS) combines
-        Doppler lidar, microwave radiometer, and AERI thermodynamic profiling in a
-        transportable trailer platform operated by NOAA/NSSL and the University of Oklahoma.
+        remote-sensing and in situ boundary-layer observations on transportable platforms
+        operated across NOAA and university partners. CLAMPS1 and CLAMPS2 — built at
+        NOAA/NSSL and the University of Oklahoma — profile temperature, moisture, and
+        wind for severe-weather and boundary-layer research. Newer fire-weather systems
+        (CLAMPS3 and CLAMPS4; joint NOAA labs effort) extend the concept for wildland and prescribed-fire applications.
       </p>
       <div class="header-actions">
         <a href="index.html" class="header-link">Home</a>
@@ -33,16 +36,34 @@
         CLAMPS was designed to measure profiles of temperature, water vapor, and wind
         in the lowest several kilometers of the atmosphere at high temporal resolution.
         The integrated instrument suite supports research on convection initiation,
-        boundary-layer evolution, mesoscale dynamics, wind-energy applications, and
-        operational nowcasting concepts. Two sibling facilities — CLAMPS1 (2015) and
-        CLAMPS2 (2016) — have been deployed across field campaigns throughout the
-        United States and abroad.
+        boundary-layer evolution, mesoscale dynamics, wind-energy applications, fire
+        weather, and operational nowcasting concepts.
       </p>
       <p>
-        For complete facility documentation, instrument history, retrieval methods,
-        and science applications, see the
-        <a href="https://doi.org/10.1175/bams-d-17-0165.1" target="_blank" rel="noopener noreferrer">Wagner et al. (2019) BAMS overview paper</a>
-        and the accompanying review manuscript that this site supports.
+        <strong>CLAMPS1 (2015) and CLAMPS2 (2016)</strong> were developed at NOAA’s
+        National Severe Storms Laboratory (NSSL) with University of Oklahoma partners.
+        These sibling trailers deployed across field campaigns throughout the United States
+        and abroad — the first decade of that record is summarized in this site’s
+        <a href="deployments.html">deployment history</a>.
+      </p>
+      <p>
+        <strong>CLAMPS3 and CLAMPS4</strong> are a new generation of mobile fire-weather
+        observing systems. Construction began in Boulder in 2024 as a collaboration among
+        NOAA’s Air Resources Laboratory (ARL), Global Monitoring Laboratory (GML),
+        Global Systems Laboratory (GSL), and Physical Sciences Laboratory (PSL). 
+        The systems are built for rapid deployment to wildfire-prone regions to monitor how
+        atmospheric and land-surface conditions influence fire ignition risk and behavior,
+        including upwind or downwind of active fires and in complex terrain. CLAMPS3 was first deployed in late July 2025 at NCAR’s Marshall Field Site near
+        Boulder for proof-of-concept testing and continuous boundary-layer observations.
+        CLAMPS4 deployed for the first time in June 2026 near Kennewick, Washington.
+      </p>
+      <p>
+        For CLAMPS1/CLAMPS2 facility documentation, retrieval methods, and science
+        applications, see the
+        <a href="https://doi.org/10.1175/bams-d-17-0165.1" target="_blank" rel="noopener noreferrer">Wagner et al. (2019) BAMS overview paper</a>.
+        For the fire-weather systems, see NOAA GSL’s
+        <a href="https://gsl.noaa.gov/fire-weather/observations/" target="_blank" rel="noopener noreferrer">Fire Weather Observations</a>
+        page and the accompanying review manuscript that this site supports.
       </p>
     </section>
 
@@ -65,13 +86,22 @@
     </div>
 
     <section class="content-section">
-      <h2>Instrument suite</h2>
-      <ul>
-        <li><strong>Doppler lidar</strong> — scanning and staring wind profiles, turbulence, and cloud-base detection</li>
-        <li><strong>Microwave radiometer (MWR)</strong> — temperature and moisture profiles, including through some cloud layers</li>
-        <li><strong>AERI</strong> — high-spectral-resolution infrared radiance for TROPoe thermodynamic retrievals</li>
-        <li><strong>Surface met &amp; radiosondes</strong> — supporting surface observations and balloon launches</li>
-      </ul>
+      <h2>Bibliometrics</h2>
+      <p>
+        This site includes a reproducible bibliometric analysis of the
+        <strong>726-work CLAMPS review corpus</strong> (570 articles, 20 reports,
+        107 datasets, 29 theses) developed for the facility review paper. Summary
+        figures, tables, and a Binder notebook reproduce the full pipeline.
+      </p>
+      <p>
+        <a href="bibliometrics/index.html" class="doc-button">Bibliometrics overview</a>
+        <a
+          href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb"
+          class="doc-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Open Binder notebook</a>
+      </p>
     </section>
 
     <section class="content-section">
@@ -89,26 +119,87 @@
           <span class="action-card__title">CLAMPS THREDDS archive</span>
           <span class="action-card__desc">Campaign and operations data catalogs</span>
         </a>
+        <a href="https://gsl.noaa.gov/fire-weather/observations/" class="action-card" target="_blank" rel="noopener noreferrer">
+          <span class="action-card__title">GSL Fire Weather Observations</span>
+          <span class="action-card__desc">CLAMPS3/4 fire-weather systems, deployments, and data access</span>
+        </a>
+        <a href="https://www.psl.noaa.gov/fire_weather/modelobs/index.html" class="action-card" target="_blank" rel="noopener noreferrer">
+          <span class="action-card__title">PSL Fire Weather Model/Obs Comparisons</span>
+          <span class="action-card__desc">CLAMPS3/4 observations and model comparison displays</span>
+        </a>
       </div>
     </section>
 
     <section class="content-section">
-      <h2>Bibliometrics</h2>
+      <h2>CLAMPS1 &amp; CLAMPS2</h2>
       <p>
-        This site includes a reproducible bibliometric analysis of the
-        <strong>726-work CLAMPS review corpus</strong> (570 articles, 20 reports,
-        107 datasets, 29 theses) developed for the facility review paper. Summary
-        figures, tables, and a Binder notebook reproduce the full pipeline.
+        CLAMPS1 was funded by NSF, NSSL, and the University of Oklahoma and constructed
+        in 2015. CLAMPS2 followed in 2016 as a sibling system built by NOAA/NSSL. The
+        two trailers share a common severe-weather profiling design: a transportable
+        platform combining Doppler lidar, microwave radiometry, and AERI-based
+        thermodynamic retrievals, with surface met and radiosonde support. CLAMPS1 is
+        collaboratively maintained and operated by OU and NSSL; CLAMPS2 is maintained
+        and operated by NSSL/CIMMS, with frequent coordinated deployments alongside
+        CLAMPS1.
       </p>
       <p>
-        <a href="bibliometrics/index.html" class="doc-button">Bibliometrics overview</a>
-        <a
-          href="https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab/tree/bibliometrics/notebooks/reproduce.ipynb"
-          class="doc-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Open Binder notebook</a>
+        Retrieval methods, instrument history, and science applications are documented in the
+        <a href="https://doi.org/10.1175/bams-d-17-0165.1" target="_blank" rel="noopener noreferrer">Wagner et al. (2019) BAMS overview paper</a>.
       </p>
+      <h3>Instrument suite</h3>
+      <ul>
+        <li><strong>Doppler lidar</strong> — scanning and staring wind profiles, turbulence, and cloud-base detection</li>
+        <li><strong>Microwave radiometer (MWR)</strong> — temperature and moisture profiles, including through some cloud layers</li>
+        <li><strong>AERI</strong> — high-spectral-resolution infrared radiance for TROPoe thermodynamic retrievals</li>
+        <li><strong>Surface met &amp; radiosondes</strong> — supporting surface observations and balloon launches</li>
+      </ul>
+    </section>
+
+    <section class="content-section">
+      <h2>CLAMPS3 &amp; CLAMPS4 (fire weather)</h2>
+      <p>
+        The fire-weather trailers expand CLAMPS beyond the original severe-weather
+        instrument suite. Construction began in Boulder in 2024 as a collaboration among
+        NOAA’s Air Resources Laboratory (ARL), Global Monitoring Laboratory (GML),
+        Global Systems Laboratory (GSL), and Physical Sciences Laboratory (PSL). GSL
+        Senior Scientist Dave Turner — who was instrumental in the original NSSL CLAMPS
+        design — leads development of the fire-weather facilities. Several sensors are
+        integrated on ARL’s collapsible mobile observing tower. GSL’s Tropospheric
+        Remotely Observed Profiling via Optimal Estimation (TROPoe) software retrieves
+        thermodynamic profiles from infrared spectrometer data. Together, the systems
+        observe the surface and boundary layer to improve understanding of land–atmosphere
+        interactions relevant to fire weather and to evaluate NOAA prediction models in
+        complex terrain.
+      </p>
+      <p>
+        CLAMPS3 was first deployed in late July 2025 at NCAR’s Marshall Field Site near
+        Boulder for proof-of-concept testing. CLAMPS4 deployed in June 2026 near
+        Kennewick, Washington. See NOAA GSL’s
+        <a href="https://gsl.noaa.gov/fire-weather/observations/" target="_blank" rel="noopener noreferrer">Fire Weather Observations</a>
+        page for current deployment status and data access.
+      </p>
+      <h3>Instrument suite</h3>
+      <ul>
+        <li><strong>Doppler lidar wind profiler</strong> — vertical profiles of wind speed and direction and turbulent mixing</li>
+        <li><strong>Infrared spectrometer</strong> — temperature and humidity profiles (surface to ~3 km) and cloud properties via TROPoe</li>
+        <li><strong>Ceilometer</strong> — aerosol, smoke, and cloud-layer heights</li>
+        <li><strong>Surface radiometers</strong> — downward shortwave and longwave radiation</li>
+        <li><strong>Sonic anemometers &amp; moisture probes</strong> — turbulent fluxes of heat, moisture, CO<sub>2</sub>, and momentum</li>
+        <li><strong>Surface meteorology</strong> — near-surface temperature, humidity, pressure, precipitation, and wind</li>
+        <li><strong>Soil moisture probes</strong> — soil moisture at multiple depths</li>
+        <li><strong>Trace gas &amp; aerosol sensors</strong> — PM<sub>2.5</sub>, CO<sub>2</sub>, and CO just above the trailer</li>
+      </ul>
+      <figure class="facility-feature">
+        <img
+          src="images/LOTOS.png"
+          alt="NOAA scientists deploying CLAMPS3 at NCAR’s Marshall Field Site"
+          loading="lazy"
+        >
+        <figcaption>
+          CLAMPS3 at NCAR’s Marshall Field Site during initial fire-weather system
+          deployment and testing (July 2025). Photo from the NCAR LOTOS deployment record.
+        </figcaption>
+      </figure>
     </section>
   </main>
 

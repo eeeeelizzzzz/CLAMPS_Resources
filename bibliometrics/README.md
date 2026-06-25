@@ -120,7 +120,7 @@ bibliometrics/
 ## Citation
 
 - **Corpus:** Zenodo data DOI (see `ZENODO.md`; update `CITATION.cff`)
-- **Software:** Zenodo software DOI from GitHub release
+- **Software:** Zenodo concept DOI [10.5281/zenodo.20709965](https://doi.org/10.5281/zenodo.20709965) from GitHub release (see `CITATION.cff`)
 - **Paper:** CLAMPS review manuscript
 
 ## License

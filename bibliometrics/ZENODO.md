@@ -48,7 +48,7 @@ Binder can build from:
 Badge template (replace `USER` and `REPO`):
 
 ```markdown
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/USER/REPO/HEAD?urlpath=lab%2Ftree%2Fnotebooks%2Freproduce.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/eeeeelizzzzz/CLAMPS_Resources/HEAD?urlpath=lab%2Ftree%2Fbibliometrics%2Fnotebooks%2Freproduce.ipynb)
 ```
 
 ---

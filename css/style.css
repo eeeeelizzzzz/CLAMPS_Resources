@@ -623,13 +623,35 @@ a.figure-ref {
 .facility-card img {
   display: block;
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: auto;
 }
 
 .facility-card figcaption {
   padding: 1rem 1.1rem;
   font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.facility-feature {
+  margin: 1.5rem auto 0;
+  max-width: min(100%, 420px);
+  text-align: center;
+}
+
+.facility-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.facility-feature figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
   color: var(--text-muted);
   line-height: 1.5;
 }

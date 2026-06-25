@@ -27,6 +27,7 @@ GitHub Pages site for the Collaborative Lower Atmospheric Mobile Profiling Syste
 | `binder/` | MyBinder environment (repo root; bibliometrics + case figure) |
 | `data/cases.json` | Case metadata (dates, titles, images, tags) |
 | `data/deployments.json` | Deployment metadata (campaigns, dates, references) |
+| `CITATION.cff` | Citation metadata for GitHub and Zenodo |
 | `images/` | Combined instrument overview figures |
 | `js/` | Page logic (ES modules) |
 | `css/style.css` | Shared styles |
